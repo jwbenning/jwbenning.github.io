@@ -398,8 +398,8 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-i-m-coming-to-cornell-eeb",
-          title: 'I’m coming to Cornell EEB!',
+            },},{id: "news-benning-lab-is-starting-at-cornell-eeb-sparkles-smile",
+          title: 'Benning Lab is starting at Cornell EEB! :sparkles: :smile:',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
