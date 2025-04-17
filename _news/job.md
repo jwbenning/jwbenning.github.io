@@ -6,4 +6,4 @@ related_posts: false
 published: true
 ---
 
-I'm coming to Cornell EEB!
+Benning Lab is starting at Cornell EEB! :sparkles: :smile:
