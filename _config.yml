@@ -271,8 +271,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Benning]
+  first_name: [John, J., J.W., JW]
 
   style: apa
   locale: en
