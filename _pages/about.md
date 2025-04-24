@@ -2,16 +2,16 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Department of Ecology and Evolutionary Biology, Cornell University
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>Department of Ecology and Evolutionary Biology</p>
-    <p>Cornell University</p>
-    <p>Ithaca, New York 14850</p>
+  #more_info: >
+    #<p>Department of Ecology and Evolutionary Biology</p>
+    #<p>Cornell University</p>
+    #<p>Ithaca, New York 14850</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
