@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Department of Ecology and Evolutionary Biology <p>Cornell University</p>
+subtitle: Department of Ecology and Evolutionary Biology\nCornell University
 
 profile:
   align: right
