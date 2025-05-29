@@ -27,7 +27,13 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-We study adaptation across space and time, using a combination of empirical and theoretical methods.
+In general, our research group seeks to understand how evolutionary processes mediate ecological patterns. We are particularly interested in how the failure vs. success of adaptation determines biogeographic patterns and persistence of populations. We have shed light on phenomena such as
+- the importance of biotic interactions in constraining species' geographic distributions
+- the role of temporal gene flow in constraining rapid adaptation
+- how environmental gradients control the spread of biological invasions 
+- how temporal environmental variation mediates the formation of species' range limits
+
+We use a variety of empirical and theoretical approaches to understand species' geographic range limits, adaptation, and the ability of populations to persist through environmental change. We make use of realistic field experiments, long-term observational data, tightly controlled laboratory experiments, and theoretical models to gain a more complete understanding of the mechanisms underlying ecological and evolutionary patterns.
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder. -->
 
