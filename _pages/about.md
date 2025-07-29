@@ -33,7 +33,7 @@ In general, our research group seeks to understand the interplay between evoluti
 - how environmental gradients control the spread of biological invasions 
 - how temporal environmental variation mediates the formation of species' range limits
 
-We make use of realistic field experiments, long-term observational data, tightly controlled laboratory experiments, and theoretical models to gain a more complete understanding of the mechanisms underlying ecological and evolutionary patterns.
+We make use of manipulative field experiments, long-term observational data, tightly controlled laboratory experiments, and theoretical models to gain a more complete understanding of the mechanisms underlying ecological and evolutionary patterns.
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder. -->
 
