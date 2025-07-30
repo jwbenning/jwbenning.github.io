@@ -12,6 +12,7 @@ horizontal: false
 <!-- pages/projects.md -->
 
 We believe that reciprocal feedback between theoretical and empirical work drives science forward. In general, we try for something like this:  
+researchFig1.png
 
 
 
