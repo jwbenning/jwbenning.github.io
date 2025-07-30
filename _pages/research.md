@@ -11,8 +11,9 @@ horizontal: false
 
 <!-- pages/projects.md -->
 
-We believe that reciprocal feedback between theoretical and empirical work drives science forward. In general, we try for something like this:  
-![Approach](/assets/img/researchFig1.jpg)
+We have broad interests, but generally wonder how organisms cope with environmental change. What enables species to move into new habitat? How do populations avert extinction during times of stress? What facilitates adaptation to novel conditions?  
+
+
 
 
 
