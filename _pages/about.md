@@ -27,13 +27,13 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-In general, our research group seeks to understand the interplay between evolutionary processes and ecological patterns. We think about things like
+In general, our research group seeks to understand the interplay between evolutionary processes and ecological patterns. Our interests are broad, but lately, we've been especially interested in the forces impeding or facilitating adaptation to environmental changes. We've worked on things like
 - the importance of biotic interactions in constraining species' geographic distributions
 - the role of temporal gene flow in constraining rapid adaptation
 - how environmental gradients control the spread of biological invasions 
 - how temporal environmental variation mediates the formation of species' range limits
 
-We make use of manipulative field experiments, long-term observational data, tightly controlled laboratory experiments, and theoretical models to gain a more complete understanding of the mechanisms underlying ecological and evolutionary patterns.
+We make use of manipulative field experiments, long-term observational data, controlled laboratory experiments, and theoretical models to gain a more complete understanding of the mechanisms underlying ecological and evolutionary patterns.
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder. -->
 
