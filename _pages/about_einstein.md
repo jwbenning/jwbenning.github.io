@@ -1,5 +1,5 @@
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+John Benning
+baby Principal Investigator
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+CV
+John received his undergraduate degree in Anthropology from UNC-Chapel Hill, then spent a couple years traveling the country doing field biology before starting his PhD at the University of Minnesota with Dave Moeller. He is an evolutionary ecologist broadly interested in the evolutionary processes that mediate ecological patterns. John just moved to Ithaca from Minneapolis with his wife, Anna, and their children, Theo (5) and Torin (1). When he’s not chasing the kids down the block, John likes to garden, play basketball, attempt various DIY projects, and play drums.
