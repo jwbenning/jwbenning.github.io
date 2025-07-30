@@ -4,7 +4,7 @@ permalink: /join/
 title: join
 description: How to join the lab.
 nav: true
-nav_order: 6
+nav_order: 8
 ---
 
 Updated August 2025
