@@ -1,4 +1,4 @@
-**John Benning**
+**John Benning**  
 Principal Investigator  
 [jbenning@cornell.edu](mailto:jbenning@cornell.edu)
 
