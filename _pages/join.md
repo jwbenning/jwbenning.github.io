@@ -7,14 +7,14 @@ nav: true
 nav_order: 5
 ---
 
-We're always looking for collaborators. Cornell offers a thriving intellectual environment set among inspiring natural beauty. 
+We're always looking for collaborators. Cornell offers a thriving intellectual environment nestled within an inspiring landscape. 
 
 _Updated August 2025_
 
 ## Postdocs  
 We're searching for a postdoctoral collaborator. This will be a combination of genomic and modeling work, but if you want to do field work there will be many opportunities.
 
-We're also interested in sponsoring candidates for postdoctoral fellowships. Reach out if you'd like to explore that option.
+We're also interested in sponsoring candidates for postdoctoral fellowships. Reach out to [John](mailto:jbenning@cornell.edu) if you'd like to explore that option.
 
 ## Graduate students  
 We're recruiting PhD students for the Fall 2025 application period, to begin graduate school in Fall 2026. 
