@@ -7,12 +7,12 @@ nav: true
 nav_order: 5
 ---
 
+_Updated August 2025_  
+
 We're always looking for collaborators. Cornell offers a stimulating intellectual environment nestled among the inspiring natural beauty of Upstate New York. 
 
-_Updated August 2025_
-
 ## Postdocs  
-We're searching for a postdoctoral collaborator. The project will leverage long-term demographic and environmental data with population genomic analyses of _Clarkia xantiana_ to better understand interrelationships between environmental change, evolution, and population demography. The work will combine population genomic simulation modeling work, but if you want to do field work there will be many opportunities. You need only motivation to learn, not experience in, simulation-based modeling and population genomics to be successful in this position. Salary will be at [NIH postdoc funding levels](https://www.niaid.nih.gov/grants-contracts/salary-cap-stipends), based on years experience. Up to three years of funding are available. 20% of your time
+We're searching for a postdoctoral collaborator. The project will leverage long-term demographic and environmental data with longitudinal population genomic analyses of _Clarkia xantiana_ to better understand interrelationships between environmental change, evolution, and population demography. The work will largely comrpise population genomics with simulation modeling work. You need only motivation to learn, not experience in, simulation-based modeling and population genomics to be successful in this position. Salary will be at [NIH postdoc funding levels](https://www.niaid.nih.gov/grants-contracts/salary-cap-stipends), based on years experience. 20% of your time will be earmarked for personal projects and professional development. Up to three years of funding are available. 
 
 We're also interested in sponsoring candidates for postdoctoral fellowships. Reach out to [John](mailto:jbenning@cornell.edu) if you'd like to explore that option.
 
