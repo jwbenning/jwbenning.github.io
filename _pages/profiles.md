@@ -11,7 +11,7 @@ profiles:
   # and create one content file for each profile inside _pages/
   - align: right
     image: jwb_and_boys.jpg
-    content: about_einstein.md
+    content: about_benning.md
     image_circular: false # crops the image to make it circular
     more_info: 
   - align: left
