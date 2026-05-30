@@ -11,3 +11,7 @@ assets/libs/
 node_modules/
 vendor
 .idea
+
+# Project scaffolding symlinks (point at Drive-side CLAUDE.md / TODO.md)
+/CLAUDE.md
+/TODO.md
