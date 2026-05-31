@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-research",
           title: "research",
-          description: "",
+          description: "How do populations cope with environmental change?",
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
@@ -408,51 +408,70 @@ ninja.data = [{
             },},{id: "news-benning-lab-is-starting-at-cornell-eeb-sparkles-smile",
           title: 'Benning Lab is starting at Cornell EEB! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "news-new-paper-out-in-proc-roy-soc-b-confounding-fuels-misinterpretation-in-human-genetics-with-jedidiah-carlson-olivia-smith-ruth-shaw-and-arbel-harpak-sparkles",
+          title: 'New paper out in Proc. Roy. Soc. B: Confounding fuels misinterpretation in human...',
+          description: "",
+          section: "News",},{id: "news-our-team-was-invited-to-submit-a-full-proposal-to-the-simons-collaborations-in-ecology-and-evolution-program-congener-community-network-genomics-of-ecosystem-resilience-with-13-pis-across-cornell-ucsc-uci-and-berkeley-crossed-fingers",
+          title: 'Our team was invited to submit a full proposal to the Simons Collaborations...',
+          description: "",
+          section: "News",},{id: "news-welcome-to-maddie-ore-postdoc-and-ella-mancino-technician-iii-60-40-split-with-the-agrawal-lab-both-joining-the-lab-today-tada",
+          title: 'Welcome to Maddie Ore (postdoc) and Ella Mancino (Technician III, 60/40 split with...',
+          description: "",
+          section: "News",},{id: "projects-rapid-adaptation-to-herbicide-in-ragweed",
+          title: 'Rapid adaptation to herbicide in ragweed',
+          description: "Tracking the origin and spread of herbicide resistance in Ambrosia artemisiifolia",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+              window.location.href = "/projects/aa-herbicide/";
+            },},{id: "projects-congener-community-network-genomics",
+          title: 'CONGENER — community network genomics',
+          description: "A multi-institution effort linking within-species genomic variation to ecosystem resilience",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+              window.location.href = "/projects/congener/";
+            },},{id: "projects-gene-flow-at-a-range-edge",
+          title: 'Gene flow at a range edge',
+          description: "A field experiment testing whether gene flow rescues or swamps marginal populations",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+              window.location.href = "/projects/cx-crosstypes/";
+            },},{id: "projects-long-term-clarkia-demography",
+          title: 'Long-term Clarkia demography',
+          description: "Two decades of population dynamics across the Clarkia xantiana range",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
+              window.location.href = "/projects/cx-demography/";
+            },},{id: "projects-the-genetic-architecture-of-adaptation-in-clarkia",
+          title: 'The genetic architecture of adaptation in Clarkia',
+          description: "Line-cross experiments to dissect the architecture of fitness differences across populations",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
+              window.location.href = "/projects/cx-linecross/";
+            },},{id: "projects-clarkia-reference-genomes",
+          title: 'Clarkia reference genomes',
+          description: "Trio-binned reference assemblies for two Clarkia xantiana subspecies",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
+              window.location.href = "/projects/cx-ref/";
+            },},{id: "projects-clarkia-in-space-and-time",
+          title: 'Clarkia in space and time',
+          description: "Population genomics of contemporary adaptation across a species&#39; range",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
+              window.location.href = "/projects/cx-spacetime/";
+            },},{id: "projects-microbial-range-expansions",
+          title: 'Microbial range expansions',
+          description: "Experimental evolution of E. coli across spatially and temporally varying environments",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
+              window.location.href = "/projects/ecoli-evo/";
+            },},{id: "projects-demography-and-genomics-of-fringed-gentian",
+          title: 'Demography and genomics of fringed gentian',
+          description: "Why is a once-common wildflower disappearing across the northeastern US?",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
+              window.location.href = "/projects/gc-demogenetics/";
+            },},{id: "projects-evolution-during-invasion-in-common-tansy",
+          title: 'Evolution during invasion in common tansy',
+          description: "Phenotypic and genomic divergence between native and invasive Tanacetum vulgare",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/tancom/";
+            },},{id: "projects-experimental-range-expansions-in-tribolium",
+          title: 'Experimental range expansions in Tribolium',
+          description: "Testing range-limit theory with replicate evolving flour-beetle landscapes",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/tc-rangelimits/";
             },},{
         id: 'social-email',
         title: 'email',
