@@ -2,22 +2,16 @@
 layout: page
 title: research
 permalink: /research/
-description: 
+description: How do populations cope with environmental change?
 nav: true
 nav_order: 2
-display_categories: [work, fun]
+display_categories: [adaptation, range limits, eco-evolutionary genomics]
 horizontal: false
 ---
 
-<!-- pages/projects.md -->
+We work at the interface of ecology, evolution, and genomics, using a mix of natural systems and laboratory model organisms to ask how populations and species respond to environmental change across space and time. What enables a species to track a shifting climate, or to spread into new habitat? When do populations adapt to novel pressures, and when do they fail? How does the genetic architecture of fitness, the structure of dispersal, and the web of species interactions jointly shape these outcomes?
 
-We have broad interests, but generally wonder how organisms cope with environmental change. What enables species to move into new habitat? How do populations avert extinction during times of stress? What facilitates adaptation to novel conditions?  
-
-
-
-
-
-
+Our work spans field experiments, common gardens, population and quantitative genomics, experimental evolution in the lab, and theoretical/simulation modeling. We currently work in three overlapping areas:
 
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
