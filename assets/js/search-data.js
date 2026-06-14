@@ -427,6 +427,11 @@ ninja.data = [{
           description: "A multi-institution effort linking within-species genomic variation to ecosystem resilience",
           section: "Projects",handler: () => {
               window.location.href = "/projects/congener/";
+            },},{id: "projects-biotic-interactions-and-range-limits",
+          title: 'Biotic interactions and range limits',
+          description: "How herbivory, mutualism, and soil microbes shape where a plant can persist",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/cx-bioticlimits/";
             },},{id: "projects-gene-flow-at-a-range-edge",
           title: 'Gene flow at a range edge',
           description: "A field experiment testing whether gene flow rescues or swamps marginal populations",
