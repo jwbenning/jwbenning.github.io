@@ -11,9 +11,9 @@ nav_order: 2
   .research-lede{max-width:46rem;margin:0 auto;text-align:center;font-size:1.5rem;font-weight:700;line-height:1.35}
   .research-lede small{display:block;font-weight:400;font-size:1.05rem;color:var(--global-text-color-light);margin-top:.6rem;line-height:1.5}
   .research-chain{max-width:54rem;margin:1.8rem auto .4rem;border:1px solid var(--global-divider-color);border-radius:16px;background:var(--global-card-bg-color);padding:1.6rem 1.3rem 1.3rem;position:relative}
-  .research-chain .axis{position:absolute;top:-.7rem;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--global-theme-color);color:#fff;padding:.2rem .75rem;border-radius:999px}
-  .research-chain .axis.l{left:1.3rem}
-  .research-chain .axis.r{right:1.3rem}
+  .research-chain .dims{display:flex;justify-content:center;align-items:center;gap:.55rem;margin:0 0 1.1rem;flex-wrap:wrap}
+  .research-chain .dim{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--global-theme-color);color:#fff;padding:.2rem .8rem;border-radius:999px}
+  .research-chain .dims .amp{color:var(--global-text-color-light);font-size:.72rem;font-weight:700}
   .research-chain .chain{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.5rem;align-items:stretch}
   .research-chain .node{border:1.5px solid;border-radius:12px;background:var(--global-bg-color);padding:.95rem .6rem;text-align:center}
   .research-chain .node .h{font-size:1.1rem;font-weight:700;line-height:1.1}
@@ -57,7 +57,6 @@ nav_order: 2
   @media(max-width:700px){
     .research-chain .chain{grid-template-columns:1fr}
     .research-chain .arr{transform:rotate(90deg)}
-    .research-chain .axis{display:none}
   }
 </style>
 
@@ -67,8 +66,11 @@ nav_order: 2
 </p>
 
 <div class="research-chain">
-  <span class="axis l">◀ across space</span>
-  <span class="axis r">through time ▶</span>
+  <div class="dims">
+    <span class="dim">across space</span>
+    <span class="amp">and</span>
+    <span class="dim">through time</span>
+  </div>
   <div class="chain">
     <div class="node evo"><div class="h">Evolution</div><div class="s">selection, drift,<br>gene flow, mutation</div></div>
     <div class="arr">⇄</div>
