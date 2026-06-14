@@ -30,6 +30,13 @@ nav_order: 2
   .research-q.dist{border-color:#1d6fb8}
   .research-sub{color:var(--global-text-color-light);margin:.2rem 0 0;max-width:48rem}
   .research-strip{text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;font-weight:700;color:var(--global-text-color-light);margin:1.3rem 0 .6rem}
+  .research-pubs{margin-top:1.3rem}
+  .research-pubs>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;font-weight:700;color:var(--global-text-color-light);user-select:none}
+  .research-pubs>summary::-webkit-details-marker{display:none}
+  .research-pubs>summary::before{content:"\25B8";font-size:.85rem;transition:transform .15s ease}
+  .research-pubs[open]>summary::before{transform:rotate(90deg)}
+  .research-pubs>summary:hover{color:var(--global-theme-color)}
+  .research-pubs .publications{margin-top:.7rem}
   @media(max-width:700px){
     .research-chain .chain{grid-template-columns:1fr}
     .research-chain .arr{transform:rotate(90deg)}
@@ -73,10 +80,12 @@ nav_order: 2
   </div>
 </div>
 
-<p class="research-strip">Key publications</p>
-<div class="publications">
-  {% bibliography --query @*[keywords~=adapt] %}
-</div>
+<details class="research-pubs">
+  <summary>Key publications</summary>
+  <div class="publications">
+    {% bibliography --query @*[keywords~=adapt] %}
+  </div>
+</details>
 
 <!-- ============ Demography ============ -->
 <h2 class="research-q dem">What lets populations persist through time?</h2>
@@ -92,10 +101,12 @@ nav_order: 2
   </div>
 </div>
 
-<p class="research-strip">Key publications</p>
-<div class="publications">
-  {% bibliography --query @*[keywords~=persist] %}
-</div>
+<details class="research-pubs">
+  <summary>Key publications</summary>
+  <div class="publications">
+    {% bibliography --query @*[keywords~=persist] %}
+  </div>
+</details>
 
 <!-- ============ Ecology / range limits ============ -->
 <h2 class="research-q dist">What sets the limits of a species' range?</h2>
@@ -111,7 +122,9 @@ nav_order: 2
   </div>
 </div>
 
-<p class="research-strip">Key publications</p>
-<div class="publications">
-  {% bibliography --query @*[keywords~=rangelimits] %}
-</div>
+<details class="research-pubs">
+  <summary>Key publications</summary>
+  <div class="publications">
+    {% bibliography --query @*[keywords~=rangelimits] %}
+  </div>
+</details>
