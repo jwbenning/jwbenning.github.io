@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-research",
           title: "research",
-          description: "How do populations cope with environmental change?",
+          description: "How do evolutionary processes mediate ecological patterns?",
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
