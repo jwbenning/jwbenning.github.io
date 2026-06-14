@@ -30,13 +30,30 @@ nav_order: 2
   .research-q.dist{border-color:#1d6fb8}
   .research-sub{color:var(--global-text-color-light);margin:.2rem 0 0;max-width:48rem}
   .research-strip{text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;font-weight:700;color:var(--global-text-color-light);margin:1.3rem 0 .6rem}
-  .research-pubs{margin-top:1.3rem}
-  .research-pubs>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;font-weight:700;color:var(--global-text-color-light);user-select:none}
-  .research-pubs>summary::-webkit-details-marker{display:none}
-  .research-pubs>summary::before{content:"\25B8";font-size:.85rem;transition:transform .15s ease}
-  .research-pubs[open]>summary::before{transform:rotate(90deg)}
-  .research-pubs>summary:hover{color:var(--global-theme-color)}
-  .research-pubs .publications{margin-top:.7rem}
+  /* expandable project cards */
+  .rp-list{display:flex;flex-direction:column;gap:.6rem;margin:.4rem 0}
+  .rp-card{border:1px solid var(--global-divider-color);border-radius:12px;background:var(--global-card-bg-color);overflow:hidden;transition:border-color .15s ease,box-shadow .15s ease}
+  .rp-card:hover{border-color:var(--global-theme-color)}
+  .rp-card[open]{box-shadow:0 4px 18px rgba(20,30,40,.07)}
+  .rp-card>summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:.9rem;padding:.85rem 1.05rem;user-select:none}
+  .rp-card>summary::-webkit-details-marker{display:none}
+  .rp-head{flex:1;min-width:0}
+  .rp-title{display:block;font-weight:700;font-size:1.05rem;line-height:1.25;color:var(--global-text-color)}
+  .rp-desc{display:block;color:var(--global-text-color-light);font-size:.9rem;line-height:1.4;margin-top:.2rem}
+  .rp-chevron{flex:none;margin-top:.35rem;width:.55rem;height:.55rem;border-right:2px solid var(--global-text-color-light);border-bottom:2px solid var(--global-text-color-light);transform:rotate(-45deg);transition:transform .15s ease}
+  .rp-card[open] .rp-chevron{transform:rotate(45deg)}
+  .rp-card>summary:hover .rp-title{color:var(--global-theme-color)}
+  .rp-body{padding:0 1.05rem 1.05rem;border-top:1px solid var(--global-divider-color);margin-top:-.1rem}
+  .rp-body>p:first-child{margin-top:.9rem}
+  .rp-body em{font-style:italic}
+  .rp-links{margin-top:.6rem;font-size:.85rem}
+  .rp-links a{color:var(--global-text-color-light)}
+  .rp-links a:hover{color:var(--global-theme-color)}
+  /* "Key publications" heading + list inside an expanded card */
+  .rp-body h2{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--global-text-color-light);margin:1.3rem 0 .3rem}
+  .rp-body .publications{margin-top:.2rem}
+  .rp-body .publications ol.bibliography{font-size:.92rem}
+  .rp-body .publications ol.bibliography li{margin-bottom:.7rem}
   @media(max-width:700px){
     .research-chain .chain{grid-template-columns:1fr}
     .research-chain .arr{transform:rotate(90deg)}
@@ -70,61 +87,34 @@ nav_order: 2
 <h2 class="research-q evo">When can populations adapt to a changing environment?</h2>
 <p class="research-sub">The genetics of adaptation: standing variation, genetic architecture, gene flow, and how quickly evolution can track shifting selection.</p>
 
-<p class="research-strip">Active projects</p>
-<div class="projects">
-  <div class="row row-cols-1 row-cols-md-3">
-    {% assign adapt_projects = site.projects | where: "category", "adapt" | sort: "importance" %}
-    {% for project in adapt_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
+<p class="research-strip">Projects — click to expand for details &amp; papers</p>
+<div class="rp-list">
+  {% assign adapt_projects = site.projects | where: "category", "adapt" | sort: "importance" %}
+  {% for project in adapt_projects %}
+    {% include research_project.liquid %}
+  {% endfor %}
 </div>
-
-<details class="research-pubs">
-  <summary>Key publications</summary>
-  <div class="publications">
-    {% bibliography --query @*[keywords~=adapt] %}
-  </div>
-</details>
 
 <!-- ============ Demography ============ -->
 <h2 class="research-q dem">What lets populations persist through time?</h2>
 <p class="research-sub">Long-term demography paired with genomics: which populations grow, decline, or hold on, and what drives those trajectories.</p>
 
-<p class="research-strip">Active projects</p>
-<div class="projects">
-  <div class="row row-cols-1 row-cols-md-3">
-    {% assign persist_projects = site.projects | where: "category", "persist" | sort: "importance" %}
-    {% for project in persist_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
+<p class="research-strip">Projects — click to expand for details &amp; papers</p>
+<div class="rp-list">
+  {% assign persist_projects = site.projects | where: "category", "persist" | sort: "importance" %}
+  {% for project in persist_projects %}
+    {% include research_project.liquid %}
+  {% endfor %}
 </div>
-
-<details class="research-pubs">
-  <summary>Key publications</summary>
-  <div class="publications">
-    {% bibliography --query @*[keywords~=persist] %}
-  </div>
-</details>
 
 <!-- ============ Ecology / range limits ============ -->
 <h2 class="research-q dist">What sets the limits of a species' range?</h2>
 <p class="research-sub">How biotic interactions, dispersal, and environmental gradients govern where species can live and how fast they spread into new terrain.</p>
 
-<p class="research-strip">Active projects</p>
-<div class="projects">
-  <div class="row row-cols-1 row-cols-md-3">
-    {% assign range_projects = site.projects | where: "category", "rangelimits" | sort: "importance" %}
-    {% for project in range_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
+<p class="research-strip">Projects — click to expand for details &amp; papers</p>
+<div class="rp-list">
+  {% assign range_projects = site.projects | where: "category", "rangelimits" | sort: "importance" %}
+  {% for project in range_projects %}
+    {% include research_project.liquid %}
+  {% endfor %}
 </div>
-
-<details class="research-pubs">
-  <summary>Key publications</summary>
-  <div class="publications">
-    {% bibliography --query @*[keywords~=rangelimits] %}
-  </div>
-</details>

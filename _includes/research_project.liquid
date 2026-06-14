@@ -1,0 +1,17 @@
+<details class="rp-card">
+  <summary>
+    <span class="rp-head">
+      <span class="rp-title">{{ project.title }}</span>
+      <span class="rp-desc">{{ project.description }}</span>
+    </span>
+    <span class="rp-chevron" aria-hidden="true"></span>
+  </summary>
+  <div class="rp-body">
+    {{ project.content }}
+    {% if project.github %}
+      <p class="rp-links">
+        <a href="{{ project.github }}"><i class="fa-brands fa-github"></i> Code</a>
+      </p>
+    {% endif %}
+  </div>
+</details>
