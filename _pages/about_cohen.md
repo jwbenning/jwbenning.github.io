@@ -1,5 +1,6 @@
-**Anna Cohen**  
-Lab Manager  
-[adc227@cornell.edu](mailto:adc227@cornell.edu)
+## Lab alumni
 
-_Bio placeholder — replace with a short biographical sketch in John's style. Anna runs the lab's day-to-day operations and is currently leading E. coli range-expansion pilots and Clarkia seed germination trials._
+**Anna Cohen**  
+Lab Manager, 2025–2026
+
+_Bio placeholder — replace with a short biographical sketch in John's style. Anna was the lab's first lab manager, setting up the E. coli range-expansion pilots and the Clarkia seed germination trials._
