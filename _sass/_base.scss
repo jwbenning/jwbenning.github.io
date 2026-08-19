@@ -1439,26 +1439,38 @@ figure.cover {
     min-width: 0;
   }
 
+  /* Feed thumbnails are uniform tiles regardless of the source photo's shape,
+     so the stream stays tidy without anyone having to crop before posting.
+     Clicking opens the full uncropped image (see .medium-zoom-image--opened).
+     Anchored high because the subject of a portrait shot is near the top. */
   .update-photos {
     margin-bottom: 0.5rem;
 
     img {
       width: 100%;
       height: auto;
-      max-height: 26rem;
+      aspect-ratio: 3 / 2;
       object-fit: cover;
+      object-position: center 25%;
+      cursor: zoom-in;
     }
   }
 
-  /* More than one photo in a single update: side-by-side, wrapping. */
+  /* More than one photo in a single update: side-by-side, wrapping.
+     Each keeps its own aspect ratio — forcing a uniform tile crops heads off
+     portrait shots. Ragged bottoms are the right trade here. */
   .update-photos-multi {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 0.5rem;
+    align-items: start;
 
     img {
-      aspect-ratio: 4 / 3;
-      max-height: none;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center 25%;
     }
   }
 
@@ -1487,4 +1499,14 @@ figure.cover {
       font-size: 0.85rem;
     }
   }
+}
+
+/* medium-zoom opens the same <img>, so the tile crop has to be undone here or
+   the zoomed photo stays cropped. */
+.medium-zoom-image--opened {
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  max-height: none !important;
+  cursor: zoom-out;
 }
