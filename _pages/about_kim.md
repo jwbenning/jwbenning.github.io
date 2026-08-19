@@ -2,4 +2,4 @@
 Undergraduate Researcher  
 [email TBD]
 
-_Bio placeholder — replace with a short biographical sketch in John's style._
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.

@@ -2,4 +2,4 @@
 Undergraduate Researcher  
 [email TBD]
 
-_Bio placeholder — replace with a short biographical sketch in John's style. Nia is gaining wet-lab experience on the E. coli projects._
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.

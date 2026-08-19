@@ -2,4 +2,4 @@
 Postdoctoral Researcher  
 [mjo234@cornell.edu](mailto:mjo234@cornell.edu)
 
-_Bio placeholder — replace with a short biographical sketch in John's style. Maddie's work spans Clarkia temporal population genomics, SLiM eco-evolutionary modeling, and Tribolium whole-genome sequence analysis. Joined the lab June 2026._
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

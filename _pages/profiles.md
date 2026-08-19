@@ -28,7 +28,7 @@ profiles:
     more_info:
   # Research technician
   - align: left
-    image: pic_you.png  # TODO: replace with mancino.jpg once Ella sends a photo
+    image: mancino.jpg
     content: about_mancino.md
     image_circular: false
     more_info:
@@ -48,13 +48,13 @@ profiles:
     content: about_kim.md
     image_circular: false
     more_info:
-  # Friends of the lab (no photo)
-  - content: about_landis.md
-  # Lab alumni (no photo)
-  - content: about_cohen.md
-  # Recruitment CTA
+  # Recruitment CTA — closes the current-members section
   - align: left
     image: pic_you.png
     content: about_you.md
     image_circular: false # crops the image to make it circular
+  # Friends of the lab (no photo)
+  - content: about_landis.md
+  # Lab alumni (no photo)
+  - content: about_cohen.md
 ---

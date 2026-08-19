@@ -3,4 +3,4 @@
 **Jacob Landis**  
 Computational biologist, Cornell University  
 
-_Bio placeholder — replace with a short biographical sketch in John's style. Jacob collaborates with us on genome assembly and population genomics across the Clarkia, Gentianopsis, and Tribolium projects._
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
