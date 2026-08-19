@@ -48,6 +48,17 @@ layout: default
       {% include news.liquid limit=true %}
     {% endif %}
 
+    <!-- Photos -->
+    {% if page.photos and page.photos.enabled %}
+      {% capture photo_gallery %}{% include photo_gallery.liquid limit=page.photos.limit %}{% endcapture %}
+      {% unless photo_gallery == blank %}
+        <h2>
+          <a href="{{ '/photos/' | relative_url }}" style="color: inherit">photos</a>
+        </h2>
+        {{ photo_gallery }}
+      {% endunless %}
+    {% endif %}
+
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>

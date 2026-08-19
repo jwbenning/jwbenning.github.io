@@ -4,7 +4,7 @@ permalink: /principles/
 title: principles
 description: What we value and how we work.
 nav: true
-nav_order: 5
+nav_order: 7
 ---
 
 <style>

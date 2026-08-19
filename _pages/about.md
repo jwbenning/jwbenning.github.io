@@ -21,6 +21,10 @@ announcements:
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
+photos:
+  enabled: true # shows the most recent photos from assets/img/photos/
+  limit: 6 # leave blank to include every photo
+
 latest_posts:
   enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
