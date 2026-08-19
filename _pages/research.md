@@ -2,7 +2,7 @@
 layout: page
 title: research
 permalink: /research/
-description: How do evolutionary processes mediate ecological patterns?
+description:
 nav: true
 nav_order: 2
 ---
@@ -14,14 +14,12 @@ nav_order: 2
   .research-chain .dims{display:flex;justify-content:center;align-items:center;gap:.55rem;margin:0 0 1.1rem;flex-wrap:wrap}
   .research-chain .dim{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--global-theme-color);color:#fff;padding:.2rem .8rem;border-radius:999px}
   .research-chain .dims .amp{color:var(--global-text-color-light);font-size:.72rem;font-weight:700}
-  .research-chain .chain{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.5rem;align-items:stretch}
-  .research-chain .node{border:1.5px solid;border-radius:12px;background:var(--global-bg-color);padding:.95rem .6rem;text-align:center}
-  .research-chain .node .h{font-size:1.1rem;font-weight:700;line-height:1.1}
-  .research-chain .node .s{font-size:.8rem;color:var(--global-text-color-light);margin-top:.3rem;line-height:1.3}
-  .research-chain .node.evo{border-color:#7c3aed}.research-chain .node.evo .h{color:#7c3aed}
-  .research-chain .node.dem{border-color:#0d9488}.research-chain .node.dem .h{color:#0d9488}
-  .research-chain .node.dist{border-color:#1d6fb8}.research-chain .node.dist .h{color:#1d6fb8}
-  .research-chain .arr{display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--global-text-color-light)}
+  .research-tri{display:block;width:100%;height:auto;max-width:620px;margin:0 auto}
+  .research-tri .bx{fill:var(--global-bg-color);stroke-width:1.5}
+  .research-tri .lab{font-size:19px;font-weight:700}
+  .research-tri .sub{font-size:12.5px;fill:var(--global-text-color-light)}
+  .research-tri .edge{stroke:var(--global-text-color-light);stroke-width:1.6;fill:none}
+  .research-tri .ahead{fill:var(--global-text-color-light)}
   .research-chain .cap{text-align:center;color:var(--global-text-color-light);font-size:.85rem;margin:1rem auto 0;max-width:42rem;line-height:1.5}
   .research-philosophy{max-width:46rem;margin:1.5rem auto 2.4rem;text-align:center;line-height:1.65}
   .research-q{margin-top:2.8rem;padding-left:.7rem;border-left:5px solid var(--global-theme-color)}
@@ -55,14 +53,14 @@ nav_order: 2
   .rp-body .publications ol.bibliography{font-size:.92rem}
   .rp-body .publications ol.bibliography li{margin-bottom:.7rem}
   @media(max-width:700px){
-    .research-chain .chain{grid-template-columns:1fr}
-    .research-chain .arr{transform:rotate(90deg)}
+    .research-tri .lab{font-size:22px}
+    .research-tri .sub{font-size:14px}
   }
 </style>
 
 <p class="research-lede">
-  How do evolutionary processes mediate ecological patterns?
-  <small>How do changes in allele frequency, through time and across space, shape the abundance and distribution of organisms?</small>
+  Evolutionary ecology
+  <small>How do changes in allele frequency, through time and across space, shape population abundances and species’ distributions?</small>
 </p>
 
 <div class="research-chain">
@@ -71,18 +69,37 @@ nav_order: 2
     <span class="amp">and</span>
     <span class="dim">through time</span>
   </div>
-  <div class="chain">
-    <div class="node evo"><div class="h">Evolution</div><div class="s">selection, drift,<br>gene flow, mutation</div></div>
-    <div class="arr">⇄</div>
-    <div class="node dem"><div class="h">Demography</div><div class="s">birth, death,<br>population growth</div></div>
-    <div class="arr">⇄</div>
-    <div class="node dist"><div class="h">Ecology</div><div class="s">distribution, abundance,<br>range limits, persistence</div></div>
-  </div>
-  <p class="cap">Changes in allele frequency ripple through demography to shape the distribution, abundance, and persistence of populations, and ecology feeds back on evolution in turn. We follow this chain in both directions, across space and time.</p>
+  <svg class="research-tri" viewBox="0 0 640 372" role="img" aria-label="Evolution, demography, and ecology each act on one another">
+    <defs>
+      <marker id="tri-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+        <path class="ahead" d="M0,0 L10,5 L0,10 z" />
+      </marker>
+    </defs>
+    <line class="edge" x1="258" y1="122" x2="158" y2="252" marker-start="url(#tri-ah)" marker-end="url(#tri-ah)" />
+    <line class="edge" x1="382" y1="122" x2="482" y2="252" marker-start="url(#tri-ah)" marker-end="url(#tri-ah)" />
+    <line class="edge" x1="238" y1="308" x2="402" y2="308" marker-start="url(#tri-ah)" marker-end="url(#tri-ah)" />
+
+    <rect class="bx" x="210" y="18" width="220" height="96" rx="12" stroke="#7c3aed" />
+    <text class="lab" x="320" y="52" text-anchor="middle" fill="#7c3aed">Evolution</text>
+    <text class="sub" x="320" y="76" text-anchor="middle">selection, drift,</text>
+    <text class="sub" x="320" y="94" text-anchor="middle">gene flow, mutation</text>
+
+    <rect class="bx" x="12" y="260" width="220" height="96" rx="12" stroke="#0d9488" />
+    <text class="lab" x="122" y="294" text-anchor="middle" fill="#0d9488">Demography</text>
+    <text class="sub" x="122" y="318" text-anchor="middle">birth, death,</text>
+    <text class="sub" x="122" y="336" text-anchor="middle">population growth</text>
+
+    <rect class="bx" x="408" y="260" width="220" height="96" rx="12" stroke="#1d6fb8" />
+    <text class="lab" x="518" y="288" text-anchor="middle" fill="#1d6fb8">Ecology</text>
+    <text class="sub" x="518" y="310" text-anchor="middle">distribution, abundance,</text>
+    <text class="sub" x="518" y="328" text-anchor="middle">range limits,</text>
+    <text class="sub" x="518" y="346" text-anchor="middle">species interactions</text>
+  </svg>
+  <p class="cap">Lorem ipsum</p>
 </div>
 
 <p class="research-philosophy">
-  We come at these questions with whatever tools fit them best: theory and simulation, long-term field data, experiments in nature, and experimental evolution in the lab. No single approach sees the whole picture, so we use several together. We're also not wedded to any one organism: if the processes we study are general, they should hold across very different systems, so we work across plants, insects, and microbes.
+  We tackle questions with a broad suite of tools: theory and simulation, long-term field data, experiments in the field, and experimental evolution in the lab. We work across plants, insects, and microbes.
 </p>
 
 <!-- ============ Evolution ============ -->
