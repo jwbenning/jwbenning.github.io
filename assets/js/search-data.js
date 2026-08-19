@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-research",
           title: "research",
-          description: "How do evolutionary processes mediate ecological patterns?",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
