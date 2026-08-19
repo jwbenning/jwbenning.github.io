@@ -26,7 +26,7 @@ profiles:
     content: about_cha.md
     image_circular: false
     more_info:
-  # Research technician
+  # Research specialist
   - align: left
     image: mancino.jpg
     content: about_mancino.md
