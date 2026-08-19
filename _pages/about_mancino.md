@@ -1,5 +1,4 @@
 **Ella Mancino**  
-<!-- pronouns: add here, e.g. she/her -->
 Research Specialist (jointly with the Agrawal Lab)  
 [emm359@cornell.edu](mailto:emm359@cornell.edu)
 

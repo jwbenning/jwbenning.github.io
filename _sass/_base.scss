@@ -216,6 +216,10 @@ ul.task-list input[type="checkbox"] {
 }
 
 @media (min-width: 576px) {
+  .profile.profile-home {
+    width: 40%;
+  }
+
   .profile {
     width: 30%;
 
