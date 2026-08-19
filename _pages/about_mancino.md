@@ -1,4 +1,5 @@
 **Ella Mancino**  
+<!-- pronouns: add here, e.g. she/her -->
 Research Technician (jointly with the Agrawal Lab)  
 [emm359@cornell.edu](mailto:emm359@cornell.edu)
 

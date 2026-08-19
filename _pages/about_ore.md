@@ -1,4 +1,5 @@
 **Maddie Ore**  
+<!-- pronouns: add here, e.g. she/her -->
 Postdoctoral Researcher  
 [mjo234@cornell.edu](mailto:mjo234@cornell.edu)
 

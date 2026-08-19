@@ -1,4 +1,5 @@
 **Sean Kim**  
+<!-- pronouns: add here, e.g. he/him -->
 Undergraduate Researcher  
 [email TBD]
 

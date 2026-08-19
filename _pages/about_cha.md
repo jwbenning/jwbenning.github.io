@@ -1,4 +1,5 @@
 **Joanie Cha**  
+they/them  
 PhD Student (incoming, Fall 2026)  
 [email TBD]
 
