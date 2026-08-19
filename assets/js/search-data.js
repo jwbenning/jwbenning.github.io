@@ -30,6 +30,20 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
+        },{id: "nav-news",
+          title: "news",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-photos",
+          title: "photos",
+          description: "Nature, field, and lab photos from the group.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/photos/";
+          },
         },{id: "nav-principles",
           title: "principles",
           description: "What we value and how we work.",
