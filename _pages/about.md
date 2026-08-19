@@ -26,7 +26,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-In general, our research group seeks to understand the interplay between evolutionary processes and ecological patterns. We've worked on things like
+Our research group seeks to understand the interplay between evolutionary processes and ecological patterns. We've worked on things like
 - the importance of biotic interactions in constraining species' geographic distributions
 - the role of temporal gene flow in constraining rapid adaptation
 - how environmental gradients control the spread of biological invasions 
