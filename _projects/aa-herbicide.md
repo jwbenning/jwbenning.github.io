@@ -7,4 +7,4 @@ importance: 7
 category: natural
 ---
 
-Common ragweed (*Ambrosia artemisiifolia*) has independently evolved resistance to multiple herbicide classes. We use whole-genome sequencing of resistant and susceptible New York populations to find the genetic basis of resistance, ask whether it arose from standing variation or new mutation, and forecast its spread under different management strategies.
+Common ragweed (*Ambrosia artemisiifolia*) has independently evolved resistance to multiple herbicide classes across its agricultural range. We're using whole-genome sequencing of resistant and susceptible populations to identify the genetic basis of resistance, ask whether resistance has arisen from standing variation versus *de novo* mutation, and reconstruct how resistance alleles spread across the landscape.

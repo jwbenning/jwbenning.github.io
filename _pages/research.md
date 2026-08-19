@@ -101,7 +101,7 @@ nav_order: 2
 
 <!-- ============ Natural systems ============ -->
 <h2 class="research-q">Natural systems</h2>
-<p class="research-sub">Long-term demography, field experiments, and population genomics in wild populations, asking how they adapt, persist, and reach their limits in the places they actually live.</p>
+<p class="research-sub">Lorem ipsum</p>
 
 <p class="research-strip">Projects — click to expand for details &amp; papers</p>
 <div class="rp-list">
@@ -113,7 +113,7 @@ nav_order: 2
 
 <!-- ============ Experimental evolution ============ -->
 <h2 class="research-q">Experimental evolution</h2>
-<p class="research-sub">Replicate populations evolving in landscapes we build and control, where dispersal evolution, expansion load, and the failure or success of adaptation can be watched directly rather than inferred.</p>
+<p class="research-sub">Lorem ipsum</p>
 
 <p class="research-strip">Projects — click to expand for details &amp; papers</p>
 <div class="rp-list">
@@ -125,7 +125,7 @@ nav_order: 2
 
 <!-- ============ Theory and simulation ============ -->
 <h2 class="research-q">Theory and simulation</h2>
-<p class="research-sub">Models of populations evolving across space and through time, used to generate predictions we test in the field and the lab, and to make sense of what we find there.</p>
+<p class="research-sub">Lorem ipsum</p>
 
 <p class="research-strip">Projects — click to expand for details &amp; papers</p>
 <div class="rp-list">
@@ -137,8 +137,6 @@ nav_order: 2
 
 <!-- ============ Foundations ============ -->
 <h2 class="research-q">Foundations &amp; collaborations</h2>
-<p class="research-sub">Shared resources and multi-lab efforts that much of the work above is built on.</p>
-
 <div class="rp-list">
   {% assign foundation_projects = site.projects | where: "category", "foundations" | sort: "importance" %}
   {% for project in foundation_projects %}
