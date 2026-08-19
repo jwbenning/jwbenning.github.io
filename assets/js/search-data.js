@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "nav-updates",
           title: "updates",
-          description: "Lab news and photos.",
+          description: "Lab news, and photos from the field, the greenhouse, and the bench.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/updates/";
