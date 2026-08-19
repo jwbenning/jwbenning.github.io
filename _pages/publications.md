@@ -9,7 +9,7 @@ nav_order: 3
 
 <!-- _pages/publications.md -->
 
-*_Equal contribution_    ^_Undergraduate mentee_
+*_Equal contribution_&emsp;&emsp;^_Undergraduate mentee_
 
 <div class="publications">
 
