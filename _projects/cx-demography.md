@@ -3,10 +3,10 @@ layout: page
 title: Long-term Clarkia demography
 description: Two decades of population dynamics across the Clarkia xantiana range
 img:
-importance: 1
-category: persist
+importance: 2
+category: natural
 ---
 
-Long-term demographic data from ~20 populations of *Clarkia xantiana* — collected across two decades by the Moeller and Geber labs — let us ask how population dynamics vary across a species' range, how the range edge differs from the core, and whether demographic and genetic signals of stress co-localize. We're integrating these data with new genomic resequencing to bridge demography and evolution at landscape scale.
+A twenty-year record of births, deaths, and population growth across a species' range, now being linked to climate and genomics. Which populations are growing, which are declining, and can we predict their trajectories from the environment they experience?
 
 *With Dave Moeller (Minnesota) and Monica Geber (Cornell).*

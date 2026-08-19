@@ -23,9 +23,6 @@ nav_order: 2
   .research-chain .cap{text-align:center;color:var(--global-text-color-light);font-size:.85rem;margin:1rem auto 0;max-width:42rem;line-height:1.5}
   .research-philosophy{max-width:46rem;margin:1.5rem auto 2.4rem;text-align:center;line-height:1.65}
   .research-q{margin-top:2.8rem;padding-left:.7rem;border-left:5px solid var(--global-theme-color)}
-  .research-q.evo{border-color:#7c3aed}
-  .research-q.dem{border-color:#0d9488}
-  .research-q.dist{border-color:#1d6fb8}
   .research-sub{color:var(--global-text-color-light);margin:.2rem 0 0;max-width:48rem}
   .research-strip{text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;font-weight:700;color:var(--global-text-color-light);margin:1.3rem 0 .6rem}
   /* expandable project cards */
@@ -102,38 +99,49 @@ nav_order: 2
   We tackle questions with a broad suite of tools: theory and simulation, long-term field data, experiments in the field, and experimental evolution in the lab. We work across plants, insects, and microbes.
 </p>
 
-<!-- ============ Evolution ============ -->
-<h2 class="research-q evo">When can populations adapt to a changing environment?</h2>
-<p class="research-sub">The genetics of adaptation: standing variation, genetic architecture, gene flow, and how quickly evolution can track shifting selection.</p>
+<!-- ============ Natural systems ============ -->
+<h2 class="research-q">Natural systems</h2>
+<p class="research-sub">Long-term demography, field experiments, and population genomics in wild populations, asking how they adapt, persist, and reach their limits in the places they actually live.</p>
 
 <p class="research-strip">Projects — click to expand for details &amp; papers</p>
 <div class="rp-list">
-  {% assign adapt_projects = site.projects | where: "category", "adapt" | sort: "importance" %}
-  {% for project in adapt_projects %}
+  {% assign natural_projects = site.projects | where: "category", "natural" | sort: "importance" %}
+  {% for project in natural_projects %}
     {% include research_project.liquid %}
   {% endfor %}
 </div>
 
-<!-- ============ Demography ============ -->
-<h2 class="research-q dem">What lets populations persist through time?</h2>
-<p class="research-sub">Long-term demography paired with genomics: which populations grow, decline, or hold on, and what drives those trajectories.</p>
+<!-- ============ Experimental evolution ============ -->
+<h2 class="research-q">Experimental evolution</h2>
+<p class="research-sub">Replicate populations evolving in landscapes we build and control, where dispersal evolution, expansion load, and the failure or success of adaptation can be watched directly rather than inferred.</p>
 
 <p class="research-strip">Projects — click to expand for details &amp; papers</p>
 <div class="rp-list">
-  {% assign persist_projects = site.projects | where: "category", "persist" | sort: "importance" %}
-  {% for project in persist_projects %}
+  {% assign experimental_projects = site.projects | where: "category", "experimental" | sort: "importance" %}
+  {% for project in experimental_projects %}
     {% include research_project.liquid %}
   {% endfor %}
 </div>
 
-<!-- ============ Ecology / range limits ============ -->
-<h2 class="research-q dist">What sets the limits of a species' range?</h2>
-<p class="research-sub">How biotic interactions, dispersal, and environmental gradients govern where species can live and how fast they spread into new terrain.</p>
+<!-- ============ Theory and simulation ============ -->
+<h2 class="research-q">Theory and simulation</h2>
+<p class="research-sub">Models of populations evolving across space and through time, used to generate predictions we test in the field and the lab, and to make sense of what we find there.</p>
 
 <p class="research-strip">Projects — click to expand for details &amp; papers</p>
 <div class="rp-list">
-  {% assign range_projects = site.projects | where: "category", "rangelimits" | sort: "importance" %}
-  {% for project in range_projects %}
+  {% assign modeling_projects = site.projects | where: "category", "modeling" | sort: "importance" %}
+  {% for project in modeling_projects %}
+    {% include research_project.liquid %}
+  {% endfor %}
+</div>
+
+<!-- ============ Foundations ============ -->
+<h2 class="research-q">Foundations &amp; collaborations</h2>
+<p class="research-sub">Shared resources and multi-lab efforts that much of the work above is built on.</p>
+
+<div class="rp-list">
+  {% assign foundation_projects = site.projects | where: "category", "foundations" | sort: "importance" %}
+  {% for project in foundation_projects %}
     {% include research_project.liquid %}
   {% endfor %}
 </div>
