@@ -30,26 +30,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
-        },{id: "nav-news",
-          title: "news",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/news/";
-          },
-        },{id: "nav-photos",
-          title: "photos",
-          description: "Nature, field, and lab photos from the group.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/photos/";
-          },
         },{id: "nav-principles",
           title: "principles",
           description: "What we value and how we work.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/principles/";
+          },
+        },{id: "nav-updates",
+          title: "updates",
+          description: "Lab news, and photos from the field, the greenhouse, and the bench.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/updates/";
           },
         },{id: "nav-join",
           title: "join",
@@ -426,31 +419,7 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-benning-lab-is-starting-at-cornell-eeb-sparkles-smile",
-          title: 'Benning Lab is starting at Cornell EEB! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "news-new-paper-out-in-proc-roy-soc-b-confounding-fuels-misinterpretation-in-human-genetics-with-jedidiah-carlson-olivia-smith-ruth-shaw-and-arbel-harpak-sparkles",
-          title: 'New paper out in Proc. Roy. Soc. B: Confounding fuels misinterpretation in human...',
-          description: "",
-          section: "News",},{id: "news-our-team-was-invited-to-submit-a-full-proposal-to-the-simons-collaborations-in-ecology-and-evolution-program-congener-community-network-genomics-of-ecosystem-resilience-with-13-pis-across-cornell-ucsc-uci-and-berkeley-crossed-fingers",
-          title: 'Our team was invited to submit a full proposal to the Simons Collaborations...',
-          description: "",
-          section: "News",},{id: "news-welcome-to-maddie-ore-postdoc-and-ella-mancino-technician-iii-60-40-split-with-the-agrawal-lab-both-joining-the-lab-today-tada",
-          title: 'Welcome to Maddie Ore (postdoc) and Ella Mancino (Technician III, 60/40 split with...',
-          description: "",
-          section: "News",},{id: "news-john-is-co-hosting-with-erik-enbody-a-5-day-slim-evolutionary-modeling-workshop-at-cornell-oct-5-9-2026-taught-by-slim-s-architect-ben-haller-free-30-seats-registration-is-open-and-one-fully-funded-travel-scholarship-is-available-computer",
-          title: 'John is co-hosting (with Erik Enbody) a 5-day SLiM Evolutionary Modeling Workshop at...',
-          description: "",
-          section: "News",},{id: "news-farewell-and-thank-you-to-anna-cohen-our-first-lab-manager-whose-last-day-is-today-anna-built-this-lab-from-an-empty-room-e-coli-pilots-clarkia-germination-trials-and-most-of-our-protocols-we-ll-miss-her-wave",
-          title: 'Farewell and thank you to Anna Cohen, our first lab manager, whose last...',
-          description: "",
-          section: "News",},{id: "news-joanie-cha-joins-the-lab-as-a-phd-student-this-fall-our-first-graduate-student-tada",
-          title: 'Joanie Cha joins the lab as a PhD student this fall — our...',
-          description: "",
-          section: "News",},{id: "news-new-preprint-expansion-load-reduces-fitness-at-the-range-margin-of-an-invasive-plant-with-ryan-briscoe-runquist-and-dave-moeller-across-a-150-year-invasion-chronosequence-in-common-tansy-drift-not-adaptation-dominates-range-edge-populations-carry-expansion-load-and-show-reduced-fitness-seedling",
-          title: 'New preprint: Expansion load reduces fitness at the range margin of an invasive...',
-          description: "",
-          section: "News",},{id: "projects-rapid-adaptation-to-herbicide-in-ragweed",
+            },},{id: "projects-rapid-adaptation-to-herbicide-in-ragweed",
           title: 'Rapid adaptation to herbicide in ragweed',
           description: "Tracking the origin and spread of herbicide resistance in Ambrosia artemisiifolia",
           section: "Projects",handler: () => {
@@ -510,7 +479,31 @@ ninja.data = [{
           description: "Testing range-limit theory with replicate evolving flour-beetle landscapes",
           section: "Projects",handler: () => {
               window.location.href = "/projects/tc-rangelimits/";
-            },},{
+            },},{id: "updates-benning-lab-is-starting-at-cornell-eeb-sparkles-smile",
+          title: 'Benning Lab is starting at Cornell EEB! :sparkles: :smile:',
+          description: "",
+          section: "Updates",},{id: "updates-new-paper-out-in-proc-roy-soc-b-confounding-fuels-misinterpretation-in-human-genetics-with-jedidiah-carlson-olivia-smith-ruth-shaw-and-arbel-harpak-sparkles",
+          title: 'New paper out in Proc. Roy. Soc. B: Confounding fuels misinterpretation in human...',
+          description: "",
+          section: "Updates",},{id: "updates-our-team-was-invited-to-submit-a-full-proposal-to-the-simons-collaborations-in-ecology-and-evolution-program-congener-community-network-genomics-of-ecosystem-resilience-with-13-pis-across-cornell-ucsc-uci-and-berkeley-crossed-fingers",
+          title: 'Our team was invited to submit a full proposal to the Simons Collaborations...',
+          description: "",
+          section: "Updates",},{id: "updates-welcome-to-maddie-ore-postdoc-and-ella-mancino-technician-iii-60-40-split-with-the-agrawal-lab-both-joining-the-lab-today-tada",
+          title: 'Welcome to Maddie Ore (postdoc) and Ella Mancino (Technician III, 60/40 split with...',
+          description: "",
+          section: "Updates",},{id: "updates-john-is-co-hosting-with-erik-enbody-a-5-day-slim-evolutionary-modeling-workshop-at-cornell-oct-5-9-2026-taught-by-slim-s-architect-ben-haller-free-30-seats-registration-is-open-and-one-fully-funded-travel-scholarship-is-available-computer",
+          title: 'John is co-hosting (with Erik Enbody) a 5-day SLiM Evolutionary Modeling Workshop at...',
+          description: "",
+          section: "Updates",},{id: "updates-farewell-and-thank-you-to-anna-cohen-our-first-lab-manager-whose-last-day-is-today-anna-built-this-lab-from-an-empty-room-e-coli-pilots-clarkia-germination-trials-and-most-of-our-protocols-we-ll-miss-her-wave",
+          title: 'Farewell and thank you to Anna Cohen, our first lab manager, whose last...',
+          description: "",
+          section: "Updates",},{id: "updates-joanie-cha-joins-the-lab-as-a-phd-student-this-fall-our-first-graduate-student-tada",
+          title: 'Joanie Cha joins the lab as a PhD student this fall — our...',
+          description: "",
+          section: "Updates",},{id: "updates-new-preprint-expansion-load-reduces-fitness-at-the-range-margin-of-an-invasive-plant-with-ryan-briscoe-runquist-and-dave-moeller-across-a-150-year-invasion-chronosequence-in-common-tansy-drift-not-adaptation-dominates-range-edge-populations-carry-expansion-load-and-show-reduced-fitness-seedling",
+          title: 'New preprint: Expansion load reduces fitness at the range margin of an invasive...',
+          description: "",
+          section: "Updates",},{
         id: 'social-email',
         title: 'email',
         section: 'Socials',

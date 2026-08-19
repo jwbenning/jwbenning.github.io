@@ -1,22 +1,40 @@
-# Photo gallery
+# Photos for the updates feed
 
-Drop image files in this folder and they appear automatically — on the
-[photos page](/photos/) (all of them) and on the front page (the most recent few).
-No config edit needed.
+Image files for photo posts live here. The post itself is a small markdown file
+in `_updates/` — that's what puts the photo in the feed and gives it a date and
+a caption.
 
-## Naming
+## Posting a photo
 
-Name files `YYYY-MM-DD_short-slug.jpg`, e.g. `2026-08-19_gentian-dawn.jpg`.
+1. Drop the image in this folder, named `YYYY-MM-DD_short-slug.jpg`.
+2. Add a file in `_updates/` with the same base name, e.g.
+   `_updates/2026-08-19_gentian-dawn.md`:
 
-The date prefix is what sorts the gallery newest-first, so it matters. The slug
-becomes the image's alt text, so keep it descriptive.
+```
+---
+layout: post
+date: 2026-08-19 08:00:00-0400
+inline: true
+image: assets/img/photos/2026-08-19_gentian-dawn.jpg
+alt: Gentianopsis crinita flower at sunrise
+---
 
-## Captions (optional)
+*Gentianopsis crinita* at first light, Ithaca NY.
+```
 
-To put a caption under a photo, add an entry to `_data/photos.yml` keyed on the
-filename. Photos without an entry simply render uncaptioned.
+The body text is the caption. Leave it empty for an uncaptioned photo.
+
+## Several photos in one post
+
+Use `images:` instead of `image:` and they render side by side:
+
+```
+images:
+  - assets/img/photos/2026-08-19_field-a.jpg
+  - assets/img/photos/2026-08-19_field-b.jpg
+```
 
 ## Formats and size
 
-`.jpg`, `.jpeg`, and `.png`. Jekyll generates 480/800/1400px WebP versions at
-build time, so upload the full-resolution file and let the build downscale it.
+`.jpg`, `.jpeg`, `.png`. Jekyll generates 480/800/1400px WebP versions at build
+time, so commit the full-resolution file and let the build downscale it.
