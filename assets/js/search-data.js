@@ -471,7 +471,7 @@ ninja.data = [{
               window.location.href = "/projects/gc-demogenetics/";
             },},{id: "projects-theory-and-simulation",
           title: 'Theory and simulation',
-          description: "Models of range limits, dispersal evolution, and adaptation to a changing environment",
+          description: "Lorem ipsum",
           section: "Projects",handler: () => {
               window.location.href = "/projects/modeling/";
             },},{id: "projects-evolution-during-invasion-in-common-tansy",
