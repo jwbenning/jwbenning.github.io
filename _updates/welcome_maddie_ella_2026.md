@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Welcome to **Maddie Ore** (postdoc) and **Ella Mancino** (Technician III, 60/40 split with the [Agrawal lab](https://www.agrawallab.com/)) — both joining the lab today! :tada:
+Welcome to **Maddie Ore** (postdoc) and **Ella Mancino** (research specialist, 60/40 split with the [Agrawal lab](https://www.agrawallab.com/)) — both joining the lab today! :tada:
