@@ -469,6 +469,11 @@ ninja.data = [{
           description: "Why is a once-common wildflower disappearing across the northeastern US?",
           section: "Projects",handler: () => {
               window.location.href = "/projects/gc-demogenetics/";
+            },},{id: "projects-theory-and-simulation",
+          title: 'Theory and simulation',
+          description: "Models of range limits, dispersal evolution, and adaptation to a changing environment",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/modeling/";
             },},{id: "projects-evolution-during-invasion-in-common-tansy",
           title: 'Evolution during invasion in common tansy',
           description: "Phenotypic and genomic divergence between native and invasive Tanacetum vulgare",
