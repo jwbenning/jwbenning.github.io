@@ -34,17 +34,17 @@ profiles:
     more_info:
   # Undergraduate researchers
   - align: right
-    image: pic_you.png  # TODO: replace with delardi.jpg once Nia sends a photo
+    image: smiley_1.png  # TODO: replace with delardi.jpg once Nia sends a photo
     content: about_delardi.md
     image_circular: false
     more_info:
   - align: left
-    image: pic_you.png  # TODO: replace with poplyk.jpg once Emma sends a photo
+    image: smiley_2.png  # TODO: replace with poplyk.jpg once Emma sends a photo
     content: about_poplyk.md
     image_circular: false
     more_info:
   - align: right
-    image: pic_you.png  # TODO: replace with kim.jpg once Sean sends a photo
+    image: smiley_3.png  # TODO: replace with kim.jpg once Sean sends a photo
     content: about_kim.md
     image_circular: false
     more_info:
