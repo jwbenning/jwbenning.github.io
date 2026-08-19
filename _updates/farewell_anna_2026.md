@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Farewell and thank you to **Anna Cohen**, our first lab manager, whose last day is today. Anna built this lab from an empty room. We'll miss her! :wave:
+Farewell and thank you to **Anna Cohen**, our first lab manager, whose last day is today. Anna built this lab from an empty room. We'll miss her!

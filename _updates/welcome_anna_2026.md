@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-**Anna Cohen** joins the lab as our first lab manager :tada:
+**Anna Cohen** joins the lab as our first lab manager

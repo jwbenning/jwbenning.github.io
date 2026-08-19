@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-**Joanie Cha**, the lab's first PhD student, joins the lab :tada: — they're working with us for a month before grad school starts.
+**Joanie Cha**, the lab's first PhD student, joins the lab — they're working with us for a month before grad school starts.
