@@ -1,4 +1,4 @@
 ## Lab alumni
 
 **Anna Cohen**  
-Lab Manager, 2025–2026
+Lab Manager, 2026

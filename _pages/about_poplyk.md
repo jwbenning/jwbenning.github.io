@@ -1,5 +1,4 @@
 **Emma Poplyk**  
-<!-- pronouns: add here, e.g. she/her -->
 Undergraduate Researcher  
 [email TBD]
 
