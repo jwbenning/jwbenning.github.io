@@ -1,0 +1,70 @@
+{% comment %}
+  The updates feed — a single reverse-chronological stream mixing short text
+  announcements with photos.
+
+  Each item is one markdown file in _updates/. Front matter:
+
+    date:     required, sets the position in the feed
+    inline:   true to render in the feed (rather than link out to its own page)
+    image:    optional, a path under assets/img/ — makes it a photo item
+    images:   optional, a list of paths — makes it a multi-photo item
+
+  The body text is the announcement, or the caption for a photo item. An item
+  can have text, a photo, or both.
+
+  Params:
+    limit  — show only the N most recent (omit to show all)
+{% endcomment %}
+
+<div class="updates">
+  {% if site.updates != blank %}
+    {% assign updates = site.updates | sort: 'date' | reverse %}
+    {% if include.limit %}
+      {% assign updates_limit = include.limit %}
+    {% else %}
+      {% assign updates_limit = updates | size %}
+    {% endif %}
+
+    {% for item in updates limit: updates_limit %}
+      {% comment %}Normalise image / images into one list.{% endcomment %}
+      {% if item.images %}
+        {% assign item_images = item.images %}
+      {% elsif item.image %}
+        {% assign item_images = item.image | split: '|' %}
+      {% else %}
+        {% assign item_images = nil %}
+      {% endif %}
+
+      <div class="update-item">
+        <div class="update-date">{{ item.date | date: '%b %d, %Y' }}</div>
+        <div class="update-body">
+          {% if item_images %}
+            <div class="update-photos{% if item_images.size > 1 %} update-photos-multi{% endif %}">
+              {% for img in item_images %}
+                {%
+                  include figure.liquid
+                  path=img
+                  class="img-fluid rounded z-depth-1"
+                  sizes="(min-width: 768px) 45vw, 90vw"
+                  alt=item.alt
+                  zoomable=true
+                %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if item.inline %}
+            {% assign body = item.content | strip %}
+            {% if body != blank %}
+              <div class="update-text">{{ body | remove: '<p>' | remove: '</p>' | emojify }}</div>
+            {% endif %}
+          {% else %}
+            <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No updates so far...</p>
+  {% endif %}
+</div>

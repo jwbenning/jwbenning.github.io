@@ -146,7 +146,7 @@ newsletter:
 collections:
   books:
     output: true
-  news:
+  updates:
     defaults:
       layout: post
     output: true
@@ -187,6 +187,7 @@ exclude:
   - lighthouse_results/
   - package.json
   - package-lock.json
+  - POSTING.md
   - _pages/about_einstein.md
   - purgecss.config.js
   - README.md

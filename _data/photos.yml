@@ -1,9 +1,0 @@
-# Optional captions for the photo gallery.
-#
-# Photos are auto-discovered from assets/img/photos/ — you do NOT need an entry
-# here for a photo to show up. Add one only when you want a caption under it.
-#
-# Key on the filename exactly as it appears in assets/img/photos/.
-#
-# - file: 2026-08-19_gentian-dawn.jpg
-#   caption: Gentianopsis crinita at first light, Ithaca NY

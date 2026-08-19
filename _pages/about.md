@@ -16,14 +16,9 @@ profile:
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 
-announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-photos:
-  enabled: true # shows the most recent photos from assets/img/photos/
-  limit: 6 # leave blank to include every photo
+updates:
+  enabled: true # shows the most recent items from the `_updates` folder
+  limit: 5 # leave blank to include the whole feed
 
 latest_posts:
   enabled: false

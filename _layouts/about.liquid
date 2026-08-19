@@ -40,23 +40,12 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    <!-- News -->
-    {% if page.announcements and page.announcements.enabled %}
+    <!-- Updates -->
+    {% if page.updates and page.updates.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        <a href="{{ '/updates/' | relative_url }}" style="color: inherit">updates</a>
       </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
-
-    <!-- Photos -->
-    {% if page.photos and page.photos.enabled %}
-      {% capture photo_gallery %}{% include photo_gallery.liquid limit=page.photos.limit %}{% endcapture %}
-      {% unless photo_gallery == blank %}
-        <h2>
-          <a href="{{ '/photos/' | relative_url }}" style="color: inherit">photos</a>
-        </h2>
-        {{ photo_gallery }}
-      {% endunless %}
+      {% include updates.liquid limit=page.updates.limit %}
     {% endif %}
 
     <!-- Latest posts -->
