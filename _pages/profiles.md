@@ -2,7 +2,7 @@
 layout: profiles
 permalink: /people/
 title: people
-description: 
+description: Under construction — bios are on the way. Names, roles, and faces are current.
 nav: true
 nav_order: 4
 

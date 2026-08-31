@@ -4,7 +4,7 @@ permalink: /principles/
 title: principles
 description:
 nav: true
-nav_order: 5
+nav_order: 6
 ---
 
 Guiding principles of our research group:
