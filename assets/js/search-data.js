@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-research",
           title: "research",
-          description: "",
+          description: "Under construction — a fuller account of what we work on is coming soon.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
@@ -25,10 +25,17 @@ ninja.data = [{
           },
         },{id: "nav-people",
           title: "people",
-          description: "",
+          description: "Under construction — bios are on the way. Names, roles, and faces are current.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/people/";
+          },
+        },{id: "nav-teaching",
+          title: "teaching",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
           },
         },{id: "nav-principles",
           title: "principles",
