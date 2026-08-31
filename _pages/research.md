@@ -36,6 +36,8 @@ nav_order: 2
 
 {% include figure.liquid path="assets/img/publication_preview/dispersal-evolution.png" zoomable=true sizes="(min-width:768px) 30vw, 90vw" alt="Dispersal phenotype of core and edge populations across environmental gradients" caption="Dispersal evolves during range expansion, but only where the environmental gradient is shallow. Benning et al. 2024, <em>Ecology Letters</em>." %}
 
+{% include figure.liquid path="assets/img/gallery/tribolium-boxes.jpg" zoomable=true sizes="(min-width:768px) 30vw, 90vw" alt="A row of clear plastic boxes of flour beetles, with beetle density declining from left to right" caption="Flour beetle populations spreading across a linear landscape, one patch at a time." %}
+
 {% include figure.liquid path="assets/img/gallery/clarkia-system.jpg" zoomable=true sizes="(min-width:768px) 30vw, 90vw" alt="Four panels: a kangaroo rat at night, a bee on a Clarkia flower, a gridded field plot, and a seed dish" caption="The <em>Clarkia</em> system: seed predators, pollinators, demography plots, and seed banks." %}
 
 {% include figure.liquid path="assets/img/photos/2026-06-24_plant-id.jpg" zoomable=true sizes="(min-width:768px) 30vw, 90vw" alt="Two people identifying plants in the field" caption="Working through an unfamiliar flora." %}
