@@ -35,7 +35,8 @@ nav: false
   .ai-feed li{padding:.75rem 0;border-bottom:1px solid var(--global-divider-color);line-height:1.5}
   .ai-feed li:first-child{padding-top:0}
   .ai-feed .src{color:var(--global-text-color-light);font-size:.85rem}
-  .ai-feed .fnote{display:block;color:var(--global-text-color-light);font-size:.88rem;margin:.3rem 0 0;padding-left:.7rem;border-left:2px solid var(--global-divider-color)}
+  .fnote{display:block;color:var(--global-text-color-light);font-size:.88rem;margin:.3rem 0 0;padding-left:.7rem;border-left:2px solid var(--global-divider-color)}
+  li > .fnote{margin:.3rem 0 .55rem}
   .post h2{margin-top:2.6rem}
   .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--global-divider-color);border-radius:999px;padding:.06rem .45rem;color:var(--global-text-color-light);margin-left:.35rem;vertical-align:.1em}
   .ai-foot{color:var(--global-text-color-light);font-size:.85rem;margin-top:2.4rem;padding-top:1rem;border-top:1px solid var(--global-divider-color)}
@@ -53,6 +54,7 @@ nav: false
 </dl>
 
 {% if c.announcement %}
+
 <div class="ai-banner">{{ c.announcement }}</div>
 {% endif %}
 
@@ -83,7 +85,7 @@ demos but isn't required. **Bring a laptop.**
     <p><span class="ai-lbl">Read before class</span></p>
     <ul>
       {% for r in now.readings %}
-        <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% if r.tag %}<span class="tag">{{ r.tag }}</span>{% endif %}</li>
+        <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% if r.tag %}<span class="tag">{{ r.tag }}</span>{% endif %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
       {% endfor %}
     </ul>
   {% endif %}
@@ -111,7 +113,7 @@ readings, and demo.
         <p><span class="ai-lbl">Readings</span></p>
         <ul>
           {% for r in w.readings %}
-            <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% if r.tag %}<span class="tag">{{ r.tag }}</span>{% endif %}</li>
+            <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% if r.tag %}<span class="tag">{{ r.tag }}</span>{% endif %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
           {% endfor %}
         </ul>
       {% endif %}
@@ -156,7 +158,7 @@ accountable for your work regardless of the tools you use — along with Cornell
 **never paste unpublished data, personal information, reviewer identities, or institutional
 data into free, non-Cornell AI tools.**
 
-Because agents *act*, we add one rule of our own: **gate every irreversible action — delete,
+Because agents _act_, we add one rule of our own: **gate every irreversible action — delete,
 overwrite, submit, send — behind human confirmation.**
 
 ## Getting a seat
