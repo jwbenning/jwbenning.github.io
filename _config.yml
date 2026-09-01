@@ -145,7 +145,7 @@ newsletter:
 
 collections:
   books:
-    output: true
+    output: false # al-folio demo content; /books/ is excluded above
   updates:
     defaults:
       layout: post
@@ -197,6 +197,7 @@ exclude:
   - _pages/repositories.md
   - _pages/dropdown.md
   - _pages/cv.md
+  - _pages/books.md
 
 keep_files:
   - CNAME
@@ -260,7 +261,7 @@ jekyll-archives:
       tags: "/blog/:type/:name/"
       categories: "/blog/:type/:name/"
   books:
-    enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+    enabled: [] # al-folio demo content; the collection and its page are disabled above
 
 display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
 display_categories: ["external-services"] # these categories will be displayed on the front page of your blog

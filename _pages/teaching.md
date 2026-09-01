@@ -21,7 +21,7 @@ nav_order: 5
   .course-live{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--global-theme-color);color:#fff;padding:.12rem .5rem;border-radius:999px;margin-left:.4rem;vertical-align:.12em}
 </style>
 
-Courses I teach.
+Courses John teaches.
 
 <div class="course-list">
 
