@@ -530,6 +530,9 @@ ninja.data = [{
           section: "Updates",},{id: "updates-todd-bittner-gave-john-a-tour-of-the-native-lawn-test-plots-at-cornell-botanic-gardens",
           title: 'Todd Bittner gave John a tour of the native lawn test plots at...',
           description: "",
+          section: "Updates",},{id: "updates-the-fall-semester-is-under-way-and-the-lab-is-full-again-nia-emma-sean-and-ari-are-all-back-at-the-bench-john-is-co-teaching-two-courses-this-term-bioee-1780-cornell-s-introductory-course-in-evolutionary-biology-and-a-new-graduate-seminar-agentic-ai-in-ecology-amp-amp-evolutionary-biology-with-xiangtao-xu-the-seminar-is-a-hands-on-and-deliberately-skeptical-look-at-what-ai-agents-can-and-can-t-be-trusted-to-do-across-the-research-lifecycle-it-starts-september-11-and-a-few-seats-are-left",
+          title: 'The fall semester is under way, and the lab is full again —...',
+          description: "",
           section: "Updates",},{
         id: 'social-email',
         title: 'email',
