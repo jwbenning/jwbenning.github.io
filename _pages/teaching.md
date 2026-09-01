@@ -41,10 +41,12 @@ Courses John teaches.
   <div class="course">
     <div class="course-code">BIOEE 1780 · Fall 2026</div>
     <div class="course-title">
-      <a href="https://classes.cornell.edu/browse/roster/FA26/class/BIOEE/1780">Evolution and Biodiversity</a>
+      <a href="https://classes.cornell.edu/browse/roster/FA26/class/BIOEE/1780">An Introduction to Evolutionary Biology and Diversity</a>
     </div>
-    <p class="course-meta">Introductory lecture · co-teaching</p>
-    <p>Cornell's introductory course in evolutionary biology and the diversity of life.</p>
+    <p class="course-meta">Introductory undergraduate lecture + discussion sections · 4 credits · co-taught</p>
+    <p>Cornell's introductory course in evolutionary biology: the genetic and developmental
+    basis of evolutionary change, natural selection and other population-level processes,
+    speciation, long-term trends, and the diversity of life.</p>
   </div>
 
 </div>
