@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publications/
-last_updated: 2026-08-19
+last_updated: 2026-09-01
 title: publications
 description:
 nav: true
