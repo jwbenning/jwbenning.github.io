@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /teaching/
+last_updated: 2026-08-31
 title: teaching
 description:
 nav: true

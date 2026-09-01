@@ -2,6 +2,7 @@
 layout: about
 title: about
 permalink: /
+last_updated: 2026-08-19
 subtitle: <strong>Department of Ecology and Evolutionary Biology</strong><br><strong>Cornell University</strong>
 
 profile:

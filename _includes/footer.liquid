@@ -6,8 +6,13 @@
   {% if site.impressum_path %}
     <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
   {% endif %}
-  {% if site.last_updated %}
-    Last updated: {{ 'now' | date: '%B %d, %Y' }}.
+  {% comment %}
+    Per-page date, hardcoded in each page's front matter as `last_updated:`.
+    Deliberately NOT site.last_updated — that renders the build time, so every
+    page would claim to be current after any deploy.
+  {% endcomment %}
+  {% if page.last_updated %}
+    <br />Page last updated {{ page.last_updated | date: '%B %-d, %Y' }}.
   {% endif %}
 {% endcapture %}
 

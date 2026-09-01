@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /join/
+last_updated: 2026-08-31
 title: join
 description:
 nav: true

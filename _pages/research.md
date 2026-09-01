@@ -2,6 +2,7 @@
 layout: page
 title: research
 permalink: /research/
+last_updated: 2026-08-31
 description: Under construction — a fuller account of what we work on is coming soon.
 nav: true
 nav_order: 2
