@@ -21,7 +21,7 @@ nav_order: 5
   .course-live{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--global-theme-color);color:#fff;padding:.12rem .5rem;border-radius:999px;margin-left:.4rem;vertical-align:.12em}
 </style>
 
-Courses I teach in the Department of Ecology and Evolutionary Biology at Cornell.
+Courses I teach.
 
 <div class="course-list">
 
@@ -36,6 +36,15 @@ Courses I teach in the Department of Ecology and Evolutionary Biology at Cornell
     trusted to do across the research lifecycle, and a conversation about what EEB
     might look like in a world with highly capable AI.
     <a href="{{ '/teaching/agentic-ai/' | relative_url }}">Course page →</a></p>
+  </div>
+
+  <div class="course">
+    <div class="course-code">BIOEE 1780 · Fall 2026</div>
+    <div class="course-title">
+      <a href="https://classes.cornell.edu/browse/roster/FA26/class/BIOEE/1780">Evolution and Biodiversity</a>
+    </div>
+    <p class="course-meta">Introductory lecture · co-teaching</p>
+    <p>Cornell's introductory course in evolutionary biology and the diversity of life.</p>
   </div>
 
 </div>

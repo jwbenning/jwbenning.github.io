@@ -7,12 +7,6 @@ description:
 nav: true
 nav_order: 8
 
-# Flip these to turn the "Recruiting" / "Not currently recruiting" pill on each
-# section. One word each; nothing else needs touching.
-recruiting:
-  undergraduates: true
-  graduate_students: true
-  postdocs: false
 ---
 
 <style>
@@ -24,9 +18,6 @@ recruiting:
   .join-card>summary::-webkit-details-marker{display:none}
   .join-head{flex:1;min-width:0;display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
   .join-title{font-weight:700;font-size:1.1rem;line-height:1.3;color:var(--global-text-color)}
-  .join-flag{font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.14rem .6rem;border-radius:999px;white-space:nowrap}
-  .join-flag.yes{background:var(--global-theme-color);color:#fff}
-  .join-flag.no{background:transparent;color:var(--global-text-color-light);border:1px solid var(--global-divider-color)}
   .join-chevron{flex:none;width:.55rem;height:.55rem;border-right:2px solid var(--global-text-color-light);border-bottom:2px solid var(--global-text-color-light);transform:rotate(-45deg);transition:transform .15s ease}
   .join-card[open] .join-chevron{transform:rotate(45deg)}
   .join-body{padding:0 1.15rem 1.1rem;line-height:1.65}
@@ -35,7 +26,7 @@ recruiting:
   .join-photo img{border-radius:10px;display:block;width:100%;height:auto}
 </style>
 
-We're always looking for collaborators. Cornell offers a stimulating intellectual environment nestled in the natural beauty of the Finger Lakes region of upstate New York. The lab launched in July 2025 within Cornell's [Department of Ecology & Evolutionary Biology](https://ecologyandevolution.cornell.edu/), and works on how populations respond to novel environments across space and time — using a mix of plants, insects, and microbes and a combination of empirical and theoretical approaches.
+We're always looking for collaborators. Cornell offers a stimulating intellectual environment nestled in the natural beauty of the Finger Lakes region of upstate New York. The lab launched in July 2025 within Cornell's [Department of Ecology & Evolutionary Biology](https://ecologyandevolution.cornell.edu/), and asks how populations respond to novel environments across space and time. We work across a range of taxa using a combination of empirical and theoretical approaches.
 
 <div class="join-list">
 
@@ -43,14 +34,14 @@ We're always looking for collaborators. Cornell offers a stimulating intellectua
     <summary>
       <span class="join-head">
         <span class="join-title">Undergraduate students</span>
-        {% if page.recruiting.undergraduates %}<span class="join-flag yes">Recruiting</span>{% else %}<span class="join-flag no">Not currently recruiting</span>{% endif %}
       </span>
       <span class="join-chevron"></span>
     </summary>
     <div class="join-body">
-  <p>Cornell undergraduates interested in research with the lab should contact
+  <p>We love to offer undergraduates opportunities to take part in research across the lab's
+  varied systems and approaches. Undergraduates interested in research with the lab should contact
   <a href="mailto:jbenning@cornell.edu">John</a> directly. Please include a short note on your
-  background, what you'd like to work on, and your year/major.</p>
+  background, what about the lab's work interests you, and your year/major.</p>
   </div>
   </details>
 
@@ -58,13 +49,11 @@ We're always looking for collaborators. Cornell offers a stimulating intellectua
     <summary>
       <span class="join-head">
         <span class="join-title">Graduate students</span>
-        {% if page.recruiting.graduate_students %}<span class="join-flag yes">Recruiting</span>{% else %}<span class="join-flag no">Not currently recruiting</span>{% endif %}
       </span>
       <span class="join-chevron"></span>
     </summary>
     <div class="join-body">
-  <p>The Fall 2026 application window has closed. <strong>We will be recruiting a PhD student
-  to start Fall 2027.</strong></p>
+  <p><strong>We will be recruiting a PhD student to start Fall 2027.</strong></p>
   <p>If you're interested in joining the Benning Lab as a PhD student at Cornell, please fill out
   <a href="https://docs.google.com/forms/d/e/1FAIpQLScAYiXx9ZPS7TAvKs_pKGzmY8JL5HUe_CyiBX6yCBLEmhXeAg/viewform?usp=header">this short form</a>
   to share some information about your background and your motivation for joining the lab.</p>
@@ -84,7 +73,6 @@ We're always looking for collaborators. Cornell offers a stimulating intellectua
     <summary>
       <span class="join-head">
         <span class="join-title">Postdocs</span>
-        {% if page.recruiting.postdocs %}<span class="join-flag yes">Recruiting</span>{% else %}<span class="join-flag no">Not currently recruiting</span>{% endif %}
       </span>
       <span class="join-chevron"></span>
     </summary>
@@ -93,7 +81,7 @@ We're always looking for collaborators. Cornell offers a stimulating intellectua
   <a href="https://www.nsf.gov/funding/opportunities/postdoctoral-research-fellowships-biology-prfb">NSF PRFB</a>,
   the <a href="https://www.simonsfoundation.org/grant/simons-postdoctoral-fellowships-in-plant-biology/">Simons Postdoctoral Fellowships in Plant Biology</a>,
   or <a href="https://atkinson.cornell.edu/cornell-atkinson-postdocs-rfp/">Cornell's Atkinson Postdoctoral Fellowship</a>.
-  If you'd like to explore a fellowship together, reach out to
+  If you'd like to chat about these fellowship opportunities, reach out to
   <a href="mailto:jbenning@cornell.edu">John</a> with a CV and a short note on what you're interested in.</p>
   </div>
   </details>

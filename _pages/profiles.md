@@ -33,20 +33,25 @@ profiles:
     content: about_mancino.md
     image_circular: false
     more_info:
-  # Undergraduate researchers
+  # Undergraduate researchers — alphabetical by last name
   - align: right
     image: smiley_1.png  # TODO: replace with delardi.jpg once Nia sends a photo
     content: about_delardi.md
     image_circular: false
     more_info:
   - align: left
-    image: smiley_2.png  # TODO: replace with poplyk.jpg once Emma sends a photo
-    content: about_poplyk.md
+    image: smiley_3.png  # TODO: replace with kim.jpg once Sean sends a photo
+    content: about_kim.md
     image_circular: false
     more_info:
   - align: right
-    image: smiley_3.png  # TODO: replace with kim.jpg once Sean sends a photo
-    content: about_kim.md
+    image: smiley_4.png  # TODO: replace with moshkovich.jpg once Ari sends a photo
+    content: about_moshkovich.md
+    image_circular: false
+    more_info:
+  - align: left
+    image: smiley_2.png  # TODO: replace with poplyk.jpg once Emma sends a photo
+    content: about_poplyk.md
     image_circular: false
     more_info:
   # Recruitment CTA — closes the current-members section
