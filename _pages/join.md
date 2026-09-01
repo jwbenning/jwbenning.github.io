@@ -23,7 +23,7 @@ If you're interested in joining the Benning Lab as a PhD student at Cornell, ple
 
 Starting in June, we'll review submissions during the first two weeks of each month. So if you submit before June 1, you'll hear from John by the third week in June; if you submit in June, you'll hear from John by the third week of July, and so on. If you don't hear back within that window, or if you have a question on a different timeline (e.g., a funding-application deadline or an eligibility question), please reach out to [John](mailto:jbenning@cornell.edu) directly.
 
-Read more about Cornell's application process [here](https://ecologyandevolution.cornell.edu/graduate). You can compare stipends across similar graduate programs with [this great resource](https://rhettrautsaw.app/shiny/BiologyPhDStipends/) created by Michelle L. Gaynor and Rhett M. Rautsaw.
+Read more about Cornell's application process [here](https://ecologyandevolution.cornell.edu/graduate). You can compare stipends across similar graduate programs with [this great resource](https://mlgaynor.com/BiologyPhDStipends/) created by Michelle L. Gaynor and Rhett M. Rautsaw.
 
 ## Undergraduate students
 
