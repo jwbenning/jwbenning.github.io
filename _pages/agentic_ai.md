@@ -41,6 +41,7 @@ nav: false
   .post h2{margin-top:2.6rem}
   .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--global-divider-color);border-radius:999px;padding:.06rem .45rem;color:var(--global-text-color-light);margin-left:.35rem;vertical-align:.1em}
   .tag.is-assigned{border-color:var(--global-theme-color);color:var(--global-theme-color);font-weight:700}
+  .tag.is-week{font-weight:700}
   .ai-filters{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.1rem 0 .3rem}
   .ai-f{font:inherit;font-size:.72rem;font-weight:600;letter-spacing:.03em;cursor:pointer;border:1px solid var(--global-divider-color);background:var(--global-card-bg-color);color:var(--global-text-color-light);border-radius:999px;padding:.2rem .7rem}
   .ai-f:hover{border-color:var(--global-theme-color);color:var(--global-theme-color)}
@@ -56,8 +57,8 @@ nav: false
   <div><dt>Meets</dt><dd>Fridays, 12:20–1:10 pm</dd></div>
   <div><dt>Room</dt><dd>Comstock B104</dd></div>
   <div><dt>Credits</dt><dd>1 credit, S/U</dd></div>
-  <div><dt>Instructors</dt><dd><a href="{{ '/people/' | relative_url }}">John Benning</a> · Xiangtao Xu</dd></div>
-  <div><dt>Enrollment</dt><dd>Capped at 20, by instructor consent</dd></div>
+  <div><dt>Instructors</dt><dd><a href="{{ '/people/' | relative_url }}">John Benning</a> · <a href="https://xiangtaoxu.eeb.cornell.edu/">Xiangtao Xu</a></dd></div>
+  <div><dt>Enrollment</dt><dd>Capped at 20, by instructor consent; graduate students and above</dd></div>
 </dl>
 
 {% if c.announcement %}
@@ -92,10 +93,20 @@ with no background assumed. It is the first of the Week 1 readings; read it befo
   <div class="wk">Week {{ now.week }}{% if now.date %} · {{ now.date | date: "%B %-d" }}{% endif %}</div>
   <h3>{{ now.theme }}</h3>
   {% if now.framing %}<p><span class="ai-lbl">Framing</span><br>{{ now.framing }}</p>{% endif %}
-  {% if now.readings %}
+  {% assign now_req = now.readings | where_exp: "r", "r.optional != true" %}
+  {% assign now_opt = now.readings | where_exp: "r", "r.optional == true" %}
+  {% if now_req.size > 0 %}
     <p><span class="ai-lbl">Read before class</span></p>
     <ul>
-      {% for r in now.readings %}
+      {% for r in now_req %}
+        <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% if now_opt.size > 0 %}
+    <p><span class="ai-lbl">Optional, and worth it</span></p>
+    <ul>
+      {% for r in now_opt %}
         <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
       {% endfor %}
     </ul>
@@ -120,10 +131,20 @@ readings, and demo.
       <p><span class="ai-lbl">{{ w.part }}{% if w.date %} · {{ w.date | date: "%B %-d, %Y" }}{% else %} · date TBD{% endif %}</span></p>
       {% if w.framing %}<p>{{ w.framing }}</p>{% endif %}
       {% if w.demo %}<p><span class="ai-lbl">Demo</span><br>{{ w.demo }}</p>{% endif %}
-      {% if w.readings %}
-        <p><span class="ai-lbl">Readings</span></p>
+      {% assign w_req = w.readings | where_exp: "r", "r.optional != true" %}
+      {% assign w_opt = w.readings | where_exp: "r", "r.optional == true" %}
+      {% if w_req.size > 0 %}
+        <p><span class="ai-lbl">Read before class</span></p>
         <ul>
-          {% for r in w.readings %}
+          {% for r in w_req %}
+            <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if w_opt.size > 0 %}
+        <p><span class="ai-lbl">Optional</span></p>
+        <ul>
+          {% for r in w_opt %}
             <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
           {% endfor %}
         </ul>
@@ -134,10 +155,31 @@ readings, and demo.
 {% endfor %}
 </div>
 
-## Reading room
+## Using AI in this course
 
-Everything worth reading, assigned or not, added as we find it. Assigned items carry the
-week they belong to; filter by topic to find the rest.
+We practice what we study, so use these tools throughout. A few things worth holding onto.
+
+- **Decide whether your data trains the model.** Most tools let you turn this off, and the
+  setting is rarely where you would look. Ask either of us if you want a hand finding it.
+- **Think before you paste.** Unpublished data, anything with a person's name in it, a
+  manuscript you are reviewing, a collaborator's data you were trusted with — none of that
+  belongs in a tool whose terms let it keep or train on what you send. Cornell's
+  [AI guidelines](https://it.cornell.edu/ai-strategy/ai-guidelines) are the floor. The
+  people whose data it is usually expect more.
+- **Calibrate your bullshit meter.** These models are confidently wrong on a regular basis,
+  and the confidence does not fall when the accuracy does. That is the hard part.
+- **Say what you used.** Name the tool and what it did. Not for policing — a room that says
+  it out loud gets better at this faster than one that doesn't.
+- **You own the output.** Every citation, every number, every claim. Something else produced
+  it; you are answerable for it.
+
+Because agents act, one rule of our own: **gate every irreversible action — delete,
+overwrite, submit, send — behind human confirmation.**
+
+## 📚 Reading room
+
+Everything worth reading, added as we find it. Anything tied to a session carries its week
+and whether it is required; the rest is here because it is good. Filter by topic.
 
 {% assign alltags = "" | split: "" %}
 {% for w in c.schedule %}{% for r in w.readings %}{% if r.tags %}{% assign alltags = alltags | concat: r.tags %}{% endif %}{% endfor %}{% endfor %}
@@ -152,8 +194,8 @@ week they belong to; filter by topic to find the rest.
 
 <ul class="ai-feed" id="aiFeed">
 {% for w in c.schedule %}{% for r in w.readings %}
-  <li data-tags="assigned {{ r.tags | join: ' ' }}">
-    <a href="{{ r.url }}">{{ r.title }}</a><span class="tag is-assigned">week {{ w.week }}</span>{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+  <li data-tags="{% unless r.optional %}assigned {% endunless %}{{ r.tags | join: ' ' }}">
+    <a href="{{ r.url }}">{{ r.title }}</a>{% if r.optional %}<span class="tag is-week">week {{ w.week }} · optional</span>{% else %}<span class="tag is-assigned">week {{ w.week }} · required</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}
     {% if r.source %}<br><span class="src">{{ r.source }}</span>{% endif %}
     {% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}
   </li>
@@ -192,34 +234,4 @@ week they belong to; filter by topic to find the rest.
     });
   })();
 </script>
-
-## How each session works
-
-A discussion seminar built around live demos, not a lecture course. Roughly: five minutes on
-the framing question, fifteen on the reading, thirty-five on a live agent demo and the audit
-that follows it, five to wrap up.
-
-**Audit of the Week.** In rotation, each of us brings one real case of an agent doing
-something wrong in our own subfield — a bad clean, a spurious result, a fabricated
-reference, a silent overwrite. Two minutes, then on with the demo. Skepticism as muscle
-memory. The cases we accumulate become raw material for the guideline we draft in Week 9.
-
-## Using AI in this course
-
-We practice what we study. **You are encouraged to use agentic tools throughout**, and
-expected to be transparent: name the tool and version, and say what it did. You remain fully
-accountable for accuracy, including every citation and every number an agent produced. That
-is [Cornell's guiding principle](https://it.cornell.edu/ai-strategy/ai-guidelines) — you are
-accountable for your work regardless of the tools you use — along with Cornell's data rule:
-**never paste unpublished data, personal information, reviewer identities, or institutional
-data into free, non-Cornell AI tools.**
-
-Because agents _act_, we add one rule of our own: **gate every irreversible action — delete,
-overwrite, submit, send — behind human confirmation.**
-
-## Getting a seat
-
-Enrollment is capped at 20 and by instructor consent; undergraduates are not eligible.
-Email [Xiangtao](mailto:xx286@cornell.edu) or [John](mailto:jbenning@cornell.edu) and we
-will add you. Postdocs and faculty are welcome to join the discussion without registering.
 

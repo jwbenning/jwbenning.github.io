@@ -42,6 +42,10 @@ nav: false
 used an AI agent, or have used one without being sure what made it an agent, start here.
 No computer-science background is needed and none is assumed.</p>
 
+<p class="pr-cap" style="margin:-1rem 0 2rem">Written by Claude, checked and edited by us.
+We ask you to say what a tool did for you, so: it drafted this page, we cut it down, and the
+herbarium test below we ran ourselves.</p>
+
 ## The short version
 
 A **large language model** predicts text. That is the whole of what it does. Give it some
@@ -127,38 +131,49 @@ The tell: did it go and get something, and did what came back change what it did
 Every agent, whatever it is called and whoever built it, is running the same cycle.
 
 <div class="pr-fig">
-<svg viewBox="0 0 640 250" role="img" aria-label="The agent loop: goal feeds into a repeating cycle of plan, act, observe, and judge, which exits to a result.">
+<svg viewBox="0 0 620 330" role="img" aria-label="The agent loop. Your goal enters at plan; plan leads to act, act to observe, observe to judge; judge either returns to plan or exits with a result.">
   <defs>
-    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
     </marker>
   </defs>
-  <g fill="none" stroke="currentColor" stroke-width="1.6" opacity=".75" marker-end="url(#ar)">
-    <path d="M 96 125 H 150"/>
-    <path d="M 258 100 A 90 90 0 0 1 382 100"/>
-    <path d="M 400 150 A 90 90 0 0 1 300 196"/>
-    <path d="M 250 190 A 90 90 0 0 1 190 152"/>
-    <path d="M 490 125 H 546"/>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.7" opacity=".7" marker-end="url(#ar)">
+    <path d="M 104 95 H 194"/>
+    <path d="M 302 95 H 394"/>
+    <path d="M 450 145 V 179"/>
+    <path d="M 398 235 H 306"/>
+    <path d="M 250 185 V 151"/>
+    <path d="M 198 235 H 110"/>
+  </g>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.6" opacity=".5">
+    <rect x="8" y="76" width="92" height="38" rx="8"/>
+    <rect x="8" y="216" width="92" height="38" rx="8"/>
   </g>
   <g font-size="13" font-weight="700" text-anchor="middle" fill="currentColor">
-    <rect x="8" y="106" width="88" height="38" rx="8" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".55"/>
-    <text x="52" y="130">your goal</text>
-    <rect x="548" y="106" width="86" height="38" rx="8" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".55"/>
-    <text x="591" y="130">a result</text>
+    <text x="54" y="100">your goal</text>
+    <text x="54" y="240">a result</text>
   </g>
-  <g text-anchor="middle">
-    <circle cx="212" cy="90" r="46" fill="var(--global-card-bg-color)" stroke="var(--global-theme-color)" stroke-width="1.8"/>
-    <circle cx="428" cy="90" r="46" fill="var(--global-card-bg-color)" stroke="var(--global-theme-color)" stroke-width="1.8"/>
-    <circle cx="428" cy="196" r="46" fill="var(--global-card-bg-color)" stroke="var(--global-theme-color)" stroke-width="1.8"/>
-    <circle cx="212" cy="196" r="46" fill="var(--global-card-bg-color)" stroke="var(--global-theme-color)" stroke-width="1.8"/>
-    <g font-size="14" font-weight="700" fill="currentColor">
-      <text x="212" y="88">plan</text><text x="428" y="88">act</text>
-      <text x="428" y="194">observe</text><text x="212" y="194">judge</text>
+
+  <g fill="var(--global-card-bg-color)" stroke="var(--global-theme-color)" stroke-width="1.8">
+    <circle cx="250" cy="95" r="48"/><circle cx="450" cy="95" r="48"/>
+    <circle cx="450" cy="235" r="48"/><circle cx="250" cy="235" r="48"/>
+  </g>
+  <g text-anchor="middle" fill="currentColor">
+    <g font-size="15" font-weight="700">
+      <text x="250" y="93">plan</text><text x="450" y="93">act</text>
+      <text x="450" y="233">observe</text><text x="250" y="233">judge</text>
     </g>
-    <g font-size="10.5" fill="currentColor" opacity=".7">
-      <text x="212" y="104">what next?</text><text x="428" y="104">run the tool</text>
-      <text x="428" y="210">read output</text><text x="212" y="210">good enough?</text>
+    <g font-size="11" opacity=".72">
+      <text x="250" y="111">what next?</text><text x="450" y="111">run the tool</text>
+      <text x="450" y="251">read output</text><text x="250" y="251">good enough?</text>
     </g>
+  </g>
+
+  <g font-size="10.5" font-weight="700" fill="currentColor" opacity=".72">
+    <text x="240" y="171" text-anchor="end">not yet</text>
+    <text x="154" y="228" text-anchor="middle">done</text>
   </g>
 </svg>
 </div>

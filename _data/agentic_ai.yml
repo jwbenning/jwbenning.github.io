@@ -10,9 +10,12 @@ current_week: 1
 
 announcement: >
   First meeting is <strong>Friday, September 4</strong>, 12:20–1:10 pm in Comstock B104.
-  Bring a laptop. New to agentic AI? Start with the ten-minute primer,
+  Bring a laptop. The one thing to read first is the ten-minute primer,
   <a href="/teaching/agentic-ai/primer/">what is an agent?</a> — no background assumed.
-  Seats are by instructor consent and there are still some left — email either of us.
+  Seats are by instructor consent and a few are left: email
+  <a href="mailto:xx286@cornell.edu">Xiangtao</a> or
+  <a href="mailto:jbenning@cornell.edu">John</a>. Postdocs and faculty are welcome to sit in
+  without registering.
 
 schedule:
   - week: 1
@@ -29,7 +32,7 @@ schedule:
       the world and pull real occurrence records.
     readings:
       - title: "What is an agent? A primer for this seminar"
-        source: Benning & Xu — start here
+        source: Written by Claude for this seminar
         url: /teaching/agentic-ai/primer/
         tags: [foundations]
         note: >
@@ -39,6 +42,7 @@ schedule:
           risk, and the twenty terms you will hear all term. Read this one first.
       - title: "A new Moore's Law for AI agents"
         source: AI Digest
+        optional: true
         url: https://theaidigest.org/time-horizons
         tags: [foundations, evaluation]
         note: >
@@ -48,6 +52,7 @@ schedule:
           exercise.
       - title: "The Dark Night of Mathematics"
         source: Kirwin Hampshire, July 2026
+        optional: true
         url: https://kirwinhampshire.substack.com/p/the-dark-night-of-mathematics
         tags: [debate]
         note: >
@@ -56,15 +61,18 @@ schedule:
           report from somewhere we may be going.
       - title: "A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis"
         source: Xu, Ren, Wang et al. 2025, Nature Medicine — abstract and figures
+        optional: true
         url: https://doi.org/10.1038/s41591-025-03743-2
         tags: [application]
         note: >
-          The strongest positive case on the table: an AI-found target and an
-          AI-designed molecule, a dose-dependent lung-function signal in 71 patients,
-          and a phase III trial opened in July 2026. Note also whose drug it is and who
-          ran the trial. Shorter way in — the authors' "Behind the Paper" post.
+          An AI-found target and an AI-designed molecule, a dose-dependent lung-function
+          signal in 71 patients, and a phase III trial opened in July 2026. Note whose drug
+          it is and who ran the trial. The authors' <a
+          href="https://communities.springernature.com/posts/ai-meets-ipf-taking-an-ai-designed-drug-from-target-discovery-to-phase-iia">Behind
+          the Paper</a> post is a shorter way in.
       - title: "Machines of Loving Grace — §1, Biology and health"
         source: Dario Amodei, October 2024 — section 1 only
+        optional: true
         url: https://darioamodei.com/essay/machines-of-loving-grace
         tags: [debate]
         note: >
@@ -73,12 +81,14 @@ schedule:
           breakthroughs; skim the rest.
       - title: "No, Dario Amodei, we will not be curing cancer and most human disease"
         source: Gary Marcus, August 2026
+        optional: true
         url: https://garymarcus.substack.com/p/no-dario-amodei-we-will-not-be-curing
         tags: [debate]
         note: >
           The rebuttal, three weeks old, with Topol, Pachter, Robison and others on the
           record — and the argument that clinical timelines, not intelligence, are the
-          binding constraint. Read against the trial above and decide who is right.
+          binding constraint. Read it against the trial above and work out where the
+          disagreement actually sits.
     assignment: >
       Come with one question you would actually want an agent to answer from your own
       research. We will try a few of them live.
