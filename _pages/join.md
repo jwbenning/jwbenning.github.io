@@ -13,7 +13,7 @@ We're always looking for collaborators. Cornell offers a stimulating intellectua
 
 ## Postdocs
 
-We're not actively recruiting at the moment, but we're happy to sponsor strong candidates for postdoctoral fellowships such as the [NSF PRFB](https://www.nsf.gov/funding/opportunities/postdoctoral-research-fellowships-biology-prfb) or [Cornell's Atkinson Postdoctoral Fellowship](https://atkinson.cornell.edu/initiatives-funding/atkinson-postdoctoral-fellowship/). If you'd like to explore a fellowship together, reach out to [John](mailto:jbenning@cornell.edu) with a CV and a short note on what you're interested in.
+We're not actively recruiting at the moment, but we're happy to sponsor strong candidates for postdoctoral fellowships such as the [NSF PRFB](https://www.nsf.gov/funding/opportunities/postdoctoral-research-fellowships-biology-prfb) or [Cornell's Atkinson Postdoctoral Fellowship](https://atkinson.cornell.edu/cornell-atkinson-postdocs-rfp/). If you'd like to explore a fellowship together, reach out to [John](mailto:jbenning@cornell.edu) with a CV and a short note on what you're interested in.
 
 ## Graduate students
 
