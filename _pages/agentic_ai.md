@@ -42,6 +42,12 @@ nav: false
   .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--global-divider-color);border-radius:999px;padding:.06rem .45rem;color:var(--global-text-color-light);margin-left:.35rem;vertical-align:.1em}
   .tag.is-assigned{border-color:var(--global-theme-color);color:var(--global-theme-color);font-weight:700}
   .tag.is-week{font-weight:700}
+  .setup{border:1px solid var(--global-divider-color);border-radius:12px;background:var(--global-card-bg-color);padding:1.1rem 1.3rem;margin:1.2rem 0 0}
+  .setup h3{margin:0 0 .35rem;font-size:1rem}
+  .setup p{margin:.5rem 0 0;line-height:1.6}
+  .setup pre{margin:.55rem 0 0;padding:.6rem .8rem;border-radius:8px;background:var(--global-bg-color);border:1px solid var(--global-divider-color);overflow-x:auto}
+  .setup code{font-size:.86rem}
+  .setup .why{color:var(--global-text-color-light);font-size:.9rem}
   .ai-filters{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.1rem 0 .3rem}
   .ai-f{font:inherit;font-size:.72rem;font-weight:600;letter-spacing:.03em;cursor:pointer;border:1px solid var(--global-divider-color);background:var(--global-card-bg-color);color:var(--global-text-color-light);border-radius:999px;padding:.2rem .7rem}
   .ai-f:hover{border-color:var(--global-theme-color);color:var(--global-theme-color)}
@@ -114,6 +120,51 @@ with no background assumed. It is the first of the Week 1 readings; read it befo
   {% if now.assignment %}<p><span class="ai-lbl">Bring with you</span><br>{{ now.assignment }}</p>{% endif %}
 </div>
 {% endif %}
+
+## Getting set up
+
+**Do this before Friday.** It takes about ten minutes and needs no account.
+
+We use [Claude Code](https://code.claude.com/docs/), an agent that reads and writes files on
+your own machine. That read-write part is the whole reason we use it rather than a chat
+window, and it is what we spend the term auditing. Two ways to run it — pick one.
+
+<div class="setup">
+  <h3>The app</h3>
+  <p class="why">A normal application window, no terminal involved. Start here unless you
+  already work in a terminal every day.</p>
+  <p>Download for macOS, Windows or Linux from
+  <a href="https://claude.com/download">claude.com/download</a>, then open it. There is a
+  <a href="https://code.claude.com/docs/en/desktop-quickstart">two-minute walkthrough</a> if
+  you want one.</p>
+</div>
+
+<div class="setup">
+  <h3>The terminal</h3>
+  <p class="why">Same tool, more control. If you already use a terminal for R or bash, use
+  this.</p>
+  <p>macOS, Linux, or Windows WSL:</p>
+  <pre><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre>
+  <p>Windows PowerShell:</p>
+  <pre><code>irm https://claude.ai/install.ps1 | iex</code></pre>
+  <p>Then run <code>claude</code> in any folder. Check it worked with
+  <code>claude --version</code>, which should print a version number; if something is wrong,
+  <code>claude doctor</code> says what. Never used a terminal? Read the
+  <a href="https://code.claude.com/docs/en/terminal-guide">terminal guide</a> first, or just
+  use the app.</p>
+</div>
+
+You need macOS 13 or later, Windows 10 or later, or Ubuntu 20.04 or later, and 4 GB of RAM.
+If your machine is older than that, tell us and we will pair you with someone.
+
+**Do not pay for anything.** Claude Code is not included in the free plan, so it will ask you
+to sign in and you will not have an account that works. That is expected. We are covering
+access for everyone in the seminar — install now, and wait for an email from us before
+signing in.
+
+**If it will not install,** come ten minutes early on Friday and we will sort it in the
+room. Bring the error message. Do not skip the session over a broken install — watching
+someone else's screen for one week costs you nothing.
 
 ## Schedule
 
