@@ -35,7 +35,7 @@ profiles:
     more_info:
   # Undergraduate researchers — alphabetical by last name
   - align: right
-    image: smiley_1.png  # TODO: replace with delardi.jpg once Nia sends a photo
+    image: delardi.jpg
     content: about_delardi.md
     image_circular: false
     more_info:
