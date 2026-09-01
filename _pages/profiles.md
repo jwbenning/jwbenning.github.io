@@ -40,7 +40,7 @@ profiles:
     image_circular: false
     more_info:
   - align: left
-    image: smiley_3.png  # TODO: replace with kim.jpg once Sean sends a photo
+    image: kim.jpg
     content: about_kim.md
     image_circular: false
     more_info:
