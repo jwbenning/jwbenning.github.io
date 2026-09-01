@@ -71,6 +71,9 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+        with:
+          # jekyll-last-modified-at reads each page's date from git history
+          fetch-depth: 0
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
