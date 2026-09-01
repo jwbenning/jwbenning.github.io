@@ -79,9 +79,9 @@ drafting an EEB community guideline for responsible use.
 No computer-science background is assumed. A little R or Python helps you follow the coding
 demos but isn't required. **Bring a laptop.**
 
-**New to any of this?** Start with [what is an agent?]({{ '/teaching/agentic-ai/primer/' | relative_url }}) —
-a ten-minute primer covering the vocabulary and the core ideas, written for this seminar.
-Read it before the Week 1 readings.
+**Start with [what is an agent?]({{ '/teaching/agentic-ai/primer/' | relative_url }})** —
+a ten-minute primer written for this seminar, covering the vocabulary and the core ideas
+with no background assumed. It is the first of the Week 1 readings; read it before the rest.
 
 {% assign now = c.schedule | where: "week", c.current_week | first %}
 {% if now %}

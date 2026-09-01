@@ -28,13 +28,15 @@ schedule:
       rather than verified fact, then give an agent a goal that forces it to reach into
       the world and pull real occurrence records.
     readings:
-      - title: "Building effective agents"
-        source: Anthropic, December 2024
-        url: https://www.anthropic.com/engineering/building-effective-agents
+      - title: "What is an agent? A primer for this seminar"
+        source: Benning & Xu — start here
+        url: /teaching/agentic-ai/primer/
         tags: [foundations]
         note: >
-          What an agent actually is, and the case for not building one. Skim the
-          patterns; the workflow-versus-agent distinction is the part that matters.
+          Written for this course, for people with no background in any of this. Ten
+          minutes: the ladder from a plain language model up to an agent, the loop every
+          agent runs, why read-only and read-write agents carry categorically different
+          risk, and the twenty terms you will hear all term. Read this one first.
       - title: "A new Moore's Law for AI agents"
         source: AI Digest
         url: https://theaidigest.org/time-horizons
@@ -165,6 +167,18 @@ schedule:
       research, writing, teaching, and lab work?
 
 links:
+  - date: 2026-09-01
+    title: "Building effective agents"
+    source: Anthropic, December 2024
+    url: https://www.anthropic.com/engineering/building-effective-agents
+    tags: [foundations]
+    note: >
+      Optional. The engineering account of what an agent is and the case for not
+      building one — the workflow-versus-agent distinction is the part worth having.
+      From December 2024, so it predates most of what we will actually use, and it is
+      written for people building these systems rather than using them. Worth a skim
+      once the primer has done its job.
+
   - date: 2026-08-31
     title: "The Hugging Face hack is a PR crisis that's costing OpenAI millions"
     source: Fortune, August 2026
