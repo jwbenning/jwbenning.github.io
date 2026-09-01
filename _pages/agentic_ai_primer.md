@@ -34,13 +34,26 @@ nav: false
   .pr-note{border:1px solid var(--global-divider-color);border-left:4px solid var(--global-theme-color);border-radius:10px;background:var(--global-card-bg-color);padding:.9rem 1.1rem;margin:1.6rem 0;line-height:1.6}
   .post h2{margin-top:2.8rem}
   .pr-back{display:inline-block;font-size:.9rem;margin-bottom:1.4rem}
+  .pr-more{border:1px solid var(--global-divider-color);border-radius:10px;background:var(--global-card-bg-color);margin:1rem 0 0;overflow:hidden}
+  .pr-more[open]{box-shadow:0 3px 14px rgba(20,30,40,.06)}
+  .pr-more > summary{list-style:none;cursor:pointer;padding:.7rem 1rem;font-weight:700;font-size:.92rem;user-select:none}
+  .pr-more > summary::-webkit-details-marker{display:none}
+  .pr-more > summary::before{content:"▸ ";color:var(--global-theme-color)}
+  .pr-more[open] > summary::before{content:"▾ "}
+  .pr-more > summary:hover{color:var(--global-theme-color)}
+  .pr-more .inner{padding:.2rem 1rem 1rem;border-top:1px solid var(--global-divider-color)}
+  .pr-more .inner p{margin:.75rem 0 0;line-height:1.6}
+  .pr-more .inner pre{margin:.55rem 0 0;padding:.6rem .8rem;border-radius:8px;background:var(--global-bg-color);border:1px solid var(--global-divider-color);overflow-x:auto;font-size:.85rem}
+  .pr-more table{width:100%;border-collapse:collapse;margin:.8rem 0 0;font-size:.9rem}
+  .pr-more th,.pr-more td{text-align:left;padding:.35rem .5rem;border-bottom:1px solid var(--global-divider-color)}
+  .pr-more th{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--global-text-color-light)}
 </style>
 
 <a class="pr-back" href="{{ '/teaching/agentic-ai/' | relative_url }}">← back to the course page</a>
 
-<p class="pr-lede">This is the ten-minute version of everything the seminar assumes. If you have never
-used an AI agent, or have used one without being sure what made it an agent, start here.
-No computer-science background is needed and none is assumed.</p>
+<p class="pr-lede">Ten minutes on what an agent is, what it does while you are not watching, and the
+words you will hear all term. Read it if you have never used one, or have used one without
+being sure what made it an agent. No computer science needed.</p>
 
 <p class="pr-cap" style="margin:-1rem 0 2rem">Written by Claude, checked and edited by us.
 We ask you to say what a tool did for you, so: it drafted this page, we cut it down, and the
@@ -113,7 +126,7 @@ useful habit is asking which rung you are on right now, not which company made t
     them, and fit a species distribution model." It pulls the records, drops the ones at
     (0, 0) and in the ocean, quietly throws out everything georeferenced only to a county
     centroid, picks a climate dataset you have not heard of, fits the model on its defaults,
-    and hands you a map. Twenty minutes, no input from you. Two of those choices were
+    and hands you a map. You are not consulted at any point. Two of those choices were
     routine. Two it made on your behalf. Which two, and how would you know?</span>
   </li>
 </ul>
@@ -126,9 +139,59 @@ deciding each time what to try next, it is on rung four whatever the interface c
 The tell: did it go and get something, and did what came back change what it did next?
 </div>
 
+<details class="pr-more">
+<summary>Run the herbarium test yourself</summary>
+<div class="inner">
+
+<p>Worth ten minutes, because reading that a model fabricates is not the same as watching
+one do it to a species you know.</p>
+
+<p><b>1. Ask a model with no tools.</b> Turn search off, then paste:</p>
+<pre>List herbarium specimens of Clarkia xantiana subsp. parviflora
+collected before 1980. For each, give the collector, collection
+number, collection date, locality, and the herbarium where it is
+deposited.</pre>
+
+<p><b>2. Note what it gets right</b>, because this is the part that makes it dangerous.
+Every run we did opened by saying it had no live database access — true, and stated
+unprompted. The collectors it named are real botanists who really did collect this species.
+The herbaria are real. The localities are in the right part of Kern County. One run even
+warned us that AI models invent herbarium records, then produced a list.</p>
+
+<p><b>3. Now check the identifiers.</b> Every specimen record has a collection number, and
+those are checkable. Ours:</p>
+
+<table>
+<tr><th>It claimed</th><th>Collector real?</th><th>Number in GBIF</th><th>That collector's real dates</th></tr>
+<tr><td>Abrams 5361, 1915</td><td>yes, 4 specimens</td><td><b>absent</b></td><td>1900, 1908</td></tr>
+<tr><td>Howell 5021, 1930</td><td>yes, 17</td><td><b>absent</b></td><td>1958–1971</td></tr>
+<tr><td>Munz 13345, 1934</td><td>yes, 3</td><td><b>absent</b></td><td>1923</td></tr>
+<tr><td>Lewis 412, 1947</td><td>yes, 53</td><td><b>absent</b></td><td>1946–1956</td></tr>
+</table>
+
+<p>We swept all 452 preserved specimens of <em>Clarkia xantiana</em> in GBIF. No collection
+number matched, and the dates miss by decades. You can repeat the sweep from any browser:</p>
+<pre>https://api.gbif.org/v1/occurrence/search?scientificName=Clarkia%20xantiana&amp;basisOfRecord=PRESERVED_SPECIMEN&amp;limit=300</pre>
+
+<p><b>4. Ask it twice more.</b> Ours named Alice Eastwood as the original collector on one
+run and T. S. Brandegee on another. That contradiction proves one answer is wrong without
+consulting any database at all — which is a check you can always run, on any claim, for
+free.</p>
+
+<p><b>5. Then turn search on and ask again.</b> Same question, one rung up. Watch what
+changes, and watch what does not.</p>
+
+<p>So: real names, real institutions, real region, invented identifiers. Nothing in the
+output looks wrong. Expertise does not catch it. Only the lookup does.</p>
+
+</div>
+</details>
+
 ## The loop
 
-Every agent, whatever it is called and whoever built it, is running the same cycle.
+Every agent, whatever it is called and whoever built it, is running the same cycle. The
+pattern was named by [Yao et al. (2022)](https://arxiv.org/abs/2210.03629), who showed that
+making a model reason and act in turn, rather than only reason, beat both on its own.
 
 <div class="pr-fig">
 <svg viewBox="0 0 620 330" role="img" aria-label="The agent loop. Your goal enters at plan; plan leads to act, act to observe, observe to judge; judge either returns to plan or exits with a result.">
@@ -282,6 +345,40 @@ Treat an agent the way you treat a new field assistant in their first week — q
 keen to report success — and read the first datasheets in full before you start spot-checking.
 </div>
 
+## Who makes these
+
+<details class="pr-more">
+<summary>The main tools, as of September 2026</summary>
+<div class="inner">
+
+<p>A snapshot, and it will date fast — that is the nature of the thing. What lasts is the
+two questions to ask of anything new: <b>which rung is it on</b>, and <b>can it write</b>.</p>
+
+<p><b>Chat assistants.</b> ChatGPT, Claude, Gemini. Rung two on their own, rung three or
+four once search, code execution or connectors are switched on. They act on their own
+servers, not your machine, so they cannot alter your files.</p>
+
+<p><b>Terminal and desktop coding agents.</b> Claude Code, OpenAI Codex, Gemini CLI. Rung
+four, and read-write on your actual machine — they edit files and run commands. This is the
+category we use in class, and the category the seminar's warnings are really about.</p>
+
+<p><b>Editor-integrated agents.</b> Cursor, GitHub Copilot, Windsurf, Cline. Rung four,
+read-write, scoped to the project you have open.</p>
+
+<p><b>Open source.</b> Aider, OpenHands, SWE-agent. Same shape, run against a model of your
+choosing, which matters if you need to know where your data goes.</p>
+
+<p><b>Science-specific.</b> Elicit and Consensus for literature search and screening; a
+growing set of research agents from groups like FutureHouse. Mostly read-only, mostly
+retrieval — closer to a very good search tool than to an agent that acts.</p>
+
+<p>Published benchmark rankings among these change monthly and are usually reported by
+whoever comes out ahead. Treat them the way you would treat any effect size from a study you
+did not read.</p>
+
+</div>
+</details>
+
 ## Vocabulary
 
 Everything below will come up. You do not need to memorise it; skim it now and come back.
@@ -304,8 +401,10 @@ Everything below will come up. You do not need to memorise it; skim it now and c
   <dd>Fluent, confident, false. Not a bug that will be patched — a direct consequence of a
   system that generates plausible continuations rather than retrieving facts.</dd>
   <dt>Nondeterminism</dt>
-  <dd>The same prompt can give different answers on different runs. This is why "I ran it
-  again and it was fine" is not evidence, and why reproducibility is genuinely hard here.</dd>
+  <dd>The same prompt gives different answers on different runs. Two consequences. A second
+  run that comes out clean does not tell you the first was a fluke, so re-running is not a
+  check. And nobody else can reproduce your output exactly, including you next week — which
+  is why an agent's result needs its transcript attached to mean anything.</dd>
   <dt>Reasoning model <span class="alt">/ extended thinking</span></dt>
   <dd>A model that generates a long internal working-out before answering. Better on hard
   problems, slower, more expensive. The visible "thinking" is not a reliable account of what
@@ -340,7 +439,9 @@ Everything below will come up. You do not need to memorise it; skim it now and c
   <dt>Prompt injection</dt>
   <dd>An agent cannot fully separate the text it reads from the instructions it follows. A
   web page, a README or a data file can carry wording aimed at the agent, and it may act on
-  it. This is why an agent that only reads still needs watching.</dd>
+  it. Demonstrated across real deployed systems by
+  <a href="https://arxiv.org/abs/2302.12173">Greshake et al. (2023)</a>. This is why an
+  agent that only reads still needs watching.</dd>
   <dt>Subagent <span class="alt">/ multi-agent</span></dt>
   <dd>An agent that spawns other agents to work in parallel and reports back. More
   throughput, and correspondingly more places for an error to hide.</dd>
@@ -366,17 +467,5 @@ Everything below will come up. You do not need to memorise it; skim it now and c
   corresponding drop in confidence. Your specific study system is more likely to be here
   than you think.</dd>
 </dl>
-
-## Before Friday
-
-1. Skim the Week 1 readings on the [course page]({{ '/teaching/agentic-ai/' | relative_url }}).
-   The skim instructions are there for a reason; do not read them all in full.
-2. Bring a laptop.
-3. Bring one question you would genuinely want an agent to answer from your own research —
-   something real from your own data or your own literature, not a demo question. We will
-   try some of them live, and decide together what is safe to put in before anything runs.
-
-You are not expected to have used any of this before. The point of the seminar is to look
-carefully at what these systems actually do, together, with our own work as the test case.
 
 <a class="pr-back" href="{{ '/teaching/agentic-ai/' | relative_url }}">← back to the course page</a>
