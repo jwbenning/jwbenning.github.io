@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /teaching/agentic-ai/
+last_updated: 2026-09-01
 title: agentic AI in EEB
 description: BIOEE 7600-103 · Fall 2026 · a graduate seminar at Cornell
 nav: false
@@ -39,7 +40,6 @@ nav: false
   li > .fnote{margin:.3rem 0 .55rem}
   .post h2{margin-top:2.6rem}
   .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--global-divider-color);border-radius:999px;padding:.06rem .45rem;color:var(--global-text-color-light);margin-left:.35rem;vertical-align:.1em}
-  .ai-foot{color:var(--global-text-color-light);font-size:.85rem;margin-top:2.4rem;padding-top:1rem;border-top:1px solid var(--global-divider-color)}
 </style>
 
 <span class="ai-live"><span class="dot"></span>Live page — updated through the semester</span>
@@ -167,4 +167,3 @@ Enrollment is capped at 20 and by instructor consent; undergraduates are not eli
 Email [Xiangtao](mailto:xx286@cornell.edu) or [John](mailto:jbenning@cornell.edu) and we
 will add you. Postdocs and faculty are welcome to join the discussion without registering.
 
-<p class="ai-foot">Page last updated {{ site.time | date: "%B %-d, %Y" }}.</p>
