@@ -61,6 +61,10 @@ stopped producing sentences about the world and started taking actions in it.
 The word "AI" now covers systems that differ enormously in what they can do to your data.
 It helps to see them as a ladder. The same task runs through all four.
 
+**These are rungs of capability, not brands.** One product can sit on several of them
+depending on what is switched on, and the box you type into looks identical either way. The
+useful habit is asking which rung you are on right now, not which company made the tool.
+
 <ul class="pr-rungs">
   <li class="pr-rung">
     <h3>A language model</h3>
@@ -74,9 +78,9 @@ It helps to see them as a ladder. The same task runs through all four.
   <li class="pr-rung">
     <h3>A chatbot</h3>
     <p>The same model wrapped in a conversation, so it remembers what you said earlier in
-    the session and has been trained to be helpful and to follow instructions. Still no
-    access to the world. This is what most people mean by "AI" and it is one rung up from
-    nothing.</p>
+    the session and has been trained to be helpful and to follow instructions. With no tools
+    switched on it still has no access to anything outside itself: it cannot look anything
+    up, and it cannot check its own claims.</p>
     <span class="ex"><b>Our task</b>You can now refine across turns — "only Californian
     records," "only after 1980." The answers get more responsive to you. They are not any
     more likely to be true.</span>
@@ -105,6 +109,14 @@ It helps to see them as a ladder. The same task runs through all four.
     would you know?</span>
   </li>
 </ul>
+
+<div class="pr-note">
+<b>So which rung am I on?</b> Today's assistants slide between rungs two and four inside the
+same chat window. A plain reply is rung two. The moment one searches the web, runs code, or
+reaches a connected database it is on rung three — and when it does that over and over,
+deciding each time what to try next, it is on rung four whatever the interface calls itself.
+The tell: did it go and get something, and did what came back change what it did next?
+</div>
 
 ## The loop
 
@@ -159,6 +171,25 @@ a right answer would look like, and it is the step agents are worst at. When the
 clear pass/fail criterion — the tests pass, the file parses — agents iterate well. When the
 criterion is "does this look reasonable," they will often decide that it does.
 
+## Reading and writing
+
+The loop tells you how an agent works. It does not tell you what it can do to you. For that,
+ask a second question: **what is this thing allowed to change?**
+
+Some agents only read. They search, fetch pages, query databases, run an analysis on a copy.
+An assistant looping over web searches is doing entirely genuine agentic work and cannot
+alter anything you own. Others write. They edit your files, run shell commands, modify
+databases, send mail, commit to your repository.
+
+That distinction cuts across products rather than along them, and it is the axis that
+actually governs risk. Two agents can run the identical loop the identical number of times:
+the read-only one wastes your afternoon and may mislead you, the read-write one leaves your
+data in a state you did not choose and may not notice. A difference in kind, not degree.
+
+So the loop is not the dangerous part. **The loop combined with write access is.** Before
+letting any agent near real work, know which of the two you have — and if it can write, know
+exactly what it is allowed to write to.
+
 ## What they are good and bad at
 
 This is not speculation. In one careful study, coding agents were given the stages of a real
@@ -199,8 +230,8 @@ single task.</p>
 A chatbot that is wrong produces a wrong sentence, and you are the last line of defence
 before it becomes a wrong claim. That is a familiar risk and we already have habits for it.
 
-An agent that is wrong has already run the code, already rewritten the file, already sent
-the query. The error is not in a draft you are reviewing; it is in your data directory. Three
+An agent with write access that is wrong has already run the code, already rewritten the
+file, already sent the query. The error is not in a draft you are reviewing; it is in your data directory. Three
 consequences follow, and the seminar returns to them all term:
 
 **Errors become silent.** A hallucinated citation is visible if you look. A dropped subset of
@@ -269,6 +300,10 @@ Everything below will come up. You do not need to memorise it; skim it now and c
   <dt>Autonomy <span class="alt">/ permission gating</span></dt>
   <dd>How many actions it may take before checking with you, and which actions require your
   say-so. The single most important setting in any agent tool.</dd>
+  <dt>Read-only <span class="alt">/ read-write</span></dt>
+  <dd>Whether an agent's tools can change anything. Searching and fetching are read-only;
+  editing files, running shell commands and sending mail are read-write. The best single
+  predictor of how much damage one mistake can do.</dd>
   <dt>Memory</dt>
   <dd>What persists after the context window or the session ends — usually notes the agent
   writes to a file and reads back later.</dd>
