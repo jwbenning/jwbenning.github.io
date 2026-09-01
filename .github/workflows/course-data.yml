@@ -1,0 +1,35 @@
+name: Course page data
+
+# The BIOEE 7600-103 page reads everything from _data/agentic_ai.yml, so a typo
+# there fails the Jekyll build, fails the deploy, and leaves the live site quietly
+# serving the previous version. This check makes that loud, and runs on pull
+# requests so it catches the mistake before it reaches main.
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "_data/agentic_ai.yml"
+      - "_pages/agentic_ai.md"
+      - "_pages/agentic_ai_primer.md"
+      - "bin/check-course-data.py"
+      - ".github/workflows/course-data.yml"
+  pull_request:
+    paths:
+      - "_data/agentic_ai.yml"
+      - "_pages/agentic_ai.md"
+      - "_pages/agentic_ai_primer.md"
+      - "bin/check-course-data.py"
+      - ".github/workflows/course-data.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Validate course data
+        run: python3 bin/check-course-data.py
