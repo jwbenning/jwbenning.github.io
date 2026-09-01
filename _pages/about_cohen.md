@@ -2,4 +2,4 @@
 
 **Anna Cohen**  
 Lab Manager, 2026  
-Currently: graduate school at U. Toronto
+_Currently:_ graduate school at U. Toronto
