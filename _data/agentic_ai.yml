@@ -9,17 +9,18 @@
 current_week: 1
 
 announcement: >
-  First meeting is <strong>Friday, September 4</strong>, 12:20–1:10 pm in Comstock B104.
-  Bring a laptop. The one thing to read first is the ten-minute primer,
-  <a href="/teaching/agentic-ai/primer/">what is an agent?</a> — no background assumed.
-  Seats are by instructor consent and a few are left: email
-  <a href="mailto:xx286@cornell.edu">Xiangtao</a> or
+  First meeting is <strong>Friday, September 11</strong>, 12:20–1:10 pm in Comstock B104
+  (moved a week later than first announced). Two things to do before then: read the
+  ten-minute primer, <a href="/teaching/agentic-ai/primer/">what is an agent?</a>, and
+  <a href="#getting-set-up">install Claude Code</a> — about ten minutes, no account needed
+  yet, do not pay for anything. Bring a laptop. Seats are by instructor consent and a few
+  are left: email <a href="mailto:xx286@cornell.edu">Xiangtao</a> or
   <a href="mailto:jbenning@cornell.edu">John</a>. Postdocs and faculty are welcome to sit in
   without registering.
 
 schedule:
   - week: 1
-    date: 2026-09-04
+    date: 2026-09-11
     part: Foundations
     theme: What agentic AI is (and isn't) — from LLMs to tool-using agents
     framing: >
@@ -93,7 +94,7 @@ schedule:
       Come with a task you would actually want an agent to tackle in your own research.
 
   - week: 2
-    date: 2026-09-11
+    date: 2026-09-18
     part: The research data lifecycle
     theme: Agentic coding & data analysis
     framing: >
@@ -119,7 +120,7 @@ schedule:
           result about last year's models.
 
   - week: 3
-    date: 2026-09-18
+    date: 2026-09-25
     part: The research data lifecycle
     theme: Agentic data exploration, compilation & archiving
     framing: >
@@ -128,7 +129,7 @@ schedule:
       what it did?
 
   - week: 4
-    date: 2026-09-25
+    date: 2026-10-02
     part: Literature synthesis & writing
     theme: Agentic literature synthesis
     framing: >
@@ -136,7 +137,7 @@ schedule:
       literature — and where does it quietly corrupt the record?
 
   - week: 5
-    date: 2026-10-02
+    date: 2026-10-09
     part: Literature synthesis & writing
     theme: Agentic scientific writing
     framing: >
@@ -144,7 +145,7 @@ schedule:
       writing in a second language — and where does it cross into misrepresentation?
 
   - week: 6
-    date: 2026-10-09
+    date: 2026-10-16
     part: Lab management, teaching & training
     theme: Project & lab management and automation
     framing: >
@@ -152,7 +153,7 @@ schedule:
       under direct human control?
 
   - week: 7
-    date: 2026-10-16
+    date: 2026-10-23
     part: Lab management, teaching & training
     theme: Teaching, mentoring & implications for graduate training
     framing: >
@@ -160,7 +161,7 @@ schedule:
       and does leaning on agents accelerate skill-building or quietly prevent it?
 
   - week: 8
-    date: 2026-10-23
+    date: 2026-10-30
     part: Costs, ethics & governance
     theme: Costs, ethics & accountability of agentic AI
     framing: >
@@ -169,7 +170,7 @@ schedule:
       system errs, who is accountable?
 
   - week: 9
-    date: 2026-10-30
+    date: 2026-11-06
     part: Costs, ethics & governance
     theme: Formulating an EEB community guideline
     framing: >
