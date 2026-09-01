@@ -77,11 +77,11 @@ over many steps — cleaning datasets, running analyses, writing and executing c
 databases, monitoring the literature, drafting the outputs. That autonomy is what makes
 agents useful, and what raises the stakes when they go wrong.
 
-This seminar is a hands-on and deliberately skeptical tour of what agents can and can't be
+This seminar is a hands-on and skeptical tour of what agents can and can't be
 trusted to do across the research lifecycle. After a week defining what "agentic" actually
 means, most of each session is a live demo: we give an agent a real EEB task and then audit
 the process and the result, hunting for what it got wrong or quietly hid. We close by
-drafting an EEB community guideline for responsible use.
+drafting an EEB community guideline for responsible use of agentic AI.
 
 No computer-science background is assumed. A little R or Python helps you follow the coding
 demos but isn't required. **Bring a laptop.**
@@ -208,29 +208,25 @@ readings, and demo.
 
 ## Using AI in this course
 
-We practice what we study, so use these tools throughout. A few things worth holding onto.
+A few things worth holding onto.
 
-- **Decide whether your data trains the model.** Most tools let you turn this off, and the
-  setting is rarely where you would look. Ask either of us if you want a hand finding it.
+- **Decide whether your data trains the model.** Most tools let you turn this off. Ask
+  either of us if you want a hand finding it.
 - **Think before you paste.** Unpublished data, anything with a person's name in it, a
   manuscript you are reviewing, a collaborator's data you were trusted with — none of that
   belongs in a tool whose terms let it keep or train on what you send. Cornell's
-  [AI guidelines](https://it.cornell.edu/ai-strategy/ai-guidelines) are the floor. The
-  people whose data it is usually expect more.
+  [AI guidelines](https://it.cornell.edu/ai-strategy/ai-guidelines) are helpful here.
 - **Calibrate your bullshit meter.** These models are confidently wrong on a regular basis,
-  and the confidence does not fall when the accuracy does. That is the hard part.
-- **Say what you used.** Name the tool and what it did. Not for policing — a room that says
-  it out loud gets better at this faster than one that doesn't.
-- **You own the output.** Every citation, every number, every claim. Something else produced
-  it; you are answerable for it.
+  and unfortunately, the confidence and accuracy often don't go hand in hand.
 
-Because agents act, one rule of our own: **gate every irreversible action — delete,
-overwrite, submit, send — behind human confirmation.**
+**Gate every irreversible action — delete, overwrite, submit, send — behind human
+confirmation.**
 
 ## 📚 Reading room
 
-Everything worth reading, added as we find it. Anything tied to a session carries its week
-and whether it is required; the rest is here because it is good. Filter by topic.
+Interesting reading, added as we find it. Anything tied to a session carries its week and
+whether it is required; the rest is here because we think you might enjoy it. Please suggest
+additions! Filter by topic.
 
 {% assign alltags = "" | split: "" %}
 {% for w in c.schedule %}{% for r in w.readings %}{% if r.tags %}{% assign alltags = alltags | concat: r.tags %}{% endif %}{% endfor %}{% endfor %}

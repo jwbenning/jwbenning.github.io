@@ -90,8 +90,7 @@ schedule:
           binding constraint. Read it against the trial above and work out where the
           disagreement actually sits.
     assignment: >
-      Come with one question you would actually want an agent to answer from your own
-      research. We will try a few of them live.
+      Come with a task you would actually want an agent to tackle in your own research.
 
   - week: 2
     date: 2026-09-11
@@ -104,6 +103,7 @@ schedule:
       - title: "A case study of evaluating AI agents on a neuroscience data-to-discovery pipeline"
         source: Horstmann, Lin, Robie, Sun & Branson 2026, COLM (arXiv:2606.07718)
         url: https://arxiv.org/abs/2606.07718
+        optional: true
         tags: [evaluation, application]
         note: >
           The closest thing yet to this course, done as research. Coding agents turned
