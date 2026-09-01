@@ -7,6 +7,22 @@ Live pages:
 - <https://benninglab.org/teaching/agentic-ai/> — the course page
 - <https://benninglab.org/teaching/agentic-ai/primer/> — "what is an agent?", the primer
 
+## Two ways in
+
+**Markup Google Docs.** For changing the *writing* — prose, framing questions, the notes
+under each reading. John keeps a Doc per page holding every word that is live, and marks it
+up with suggestions and comments; the edits then get applied to this repo. If you mostly
+want to rewrite sentences rather than restructure the page, this is the easier route and you
+never touch GitHub. Ask John for the links.
+
+One rule if you use them: **leave suggestions and comments, do not type directly into the
+document.** Each round's Doc is regenerated from the live page rather than merged back, so a
+direct edit is invisible to that process and gets thrown away on the next round. A suggestion
+or a comment is read and applied; a silent edit is lost.
+
+**This repo.** For everything else, and for anything structural. Fork it, edit, open a pull
+request. A check runs on the pull request and tells you if the course data is malformed.
+
 ## The short version
 
 **Almost everything you will want to change lives in one file: `_data/agentic_ai.yml`.**
