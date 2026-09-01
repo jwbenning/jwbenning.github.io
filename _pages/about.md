@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-last_updated: 2026-08-19
+last_updated: 2026-09-01
 subtitle: <strong>Department of Ecology and Evolutionary Biology</strong><br><strong>Cornell University</strong>
 
 profile:
@@ -27,11 +27,13 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Our research group seeks to understand the interplay between evolutionary processes and ecological patterns. We've worked on things like
-- the importance of biotic interactions in constraining species' geographic distributions
-- the role of temporal gene flow in constraining rapid adaptation
-- how environmental gradients control the spread of biological invasions 
-- how temporal environmental variation mediates the formation of species' range limits
+## Evolutionary ecology & ecological genetics
+
+Our research group seeks to understand the interplay between evolutionary processes and ecological patterns. We work on questions like
+- how important are biotic interactions for constraining species' geographic distributions?
+- how does gene flow through space and time mediate adaptation?
+- how do environmental gradients influence biological invasions?
+- how does temporal environmental variation alter evolutionary trajectories and the spread of populations across space?
 
 We make use of manipulative field experiments, long-term observational data, controlled laboratory experiments, and theoretical models to gain a more complete understanding of the mechanisms underlying ecological and evolutionary patterns.
 

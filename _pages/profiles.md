@@ -1,9 +1,9 @@
 ---
 layout: profiles
 permalink: /people/
-last_updated: 2026-08-31
+last_updated: 2026-09-01
 title: people
-description: Under construction — bios are on the way. Names, roles, and faces are current.
+description:
 nav: true
 nav_order: 4
 

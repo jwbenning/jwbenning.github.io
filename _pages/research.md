@@ -2,8 +2,8 @@
 layout: page
 title: research
 permalink: /research/
-last_updated: 2026-08-31
-description: Under construction — a fuller account of what we work on is coming soon.
+last_updated: 2026-09-01
+description:
 nav: true
 nav_order: 2
 ---
@@ -20,11 +20,9 @@ nav_order: 2
 </style>
 
 <div class="uc-note">
-  <p><strong>This page is under construction.</strong> We are writing up the research
-  properly — the questions, the systems, and how the pieces fit together.</p>
-  <p>In the meantime, the <a href="{{ '/publications/' | relative_url }}">publications</a>
-  page lists the work itself, and <a href="{{ '/updates/' | relative_url }}">updates</a>
-  has what the lab is up to lately. Some of both, below.</p>
+  <p><strong>This page is under construction.</strong> In the meantime, see the
+  <a href="{{ '/publications/' | relative_url }}">publications</a> and
+  <a href="{{ '/updates/' | relative_url }}">updates</a> pages for a sense of what we're up to.</p>
 </div>
 
 <div class="gal">
