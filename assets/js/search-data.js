@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-research",
           title: "research",
-          description: "Under construction — a fuller account of what we work on is coming soon.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-people",
           title: "people",
-          description: "Under construction — bios are on the way. Names, roles, and faces are current.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/people/";
