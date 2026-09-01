@@ -68,12 +68,16 @@ useful habit is asking which rung you are on right now, not which company made t
 <ul class="pr-rungs">
   <li class="pr-rung">
     <h3>A language model</h3>
-    <p>Text in, text out. It has no memory between uses, no access to anything, and no way
-    to check whether what it said is true. It is not looking anything up; it is producing
-    what sounds right.</p>
-    <span class="ex"><b>Our task</b>You ask it which herbarium records exist for your study
-    species. It produces a confident, well-formatted list of records. Some of them do not
-    exist. It has no way to know that and no way to tell you.</span>
+    <p>Text in, text out. No memory between uses, no access to anything, no way to check
+    what it said. It is not looking anything up. It is producing what sounds right.</p>
+    <span class="ex"><b>Our task</b>We asked one for herbarium records of <em>Clarkia
+    xantiana</em> subsp. <em>parviflora</em> collected before 1980. It said it had no live
+    access to any database, then listed specimens anyway — Abrams 5361, Howell 5021, Munz
+    13345, Lewis 412 — with dates, localities and herbaria. Every collector is real. Not one
+    of those collection numbers appears among the 452 herbarium specimens of this species in
+    GBIF, and the real dates for those collectors miss the claimed ones by decades. Asked
+    again, it named a different botanist as the original collector. Nothing in the output
+    looks wrong. Only the database says so.</span>
   </li>
   <li class="pr-rung">
     <h3>A chatbot</h3>
@@ -91,9 +95,9 @@ useful habit is asking which rung you are on right now, not which company made t
     Crucially, it can bring real results back into its own context and use them. This is
     the rung where output can start being checkable, because there is now something outside
     the model that produced it.</p>
-    <span class="ex"><b>Our task</b>It queries GBIF directly and returns records that
-    actually exist, because it fetched them. You can click through and verify. But you are
-    still driving: one request, one answer.</span>
+    <span class="ex"><b>Our task</b>It queries GBIF and returns records that do exist,
+    because it fetched them, and you can click through and check. What it <em>says about</em>
+    them is still its own summary. And you are still driving: one request, one answer.</span>
   </li>
   <li class="pr-rung">
     <h3>An agent</h3>
@@ -101,12 +105,12 @@ useful habit is asking which rung you are on right now, not which company made t
     which tools to use and in what order, runs them, reads what came back, notices problems,
     and tries again. It may take fifty actions before it says anything to you. That
     stretch of unsupervised action is the thing that makes it an agent.</p>
-    <span class="ex"><b>Our task</b>"Get the occurrence records for this species, clean them,
-    and fit a climate model." It pulls the records, writes a script to drop records at
-    (0, 0) and in the ocean, notices the coordinate system is inconsistent, fixes that,
-    downloads climate layers, fits the model, and hands you a map. Twenty minutes, no
-    input from you. Now: which of those decisions would you have made differently, and how
-    would you know?</span>
+    <span class="ex"><b>Our task</b>"Get the occurrence records for this species, clean
+    them, and fit a species distribution model." It pulls the records, drops the ones at
+    (0, 0) and in the ocean, quietly throws out everything georeferenced only to a county
+    centroid, picks a climate dataset you have not heard of, fits the model on its defaults,
+    and hands you a map. Twenty minutes, no input from you. Two of those choices were
+    routine. Two it made on your behalf. Which two, and how would you know?</span>
   </li>
 </ul>
 
@@ -165,8 +169,7 @@ run code, query an API, edit a file. <b>Observe</b> — read what came back, inc
 The number of times round this loop before it reports back to you is the amount of autonomy
 you have granted it.</p>
 
-The interesting failures live in **judge**. Plan, act, and observe are largely mechanical.
-Judging whether a result is scientifically acceptable is the step that requires knowing what
+The interesting failures live in **judge**. Judging whether a result is scientifically acceptable is the step that requires knowing what
 a right answer would look like, and it is the step agents are worst at. When there is a
 clear pass/fail criterion — the tests pass, the file parses — agents iterate well. When the
 criterion is "does this look reasonable," they will often decide that it does.
@@ -178,7 +181,8 @@ ask a second question: **what is this thing allowed to change?**
 
 Some agents only read. They search, fetch pages, query databases, run an analysis on a copy.
 An assistant looping over web searches is doing entirely genuine agentic work and cannot
-alter anything you own. Others write. They edit your files, run shell commands, modify
+alter anything you own. That is not the same as harmless: anything an agent reads, and any
+page it fetches, is a route by which your own data can leave. Others write. They edit your files, run shell commands, modify
 databases, send mail, commit to your repository.
 
 That distinction cuts across products rather than along them, and it is the axis that
@@ -192,9 +196,9 @@ exactly what it is allowed to write to.
 
 ## What they are good and bad at
 
-This is not speculation. In one careful study, coding agents were given the stages of a real
-neuroscience analysis pipeline and scored against the standards of the scientists who
-originally built it.
+[Horstmann and colleagues](https://arxiv.org/abs/2606.07718) handed coding agents the
+stages of a real neuroscience analysis pipeline and scored them against the standards of the
+scientists who built it. It is the Week 2 reading, and the two lists below come from it.
 
 <div class="pr-two">
   <div class="pr-card good">
@@ -222,8 +226,8 @@ originally built it.
 <p class="pr-cap">Two patterns from that study are worth carrying into every session. Stages the
 agents solved perfectly in isolation broke once composed into a full pipeline. And when the
 authors classified every occasion an agent looked at a plot of its own output, the times it
-misread or explained away a real problem outnumbered the times it caught one — on every
-single task.</p>
+misread or explained away a real problem outnumbered the times it caught one, on every
+task where it looked at a plot at all.</p>
 
 ## Why "it acts" changes everything
 
@@ -238,9 +242,10 @@ consequences follow, and the seminar returns to them all term:
 rows during a merge is not, and neither is a coordinate system quietly reprojected. The
 agent will report success either way, because from inside the loop it succeeded.
 
-**Provenance evaporates.** The agent made forty decisions to produce that file. Unless
-something recorded them, neither you nor a reviewer nor future-you can reconstruct what was
-done. This is a reproducibility problem before it is anything else.
+**Provenance thins out.** The agent made forty decisions to produce that file, and the file
+records none of them. Agent tools do keep a transcript of every action and its output, and
+reading that transcript is what this seminar means by an audit. But nothing attaches it to
+the result, and nobody reads it unless they decide to.
 
 **Speed removes the pause.** The friction of doing analysis by hand is also the occasion on
 which you notice things. Removing the work removes the noticing, unless you deliberately put
@@ -253,6 +258,13 @@ tools you used, and you never paste unpublished data or personal information int
 external tool. Because agents act, we add one more: <b>gate every irreversible action —
 delete, overwrite, submit, send — behind human confirmation.</b> An agent should be able to
 propose deleting something. It should not be able to delete it.
+</div>
+
+<div class="pr-note">
+<b>The audit, in four questions.</b> Every demo this term ends the same way. What did it
+read? What did it change? What did it decide for us? How would we know if it was wrong?
+Treat an agent the way you treat a new field assistant in their first week — quick, capable,
+keen to report success — and read the first datasheets in full before you start spot-checking.
 </div>
 
 ## Vocabulary
@@ -310,6 +322,10 @@ Everything below will come up. You do not need to memorise it; skim it now and c
   <dt>MCP <span class="alt">(Model Context Protocol)</span></dt>
   <dd>A common standard for plugging tools and data sources into an agent, so the same
   connector works across different assistants.</dd>
+  <dt>Prompt injection</dt>
+  <dd>An agent cannot fully separate the text it reads from the instructions it follows. A
+  web page, a README or a data file can carry wording aimed at the agent, and it may act on
+  it. This is why an agent that only reads still needs watching.</dd>
   <dt>Subagent <span class="alt">/ multi-agent</span></dt>
   <dd>An agent that spawns other agents to work in parallel and reports back. More
   throughput, and correspondingly more places for an error to hide.</dd>
@@ -343,7 +359,7 @@ Everything below will come up. You do not need to memorise it; skim it now and c
 2. Bring a laptop.
 3. Bring one question you would genuinely want an agent to answer from your own research —
    something real from your own data or your own literature, not a demo question. We will
-   try some of them live.
+   try some of them live, and decide together what is safe to put in before anything runs.
 
 You are not expected to have used any of this before. The point of the seminar is to look
 carefully at what these systems actually do, together, with our own work as the test case.
