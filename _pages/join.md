@@ -31,6 +31,8 @@ recruiting:
   .join-card[open] .join-chevron{transform:rotate(45deg)}
   .join-body{padding:0 1.15rem 1.1rem;line-height:1.65}
   .join-body p:last-child{margin-bottom:0}
+  .join-photo{margin:2.6rem 0 0}
+  .join-photo img{border-radius:10px;display:block;width:100%;height:auto}
 </style>
 
 We're always looking for collaborators. Cornell offers a stimulating intellectual environment nestled in the natural beauty of the Finger Lakes region of upstate New York. The lab launched in July 2025 within Cornell's [Department of Ecology & Evolutionary Biology](https://ecologyandevolution.cornell.edu/), and works on how populations respond to novel environments across space and time — using a mix of plants, insects, and microbes and a combination of empirical and theoretical approaches.
@@ -95,5 +97,11 @@ We're always looking for collaborators. Cornell offers a stimulating intellectua
   <a href="mailto:jbenning@cornell.edu">John</a> with a CV and a short note on what you're interested in.</p>
   </div>
   </details>
+
+</div>
+
+<div class="join-photo">
+
+{% include figure.liquid path="assets/img/gallery/finger-lakes-gorge.jpg" zoomable=true sizes="(min-width:768px) 60vw, 95vw" alt="A tiered waterfall spilling over shale ledges into a clear green plunge pool, in a wooded Finger Lakes gorge" %}
 
 </div>
