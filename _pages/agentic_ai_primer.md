@@ -4,6 +4,7 @@ permalink: /teaching/agentic-ai/primer/
 title: what is an agent?
 description: A primer for BIOEE 7600-103 — no background assumed
 nav: false
+icon: ai-eeb.png
 ---
 
 <style>
