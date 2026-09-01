@@ -1,0 +1,316 @@
+---
+layout: page
+permalink: /teaching/agentic-ai/primer/
+title: what is an agent?
+description: A primer for BIOEE 7600-103 — no background assumed
+nav: false
+---
+
+<style>
+  .pr-lede{font-size:1.05rem;line-height:1.7;border-left:4px solid var(--global-theme-color);padding:.1rem 0 .1rem 1.1rem;margin:0 0 2rem}
+  .pr-rungs{list-style:none;padding:0;margin:1.4rem 0 0;counter-reset:rung}
+  .pr-rung{position:relative;border:1px solid var(--global-divider-color);border-radius:12px;background:var(--global-card-bg-color);padding:1rem 1.2rem 1.05rem 3.4rem;margin:0 0 .7rem}
+  .pr-rung::before{counter-increment:rung;content:counter(rung);position:absolute;left:1.1rem;top:1rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--global-theme-color);color:#fff;font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .pr-rung h3{margin:0 0 .3rem;font-size:1.05rem;line-height:1.3}
+  .pr-rung p{margin:.45rem 0 0;line-height:1.6}
+  .pr-rung .ex{display:block;margin-top:.6rem;padding:.6rem .8rem;border-radius:8px;background:var(--global-bg-color);border:1px solid var(--global-divider-color);font-size:.92rem;line-height:1.55}
+  .pr-rung .ex b{color:var(--global-theme-color);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+  .pr-fig{border:1px solid var(--global-divider-color);border-radius:12px;background:var(--global-card-bg-color);padding:1.3rem;margin:1.6rem 0;overflow-x:auto}
+  .pr-fig svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  .pr-cap{color:var(--global-text-color-light);font-size:.87rem;line-height:1.55;margin:.9rem 0 0}
+  .pr-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.4rem 0 0}
+  .pr-card{border:1px solid var(--global-divider-color);border-radius:12px;background:var(--global-card-bg-color);padding:1rem 1.2rem}
+  .pr-card h3{margin:0 0 .5rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--global-text-color-light)}
+  .pr-card.good h3{color:var(--global-theme-color)}
+  .pr-card ul{margin:0;padding-left:1.1rem}
+  .pr-card li{margin:.35rem 0;line-height:1.55}
+  .pr-vocab{margin:1.2rem 0 0}
+  .pr-vocab dt{font-weight:700;margin:1rem 0 .1rem;line-height:1.4}
+  .pr-vocab dt:first-of-type{margin-top:0}
+  .pr-vocab dd{margin:0;line-height:1.6;color:var(--global-text-color)}
+  .pr-vocab .alt{color:var(--global-text-color-light);font-weight:400;font-size:.9rem}
+  .pr-grp{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--global-theme-color);margin:2rem 0 .8rem;padding-bottom:.35rem;border-bottom:1px solid var(--global-divider-color)}
+  .pr-grp:first-of-type{margin-top:1.2rem}
+  .pr-note{border:1px solid var(--global-divider-color);border-left:4px solid var(--global-theme-color);border-radius:10px;background:var(--global-card-bg-color);padding:.9rem 1.1rem;margin:1.6rem 0;line-height:1.6}
+  .post h2{margin-top:2.8rem}
+  .pr-back{display:inline-block;font-size:.9rem;margin-bottom:1.4rem}
+</style>
+
+<a class="pr-back" href="{{ '/teaching/agentic-ai/' | relative_url }}">← back to the course page</a>
+
+<p class="pr-lede">This is the ten-minute version of everything the seminar assumes. If you have never
+used an AI agent, or have used one without being sure what made it an agent, start here.
+No computer-science background is needed and none is assumed.</p>
+
+## The short version
+
+A **large language model** predicts text. That is the whole of what it does. Give it some
+words and it produces the words that plausibly follow, one piece at a time, based on
+patterns in an enormous amount of training text.
+
+An **agent** is that same model placed in a loop, handed a set of tools it can actually
+operate — a shell, a web browser, a Python interpreter, your file system — and given a goal
+rather than a question. It decides what to do, does it, looks at the result, and decides
+what to do next, repeating until it thinks it is finished or you stop it.
+
+Everything interesting and everything alarming follows from that one change: the model
+stopped producing sentences about the world and started taking actions in it.
+
+## Four rungs
+
+The word "AI" now covers systems that differ enormously in what they can do to your data.
+It helps to see them as a ladder. The same task runs through all four.
+
+<ul class="pr-rungs">
+  <li class="pr-rung">
+    <h3>A language model</h3>
+    <p>Text in, text out. It has no memory between uses, no access to anything, and no way
+    to check whether what it said is true. It is not looking anything up; it is producing
+    what sounds right.</p>
+    <span class="ex"><b>Our task</b>You ask it which herbarium records exist for your study
+    species. It produces a confident, well-formatted list of records. Some of them do not
+    exist. It has no way to know that and no way to tell you.</span>
+  </li>
+  <li class="pr-rung">
+    <h3>A chatbot</h3>
+    <p>The same model wrapped in a conversation, so it remembers what you said earlier in
+    the session and has been trained to be helpful and to follow instructions. Still no
+    access to the world. This is what most people mean by "AI" and it is one rung up from
+    nothing.</p>
+    <span class="ex"><b>Our task</b>You can now refine across turns — "only Californian
+    records," "only after 1980." The answers get more responsive to you. They are not any
+    more likely to be true.</span>
+  </li>
+  <li class="pr-rung">
+    <h3>A model with tools</h3>
+    <p>Now it can call things: search the web, run a snippet of code, query a database.
+    Crucially, it can bring real results back into its own context and use them. This is
+    the rung where output can start being checkable, because there is now something outside
+    the model that produced it.</p>
+    <span class="ex"><b>Our task</b>It queries GBIF directly and returns records that
+    actually exist, because it fetched them. You can click through and verify. But you are
+    still driving: one request, one answer.</span>
+  </li>
+  <li class="pr-rung">
+    <h3>An agent</h3>
+    <p>You give it a goal instead of an instruction, and it plans its own route. It chooses
+    which tools to use and in what order, runs them, reads what came back, notices problems,
+    and tries again. It may take fifty actions before it says anything to you. That
+    stretch of unsupervised action is the thing that makes it an agent.</p>
+    <span class="ex"><b>Our task</b>"Get the occurrence records for this species, clean them,
+    and fit a climate model." It pulls the records, writes a script to drop records at
+    (0, 0) and in the ocean, notices the coordinate system is inconsistent, fixes that,
+    downloads climate layers, fits the model, and hands you a map. Twenty minutes, no
+    input from you. Now: which of those decisions would you have made differently, and how
+    would you know?</span>
+  </li>
+</ul>
+
+## The loop
+
+Every agent, whatever it is called and whoever built it, is running the same cycle.
+
+<div class="pr-fig">
+<svg viewBox="0 0 640 250" role="img" aria-label="The agent loop: goal feeds into a repeating cycle of plan, act, observe, and judge, which exits to a result.">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1.6" opacity=".75" marker-end="url(#ar)">
+    <path d="M 96 125 H 150"/>
+    <path d="M 258 100 A 90 90 0 0 1 382 100"/>
+    <path d="M 400 150 A 90 90 0 0 1 300 196"/>
+    <path d="M 250 190 A 90 90 0 0 1 190 152"/>
+    <path d="M 490 125 H 546"/>
+  </g>
+  <g font-size="13" font-weight="700" text-anchor="middle" fill="currentColor">
+    <rect x="8" y="106" width="88" height="38" rx="8" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".55"/>
+    <text x="52" y="130">your goal</text>
+    <rect x="548" y="106" width="86" height="38" rx="8" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".55"/>
+    <text x="591" y="130">a result</text>
+  </g>
+  <g text-anchor="middle">
+    <circle cx="212" cy="90" r="46" fill="var(--global-card-bg-color)" stroke="var(--global-theme-color)" stroke-width="1.8"/>
+    <circle cx="428" cy="90" r="46" fill="var(--global-card-bg-color)" stroke="var(--global-theme-color)" stroke-width="1.8"/>
+    <circle cx="428" cy="196" r="46" fill="var(--global-card-bg-color)" stroke="var(--global-theme-color)" stroke-width="1.8"/>
+    <circle cx="212" cy="196" r="46" fill="var(--global-card-bg-color)" stroke="var(--global-theme-color)" stroke-width="1.8"/>
+    <g font-size="14" font-weight="700" fill="currentColor">
+      <text x="212" y="88">plan</text><text x="428" y="88">act</text>
+      <text x="428" y="194">observe</text><text x="212" y="194">judge</text>
+    </g>
+    <g font-size="10.5" fill="currentColor" opacity=".7">
+      <text x="212" y="104">what next?</text><text x="428" y="104">run the tool</text>
+      <text x="428" y="210">read output</text><text x="212" y="210">good enough?</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<p class="pr-cap"><b>Plan</b> — decide the next step toward the goal. <b>Act</b> — call a tool:
+run code, query an API, edit a file. <b>Observe</b> — read what came back, including errors.
+<b>Judge</b> — decide whether that worked and whether the goal is met. If not, loop.
+The number of times round this loop before it reports back to you is the amount of autonomy
+you have granted it.</p>
+
+The interesting failures live in **judge**. Plan, act, and observe are largely mechanical.
+Judging whether a result is scientifically acceptable is the step that requires knowing what
+a right answer would look like, and it is the step agents are worst at. When there is a
+clear pass/fail criterion — the tests pass, the file parses — agents iterate well. When the
+criterion is "does this look reasonable," they will often decide that it does.
+
+## What they are good and bad at
+
+This is not speculation. In one careful study, coding agents were given the stages of a real
+neuroscience analysis pipeline and scored against the standards of the scientists who
+originally built it.
+
+<div class="pr-two">
+  <div class="pr-card good">
+    <h3>Reliably good at</h3>
+    <ul>
+      <li>Well-specified stages with a checkable criterion</li>
+      <li>Writing and debugging code against a test</li>
+      <li>Mechanical transformation: reformatting, reshaping, converting</li>
+      <li>Reading and extracting from large volumes of text</li>
+      <li>Doing all of the above much faster than you</li>
+    </ul>
+  </div>
+  <div class="pr-card">
+    <h3>Reliably bad at</h3>
+    <ul>
+      <li>Deciding whether their own output is scientifically sound</li>
+      <li>Sustained visual reasoning — they will plot a result, look at it, and miss an obvious problem</li>
+      <li>Stringing many stages together without drift</li>
+      <li>Saying "I don't know" instead of producing something</li>
+      <li>Knowing when a task needed judgement they do not have</li>
+    </ul>
+  </div>
+</div>
+
+<p class="pr-cap">Two patterns from that study are worth carrying into every session. Stages the
+agents solved perfectly in isolation broke once composed into a full pipeline. And when the
+authors classified every occasion an agent looked at a plot of its own output, the times it
+misread or explained away a real problem outnumbered the times it caught one — on every
+single task.</p>
+
+## Why "it acts" changes everything
+
+A chatbot that is wrong produces a wrong sentence, and you are the last line of defence
+before it becomes a wrong claim. That is a familiar risk and we already have habits for it.
+
+An agent that is wrong has already run the code, already rewritten the file, already sent
+the query. The error is not in a draft you are reviewing; it is in your data directory. Three
+consequences follow, and the seminar returns to them all term:
+
+**Errors become silent.** A hallucinated citation is visible if you look. A dropped subset of
+rows during a merge is not, and neither is a coordinate system quietly reprojected. The
+agent will report success either way, because from inside the loop it succeeded.
+
+**Provenance evaporates.** The agent made forty decisions to produce that file. Unless
+something recorded them, neither you nor a reviewer nor future-you can reconstruct what was
+done. This is a reproducibility problem before it is anything else.
+
+**Speed removes the pause.** The friction of doing analysis by hand is also the occasion on
+which you notice things. Removing the work removes the noticing, unless you deliberately put
+the noticing back.
+
+<div class="pr-note">
+<b>The one rule this course adds.</b> Everything else about responsible AI use in research
+follows the standards you already know: you are accountable for your work regardless of the
+tools you used, and you never paste unpublished data or personal information into a free
+external tool. Because agents act, we add one more: <b>gate every irreversible action —
+delete, overwrite, submit, send — behind human confirmation.</b> An agent should be able to
+propose deleting something. It should not be able to delete it.
+</div>
+
+## Vocabulary
+
+Everything below will come up. You do not need to memorise it; skim it now and come back.
+
+<div class="pr-grp">The model itself</div>
+<dl class="pr-vocab">
+  <dt>Large language model <span class="alt">(LLM)</span></dt>
+  <dd>A model trained on very large amounts of text to predict what comes next. Everything
+  else here is built on top of one.</dd>
+  <dt>Token</dt>
+  <dd>The unit a model reads and writes — roughly a short word or word-fragment. Everything
+  is counted, priced, and limited in tokens.</dd>
+  <dt>Context window</dt>
+  <dd>How much the model can hold in mind at once, in tokens. Anything outside it may as
+  well not exist. Long agent sessions can fill it, which is when behaviour gets strange.</dd>
+  <dt>Prompt</dt>
+  <dd>What you send it. <b>System prompt</b> is the standing instruction set the tool's
+  builders wrote, which you usually cannot see.</dd>
+  <dt>Hallucination</dt>
+  <dd>Fluent, confident, false. Not a bug that will be patched — a direct consequence of a
+  system that generates plausible continuations rather than retrieving facts.</dd>
+  <dt>Nondeterminism</dt>
+  <dd>The same prompt can give different answers on different runs. This is why "I ran it
+  again and it was fine" is not evidence, and why reproducibility is genuinely hard here.</dd>
+  <dt>Reasoning model <span class="alt">/ extended thinking</span></dt>
+  <dd>A model that generates a long internal working-out before answering. Better on hard
+  problems, slower, more expensive. The visible "thinking" is not a reliable account of what
+  actually determined the answer.</dd>
+</dl>
+
+<div class="pr-grp">What makes it an agent</div>
+<dl class="pr-vocab">
+  <dt>Tool <span class="alt">/ tool call / function calling</span></dt>
+  <dd>Something outside the model it can invoke — run a shell command, execute Python, fetch
+  a URL, query a database. The bridge between generating text and doing things.</dd>
+  <dt>Agent</dt>
+  <dd>A model given tools and permission to loop: plan, act, observe, judge, repeat, until
+  it decides it is done. The autonomy is the definition.</dd>
+  <dt>Workflow <span class="alt">(as opposed to an agent)</span></dt>
+  <dd>A fixed sequence of steps you wrote, that happens to call a model at points. Far more
+  predictable. Most tasks that people build agents for are better served by a workflow, and
+  knowing which you need is a real skill.</dd>
+  <dt>Autonomy <span class="alt">/ permission gating</span></dt>
+  <dd>How many actions it may take before checking with you, and which actions require your
+  say-so. The single most important setting in any agent tool.</dd>
+  <dt>Memory</dt>
+  <dd>What persists after the context window or the session ends — usually notes the agent
+  writes to a file and reads back later.</dd>
+  <dt>MCP <span class="alt">(Model Context Protocol)</span></dt>
+  <dd>A common standard for plugging tools and data sources into an agent, so the same
+  connector works across different assistants.</dd>
+  <dt>Subagent <span class="alt">/ multi-agent</span></dt>
+  <dd>An agent that spawns other agents to work in parallel and reports back. More
+  throughput, and correspondingly more places for an error to hide.</dd>
+</dl>
+
+<div class="pr-grp">Making it more reliable</div>
+<dl class="pr-vocab">
+  <dt>Retrieval-augmented generation <span class="alt">(RAG)</span></dt>
+  <dd>Fetch relevant real documents first, then have the model answer using them. Reduces
+  fabrication because the answer is anchored to retrieved text — it does not eliminate it.</dd>
+  <dt>Fine-tuning</dt>
+  <dd>Further training of an existing model on your own specialised data. Expensive, and
+  usually not the answer; a better prompt or retrieval normally is.</dd>
+  <dt>Human in the loop</dt>
+  <dd>A person deliberately placed at a checkpoint to review or approve before the process
+  continues. Only meaningful if the person has enough information to actually judge.</dd>
+  <dt>Benchmark <span class="alt">/ eval</span></dt>
+  <dd>A standard task set used to score models. Treat published scores the way you would
+  treat a p-value from an analysis you did not see: informative, and not the same as the
+  thing you care about.</dd>
+  <dt>Out-of-distribution</dt>
+  <dd>Input unlike anything in training. Model performance falls off, often without any
+  corresponding drop in confidence. Your specific study system is more likely to be here
+  than you think.</dd>
+</dl>
+
+## Before Friday
+
+1. Skim the Week 1 readings on the [course page]({{ '/teaching/agentic-ai/' | relative_url }}).
+   The skim instructions are there for a reason; do not read them all in full.
+2. Bring a laptop.
+3. Bring one question you would genuinely want an agent to answer from your own research —
+   something real from your own data or your own literature, not a demo question. We will
+   try some of them live.
+
+You are not expected to have used any of this before. The point of the seminar is to look
+carefully at what these systems actually do, together, with our own work as the test case.
+
+<a class="pr-back" href="{{ '/teaching/agentic-ai/' | relative_url }}">← back to the course page</a>

@@ -10,8 +10,9 @@ current_week: 1
 
 announcement: >
   First meeting is <strong>Friday, September 4</strong>, 12:20–1:10 pm in Comstock B104.
-  Bring a laptop. Seats are by instructor consent and there are still some left — email
-  either of us.
+  Bring a laptop. New to agentic AI? Start with the ten-minute primer,
+  <a href="/teaching/agentic-ai/primer/">what is an agent?</a> — no background assumed.
+  Seats are by instructor consent and there are still some left — email either of us.
 
 schedule:
   - week: 1
