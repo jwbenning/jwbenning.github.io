@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- After Darwin's first evolutionary tree, Notebook B p.36 (1837). Public domain.
+       Simplified to the sketch's signature: a long vertical trunk, wide splayed side
+       branches, and a short perpendicular crossbar capping every tip. -->
+  <style>
+    .ink { stroke: #b509ac; }
+    @media (prefers-color-scheme: dark) { .ink { stroke: #2698ba; } }
+  </style>
+  <g class="ink" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="7" d="M50 97 L50 17"/>
+    <path stroke-width="6" d="M50 67 L80 59"/>
+    <path stroke-width="6" d="M50 51 L19 45"/>
+    <path stroke-width="6" d="M50 35 L29 26"/>
+    <path stroke-width="6" d="M50 30 L73 21"/>
+    <path stroke-width="5.5" d="M41 17 L59 17"/>
+    <path stroke-width="5.5" d="M80 51 L80 67"/>
+    <path stroke-width="5.5" d="M19 37 L19 53"/>
+    <path stroke-width="5.5" d="M23 20 L35 32"/>
+    <path stroke-width="5.5" d="M79 15 L67 27"/>
+  </g>
+</svg>
