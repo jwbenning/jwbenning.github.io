@@ -81,6 +81,7 @@ schedule:
       research. We will try a few of them live.
 
   - week: 2
+    date: 2026-09-11
     part: The research data lifecycle
     theme: Agentic coding & data analysis
     framing: >
@@ -88,6 +89,7 @@ schedule:
       either — especially if you told it what you were hoping to find?
 
   - week: 3
+    date: 2026-09-18
     part: The research data lifecycle
     theme: Agentic data exploration, compilation & archiving
     framing: >
@@ -96,6 +98,7 @@ schedule:
       what it did?
 
   - week: 4
+    date: 2026-09-25
     part: Literature synthesis & writing
     theme: Agentic literature synthesis
     framing: >
@@ -103,6 +106,7 @@ schedule:
       literature — and where does it quietly corrupt the record?
 
   - week: 5
+    date: 2026-10-02
     part: Literature synthesis & writing
     theme: Agentic scientific writing
     framing: >
@@ -110,6 +114,7 @@ schedule:
       writing in a second language — and where does it cross into misrepresentation?
 
   - week: 6
+    date: 2026-10-09
     part: Lab management, teaching & training
     theme: Project & lab management and automation
     framing: >
@@ -117,6 +122,7 @@ schedule:
       under direct human control?
 
   - week: 7
+    date: 2026-10-16
     part: Lab management, teaching & training
     theme: Teaching, mentoring & implications for graduate training
     framing: >
@@ -124,6 +130,7 @@ schedule:
       and does leaning on agents accelerate skill-building or quietly prevent it?
 
   - week: 8
+    date: 2026-10-23
     part: Costs, ethics & governance
     theme: Costs, ethics & accountability of agentic AI
     framing: >
@@ -132,6 +139,7 @@ schedule:
       system errs, who is accountable?
 
   - week: 9
+    date: 2026-10-30
     part: Costs, ethics & governance
     theme: Formulating an EEB community guideline
     framing: >
