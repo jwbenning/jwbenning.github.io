@@ -40,6 +40,13 @@ nav: false
   li > .fnote{margin:.3rem 0 .55rem}
   .post h2{margin-top:2.6rem}
   .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--global-divider-color);border-radius:999px;padding:.06rem .45rem;color:var(--global-text-color-light);margin-left:.35rem;vertical-align:.1em}
+  .tag.is-assigned{border-color:var(--global-theme-color);color:var(--global-theme-color);font-weight:700}
+  .ai-filters{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.1rem 0 .3rem}
+  .ai-f{font:inherit;font-size:.72rem;font-weight:600;letter-spacing:.03em;cursor:pointer;border:1px solid var(--global-divider-color);background:var(--global-card-bg-color);color:var(--global-text-color-light);border-radius:999px;padding:.2rem .7rem}
+  .ai-f:hover{border-color:var(--global-theme-color);color:var(--global-theme-color)}
+  .ai-f.is-on{background:var(--global-theme-color);border-color:var(--global-theme-color);color:#fff}
+  .ai-feed li[hidden]{display:none}
+  .ai-empty{color:var(--global-text-color-light);padding:.9rem 0}
 </style>
 
 <span class="ai-live"><span class="dot"></span>Live page — updated through the semester</span>
@@ -85,7 +92,7 @@ demos but isn't required. **Bring a laptop.**
     <p><span class="ai-lbl">Read before class</span></p>
     <ul>
       {% for r in now.readings %}
-        <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% if r.tag %}<span class="tag">{{ r.tag }}</span>{% endif %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
+        <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
       {% endfor %}
     </ul>
   {% endif %}
@@ -113,7 +120,7 @@ readings, and demo.
         <p><span class="ai-lbl">Readings</span></p>
         <ul>
           {% for r in w.readings %}
-            <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% if r.tag %}<span class="tag">{{ r.tag }}</span>{% endif %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
+            <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
           {% endfor %}
         </ul>
       {% endif %}
@@ -125,17 +132,62 @@ readings, and demo.
 
 ## Reading room
 
-Things worth reading, added as we find them. Newest first — not all of it is assigned.
+Everything worth reading, assigned or not, added as we find it. Assigned items carry the
+week they belong to; filter by topic to find the rest.
 
-<ul class="ai-feed">
+{% assign alltags = "" | split: "" %}
+{% for w in c.schedule %}{% for r in w.readings %}{% if r.tags %}{% assign alltags = alltags | concat: r.tags %}{% endif %}{% endfor %}{% endfor %}
+{% for l in c.links %}{% if l.tags %}{% assign alltags = alltags | concat: l.tags %}{% endif %}{% endfor %}
+{% assign alltags = alltags | uniq | sort_natural %}
+
+<div class="ai-filters" id="aiFilters">
+  <button type="button" class="ai-f is-on" data-f="all">all</button>
+  <button type="button" class="ai-f" data-f="assigned">assigned</button>
+  {% for t in alltags %}<button type="button" class="ai-f" data-f="{{ t }}">{{ t }}</button>{% endfor %}
+</div>
+
+<ul class="ai-feed" id="aiFeed">
+{% for w in c.schedule %}{% for r in w.readings %}
+  <li data-tags="assigned {{ r.tags | join: ' ' }}">
+    <a href="{{ r.url }}">{{ r.title }}</a><span class="tag is-assigned">week {{ w.week }}</span>{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+    {% if r.source %}<br><span class="src">{{ r.source }}</span>{% endif %}
+    {% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}
+  </li>
+{% endfor %}{% endfor %}
 {% for l in c.links %}
-  <li>
-    <a href="{{ l.url }}">{{ l.title }}</a>{% if l.tag %}<span class="tag">{{ l.tag }}</span>{% endif %}
+  <li data-tags="{{ l.tags | join: ' ' }}">
+    <a href="{{ l.url }}">{{ l.title }}</a>{% for t in l.tags %}<span class="tag">{{ t }}</span>{% endfor %}
     {% if l.source %}<br><span class="src">{{ l.source }}</span>{% endif %}
     {% if l.note %}<span class="fnote">{{ l.note }}</span>{% endif %}
   </li>
 {% endfor %}
 </ul>
+
+<p class="ai-empty" id="aiEmpty" hidden>Nothing tagged that yet.</p>
+
+<script>
+  (function () {
+    var box = document.getElementById("aiFilters");
+    if (!box) return;
+    var items = Array.prototype.slice.call(document.querySelectorAll("#aiFeed > li"));
+    var empty = document.getElementById("aiEmpty");
+    box.addEventListener("click", function (e) {
+      var btn = e.target.closest(".ai-f");
+      if (!btn) return;
+      var f = btn.dataset.f;
+      var shown = 0;
+      Array.prototype.forEach.call(box.children, function (b) {
+        b.classList.toggle("is-on", b === btn);
+      });
+      items.forEach(function (li) {
+        var on = f === "all" || (" " + li.dataset.tags + " ").indexOf(" " + f + " ") > -1;
+        li.hidden = !on;
+        if (on) shown++;
+      });
+      empty.hidden = shown > 0;
+    });
+  })();
+</script>
 
 ## How each session works
 

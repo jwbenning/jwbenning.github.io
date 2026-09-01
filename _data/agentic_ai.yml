@@ -30,14 +30,14 @@ schedule:
       - title: "Building effective agents"
         source: Anthropic, December 2024
         url: https://www.anthropic.com/engineering/building-effective-agents
-        tag: intro
+        tags: [foundations]
         note: >
           What an agent actually is, and the case for not building one. Skim the
           patterns; the workflow-versus-agent distinction is the part that matters.
       - title: "A new Moore's Law for AI agents"
         source: AI Digest
         url: https://theaidigest.org/time-horizons
-        tag: intro
+        tags: [foundations, evaluation]
         note: >
           Five minutes. How long a task an agent can finish on its own, plotted over
           time. Then check its headline number against METR's own January re-fit — the
@@ -46,7 +46,7 @@ schedule:
       - title: "The Dark Night of Mathematics"
         source: Kirwin Hampshire, July 2026
         url: https://kirwinhampshire.substack.com/p/the-dark-night-of-mathematics
-        tag: debate
+        tags: [debate]
         note: >
           A pure-mathematics PhD student on what it feels like when the machine gets
           there first. Mathematics is the field furthest down this road; read it as a
@@ -54,7 +54,7 @@ schedule:
       - title: "A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis"
         source: Xu, Ren, Wang et al. 2025, Nature Medicine — abstract and figures
         url: https://doi.org/10.1038/s41591-025-03743-2
-        tag: intro
+        tags: [application]
         note: >
           The strongest positive case on the table: an AI-found target and an
           AI-designed molecule, a dose-dependent lung-function signal in 71 patients,
@@ -63,7 +63,7 @@ schedule:
       - title: "Machines of Loving Grace — §1, Biology and health"
         source: Dario Amodei, October 2024 — section 1 only
         url: https://darioamodei.com/essay/machines-of-loving-grace
-        tag: debate
+        tags: [debate]
         note: >
           The optimist case at full strength: 50 to 100 years of biological progress
           compressed into 5 to 10. Read the section opening and the list of expected
@@ -71,7 +71,7 @@ schedule:
       - title: "No, Dario Amodei, we will not be curing cancer and most human disease"
         source: Gary Marcus, August 2026
         url: https://garymarcus.substack.com/p/no-dario-amodei-we-will-not-be-curing
-        tag: debate
+        tags: [debate]
         note: >
           The rebuttal, three weeks old, with Topol, Pachter, Robison and others on the
           record — and the argument that clinical timelines, not intelligence, are the
@@ -91,7 +91,7 @@ schedule:
       - title: "A case study of evaluating AI agents on a neuroscience data-to-discovery pipeline"
         source: Horstmann, Lin, Robie, Sun & Branson 2026, COLM (arXiv:2606.07718)
         url: https://arxiv.org/abs/2606.07718
-        tag: EEB
+        tags: [evaluation, application]
         note: >
           The closest thing yet to this course, done as research. Coding agents turned
           loose on a real fly-optogenetics pipeline and scored stage by stage against
@@ -168,7 +168,7 @@ links:
     title: "The Hugging Face hack is a PR crisis that's costing OpenAI millions"
     source: Fortune, August 2026
     url: https://fortune.com/2026/08/07/the-hugging-face-hack-is-now-a-pr-crisis-thats-costing-openai-millions/
-    tag: debate
+    tags: [security]
     note: >
       An agent given a goal routed around the barriers meant to contain it, and four
       other services turned out to have been breached too. No attacker anywhere in the
@@ -178,7 +178,7 @@ links:
     title: "The Hugging Face incident exposes the wrong AI security debate"
     source: Shlomo Kramer in Fortune, August 2026
     url: https://fortune.com/2026/08/07/shlomo-kramer-cato-godfather-of-cyber-hugging-face-hack/
-    tag: debate
+    tags: [security, debate]
     note: >
       The counterpoint: a human insider threat unfolds over weeks and leaves a pattern;
       an agent takes thousands of actions before anyone notices.
@@ -187,7 +187,7 @@ links:
     title: "Emerging applications of large language models in ecology and conservation science"
     source: Mammides et al. 2026, Conservation Biology (open access)
     url: https://doi.org/10.1111/cobi.70287
-    tag: EEB
+    tags: [EEB, application, ethics]
     note: >
       Our own literature, finally. A review by conservation scientists covering data
       extraction, evidence synthesis, monitoring and coding, with a long and honest
@@ -199,7 +199,7 @@ links:
     title: "Large language model agents for biological intelligence"
     source: Dip et al. 2026, Briefings in Bioinformatics (open access)
     url: https://doi.org/10.1093/bib/bbag110
-    tag: debate
+    tags: [application, evaluation]
     note: >
       A survey that takes agentic behaviour itself as the unit of analysis across
       genomics, proteomics, spatial biology and biomedicine. Its verdict is the useful
@@ -210,7 +210,7 @@ links:
     title: "The End of Mathematics"
     source: Daniel Litt, August 2026
     url: https://www.daniellitt.com/blog/2026/8/11/the-end-of-mathematics/
-    tag: debate
+    tags: [debate]
     note: >
       The institutional version of Hampshire's essay: a field that keeps rewarding
       papers while the machines write them, stops training anyone, and quietly dies.
@@ -219,7 +219,7 @@ links:
     title: "The AI revolution in math has arrived"
     source: Quanta Magazine, April 2026
     url: https://www.quantamagazine.org/the-ai-revolution-in-math-has-arrived-20260413/
-    tag: debate
+    tags: [debate]
     note: >
       Free to read, and calibrated: real verified results alongside Tao on "scattered
       successes among a big sea of unreported failures."
@@ -228,52 +228,52 @@ links:
     title: "Agentic AI, explained"
     source: MIT Sloan Ideas Made to Matter
     url: https://mitsloan.mit.edu/ideas-made-to-matter/agentic-ai-explained
-    tag: intro
+    tags: [foundations]
     note: A plain-language explainer if the Anthropic piece assumes too much.
 
   - date: 2026-08-31
     title: "Mathematicians are developing rules for AI use — other fields should follow"
     source: Nature news
     url: https://www.nature.com/articles/d41586-026-01881-2
-    tag: debate
+    tags: [policy, debate]
     note: A worked example of another discipline doing exactly what we will attempt in Week 9.
 
   - date: 2026-08-31
     title: "Ten simple rules for using large language models in science, version 1.0"
     source: Smith et al. 2024, PLOS Computational Biology
     url: https://doi.org/10.1371/journal.pcbi.1011767
-    tag: EEB
+    tags: [EEB, policy]
     note: Written by ecologists. The closest thing we have to a starting point for our own guideline.
 
   - date: 2026-08-31
     title: "Fabrication and errors in the bibliographic citations generated by ChatGPT"
     source: Walters & Wilder 2023, Scientific Reports
     url: https://doi.org/10.1038/s41598-023-41032-5
-    tag: debate
+    tags: [evaluation, reproducibility]
     note: The evidence behind the course rule that an agent may draft, but only a human may cite.
 
   - date: 2026-08-31
     title: "Generative AI's environmental costs are soaring — and mostly secret"
     source: Crawford 2024, Nature
     url: https://doi.org/10.1038/d41586-024-00478-x
-    tag: debate
+    tags: [ethics]
 
   - date: 2026-08-31
     title: "The FAIR Guiding Principles for scientific data management and stewardship"
     source: Wilkinson et al. 2016, Scientific Data
     url: https://doi.org/10.1038/sdata.2016.18
-    tag: intro
+    tags: [reproducibility]
 
   - date: 2026-08-31
     title: "Deep learning as a tool for ecology and evolution"
     source: Borowiec et al. 2022, Methods in Ecology and Evolution
     url: https://doi.org/10.1111/2041-210X.13901
-    tag: EEB
+    tags: [EEB, foundations]
     note: Background on the domain tools an agent would orchestrate — the substrate, not the agent.
 
   - date: 2026-08-31
     title: "Cornell AI guidelines"
     source: IT@Cornell
     url: https://it.cornell.edu/ai-strategy/ai-guidelines
-    tag: policy
+    tags: [policy]
     note: The data rules we follow in this course. Read the part about what you may not paste into an external tool.
