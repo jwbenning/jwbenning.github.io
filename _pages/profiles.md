@@ -59,8 +59,10 @@ profiles:
     image: pic_you.png
     content: about_you.md
     image_circular: false # crops the image to make it circular
-  # Friends of the lab (no photo)
+  # Friends of the lab (no photo) — alphabetical by last name;
+  # the section heading lives in about_landis.md, so it stays first
   - content: about_landis.md
+  - content: about_siegmund.md
   # Lab alumni (no photo)
   - content: about_cohen.md
 ---
