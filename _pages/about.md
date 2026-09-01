@@ -27,11 +27,16 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
+<style>
+  /* The subtitle sits tight under the lab name; give the first section heading room. */
+  .post > article > .clearfix > h2:first-of-type { margin-top: 2.2rem; }
+</style>
+
 ## Evolutionary ecology & ecological genetics
 
 Our research group seeks to understand the interplay between evolutionary processes and ecological patterns. We work on questions like
-- how important are biotic interactions for constraining species' geographic distributions?
 - how does gene flow through space and time mediate adaptation?
+- how important are biotic interactions for constraining species' geographic distributions?
 - how do environmental gradients influence biological invasions?
 - how does temporal environmental variation alter evolutionary trajectories and the spread of populations across space?
 

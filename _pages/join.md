@@ -53,7 +53,7 @@ We're always looking for collaborators. Cornell offers a stimulating intellectua
       <span class="join-chevron"></span>
     </summary>
     <div class="join-body">
-  <p><strong>We will be recruiting a PhD student to start Fall 2027.</strong></p>
+  <p><strong>We are recruiting a PhD student to start Fall 2027.</strong></p>
   <p>If you're interested in joining the Benning Lab as a PhD student at Cornell, please fill out
   <a href="https://docs.google.com/forms/d/e/1FAIpQLScAYiXx9ZPS7TAvKs_pKGzmY8JL5HUe_CyiBX6yCBLEmhXeAg/viewform?usp=header">this short form</a>
   to share some information about your background and your motivation for joining the lab.</p>
