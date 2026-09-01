@@ -87,6 +87,23 @@ schedule:
     framing: >
       The agent wrote the code and found a significant effect. Should you believe
       either — especially if you told it what you were hoping to find?
+    readings:
+      - title: "A case study of evaluating AI agents on a neuroscience data-to-discovery pipeline"
+        source: Horstmann, Lin, Robie, Sun & Branson 2026, COLM (arXiv:2606.07718)
+        url: https://arxiv.org/abs/2606.07718
+        tag: EEB
+        note: >
+          The closest thing yet to this course, done as research. Coding agents turned
+          loose on a real fly-optogenetics pipeline and scored stage by stage against
+          the criteria the scientists who built it actually use. Read the abstract,
+          Figure 2 for the seven stages and what counted as passing each, Table 1 for
+          who passed what, then section 4.2. Two stages were solved by every agent;
+          body tracking was failed by every agent in every trial; and stages solved in
+          isolation fell over once composed end to end. Come ready to argue about the
+          visualization audit — the authors classified every episode in which an agent
+          looked at a plot of its own output, and failures outnumbered fixes on every
+          single task. Run on Opus 4.6 and GPT-5.4, so "not yet" here is not a stale
+          result about last year's models.
 
   - week: 3
     date: 2026-09-18
@@ -165,17 +182,6 @@ links:
     note: >
       The counterpoint: a human insider threat unfolds over weeks and leaves a pattern;
       an agent takes thousands of actions before anyone notices.
-
-  - date: 2026-08-31
-    title: "A case study of evaluating AI agents on a neuroscience data-to-discovery pipeline"
-    source: Horstmann, Lin, Robie, Sun & Branson 2026, COLM (arXiv:2606.07718)
-    url: https://arxiv.org/abs/2606.07718
-    tag: EEB
-    note: >
-      The closest thing yet to this course, done as research: coding agents turned loose
-      on a real fly-optogenetics pipeline, audited stage by stage. They cleared several
-      stages and could not finish end to end, failing hardest exactly where there was no
-      predefined criterion and scientific judgement was required.
 
   - date: 2026-08-31
     title: "Emerging applications of large language models in ecology and conservation science"
