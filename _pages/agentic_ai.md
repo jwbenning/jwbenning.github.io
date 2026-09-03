@@ -76,7 +76,7 @@ icon: ai-eeb.png
 An **agent** is a large language model given tools, memory, and permission to plan and act
 over many steps — cleaning datasets, running analyses, writing and executing code, querying
 databases, monitoring the literature, drafting the outputs. That autonomy is what makes
-agents useful, and what raises the stakes when they go wrong.
+agents useful, and what makes them dangerous.
 
 This seminar is a hands-on and skeptical look at what agents can and can't be trusted to
 do across the research lifecycle. After a first week defining what "agentic" means, most of
@@ -232,7 +232,7 @@ Four rules.
   belongs in a tool whose terms let it keep or train on what you send. Cornell's
   [AI guidelines](https://it.cornell.edu/ai-strategy/ai-guidelines) are helpful here.
 - **Calibrate your bullshit meter.** These models are confidently wrong on a regular basis.
-  Confidence does not track accuracy.
+  Confidence often does not relate to accuracy.
 
 **Gate every irreversible action — delete, overwrite, submit, send — behind human
 confirmation.**
