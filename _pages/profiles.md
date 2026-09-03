@@ -1,7 +1,7 @@
 ---
 layout: profiles
 permalink: /people/
-last_updated: 2026-09-01
+last_updated: 2026-09-03
 title: people
 description:
 nav: true
@@ -11,7 +11,7 @@ profiles:
   # if you want to include more than one profile, just replicate the following block
   # and create one content file for each profile inside _pages/
   - align: right
-    image: jwb_and_boys.jpg
+    image: jwb_family.jpg
     content: about_benning.md
     image_circular: false # crops the image to make it circular
     more_info:
