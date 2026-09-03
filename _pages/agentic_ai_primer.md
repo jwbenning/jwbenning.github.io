@@ -258,6 +258,15 @@ not grow on, and every genuine record scores below it.</p>
 anything that looks wrong. A plausible map, a respectable-looking number, and one lookup
 between you and finding out.</p>
 
+<p><b>4. Then run it on a species you know well.</b> We repeated the whole thing on the
+American robin, to test whether the Clarkia result was just an artefact of a species with a
+tiny range. It was not. With 3,835 robin records across North America, the same recipe put
+its best habitat in Guatemala, Honduras and the Dominican Republic — 670 to 1,500 km from
+the nearest record in our own dataset — scored Hawaii highly, and scored most of Canada near
+zero. Every real record again fell below the map's maximum. The one thing that did improve
+was the background-points bug, which was specific to the small California box. Pick a
+species whose distribution you would notice being wrong, and bring the map to class.</p>
+
 <p>Your run will differ from ours — different choices, different counts, possibly different
 failures. That is nondeterminism, and it is why a result without its transcript does not
 mean much. We will walk through our scripts, logs and map in Week 1; bring yours.</p>
