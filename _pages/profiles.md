@@ -50,7 +50,7 @@ profiles:
     image_circular: false
     more_info:
   - align: left
-    image: smiley_2.png  # TODO: replace with poplyk.jpg once Emma sends a photo
+    image: poplyk.jpg
     content: about_poplyk.md
     image_circular: false
     more_info:
