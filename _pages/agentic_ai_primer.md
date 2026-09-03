@@ -57,8 +57,8 @@ words you will hear all term. Read it if you have never used one, or have used o
 being sure what made it an agent. No computer science needed.</p>
 
 <p class="pr-cap" style="margin:-1rem 0 2rem">Written by Claude, checked and edited by us.
-We ask you to say what a tool did for you, so: it drafted this page, we cut it down, and the
-herbarium test below we ran ourselves.</p>
+We ask you to say what a tool did for you, so: it drafted this page, we cut it down, and
+every number in the two walkthroughs below comes from a run we did ourselves.</p>
 
 ## The short version
 
@@ -141,7 +141,7 @@ The test: did it go and get something, and did what came back change what it did
 </div>
 
 <details class="pr-more">
-<summary>Run the herbarium test yourself</summary>
+<summary>Try it yourself — rungs 1 and 2, in a chat window</summary>
 <div class="inner">
 
 <p>Ten minutes, and worth it: reading that a model fabricates is different from watching
@@ -183,6 +183,84 @@ changes, and watch what does not.</p>
 
 <p>So: real names, real institutions, real region, invented identifiers. Nothing in the
 output looks wrong, and knowing the system does not help. Only the lookup catches it.</p>
+
+</div>
+</details>
+
+<details class="pr-more">
+<summary>Try it yourself — rungs 3 and 4, with a coding agent</summary>
+<div class="inner">
+
+<p>The walkthrough above needs nothing but a chat window. This one needs Claude Code
+installed; the <a href="{{ '/teaching/agentic-ai/' | relative_url }}#getting-set-up">course
+page</a> has the instructions and takes about ten minutes. If you have never used a tool
+like this, that is the point of doing it: the whole argument of this course is about what
+happens in the stretch where nobody is watching, and you cannot really see that stretch
+from the outside.</p>
+
+<p><b>Getting to a prompt.</b> Make an empty folder somewhere you do not mind it writing
+files. In the app, open the <b>Code</b> tab, click <b>Select folder</b>, and choose it. In
+the terminal, <code>cd</code> into it and type <code>claude</code>. Either way you now have
+a prompt box, and the agent can read and write inside that folder and nowhere else. Keep
+it empty for this, so that everything in it afterwards was put there by the agent.</p>
+
+<p><b>1. Rung 3 — make it fetch.</b> Ask the same question as before, but tell it to go and
+get the answer:</p>
+<pre>Query the GBIF API for preserved herbarium specimens of Clarkia
+xantiana collected before 1980. Show me collector, collection
+number, year, and the GBIF occurrence key for the first ten.</pre>
+
+<p>Watch what it does rather than what it says: it writes a few lines of code, runs them,
+and shows you what came back. Our run got <b>244 specimens</b>, among them L. D. Gottlieb
+7436 (1974, DAV) and Geoffrey Levin 132 (1974, DAV). Every one has an occurrence key that
+opens a real sheet at <code>gbif.org/occurrence/&lt;key&gt;</code>. Click two. That
+click is the difference between this and the four invented records one rung down.</p>
+
+<p><b>2. Rung 4 — give it a goal instead.</b> One sentence, no method, no parameters:</p>
+<pre>Get the occurrence records for this species, clean them, and fit
+a species distribution model.</pre>
+
+<p>Now it plans. Expect several minutes, a dozen or more tool calls, packages installed, a
+climate dataset downloaded, code written and rewritten when it errors. It will ask
+permission for some actions depending on your settings. At the end you get a map. Notice
+that you were consulted about almost none of it.</p>
+
+<p><b>3. Audit what it did</b>, which is the part that is actually the coursework. Scroll
+back through the transcript and answer four questions: what did it read, what did it
+change, what did it decide for us, and how would we know if it was wrong. Then ask it
+directly: <i>list every analytical choice you made that I did not specify.</i> Compare its
+list with the transcript, because the two are not always the same.</p>
+
+<p><b>What our run did.</b> We ran exactly this. It pulled <b>669 records</b> and kept
+<b>245</b>, the largest cut being 256 records with no coordinates. It pooled the two
+subspecies, which differ in mating system and range. It kept iNaturalist observations
+alongside herbarium specimens. It dropped records with coordinate uncertainty over 10 km
+and kept every record whose uncertainty was unrecorded, which is the opposite rule. It
+chose climate data at 10 arc-minutes, about 18 km, for a species whose entire range is
+around 200 km across. It used three of the nineteen bioclim variables without saying why.
+None of that was mentioned in its summary.</p>
+
+<p><b>Two things went wrong that nobody would catch by reading the output.</b></p>
+
+<p>It asked for 10,000 background points and got <b>2,785</b>, because at that resolution
+the map does not contain 10,000 land cells. R printed a warning, the warning scrolled past,
+and the script carried on. The number in the code and the number in the model differ by a
+factor of four.</p>
+
+<p>And the map is confidently wrong. Its training AUC was <b>0.883</b>, which looks
+respectable, and the map looks like a species distribution map. But the highest predicted
+suitability on the whole map, <b>0.75</b>, sits on Santa Catalina Island, <b>141 km from the
+nearest record of the plant</b> — while the 243 real occurrences score a median of
+<b>0.23</b> and never exceed 0.49. The model's best habitat is an island the species does
+not grow on, and every genuine record scores below it.</p>
+
+<p>That is the failure this seminar is about. Not a crash, not a hallucinated citation, not
+anything that looks wrong. A plausible map, a respectable-looking number, and one lookup
+between you and finding out.</p>
+
+<p>Your run will differ from ours — different choices, different counts, possibly different
+failures. That is nondeterminism, and it is why a result without its transcript does not
+mean much. We will walk through our scripts, logs and map in Week 1; bring yours.</p>
 
 </div>
 </details>
@@ -364,8 +442,15 @@ category we use in class, and the category the seminar's warnings are really abo
 <p><b>Editor-integrated agents.</b> Cursor, GitHub Copilot, Windsurf, Cline. Rung four,
 read-write, scoped to the project you have open.</p>
 
-<p><b>Open source.</b> Aider, OpenHands, SWE-agent. Same shape, run against a model of your
-choosing, which matters if you need to know where your data goes.</p>
+<p><b>Open source.</b> Two to know. <b>OpenCode</b> is the most-starred open-source agent,
+terminal-based, and runs against whichever model you point it at. <b>OpenHands</b> is the
+most widely self-hosted; it runs each session in a Docker sandbox, and as of mid-2026 its
+CodeAct scaffold on a current frontier model scored 68.4% on SWE-bench Verified, close to
+the proprietary tools. <b>Aider</b> is older and narrower, and commits every change as its
+own git commit, which makes review and rollback easy. <b>SWE-agent</b> is a research
+framework rather than a daily driver, and introduced the agent-computer interface idea the
+others build on. All of them let you choose the model, which matters if you need to know
+where your data goes.</p>
 
 <p><b>Science-specific.</b> Elicit and Consensus for literature search and screening; a
 growing set of research agents from groups like FutureHouse. Mostly read-only, mostly
