@@ -232,44 +232,47 @@ directly: <i>list every analytical choice you made that I did not specify.</i> C
 list with the transcript, because the two are not always the same.</p>
 
 <p><b>What our run did.</b> We ran exactly this. It pulled <b>669 records</b> and kept
-<b>245</b>, the largest cut being 256 records with no coordinates. It pooled the two
-subspecies, which differ in mating system and range. It kept iNaturalist observations
-alongside herbarium specimens. It dropped records with coordinate uncertainty over 10 km
-and kept every record whose uncertainty was unrecorded, which is the opposite rule. It
-chose climate data at 10 arc-minutes, about 18 km, for a species whose entire range is
-around 200 km across. It used three of the nineteen bioclim variables without saying why.
-None of that was mentioned in its summary.</p>
+<b>245</b>, the largest cut being 256 with no coordinates. It pooled the two subspecies,
+which differ in mating system and range. It kept iNaturalist observations alongside
+herbarium specimens. It dropped records with coordinate uncertainty over 10 km and kept
+every record whose uncertainty was unrecorded, which is the opposite rule. It chose climate
+data at 10 arc-minutes, about 18 km, for a species whose entire range is around 200 km
+across. It used three of the nineteen bioclim variables without saying why. None of that
+appeared in its summary.</p>
 
-<p><b>Two things went wrong that nobody would catch by reading the output.</b></p>
+<p><b>The map looked fine and was wrong.</b> Its best cell scored <b>0.58</b>, 60 km from
+the nearest record, while the 245 real occurrences scored a median of <b>0.12</b> and never
+exceeded <b>0.28</b>. The model's best habitat is somewhere the plant has never been
+collected, and it beats every place the plant actually grows by a factor of two.</p>
 
-<p>It asked for 10,000 background points and got <b>2,785</b>, because at that resolution
-the map does not contain 10,000 land cells. R printed a warning, the warning scrolled past,
-and the script carried on. The number in the code and the number in the model differ by a
-factor of four.</p>
+<p><b>Second species, same failure.</b> One explanation would be that <i>Clarkia
+xantiana</i> simply has too small a range. So we ran the identical recipe on common
+ragweed, <i>Ambrosia artemisiifolia</i> — 4,062 records across North America, Europe and
+Asia. Its highest-scoring cell on the entire planet, <b>0.89</b>, is in the Atacama Desert
+of northern Chile, <b>723 km</b> from the nearest record. More data and a range two orders
+of magnitude larger made it worse, not better.</p>
 
-<p>And the map is confidently wrong. Its training AUC was <b>0.883</b>, which looks
-respectable, and the map looks like a species distribution map. But the highest predicted
-suitability on the whole map, <b>0.75</b>, sits on Santa Catalina Island, <b>141 km from the
-nearest record of the plant</b> — while the 243 real occurrences score a median of
-<b>0.23</b> and never exceed 0.49. The model's best habitat is an island the species does
-not grow on, and every genuine record scores below it.</p>
+<p><b>Then we fixed the prompt.</b> Same task, but written after reading the audit: draw
+background points only from the region actually surveyed rather than the whole map, drop
+collinear predictors instead of picking three, allow a climatic optimum rather than a
+monotonic response, and score the model by holding out regions instead of on its own
+training data. For <i>Clarkia</i> that worked. The peak moved to <b>3 km</b> from a real
+record, and the real records now sit at the top of the map rather than the bottom. For
+ragweed it helped and did not cure: the peak moved from Chile to western Japan, still 412 km
+from anything.</p>
 
-<p>That is the failure this seminar is about. Not a crash, not a hallucinated citation, not
-anything that looks wrong. A plausible map, a respectable-looking number, and one lookup
-between you and finding out.</p>
+<p><b>And here is the part worth sitting with.</b> Both improved models score <i>worse</i>
+on the number people quote. Cross-validated AUC fell from 0.866 to 0.841 for <i>Clarkia</i>,
+and from 0.812 to 0.691 for ragweed. The honest model looks worse, because the naive one was
+being graded on a test it wrote itself. If you had asked the agent to maximise AUC, it would
+have handed you back the broken model.</p>
 
-<p><b>4. Then run it on a species you know well.</b> We repeated the whole thing on the
-American robin, to test whether the Clarkia result was just an artefact of a species with a
-tiny range. It was not. With 3,835 robin records across North America, the same recipe put
-its best habitat in Guatemala, Honduras and the Dominican Republic — 670 to 1,500 km from
-the nearest record in our own dataset — scored Hawaii highly, and scored most of Canada near
-zero. Every real record again fell below the map's maximum. The one thing that did improve
-was the background-points bug, which was specific to the small California box. Pick a
-species whose distribution you would notice being wrong, and bring the map to class.</p>
-
-<p>Your run will differ from ours — different choices, different counts, possibly different
-failures. That is nondeterminism, and it is why a result without its transcript does not
-mean much. We will walk through our scripts, logs and map in Week 1; bring yours.</p>
+<p><b>Do this on a species you know.</b> Run the naive prompt, audit the map, then write the
+better prompt yourself and see what moves. Pick something whose distribution you would
+notice being wrong about — that is the whole skill. Your numbers will not match ours;
+different choices, different counts, possibly different failures, which is nondeterminism
+and is why a result without its transcript does not mean much. Bring your two maps to
+Week 1.</p>
 
 </div>
 </details>
