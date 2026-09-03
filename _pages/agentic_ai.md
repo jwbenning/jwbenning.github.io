@@ -124,7 +124,8 @@ with no background assumed. It is the first of the Week 1 readings; read it befo
 
 ## Getting set up
 
-**Do this before Friday.** It takes about ten minutes and needs no account.
+**Do this before Friday.** About ten minutes. You can install without an account; signing in
+comes later.
 
 We use [Claude Code](https://code.claude.com/docs/), an agent that reads and writes files on
 your own machine. That read-write part is the whole reason we use it rather than a chat
@@ -134,8 +135,17 @@ window, and it is what we spend the term auditing. Two ways to run it — pick o
   <h3>The app</h3>
   <p class="why">A normal application window, no terminal involved. Start here unless you
   already work in a terminal every day.</p>
-  <p>Download for macOS, Windows or Linux from
-  <a href="https://claude.com/download">claude.com/download</a>, then open it. There is a
+  <p><strong>macOS and Windows:</strong> download from
+  <a href="https://claude.com/download">claude.com/download</a> and run the installer. There
+  is a separate build for Windows on ARM on that same page.
+  <strong>Linux:</strong> the desktop app is still in beta — use
+  <a href="https://code.claude.com/docs/en/desktop-linux">these steps</a> instead of the
+  download page.</p>
+  <p><strong>On Windows you also need <a href="https://git-scm.com/downloads/win">Git for
+  Windows</a></strong>, or the app cannot open a local folder. Install it first. Macs
+  already have Git.</p>
+  <p>Open the app and click the <strong>Code</strong> tab at the top. If it asks you to sign
+  in or to upgrade, you have got as far as you can for now — see the note below. There is a
   <a href="https://code.claude.com/docs/en/desktop-quickstart">two-minute walkthrough</a> if
   you want one.</p>
 </div>
@@ -146,26 +156,31 @@ window, and it is what we spend the term auditing. Two ways to run it — pick o
   this.</p>
   <p>macOS, Linux, or Windows WSL:</p>
   <pre><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre>
-  <p>Windows PowerShell:</p>
+  <p>Windows PowerShell — your prompt starts <code>PS C:\</code>:</p>
   <pre><code>irm https://claude.ai/install.ps1 | iex</code></pre>
-  <p>Then run <code>claude</code> in any folder. Check it worked with
-  <code>claude --version</code>, which should print a version number; if something is wrong,
-  <code>claude doctor</code> says what. Never used a terminal? Read the
+  <p>Windows CMD — your prompt starts <code>C:\</code>, with no <code>PS</code>:</p>
+  <pre><code>curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd</code></pre>
+  <p>Then run <code>claude --version</code>, which should print a version number. If it does
+  not, <code>claude doctor</code> says why. On a Mac,
+  <code>brew install --cask claude-code</code> works too. Never used a terminal? Read the
   <a href="https://code.claude.com/docs/en/terminal-guide">terminal guide</a> first, or just
   use the app.</p>
 </div>
 
-You need macOS 13 or later, Windows 10 or later, or Ubuntu 20.04 or later, and 4 GB of RAM.
-If your machine is older than that, tell us and we will pair you with someone.
+You need macOS 13 or later, Windows 10 build 1809 or later, or Ubuntu 20.04 / Debian 10 or
+later, on an x64 or ARM processor, with 4 GB of RAM. **ChromeOS is not supported.** If you
+have a Chromebook, no laptop, or a machine older than that list, tell us now and we will pair
+you with someone rather than discover it on the day.
 
 **Do not pay for anything.** Claude Code is not included in the free plan, so it will ask you
-to sign in and you will not have an account that works. That is expected. We are covering
-access for everyone in the seminar — install now, and wait for an email from us before
-signing in.
+to sign in and the account you have will not work. That is expected and it is not a broken
+install. We are covering access for everyone in the seminar: you will get an invitation from
+us shortly — use it if you need it, ignore it if you are already set up.
 
-**If it will not install,** come ten minutes early on Friday and we will sort it in the
-room. Bring the error message. Do not skip the session over a broken install — watching
-someone else's screen for one week costs you nothing.
+**If it will not install,** ask in **#setup-help** on the course Slack (the invite is in our
+email) and we will work it out there. Failing that, come ten minutes early on Friday and
+bring the error message. Do not skip the session over a broken install — watching someone
+else's screen for one week costs you nothing.
 
 ## Schedule
 
