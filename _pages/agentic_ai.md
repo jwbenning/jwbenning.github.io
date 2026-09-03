@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /teaching/agentic-ai/
-last_updated: 2026-09-01
+last_updated: 2026-09-03
 title: agentic AI in EEB
 description: BIOEE 7600-103 · Fall 2026 · a graduate seminar at Cornell
 nav: false
