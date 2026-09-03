@@ -78,11 +78,11 @@ over many steps — cleaning datasets, running analyses, writing and executing c
 databases, monitoring the literature, drafting the outputs. That autonomy is what makes
 agents useful, and what raises the stakes when they go wrong.
 
-This seminar is a hands-on and skeptical tour of what agents can and can't be
-trusted to do across the research lifecycle. After a week defining what "agentic" actually
-means, most of each session is a live demo: we give an agent a real EEB task and then audit
-the process and the result, hunting for what it got wrong or quietly hid. We close by
-drafting an EEB community guideline for responsible use of agentic AI.
+This seminar is a hands-on and skeptical look at what agents can and can't be trusted to
+do across the research lifecycle. After a first week defining what "agentic" means, most of
+each session is a live demo: we give an agent a real EEB task, then audit what it did and
+what it produced, looking for what it got wrong or left out. We close by drafting an EEB
+community guideline for responsible use of agentic AI.
 
 No computer-science background is assumed. A little R or Python helps you follow the coding
 demos but isn't required. **Bring a laptop.**
@@ -124,8 +124,8 @@ with no background assumed. It is the first of the Week 1 readings; read it befo
 
 ## Getting set up
 
-**Do this before Friday.** About ten minutes. You can install without an account; signing in
-comes later.
+**Do this before Friday.** About ten minutes. You can install without an account; you sign
+in later.
 
 We use [Claude Code](https://code.claude.com/docs/), an agent that reads and writes files on
 your own machine. That read-write part is the whole reason we use it rather than a chat
@@ -145,7 +145,7 @@ window, and it is what we spend the term auditing. Two ways to run it — pick o
   Windows</a></strong>, or the app cannot open a local folder. Install it first. Macs
   already have Git.</p>
   <p>Open the app and click the <strong>Code</strong> tab at the top. If it asks you to sign
-  in or to upgrade, you have got as far as you can for now — see the note below. There is a
+  in or to upgrade, that is as far as you can get for now; see the note below. There is a
   <a href="https://code.claude.com/docs/en/desktop-quickstart">two-minute walkthrough</a> if
   you want one.</p>
 </div>
@@ -169,8 +169,8 @@ window, and it is what we spend the term auditing. Two ways to run it — pick o
 
 You need macOS 13 or later, Windows 10 build 1809 or later, or Ubuntu 20.04 / Debian 10 or
 later, on an x64 or ARM processor, with 4 GB of RAM. **ChromeOS is not supported.** If you
-have a Chromebook, no laptop, or a machine older than that list, tell us now and we will pair
-you with someone rather than discover it on the day.
+have a Chromebook, no laptop, or a machine older than that, tell us now and we will pair you
+with someone.
 
 **Do not pay for anything.** Claude Code is not included in the free plan, so it will ask you
 to sign in and the account you have will not work. That is expected and it is not a broken
@@ -178,9 +178,8 @@ install. We are covering access for everyone in the seminar: you will get an inv
 us shortly — use it if you need it, ignore it if you are already set up.
 
 **If it will not install,** ask in **#setup-help** on the course Slack (the invite is in our
-email) and we will work it out there. Failing that, come ten minutes early on Friday and
-bring the error message. Do not skip the session over a broken install — watching someone
-else's screen for one week costs you nothing.
+email). If that does not sort it, come ten minutes early on Friday with the error message.
+Do not skip a session over a broken install; you can share someone's screen for a week.
 
 ## Schedule
 
@@ -224,25 +223,25 @@ readings, and demo.
 
 ## Using AI in this course
 
-A few things worth holding onto.
+Four rules.
 
-- **Decide whether your data trains the model.** Most tools let you turn this off. Ask
-  either of us if you want a hand finding it.
+- **Decide whether your data trains the model.** Most tools let you turn this off. Ask us
+  if you cannot find the setting.
 - **Think before you paste.** Unpublished data, anything with a person's name in it, a
   manuscript you are reviewing, a collaborator's data you were trusted with — none of that
   belongs in a tool whose terms let it keep or train on what you send. Cornell's
   [AI guidelines](https://it.cornell.edu/ai-strategy/ai-guidelines) are helpful here.
-- **Calibrate your bullshit meter.** These models are confidently wrong on a regular basis,
-  and unfortunately, the confidence and accuracy often don't go hand in hand.
+- **Calibrate your bullshit meter.** These models are confidently wrong on a regular basis.
+  Confidence does not track accuracy.
 
 **Gate every irreversible action — delete, overwrite, submit, send — behind human
 confirmation.**
 
 ## 📚 Reading room
 
-Interesting reading, added as we find it. Anything tied to a session carries its week and
-whether it is required; the rest is here because we think you might enjoy it. Please suggest
-additions! Filter by topic.
+Reading we add as we find it. Anything tied to a session carries its week and whether it is
+required; the rest is here because we found it worth reading. Please suggest additions!
+Filter by topic.
 
 {% assign alltags = "" | split: "" %}
 {% for w in c.schedule %}{% for r in w.readings %}{% if r.tags %}{% assign alltags = alltags | concat: r.tags %}{% endif %}{% endfor %}{% endfor %}

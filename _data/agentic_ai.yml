@@ -24,13 +24,13 @@ schedule:
     part: Foundations
     theme: What agentic AI is (and isn't) — from LLMs to tool-using agents
     framing: >
-      What actually changes when an AI can use tools and take actions instead of only
-      producing text — and how is that different from an LLM, from deep learning, and
-      from a fixed pipeline?
+      What changes when an AI can use tools and take actions instead of only producing
+      text — and how is that different from an LLM, from deep learning, and from a fixed
+      pipeline?
     demo: >
       A chatbot becomes an agent, live: first watch a model generate plausible text
-      rather than verified fact, then give an agent a goal that forces it to reach into
-      the world and pull real occurrence records.
+      rather than verified fact, then give an agent a goal it can only meet by fetching
+      real occurrence records.
     readings:
       - title: "What is an agent? A primer for this seminar"
         source: Written by Claude for this seminar
@@ -48,18 +48,17 @@ schedule:
         tags: [foundations, evaluation]
         note: >
           Five minutes. How long a task an agent can finish on its own, plotted over
-          time. Then check its headline number against METR's own January re-fit — the
-          popular version of this chart is already stale, and noticing that is the
-          exercise.
+          time. Check its headline number against METR's own January re-fit: the popular
+          version of this chart is already stale, and spotting that is the point.
       - title: "The Dark Night of Mathematics"
         source: Kirwin Hampshire, July 2026
         optional: true
         url: https://kirwinhampshire.substack.com/p/the-dark-night-of-mathematics
         tags: [debate]
         note: >
-          A pure-mathematics PhD student on what it feels like when the machine gets
-          there first. Mathematics is the field furthest down this road; read it as a
-          report from somewhere we may be going.
+          A pure-mathematics PhD student on being outpaced by the machine. Mathematics is
+          the field furthest down this road, so read it as a report from where we may be
+          headed.
       - title: "A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis"
         source: Xu, Ren, Wang et al. 2025, Nature Medicine — abstract and figures
         optional: true
@@ -70,7 +69,7 @@ schedule:
           signal in 71 patients, and a phase III trial opened in July 2026. Note whose drug
           it is and who ran the trial. The authors' <a
           href="https://communities.springernature.com/posts/ai-meets-ipf-taking-an-ai-designed-drug-from-target-discovery-to-phase-iia">Behind
-          the Paper</a> post is a shorter way in.
+          the Paper</a> post is a shorter summary.
       - title: "Machines of Loving Grace — §1, Biology and health"
         source: Dario Amodei, October 2024 — section 1 only
         optional: true
@@ -89,7 +88,7 @@ schedule:
           The rebuttal, three weeks old, with Topol, Pachter, Robison and others on the
           record — and the argument that clinical timelines, not intelligence, are the
           binding constraint. Read it against the trial above and work out where the
-          disagreement actually sits.
+          disagreement sits.
     assignment: >
       Come with a task you would actually want an agent to tackle in your own research.
 
@@ -124,9 +123,9 @@ schedule:
     part: The research data lifecycle
     theme: Agentic data exploration, compilation & archiving
     framing: >
-      An agent can compile and standardize a messy dataset in seconds. How do you know
-      it didn't quietly break it — and can anyone, including future you, reconstruct
-      what it did?
+      An agent can compile and standardize a messy dataset in seconds. How do you know it
+      didn't break it without saying so — and can anyone, including future you,
+      reconstruct what it did?
 
   - week: 4
     date: 2026-10-02
@@ -134,7 +133,7 @@ schedule:
     theme: Agentic literature synthesis
     framing: >
       Where does an agent legitimately speed up finding, screening, and synthesizing
-      literature — and where does it quietly corrupt the record?
+      literature — and where does it corrupt the record?
 
   - week: 5
     date: 2026-10-09
@@ -157,8 +156,8 @@ schedule:
     part: Lab management, teaching & training
     theme: Teaching, mentoring & implications for graduate training
     framing: >
-      If a student can generate the answer in seconds, what are we actually teaching —
-      and does leaning on agents accelerate skill-building or quietly prevent it?
+      If a student can generate the answer in seconds, what are we teaching — and does
+      leaning on agents accelerate skill-building or prevent it?
 
   - week: 8
     date: 2026-10-30
@@ -187,8 +186,8 @@ links:
       Fiction, by a working mathematician. A professor stands outside the shed that
       replaced his office in 2035 and remembers the prompt that finished off the
       Riemann Hypothesis, sent by an influencer, run on a machine that burned a forest
-      the size of Providence every month. Three pages, funny, and it puts the Litt
-      essay and the energy-cost argument in the same frame.
+      the size of Providence every month. Three pages, funny, and it puts the Litt essay
+      and the energy-cost argument in one frame.
 
   - date: 2026-09-01
     title: "Building effective agents"
@@ -196,11 +195,10 @@ links:
     url: https://www.anthropic.com/engineering/building-effective-agents
     tags: [foundations]
     note: >
-      Optional. The engineering account of what an agent is and the case for not
-      building one — the workflow-versus-agent distinction is the part worth having.
-      From December 2024, so it predates most of what we will actually use, and it is
-      written for people building these systems rather than using them. Worth a skim
-      once the primer has done its job.
+      Optional. The engineering account of what an agent is and the case for not building
+      one; the workflow-versus-agent distinction is the useful part. From December 2024,
+      so it predates most of what we will use, and it is written for people building these
+      systems rather than using them. Skim it after the primer.
 
   - date: 2026-08-31
     title: "The Hugging Face hack is a PR crisis that's costing OpenAI millions"
@@ -209,8 +207,8 @@ links:
     tags: [security]
     note: >
       An agent given a goal routed around the barriers meant to contain it, and four
-      other services turned out to have been breached too. No attacker anywhere in the
-      story — the agent was optimizing exactly as instructed. Our Week 8 case.
+      other services turned out to have been breached too. There is no attacker in the
+      story: the agent was optimizing exactly as instructed. Our Week 8 case.
 
   - date: 2026-08-31
     title: "The Hugging Face incident exposes the wrong AI security debate"
@@ -227,11 +225,10 @@ links:
     url: https://doi.org/10.1111/cobi.70287
     tags: [EEB, application, ethics]
     note: >
-      Our own literature, finally. A review by conservation scientists covering data
-      extraction, evidence synthesis, monitoring and coding, with a long and honest
-      section on hallucination, bias, reproducibility, equity, deskilling and energy
-      cost. Mostly about LLMs rather than agents — which is itself the state of the
-      field.
+      The EEB literature on this. A review by conservation scientists covering data
+      extraction, evidence synthesis, monitoring and coding, with a long section on
+      hallucination, bias, reproducibility, equity, deskilling and energy cost. Mostly
+      about LLMs rather than agents, which is itself where the field stands.
 
   - date: 2026-08-31
     title: "Large language model agents for biological intelligence"
@@ -240,9 +237,9 @@ links:
     tags: [application, evaluation]
     note: >
       A survey that takes agentic behaviour itself as the unit of analysis across
-      genomics, proteomics, spatial biology and biomedicine. Its verdict is the useful
-      part: brittle tool interfaces, silent error propagation, poor reproducibility, and
-      not mature enough for autonomous deployment.
+      genomics, proteomics, spatial biology and biomedicine. The verdict: brittle tool
+      interfaces, silent error propagation, poor reproducibility, and not mature enough
+      for autonomous deployment.
 
   - date: 2026-08-31
     title: "The End of Mathematics"
@@ -251,7 +248,7 @@ links:
     tags: [debate]
     note: >
       The institutional version of Hampshire's essay: a field that keeps rewarding
-      papers while the machines write them, stops training anyone, and quietly dies.
+      papers while the machines write them, stops training anyone, and dies.
 
   - date: 2026-08-31
     title: "The AI revolution in math has arrived"

@@ -71,13 +71,13 @@ operate — a shell, a web browser, a Python interpreter, your file system — a
 rather than a question. It decides what to do, does it, looks at the result, and decides
 what to do next, repeating until it thinks it is finished or you stop it.
 
-Everything interesting and everything alarming follows from that one change: the model
-stopped producing sentences about the world and started taking actions in it.
+That one change is where both the usefulness and the risk come from: the model is no
+longer describing the world, it is acting in it.
 
 ## Four rungs
 
 The word "AI" now covers systems that differ enormously in what they can do to your data.
-It helps to see them as a ladder. The same task runs through all four.
+Think of them as four rungs on a ladder. The same task runs through all four.
 
 **These are rungs of capability, not brands.** One product can sit on several of them
 depending on what is switched on, and the box you type into looks identical either way. The
@@ -95,7 +95,7 @@ useful habit is asking which rung you are on right now, not which company made t
     of those collection numbers appears among the 452 herbarium specimens of this species in
     GBIF, and the real dates for those collectors miss the claimed ones by decades. Asked
     again, it named a different botanist as the original collector. Nothing in the output
-    looks wrong. Only the database says so.</span>
+    looks wrong; only checking the database shows that it is.</span>
   </li>
   <li class="pr-rung">
     <h3>A chatbot</h3>
@@ -122,11 +122,11 @@ useful habit is asking which rung you are on right now, not which company made t
     <p>You give it a goal instead of an instruction, and it plans its own route. It chooses
     which tools to use and in what order, runs them, reads what came back, notices problems,
     and tries again. It may take fifty actions before it says anything to you. That
-    stretch of unsupervised action is the thing that makes it an agent.</p>
+    stretch of unsupervised action is what makes it an agent.</p>
     <span class="ex"><b>Our task</b>"Get the occurrence records for this species, clean
     them, and fit a species distribution model." It pulls the records, drops the ones at
-    (0, 0) and in the ocean, quietly throws out everything georeferenced only to a county
-    centroid, picks a climate dataset you have not heard of, fits the model on its defaults,
+    (0, 0) and in the ocean, throws out everything georeferenced only to a county
+    centroid without telling you, picks a climate dataset you have not heard of, fits it on defaults,
     and hands you a map. You are not consulted at any point. Two of those choices were
     routine. Two it made on your behalf. Which two, and how would you know?</span>
   </li>
@@ -137,14 +137,14 @@ useful habit is asking which rung you are on right now, not which company made t
 same chat window. A plain reply is rung two. The moment one searches the web, runs code, or
 reaches a connected database it is on rung three — and when it does that over and over,
 deciding each time what to try next, it is on rung four whatever the interface calls itself.
-The tell: did it go and get something, and did what came back change what it did next?
+The test: did it go and get something, and did what came back change what it did next?
 </div>
 
 <details class="pr-more">
 <summary>Run the herbarium test yourself</summary>
 <div class="inner">
 
-<p>Worth ten minutes, because reading that a model fabricates is not the same as watching
+<p>Ten minutes, and worth it: reading that a model fabricates is different from watching
 one do it to a species you know.</p>
 
 <p><b>1. Ask a model with no tools.</b> Turn search off, then paste:</p>
@@ -153,8 +153,8 @@ collected before 1980. For each, give the collector, collection
 number, collection date, locality, and the herbarium where it is
 deposited.</pre>
 
-<p><b>2. Note what it gets right</b>, because this is the part that makes it dangerous.
-Every run we did opened by saying it had no live database access — true, and stated
+<p><b>2. Note what it gets right</b>, which is what makes the output dangerous. Every run
+we did opened by saying it had no live database access, which is true and was stated
 unprompted. The collectors it named are real botanists who really did collect this species.
 The herbaria are real. The localities are in the right part of Kern County. One run even
 warned us that AI models invent herbarium records, then produced a list.</p>
@@ -176,14 +176,13 @@ number matched, and the dates miss by decades. You can repeat the sweep from any
 
 <p><b>4. Ask it twice more.</b> Ours named Alice Eastwood as the original collector on one
 run and T. S. Brandegee on another. That contradiction proves one answer is wrong without
-consulting any database at all — which is a check you can always run, on any claim, for
-free.</p>
+consulting any database, and you can run the same check on any claim.</p>
 
 <p><b>5. Then turn search on and ask again.</b> Same question, one rung up. Watch what
 changes, and watch what does not.</p>
 
 <p>So: real names, real institutions, real region, invented identifiers. Nothing in the
-output looks wrong. Expertise does not catch it. Only the lookup does.</p>
+output looks wrong, and knowing the system does not help. Only the lookup catches it.</p>
 
 </div>
 </details>
@@ -248,10 +247,10 @@ run code, query an API, edit a file. <b>Observe</b> — read what came back, inc
 The number of times round this loop before it reports back to you is the amount of autonomy
 you have granted it.</p>
 
-The interesting failures live in **judge**. Judging whether a result is scientifically acceptable is the step that requires knowing what
-a right answer would look like, and it is the step agents are worst at. When there is a
-clear pass/fail criterion — the tests pass, the file parses — agents iterate well. When the
-criterion is "does this look reasonable," they will often decide that it does.
+Most failures happen at **judge**. Deciding whether a result is scientifically acceptable
+requires knowing what a right answer would look like, and it is the step agents are worst
+at. Given a clear pass/fail criterion — the tests pass, the file parses — agents iterate
+well. Given "does this look reasonable," they will usually decide that it does.
 
 ## Reading and writing
 
@@ -259,15 +258,15 @@ The loop tells you how an agent works. It does not tell you what it can do to yo
 ask a second question: **what is this thing allowed to change?**
 
 Some agents only read. They search, fetch pages, query databases, run an analysis on a copy.
-An assistant looping over web searches is doing entirely genuine agentic work and cannot
-alter anything you own. That is not the same as harmless: anything an agent reads, and any
-page it fetches, is a route by which your own data can leave. Others write. They edit your files, run shell commands, modify
-databases, send mail, commit to your repository.
+An assistant looping over web searches is doing real agentic work and cannot alter anything
+you own. That does not make it harmless: anything an agent reads, and any page it fetches,
+is a route by which your own data can leave. Others write. They edit your files, run shell
+commands, modify databases, send mail, commit to your repository.
 
-That distinction cuts across products rather than along them, and it is the axis that
-actually governs risk. Two agents can run the identical loop the identical number of times:
-the read-only one wastes your afternoon and may mislead you, the read-write one leaves your
-data in a state you did not choose and may not notice. A difference in kind, not degree.
+That distinction cuts across products rather than along them, and it is what governs risk.
+Two agents can run the identical loop the identical number of times: the read-only one
+wastes your afternoon and may mislead you, the read-write one leaves your data in a state
+you did not choose.
 
 So the loop is not the dangerous part. **The loop combined with write access is.** Before
 letting any agent near real work, know which of the two you have — and if it can write, know
@@ -318,7 +317,7 @@ file, already sent the query. The error is not in a draft you are reviewing; it 
 consequences follow, and the seminar returns to them all term:
 
 **Errors become silent.** A hallucinated citation is visible if you look. A dropped subset of
-rows during a merge is not, and neither is a coordinate system quietly reprojected. The
+rows during a merge is not, and neither is a reprojected coordinate system. The
 agent will report success either way, because from inside the loop it succeeded.
 
 **Provenance thins out.** The agent made forty decisions to produce that file, and the file
@@ -326,9 +325,8 @@ records none of them. Agent tools do keep a transcript of every action and its o
 reading that transcript is what this seminar means by an audit. But nothing attaches it to
 the result, and nobody reads it unless they decide to.
 
-**Speed removes the pause.** The friction of doing analysis by hand is also the occasion on
-which you notice things. Removing the work removes the noticing, unless you deliberately put
-the noticing back.
+**Speed removes the pause.** The friction of doing analysis by hand is also when you notice
+things. Remove the work and you remove the noticing, unless you put it back deliberately.
 
 <div class="pr-note">
 <b>The one rule this course adds.</b> Everything else about responsible AI use in research
@@ -352,8 +350,8 @@ keen to report success — and read the first datasheets in full before you star
 <summary>The main tools, as of September 2026</summary>
 <div class="inner">
 
-<p>A snapshot, and it will date fast — that is the nature of the thing. What lasts is the
-two questions to ask of anything new: <b>which rung is it on</b>, and <b>can it write</b>.</p>
+<p>A snapshot that will date fast. What lasts is the two questions to ask of anything new:
+<b>which rung is it on</b>, and <b>can it write</b>.</p>
 
 <p><b>Chat assistants.</b> ChatGPT, Claude, Gemini. Rung two on their own, rung three or
 four once search, code execution or connectors are switched on. They act on their own
@@ -419,11 +417,11 @@ Everything below will come up. You do not need to memorise it; skim it now and c
   a URL, query a database. The bridge between generating text and doing things.</dd>
   <dt>Agent</dt>
   <dd>A model given tools and permission to loop: plan, act, observe, judge, repeat, until
-  it decides it is done. The autonomy is the definition.</dd>
+  it decides it is done. The autonomy is what makes it an agent.</dd>
   <dt>Workflow <span class="alt">(as opposed to an agent)</span></dt>
-  <dd>A fixed sequence of steps you wrote, that happens to call a model at points. Far more
-  predictable. Most tasks that people build agents for are better served by a workflow, and
-  knowing which you need is a real skill.</dd>
+  <dd>A fixed sequence of steps you wrote, that calls a model at points. Far more
+  predictable. Most tasks people build agents for are better served by a workflow, and
+  knowing which one you need is a skill.</dd>
   <dt>Autonomy <span class="alt">/ permission gating</span></dt>
   <dd>How many actions it may take before checking with you, and which actions require your
   say-so. The single most important setting in any agent tool.</dd>
