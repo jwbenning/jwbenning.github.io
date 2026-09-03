@@ -1,5 +1,5 @@
 ## Friends of the lab
 
 **Jacob Landis**  
-Computational biologist, Cornell University  
+Genomics Wizard 🧙, Cornell University  
 [jacoblandis.com](https://jacoblandis.com/)
