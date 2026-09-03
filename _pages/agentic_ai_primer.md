@@ -245,34 +245,27 @@ the nearest record, while the 245 real occurrences scored a median of <b>0.12</b
 exceeded <b>0.28</b>. The model's best habitat is somewhere the plant has never been
 collected, and it beats every place the plant actually grows by a factor of two.</p>
 
-<p><b>Second species, same failure.</b> One explanation would be that <i>Clarkia
-xantiana</i> simply has too small a range. So we ran the identical recipe on common
-ragweed, <i>Ambrosia artemisiifolia</i> — 4,062 records across North America, Europe and
-Asia. Its highest-scoring cell on the entire planet, <b>0.89</b>, is in the Atacama Desert
-of northern Chile, <b>723 km</b> from the nearest record. More data and a range two orders
-of magnitude larger made it worse, not better.</p>
+<p><b>Then we fixed the prompt.</b> Same task, same species, but written after reading the
+audit: draw the background points only from the region that has actually been surveyed rather
+than the whole map, drop collinear predictors instead of picking three, allow a climatic
+optimum rather than forcing a monotonic response, and score the model by holding out whole
+regions instead of on its own training data. That worked. The peak moved to <b>3 km</b> from
+a real record, and the occurrences moved from the bottom of the map to the top: median
+suitability at the real records went from 0.12 to <b>0.48</b>, and the maximum from 0.28 to
+<b>0.85</b>. Same data, same species, same afternoon — a different sentence.</p>
 
-<p><b>Then we fixed the prompt.</b> Same task, but written after reading the audit: draw
-background points only from the region actually surveyed rather than the whole map, drop
-collinear predictors instead of picking three, allow a climatic optimum rather than a
-monotonic response, and score the model by holding out regions instead of on its own
-training data. For <i>Clarkia</i> that worked. The peak moved to <b>3 km</b> from a real
-record, and the real records now sit at the top of the map rather than the bottom. For
-ragweed it helped and did not cure: the peak moved from Chile to western Japan, still 412 km
-from anything.</p>
-
-<p><b>And here is the part worth sitting with.</b> Both improved models score <i>worse</i>
-on the number people quote. Cross-validated AUC fell from 0.866 to 0.841 for <i>Clarkia</i>,
-and from 0.812 to 0.691 for ragweed. The honest model looks worse, because the naive one was
-being graded on a test it wrote itself. If you had asked the agent to maximise AUC, it would
-have handed you back the broken model.</p>
+<p><b>And here is the part worth sitting with.</b> The corrected model scores <i>worse</i> on
+the number people quote. Cross-validated AUC fell from <b>0.866</b> to <b>0.841</b>, because
+the naive model was being graded on a test it had written itself: an unconstrained background
+makes discrimination easy, and holding out regions punishes exactly the extrapolation that
+the training score rewards. If you had asked the agent to maximise AUC, it would have handed
+you back the broken model.</p>
 
 <p><b>Do this on a species you know.</b> Run the naive prompt, audit the map, then write the
-better prompt yourself and see what moves. Pick something whose distribution you would
-notice being wrong about — that is the whole skill. Your numbers will not match ours;
-different choices, different counts, possibly different failures, which is nondeterminism
-and is why a result without its transcript does not mean much. Bring your two maps to
-Week 1.</p>
+better prompt yourself and see what moves. Pick something whose distribution you would notice
+being wrong about — that is the whole skill. Your numbers will not match ours; different
+choices, different counts, possibly different failures, which is nondeterminism and is why a
+result without its transcript does not mean much. Bring both maps to Week 1.</p>
 
 </div>
 </details>
