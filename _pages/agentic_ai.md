@@ -167,19 +167,35 @@ window, and it is what we spend the term auditing. Two ways to run it — pick o
   use the app.</p>
 </div>
 
+<div class="setup">
+  <h3>Then try one thing</h3>
+  <p class="why">Not required, and worth the two minutes: it turns the first session from a
+  demo you watch into something you have already done.</p>
+  <p>Make a folder, drop in any CSV you have lying around, point Claude Code at that folder,
+  and ask it:</p>
+  <pre><code>Describe this file: how many rows and columns, what each column
+appears to contain, and anything that looks wrong or inconsistent.</code></pre>
+  <p>Watch what it does <em>before</em> it answers — it will read the file, probably write and
+  run a few lines of code, and only then reply. That is the loop the primer describes,
+  running on your own data. Bring what it got wrong.</p>
+</div>
+
 You need macOS 13 or later, Windows 10 build 1809 or later, or Ubuntu 20.04 / Debian 10 or
 later, on an x64 or ARM processor, with 4 GB of RAM. **ChromeOS is not supported.** If you
 have a Chromebook, no laptop, or a machine older than that, tell us now and we will pair you
 with someone.
 
 **Do not pay for anything.** Claude Code is not included in the free plan, so it will ask you
-to sign in and the account you have will not work. That is expected and it is not a broken
-install. We are covering access for everyone in the seminar: you will get an invitation from
-us shortly — use it if you need it, ignore it if you are already set up.
+to sign in and the account you have will not work. That is expected, and it is not a broken
+install. We are covering access for everyone in the seminar: an invitation is on its way by
+email, and you will need to accept it **with your Cornell address**. Ignore it if you already
+pay for Claude.
 
-**If it will not install,** ask in **#setup-help** on the course Slack (the invite is in our
-email). If that does not sort it, come ten minutes early on Friday with the error message.
-Do not skip a session over a broken install; you can share someone's screen for a week.
+**If it will not install,** the official
+[troubleshooting page](https://code.claude.com/docs/en/troubleshoot-install) matches most
+errors to a fix. Failing that, ask in **#setup-help** on the course Slack (the invite is in
+our email), or come ten minutes early on Friday with the error message. Do not skip a session
+over a broken install; you can share someone's screen for a week.
 
 ## Schedule
 

@@ -179,6 +179,56 @@ schedule:
       research, writing, teaching, and lab work?
 
 links:
+  - date: 2026-09-03
+    title: "AI for science needs reasoning, not just data"
+    source: Eric Schmidt & Suhas Mahesh, MIT Technology Review, August 2026
+    url: https://www.technologyreview.com/2026/08/10/1141384/ai-agents-for-science/
+    tags: [debate, foundations]
+    note: >
+      The optimist case for agents specifically, argued against AlphaFold as the template:
+      the Protein Data Bank took 53 years and something like $21 billion, and most fields
+      have no equivalent, so a generalist reasoner with tools beats a specialist trained on
+      data that does not exist. Note who is writing. Schmidt Sciences funds the AI in
+      Science postdocs, including the ones in this department, which is a reason to read it
+      closely rather than a reason to discount it.
+
+  - date: 2026-09-03
+    title: "Delving into LLM-assisted writing in biomedical publications through excess vocabulary"
+    source: Kobak, Gonzalez-Marquez, Horvat & Lause 2025, Science Advances
+    url: https://doi.org/10.1126/sciadv.adt3813
+    tags: [evaluation, policy]
+    note: >
+      Fifteen million PubMed abstracts, and an abrupt post-2023 jump in a set of style
+      words. The authors put a floor of 13.5% of 2024 abstracts having been through an LLM,
+      rising to 40% in some subfields, and show the shift in scientific writing is larger
+      than the one Covid produced. The method is the interesting part: no detector, just
+      vocabulary frequencies before and after.
+
+  - date: 2026-09-03
+    title: "What Are LLMs Doing to Scientific Communication?"
+    source: Miletic & Falk 2026, arXiv:2605.19936
+    url: https://arxiv.org/abs/2605.19936
+    tags: [evaluation, debate]
+    note: >
+      Thirty-seven thousand ACL papers, plus a panel of domain experts. LLM-edited text
+      carries longer words, heavier syntax and lower lexical diversity. Then the awkward
+      bit: the same experts rated LLM-improved passages as more understandable and more
+      exciting, while reporting that they dislike LLM writing. Worth arguing about in Week
+      5, because both findings are probably true.
+
+  - date: 2026-09-03
+    title: "AI Coding Agents Can Reproduce Social Science Findings"
+    source: arXiv:2606.11447
+    url: https://arxiv.org/abs/2606.11447
+    tags: [evaluation, reproducibility]
+    note: >
+      A counterweight to the sceptical readings. Claude Code and Codex were run against
+      SocSci-Repro-Bench, 221 reproduction tasks across four disciplines, including studies
+      that are genuinely not reproducible because the data are missing. Both reproduced a
+      large share, Claude Code substantially ahead, and both well above earlier results for
+      general-purpose agents. Read it against Horstmann and work out why the verdicts
+      differ.
+
   - date: 2026-09-01
     title: "The Fate of the Riemann Hypothesis"
     source: Rich Schwartz, Brown University (short story, 3 pp.)

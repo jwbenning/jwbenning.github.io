@@ -56,9 +56,7 @@ icon: ai-eeb.png
 words you will hear all term. Read it if you have never used one, or have used one without
 being sure what made it an agent. No computer science needed.</p>
 
-<p class="pr-cap" style="margin:-1rem 0 2rem">Written by Claude, checked and edited by us.
-We ask you to say what a tool did for you, so: it drafted this page, we cut it down, and
-every number in the two walkthroughs below comes from a run we did ourselves.</p>
+<p class="pr-cap" style="margin:-1rem 0 2rem">Written by Claude, edited by JB.</p>
 
 ## The short version
 
@@ -245,21 +243,34 @@ the nearest record, while the 245 real occurrences scored a median of <b>0.12</b
 exceeded <b>0.28</b>. The model's best habitat is somewhere the plant has never been
 collected, and it beats every place the plant actually grows by a factor of two.</p>
 
-<p><b>Then we fixed the prompt.</b> Same task, same species, but written after reading the
-audit: draw the background points only from the region that has actually been surveyed rather
-than the whole map, drop collinear predictors instead of picking three, allow a climatic
-optimum rather than forcing a monotonic response, and score the model by holding out whole
-regions instead of on its own training data. That worked. The peak moved to <b>3 km</b> from
+<p><b>Then we fixed the prompt.</b> Same task, same species, same data. The only thing that
+changed is that we said what we wanted, having read the audit:</p>
+<pre>Same task, but: draw background points only from within 300 km of the
+occurrence records, not from the whole map. Screen all 19 bioclim
+variables for collinearity and drop until every |r| &lt; 0.7, instead of
+picking three. Include quadratic terms so a species can have a climatic
+optimum. Evaluate with spatial block cross-validation, not on the
+training data. Then tell me where the single highest-predicted cell is,
+and how far it is from the nearest real record.</pre>
+<p>That last sentence is the important one: it makes the agent run the audit on itself. It
+worked. The peak moved to <b>3 km</b> from
 a real record, and the occurrences moved from the bottom of the map to the top: median
 suitability at the real records went from 0.12 to <b>0.48</b>, and the maximum from 0.28 to
 <b>0.85</b>. Same data, same species, same afternoon — a different sentence.</p>
 
-<p><b>And here is the part worth sitting with.</b> The corrected model scores <i>worse</i> on
-the number people quote. Cross-validated AUC fell from <b>0.866</b> to <b>0.841</b>, because
-the naive model was being graded on a test it had written itself: an unconstrained background
-makes discrimination easy, and holding out regions punishes exactly the extrapolation that
-the training score rewards. If you had asked the agent to maximise AUC, it would have handed
-you back the broken model.</p>
+<p><b>And the better model got a worse score.</b> AUC went from <b>0.866</b> down to
+<b>0.841</b>. That looks like a step backwards, and it is not.</p>
+
+<p>AUC measures how well a model separates places the species was found from "background"
+places. The naive run drew its background from the entire map — deserts, ocean margins, the
+far side of the state — so telling <i>Clarkia</i> sites apart from those was easy, and the
+score came out high. The informed run drew background only from the region botanists have
+actually searched, where the contrast is genuinely subtle. <b>The first model was not
+better. It was sitting an easier exam, one it had written itself.</b></p>
+
+<p>Which is the thing to carry out of here. Every accuracy number an agent reports comes
+with a question it chose. Ask an agent to maximise the score and it will hand you back the
+broken model, honestly and with a straight face.</p>
 
 <p><b>Do this on a species you know.</b> Run the naive prompt, audit the map, then write the
 better prompt yourself and see what moves. Pick something whose distribution you would notice
@@ -357,19 +368,24 @@ exactly what it is allowed to write to.
 
 ## What they are good and bad at
 
-[Horstmann and colleagues](https://arxiv.org/abs/2606.07718) handed coding agents the
-stages of a real neuroscience analysis pipeline and scored them against the standards of the
-scientists who built it. It is the Week 2 reading, and the two lists below come from it.
+Capability is uneven, and the unevenness does not follow difficulty as a person would judge
+it. An agent will refactor a thousand-line script and then be unable to tell you that the
+figure it produced is nonsense. The lists below come partly from
+[Horstmann and colleagues](https://arxiv.org/abs/2606.07718), who scored coding agents stage
+by stage on a real neuroscience pipeline against the standards of the scientists who built
+it — that is the Week 2 reading — and partly from the evidence cited underneath.
 
 <div class="pr-two">
   <div class="pr-card good">
     <h3>Reliably good at</h3>
     <ul>
-      <li>Well-specified stages with a checkable criterion</li>
+      <li>Well-specified tasks with a checkable criterion</li>
       <li>Writing and debugging code against a test</li>
-      <li>Mechanical transformation: reformatting, reshaping, converting</li>
+      <li>Mechanical transformation: reformatting, reshaping, converting units, parsing</li>
       <li>Reading and extracting from large volumes of text</li>
-      <li>Doing all of the above much faster than you</li>
+      <li>Grammar, clarity, and translating into fluent English</li>
+      <li>Explaining unfamiliar code, statistics, or jargon on demand</li>
+      <li>Doing all of the above far faster than you</li>
     </ul>
   </div>
   <div class="pr-card">
@@ -377,18 +393,44 @@ scientists who built it. It is the Week 2 reading, and the two lists below come 
     <ul>
       <li>Deciding whether their own output is scientifically sound</li>
       <li>Sustained visual reasoning — they will plot a result, look at it, and miss an obvious problem</li>
-      <li>Stringing many stages together without drift</li>
+      <li>Stringing many stages together without errors compounding</li>
       <li>Saying "I don't know" instead of producing something</li>
       <li>Knowing when a task needed judgement they do not have</li>
+      <li>Citing accurately without a tool that actually looks things up</li>
+      <li>Sounding like a particular person rather than like everyone</li>
     </ul>
   </div>
 </div>
 
-<p class="pr-cap">Two patterns from that study are worth carrying into every session. Stages the
-agents solved perfectly in isolation broke once composed into a full pipeline. And when the
-authors classified every occasion an agent looked at a plot of its own output, the times it
-misread or explained away a real problem outnumbered the times it caught one, on every
-task where it looked at a plot at all.</p>
+<p><b>Writing deserves its own paragraph</b>, because it is what most people try first and
+what most people end up ambivalent about. The good part is real. Models fix grammar, tighten
+a tangled paragraph, and translate into idiomatic English — which matters enormously if
+English is not your first language, and is arguably the most equity-improving thing they do.
+The problem is not that the prose comes out wrong. It is that it comes out as nobody's.</p>
+
+<p>The scale of this is now measurable.
+<a href="https://doi.org/10.1126/sciadv.adt3813">Kobak and colleagues</a> tracked vocabulary across 15
+million PubMed abstracts and found an abrupt post-2023 jump in a set of style words, enough
+to put a floor of <b>13.5% of 2024 abstracts</b> having been through an LLM, and 40% in some
+subfields — a larger shift in scientific writing than the Covid pandemic produced. A
+<a href="https://arxiv.org/abs/2605.19936">parallel study</a> of 37,000 ACL papers found LLM-edited text
+carries longer words, heavier syntax, and lower lexical diversity.</p>
+
+<p>And here is the uncomfortable finding. In that same study, domain experts rated the
+LLM-improved passages as <i>more understandable and more exciting</i> — while saying, in the
+same breath, that they disliked LLM writing. Both things are true at once. It reads better
+and it sounds like everyone. In a field where your discussion section is an argument you are
+making rather than a report you are filing, that is a trade worth making deliberately instead
+of by default.</p>
+
+<p class="pr-cap">Two patterns from the Horstmann study are worth carrying into every session.
+<b>First, doing each step right is not the same as doing the job right.</b> Handed a single
+stage, the agents often nailed it. Handed the whole pipeline to run end to end, the same
+stages failed — because a small error early on is not caught, it is passed to the next step
+as if it were correct, and by the end the output is confidently wrong. <b>Second, they do
+not catch it by looking.</b> The authors classified every occasion on which an agent
+inspected a plot of its own output: on every task where that happened, the times it misread
+or explained away a real problem outnumbered the times it spotted one.</p>
 
 ## Why "it acts" changes everything
 
@@ -412,19 +454,18 @@ the result, and nobody reads it unless they decide to.
 things. Remove the work and you remove the noticing, unless you put it back deliberately.
 
 <div class="pr-note">
-<b>The one rule this course adds.</b> Everything else about responsible AI use in research
-follows the standards you already know: you are accountable for your work regardless of the
-tools you used, and you never paste unpublished data or personal information into a free
-external tool. Because agents act, we add one more: <b>gate every irreversible action —
-delete, overwrite, submit, send — behind human confirmation.</b> An agent should be able to
-propose deleting something. It should not be able to delete it.
+Responsible AI use in research follows many of the standards you already know: you are
+accountable for your work regardless of the tools you used, and you never paste unpublished
+data or personal information into a free external tool. You should also think about
+<b>gating every irreversible action — delete, overwrite, submit, send — behind human
+confirmation.</b> An agent should be able to propose deleting something. It (usually)
+should not be able to delete it without human input.
 </div>
 
 <div class="pr-note">
-<b>The audit, in four questions.</b> Every demo this term ends the same way. What did it
-read? What did it change? What did it decide for us? How would we know if it was wrong?
-Treat an agent the way you treat a new field assistant in their first week — quick, capable,
-keen to report success — and read the first datasheets in full before you start spot-checking.
+<b>A general audit for agentic products, in four questions.</b> What did it read? What did
+it change? What did it decide for us? How would we know if it was wrong? These agents are
+quick and capable, but also naive and keen to report success.
 </div>
 
 ## Who makes these
@@ -436,38 +477,53 @@ keen to report success — and read the first datasheets in full before you star
 <p>A snapshot that will date fast. What lasts is the two questions to ask of anything new:
 <b>which rung is it on</b>, and <b>can it write</b>.</p>
 
-<p><b>Chat assistants.</b> ChatGPT, Claude, Gemini. Rung two on their own, rung three or
-four once search, code execution or connectors are switched on. They act on their own
-servers, not your machine, so they cannot alter your files.</p>
+<p><b>Chat assistants.</b> <a href="https://chatgpt.com/">ChatGPT</a>,
+<a href="https://claude.ai/">Claude</a>, <a href="https://gemini.google.com/">Gemini</a>.
+Rung two on their own, rung three or four once search, code execution or connectors are
+switched on. They act on their own servers, not your machine, so they cannot alter your
+files.</p>
 
-<p><b>Terminal and desktop coding agents.</b> Claude Code, OpenAI Codex, Gemini CLI. Rung
-four, and read-write on your actual machine — they edit files and run commands. This is the
-category we use in class, and the category the seminar's warnings are really about.</p>
+<p><b>Terminal and desktop coding agents.</b>
+<a href="https://code.claude.com/docs/">Claude Code</a>,
+<a href="https://developers.openai.com/codex/">OpenAI Codex</a>,
+<a href="https://github.com/google-gemini/gemini-cli">Gemini CLI</a>. Rung four, and
+read-write on your actual machine — they edit files and run commands. This is the category
+we use in class, and the one the seminar's warnings are really about.</p>
 
-<p><b>Editor-integrated agents.</b> Cursor, GitHub Copilot, Windsurf, Cline. Rung four,
-read-write, scoped to the project you have open.</p>
+<p><b>Editor-integrated agents.</b> <a href="https://cursor.com/">Cursor</a>,
+<a href="https://github.com/features/copilot">GitHub Copilot</a>,
+<a href="https://windsurf.com/">Windsurf</a>, <a href="https://cline.bot/">Cline</a>. Rung
+four, read-write, scoped to the project you have open. Good if you already live in an
+editor.</p>
 
-<p><b>Open source.</b> Two to know. <b>OpenCode</b> is the most-starred open-source agent,
-terminal-based, and runs against whichever model you point it at. <b>OpenHands</b> is the
-most widely self-hosted; it runs each session in a Docker sandbox, and as of mid-2026 its
-CodeAct scaffold on a current frontier model scored 68.4% on SWE-bench Verified, close to
-the proprietary tools. <b>Aider</b> is older and narrower, and commits every change as its
-own git commit, which makes review and rollback easy. <b>SWE-agent</b> is a research
-framework rather than a daily driver, and introduced the agent-computer interface idea the
-others build on. All of them let you choose the model, which matters if you need to know
-where your data goes.</p>
+<p><b>Open source.</b> <a href="https://opencode.ai/">OpenCode</a> is the most-starred
+open-source agent, terminal-based, and runs against whichever model you point it at.
+<a href="https://www.all-hands.dev/">OpenHands</a> is the most widely self-hosted; it runs
+each session in a Docker sandbox, and as of mid-2026 its CodeAct scaffold on a current
+frontier model scored 68.4% on SWE-bench Verified, close to the proprietary tools.
+<a href="https://aider.chat/">Aider</a> is older and narrower, and commits every change as
+its own git commit, which makes review and rollback easy.
+<a href="https://swe-agent.com/">SWE-agent</a> is a research framework rather than a daily
+driver, and introduced the agent-computer interface idea the others build on. All of them
+let you choose the model, which matters if you need to know where your data goes.</p>
 
-<p><b>Open-weight models.</b> A different thing from the open-source agents above, and
-easily confused with them. Those are scaffolds; these are the models themselves, published
-so you can download the parameters and run them on hardware you control. Most of the strong
-ones now come from Chinese labs — DeepSeek, Qwen (Alibaba), Kimi (Moonshot), GLM (Zhipu),
-MiniMax — alongside Meta's Llama and Mistral. On coding and agentic benchmarks they now sit
-within a few points of the leading closed models, which was not true two years ago, and a
-mid-sized one runs on a single well-specified workstation or a pair of GPUs. The reason to
-care here is data. Calling a Chinese company's API raises exactly the same question as
-calling any other vendor's; running the weights yourself is the one configuration in which
-unpublished data, or a locality you are not allowed to disclose, never leaves your machine.
-That is the argument for open weights in our field, and it has nothing to do with cost.</p>
+<p><b>Open-weight models.</b> Not the same as the open-source agents above, and easily
+confused with them. Those are scaffolds. These are the models themselves, published so that
+you can download the parameters and run them on hardware you control. The strong ones come
+from labs on several continents — <a href="https://www.deepseek.com/">DeepSeek</a>,
+<a href="https://qwen.ai/">Qwen</a>, <a href="https://www.moonshot.ai/">Kimi</a>,
+<a href="https://z.ai/">GLM</a> and <a href="https://www.minimax.io/">MiniMax</a> in China,
+<a href="https://www.llama.com/">Llama</a> from Meta in the US,
+<a href="https://mistral.ai/">Mistral</a> in France — and on coding and agentic benchmarks
+they now sit within a few points of the leading closed models, which was not true two years
+ago. A mid-sized one runs on a single well-specified workstation or a pair of GPUs.</p>
+
+<p>The reason to care is where your data goes, and it is not a point about any particular
+company or country. <b>Any</b> hosted model means sending your text to someone else's
+servers, under their terms, wherever those servers are. Downloading the weights and running
+them yourself is the one arrangement in which unpublished data, or a locality you are not
+allowed to disclose, never leaves your machine at all. That is an argument for open weights
+in our field, and it has nothing to do with cost.</p>
 
 <p><b>Science-specific.</b> Elicit and Consensus for literature search and screening; a
 growing set of research agents from groups like FutureHouse. Mostly read-only, mostly
