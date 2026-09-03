@@ -452,6 +452,18 @@ framework rather than a daily driver, and introduced the agent-computer interfac
 others build on. All of them let you choose the model, which matters if you need to know
 where your data goes.</p>
 
+<p><b>Open-weight models.</b> A different thing from the open-source agents above, and
+easily confused with them. Those are scaffolds; these are the models themselves, published
+so you can download the parameters and run them on hardware you control. Most of the strong
+ones now come from Chinese labs — DeepSeek, Qwen (Alibaba), Kimi (Moonshot), GLM (Zhipu),
+MiniMax — alongside Meta's Llama and Mistral. On coding and agentic benchmarks they now sit
+within a few points of the leading closed models, which was not true two years ago, and a
+mid-sized one runs on a single well-specified workstation or a pair of GPUs. The reason to
+care here is data. Calling a Chinese company's API raises exactly the same question as
+calling any other vendor's; running the weights yourself is the one configuration in which
+unpublished data, or a locality you are not allowed to disclose, never leaves your machine.
+That is the argument for open weights in our field, and it has nothing to do with cost.</p>
+
 <p><b>Science-specific.</b> Elicit and Consensus for literature search and screening; a
 growing set of research agents from groups like FutureHouse. Mostly read-only, mostly
 retrieval — closer to a very good search tool than to an agent that acts.</p>
@@ -481,6 +493,11 @@ Everything below will come up. You do not need to memorise it; skim it now and c
   <dt>Prompt</dt>
   <dd>What you send it. <b>System prompt</b> is the standing instruction set the tool's
   builders wrote, which you usually cannot see.</dd>
+  <dt>Open weights <span class="alt">/ open source</span></dt>
+  <dd>Open weights means the parameters are published, so you can download the model and run
+  it yourself. It usually does not mean the training data or the training code are public,
+  which is what "open source" implies elsewhere in software. The distinction matters when you
+  need to know where your data goes, and when you need to reproduce a result.</dd>
   <dt>Hallucination</dt>
   <dd>Fluent, confident, false. Not a bug that will be patched — a direct consequence of a
   system that generates plausible continuations rather than retrieving facts.</dd>
