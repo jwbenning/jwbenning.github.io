@@ -55,6 +55,12 @@ icon: ai-eeb.png
   .setup pre{margin:.55rem 0 0;padding:.6rem .8rem;border-radius:8px;background:var(--global-bg-color);border:1px solid var(--global-divider-color);overflow-x:auto}
   .setup code{font-size:.86rem}
   .setup .why{color:var(--global-text-color-light);font-size:.9rem}
+  h2{scroll-margin-top:7rem}
+  .ai-jump{position:sticky;top:56px;z-index:20;display:flex;gap:.3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:.5rem 0;margin:0 0 1.6rem;background:var(--global-bg-color);border-bottom:1px solid var(--global-divider-color)}
+  .ai-jump::-webkit-scrollbar{display:none}
+  .ai-jump a{flex:0 0 auto;font-size:.72rem;font-weight:600;letter-spacing:.03em;white-space:nowrap;text-decoration:none;border:1px solid var(--global-divider-color);border-radius:999px;padding:.2rem .7rem;color:var(--global-text-color-light);background:var(--global-card-bg-color)}
+  .ai-jump a:hover{border-color:var(--global-theme-color);color:var(--global-theme-color)}
+  .ai-jump a.is-here{background:var(--global-theme-color);border-color:var(--global-theme-color);color:#fff}
   .ai-filters{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.1rem 0 .3rem}
   .ai-f{font:inherit;font-size:.72rem;font-weight:600;letter-spacing:.03em;cursor:pointer;border:1px solid var(--global-divider-color);background:var(--global-card-bg-color);color:var(--global-text-color-light);border-radius:999px;padding:.2rem .7rem}
   .ai-f:hover{border-color:var(--global-theme-color);color:var(--global-theme-color)}
@@ -78,6 +84,16 @@ icon: ai-eeb.png
 
 <div class="ai-banner">{{ c.announcement }}</div>
 {% endif %}
+
+<nav class="ai-jump" id="aiJump" aria-label="Jump to a section">
+{% assign nowwk = c.schedule | where: "week", c.current_week | first %}
+{% if nowwk %}<a href="#this-week">This week</a>{% endif %}
+{% if c.announcements and c.announcements.size > 0 %}<a href="#announcements">Announcements</a>{% endif %}
+<a href="#getting-set-up">Getting set up</a>
+<a href="#schedule">Schedule</a>
+<a href="#using-ai-in-this-course">Using AI here</a>
+<a href="#-reading-room">Reading room</a>
+</nav>
 
 An **agent** is a large language model given tools, memory, and permission to plan and act
 over many steps — cleaning datasets, running analyses, writing and executing code, querying
@@ -337,3 +353,47 @@ Filter by topic.
   })();
 </script>
 
+
+<script>
+  (function () {
+    var bar = document.getElementById("aiJump");
+    if (!bar) return;
+    var links = Array.prototype.slice.call(bar.querySelectorAll("a"));
+    var pairs = [];
+    links.forEach(function (a) {
+      var el = document.getElementById(decodeURIComponent(a.hash.slice(1)));
+      if (el) pairs.push({ link: a, el: el });
+    });
+    if (!pairs.length) return;
+
+    // The last heading that has passed the sticky bar is the one you are in.
+    var OFFSET = 120;
+    function current() {
+      var found = null;
+      pairs.forEach(function (p) {
+        if (p.el.getBoundingClientRect().top - OFFSET <= 0) found = p;
+      });
+      return found;
+    }
+
+    function mark() {
+      var on = current();
+      links.forEach(function (a) { a.classList.toggle("is-here", !!on && a === on.link); });
+      // keep the active pill in view when the bar itself has scrolled sideways
+      if (on && bar.scrollWidth > bar.clientWidth) {
+        var l = on.link.offsetLeft, r = l + on.link.offsetWidth;
+        if (l < bar.scrollLeft) bar.scrollLeft = l - 12;
+        else if (r > bar.scrollLeft + bar.clientWidth) bar.scrollLeft = r - bar.clientWidth + 12;
+      }
+    }
+
+    var tick = 0;
+    function onScroll() {
+      if (tick) return;
+      tick = requestAnimationFrame(function () { tick = 0; mark(); });
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    mark();
+  })();
+</script>
