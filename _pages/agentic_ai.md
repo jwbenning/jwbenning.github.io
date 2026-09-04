@@ -55,7 +55,7 @@ icon: ai-eeb.png
   .setup pre{margin:.55rem 0 0;padding:.6rem .8rem;border-radius:8px;background:var(--global-bg-color);border:1px solid var(--global-divider-color);overflow-x:auto}
   .setup code{font-size:.86rem}
   .setup .why{color:var(--global-text-color-light);font-size:.9rem}
-  h2{scroll-margin-top:7rem}
+  body h2[id]{scroll-margin-top:7rem}
   .ai-jump{position:sticky;top:56px;z-index:20;display:flex;gap:.3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:.5rem 0;margin:0 0 1.6rem;background:var(--global-bg-color);border-bottom:1px solid var(--global-divider-color)}
   .ai-jump::-webkit-scrollbar{display:none}
   .ai-jump a{flex:0 0 auto;font-size:.72rem;font-weight:600;letter-spacing:.03em;white-space:nowrap;text-decoration:none;border:1px solid var(--global-divider-color);border-radius:999px;padding:.2rem .7rem;color:var(--global-text-color-light);background:var(--global-card-bg-color)}
