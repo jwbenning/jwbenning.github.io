@@ -279,8 +279,6 @@ readings, and demo.
 
 ## Using AI in this course
 
-Four rules.
-
 - **Decide whether your data trains the model.** Most tools let you turn this off. Ask us
   if you cannot find the setting.
 - **Think before you paste.** Unpublished data, anything with a person's name in it, a
@@ -289,9 +287,8 @@ Four rules.
   [AI guidelines](https://it.cornell.edu/ai-strategy/ai-guidelines) are helpful here.
 - **Calibrate your bullshit meter.** These models are confidently wrong on a regular basis.
   Confidence often does not relate to accuracy.
-
-**Gate every irreversible action — delete, overwrite, submit, send — behind human
-confirmation.**
+- **Gate every irreversible action** — delete, overwrite, submit, send — behind human
+  confirmation.
 
 ## 📚 Reading room
 
