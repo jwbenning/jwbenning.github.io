@@ -15,6 +15,12 @@ icon: ai-eeb.png
   .ai-meta dt{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--global-text-color-light);margin:0}
   .ai-meta dd{margin:.15rem 0 0;font-size:.95rem;line-height:1.4}
   .ai-banner{border:1px solid var(--global-theme-color);border-left:4px solid var(--global-theme-color);border-radius:10px;padding:.85rem 1.1rem;margin:0 0 1.6rem;line-height:1.6;background:var(--global-card-bg-color)}
+  .ai-ann{list-style:none;padding:0;margin:0 0 2rem}
+  .ai-ann li{border-left:3px solid var(--global-divider-color);padding:0 0 0 1rem;margin:0 0 1.4rem;line-height:1.6}
+  .ai-ann li:first-child{border-left-color:var(--global-theme-color)}
+  .ai-ann .when{display:block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--global-text-color-light)}
+  .ai-ann h3{font-size:1rem;margin:.2rem 0 .35rem}
+  .ai-ann p{margin:0}
   .ai-live{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--global-text-color-light);border:1px solid var(--global-divider-color);border-radius:999px;padding:.14rem .6rem;margin-bottom:1rem}
   .ai-live .dot{display:inline-block;width:.42rem;height:.42rem;border-radius:50%;background:var(--global-theme-color);margin-right:.35rem;vertical-align:.04em}
   .ai-now{border:1px solid var(--global-divider-color);border-radius:12px;background:var(--global-card-bg-color);padding:1.1rem 1.3rem;margin:0 0 2rem}
@@ -120,6 +126,24 @@ with no background assumed. It is the first of the Week 1 readings; read it befo
   {% endif %}
   {% if now.assignment %}<p><span class="ai-lbl">Bring with you</span><br>{{ now.assignment }}</p>{% endif %}
 </div>
+{% endif %}
+
+{% if c.announcements and c.announcements.size > 0 %}
+
+## Announcements
+
+Day-to-day chatter lives on the Slack; this is the record, so nothing is lost if you missed it.
+
+<ul class="ai-ann">
+{% assign anns = c.announcements | sort: "date" | reverse %}
+{% for a in anns %}
+  <li>
+    <span class="when">{{ a.date | date: "%B %-d, %Y" }}</span>
+    {% if a.title %}<h3>{{ a.title }}</h3>{% endif %}
+    <p>{{ a.body }}</p>
+  </li>
+{% endfor %}
+</ul>
 {% endif %}
 
 ## Getting set up

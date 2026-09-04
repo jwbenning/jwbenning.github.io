@@ -50,6 +50,21 @@ if something is wrong. The site rebuilds itself a few minutes after a change lan
 **Change the banner.** Edit `announcement`. HTML links are allowed. Delete the whole
 `announcement:` block to hide the banner.
 
+**Post an announcement.** Add an entry at the top of `announcements:`. It renders in the
+Announcements section, newest first, and is the durable record of anything said on Slack.
+
+```yaml
+announcements:
+  - date: 2026-10-03
+    title: No class next week
+    body: >
+      One sentence or several. <strong>HTML</strong> and
+      <a href="https://example.org">links</a> both work.
+```
+
+`date` must be unquoted `YYYY-MM-DD`. `title` is optional; `body` is required. This is
+separate from `announcement` (singular), which is the pinned banner at the very top.
+
 **Add a reading to a week.** Under that week's `readings:`:
 
 ```yaml

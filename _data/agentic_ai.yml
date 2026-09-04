@@ -2,7 +2,10 @@
 # Edit this file to update the page — the layout reads everything from here.
 #
 #   current_week   which week to highlight in the "This week" panel (0 = before term)
-#   announcement   optional banner at the top; delete the line to hide it
+#   announcement   optional pinned banner at the top; delete the line to hide it
+#   announcements  dated log rendered as the Announcements section, newest first.
+#                  Slack carries the day-to-day; this is the durable record, so put
+#                  anything class-wide here too. `body` is HTML, `title` optional.
 #   schedule       the nine themed weeks; `date` may be blank until it is fixed
 #   links          the running reading feed, newest first
 
@@ -19,6 +22,18 @@ announcement: >
   <a href="mailto:xx286@cornell.edu">Xiangtao</a> or
   <a href="mailto:jbenning@cornell.edu">John</a>. Postdocs and faculty are welcome to sit in
   without registering.
+
+announcements:
+  - date: 2026-09-04
+    title: Room change, and announcements are moving to Slack
+    body: >
+      We outgrew the original room, so the seminar now meets in <strong>Kennedy Hall 213</strong>
+      (capacity 49) rather than Comstock B104 — same day and time. From here on, course
+      announcements go to the
+      <a href="https://join.slack.com/t/agenticaiineeb/shared_invite/zt-48mig0rjl-j1QiGpPnO9rq9GR0aH03Kw">Slack</a>
+      and to this page rather than to email, so join the Slack if you have not yet. And if you
+      have not filled in the five-minute pre-course survey, please do — we use it to pitch the
+      early sessions at the room we actually have.
 
 schedule:
   - week: 1

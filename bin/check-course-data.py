@@ -37,6 +37,7 @@ if not isinstance(d, dict):
 
 sched = d.get("schedule") or []
 links = d.get("links") or []
+anns  = d.get("announcements") or []
 
 cw = d.get("current_week")
 if not isinstance(cw, int):
@@ -83,6 +84,19 @@ for l in links:
     if not l.get("date"):
         warn(f"reading room: '{str(l.get('title'))[:40]}' has no `date:`")
 
+for i, a in enumerate(anns, 1):
+    where = f"announcement {i}"
+    dt = a.get("date")
+    if dt is None:
+        err(f"{where}: missing `date:`")
+    elif not isinstance(dt, datetime.date):
+        err(f"{where}: date must be plain YYYY-MM-DD, not quoted")
+    if not a.get("body"):
+        err(f"{where}: missing `body:` (the text students read)")
+    for field in a:
+        if field not in {"date", "title", "body"}:
+            warn(f"{where}: unknown field `{field}:` -- it will not render")
+
 urls = [r.get("url") for w in sched for r in (w.get("readings") or [])] + \
        [l.get("url") for l in links]
 for u in {u for u in urls if u and urls.count(u) > 1}:
@@ -97,4 +111,5 @@ if errors:
     sys.exit(1)
 print(f"\nok    {len(sched)} weeks, "
       f"{sum(len(w.get('readings') or []) for w in sched)} assigned readings, "
-      f"{len(links)} in the reading room.")
+      f"{len(links)} in the reading room, "
+      f"{len(anns)} announcement(s).")
