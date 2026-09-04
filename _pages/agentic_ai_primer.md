@@ -139,7 +139,7 @@ The test: did it go and get something, and did what came back change what it did
 </div>
 
 <details class="pr-more">
-<summary>Try it yourself — rungs 1 and 2, in a chat window</summary>
+<summary>Try it yourself, optional — rungs 1 and 2, in a chat window</summary>
 <div class="inner">
 
 <p>Ten minutes, and worth it: reading that a model fabricates is different from watching
@@ -186,7 +186,7 @@ output looks wrong, and knowing the system does not help. Only the lookup catche
 </details>
 
 <details class="pr-more">
-<summary>Try it yourself — rungs 3 and 4, with a coding agent</summary>
+<summary>Try it yourself, optional — rungs 3 and 4, with a coding agent</summary>
 <div class="inner">
 
 <p>The walkthrough above needs nothing but a chat window. This one needs Claude Code
@@ -223,7 +223,7 @@ climate dataset downloaded, code written and rewritten when it errors. It will a
 permission for some actions depending on your settings. At the end you get a map. Notice
 that you were consulted about almost none of it.</p>
 
-<p><b>3. Audit what it did</b>, which is the part that is actually the coursework. Scroll
+<p><b>3. Audit what it did.</b> Scroll
 back through the transcript and answer four questions: what did it read, what did it
 change, what did it decide for us, and how would we know if it was wrong. Then ask it
 directly: <i>list every analytical choice you made that I did not specify.</i> Compare its
@@ -272,11 +272,11 @@ better. It was sitting an easier exam, one it had written itself.</b></p>
 with a question it chose. Ask an agent to maximise the score and it will hand you back the
 broken model, honestly and with a straight face.</p>
 
-<p><b>Do this on a species you know.</b> Run the naive prompt, audit the map, then write the
-better prompt yourself and see what moves. Pick something whose distribution you would notice
-being wrong about — that is the whole skill. Your numbers will not match ours; different
-choices, different counts, possibly different failures, which is nondeterminism and is why a
-result without its transcript does not mean much. Bring both maps to Week 1.</p>
+<p><b>If you want to take it further, try it on a species you know.</b> Run the naive prompt,
+audit the map, then write the better prompt yourself and see what moves. Nothing to hand in and
+nothing to bring — this is here for anyone who wants it. Your numbers will not match ours;
+different choices, different counts, possibly different failures, which is nondeterminism and is
+why a result without its transcript does not mean much.</p>
 
 </div>
 </details>
