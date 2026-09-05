@@ -54,11 +54,6 @@ profiles:
     content: about_poplyk.md
     image_circular: false
     more_info:
-  # Recruitment CTA — closes the current-members section
-  - align: left
-    image: pic_you.png
-    content: about_you.md
-    image_circular: false # crops the image to make it circular
   # Friends of the lab (no photo) — alphabetical by last name;
   # the section heading lives in about_landis.md, so it stays first
   - content: about_landis.md
