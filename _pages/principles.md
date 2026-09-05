@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /principles/
-last_updated: 2026-09-03
+last_updated: 2026-09-04
 title: principles
 description:
 nav: true
@@ -13,3 +13,4 @@ These are some guiding principles of our research group. This list evolves as th
 1. Everyone can be a scientist.
 2. Good science is open science.
 3. Kindness and humility make Science better.
+4. Remember the three R's: rigor, rhythm, reproducibility.
