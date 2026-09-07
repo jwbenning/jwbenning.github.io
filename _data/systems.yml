@@ -1,0 +1,129 @@
+# Study systems for the research page. Each entry becomes one section on
+# /research/; `key` matches the `system:` field in _projects/*.md, which is how
+# project cards get grouped underneath.
+#
+# `funding` is what appears in the "Supported by" strip. Leave the list empty
+# and the strip is omitted — better an absent strip than an invented grant.
+
+- key: cx
+  name: Range limits in a California annual
+  latin: Clarkia xantiana
+  color: "#c2410c"
+  thumb: assets/img/gallery/clarkia-xantiana.jpg
+  thumb_alt: A pink Clarkia xantiana flower
+  blurb: |
+    A species' range limit is where adaptation runs out. Before asking why adaptation fails
+    there, though, we have to answer something more basic: what is it about the environment
+    beyond the edge that keeps populations from establishing? Distribution models almost always
+    answer "climate," because climate is what is easy to measure. Most range edges are gradients
+    in many things at once, biotic and abiotic together.
+
+    *Clarkia xantiana* is an annual plant of the southern Sierra Nevada whose eastern range
+    margin falls across one of these compound gradients. Transplanting it beyond that margin,
+    and manipulating candidate factors one at a time, lets us measure what each contributes to
+    lifetime fitness. The answer has repeatedly been that the biotic environment matters as much
+    as the abiotic one: herbivores, pollinators, and soil microbes each move fitness beyond the
+    edge by as much as precipitation does. Two decades of demographic monitoring and a growing
+    body of genomic data let us ask the same questions through time as well as across space.
+  hook: Why does a plant stop where it does? We take a range edge apart, factor by factor, in the field.
+  methods:
+    - field experiments
+    - long-term demography
+    - population genomics
+    - modeling & simulation
+  funding: []
+  figures:
+    - path: assets/img/gallery/clarkia-system.jpg
+      alt: "Four panels: a kangaroo rat at night, a bee on a Clarkia flower, a gridded field plot, and a seed dish"
+      caption: "The system: seed predators, pollinators, transplant plots, seed."
+    - path: assets/img/photos/2026-06-20_canyon-slope.jpg
+      alt: Dry canyon slope in the Kern River Canyon
+      caption: Kern River Canyon, at the eastern range margin.
+    - path: assets/img/gallery/flowering-drought-shift.jpg
+      alt: Distribution of days to flowering before and after a drought
+      caption: Flowering time before and after the drought.
+  people: With Dave Moeller (Minnesota), Monica Geber (Cornell), and Jacob Landis (Cornell).
+
+- key: gc
+  name: A wildflower in decline
+  latin: Gentianopsis crinita
+  color: "#1d4ed8"
+  thumb:
+  thumb_alt:
+  blurb: |
+    The fringed gentian is a charismatic late-summer flower of wet meadows across eastern North
+    America, and it is vanishing from sites where it was once reliable. Decline is easy to
+    observe and hard to attribute. Small populations lose genetic variation and suffer
+    demographic bad luck; habitat gets wetter, drier, or shadier; the climate a population is
+    adapted to drifts out from under it. These are not competing hypotheses so much as processes
+    that feed each other, and separating them takes demography and genomics on the same
+    populations.
+  hook: The fringed gentian is disappearing from eastern wet meadows. We want to know which of the obvious explanations is right.
+  methods:
+    - long-term demography
+    - population genomics
+    - common gardens
+  funding: []
+  figures: []
+  people: With Anurag Agrawal (Cornell) and Jacob Landis (Cornell).
+
+- key: expevo
+  name: Evolution we can replicate
+  latin: Tribolium castaneum & Escherichia coli
+  color: "#0d9488"
+  thumb: assets/img/gallery/tribolium-boxes.jpg
+  thumb_alt: A row of clear plastic boxes of flour beetles, with beetle density declining from left to right
+  blurb: |
+    Theory says that the steepness of an environmental gradient and the amount of dispersal
+    together decide whether a population expands, stalls, or forms a stable range limit. Almost
+    none of that has been tested directly, because a natural range limit gives you one replicate
+    and no control over the gradient. Existing models also leave out things we know are true of
+    real environments: that they vary in time as well as in space, and that dispersal itself
+    evolves.
+
+    Beetles and bacteria let us do the experiment properly. We build gradients out of connected
+    patches, let dozens of replicate populations expand across them, and watch the same process
+    play out many times, with the environment under our control and every generation sampled.
+    Simulation models run alongside the experiments, both to generate the predictions and to ask
+    what the results would have looked like under processes we did not impose.
+  hook: Range-limit theory makes sharp predictions that are almost impossible to test in the field. So we build the landscape in the lab.
+  methods:
+    - experimental evolution
+    - modeling & simulation
+    - population genomics
+  funding:
+    - "NSF DEB-2230806 (with Topher Weiss-Lehman, Wyoming)"
+  figures:
+    - path: assets/img/publication_preview/temporal-variance.png
+      alt: Conceptual diagram of two modes of temporal environmental variation
+      caption: Two ways an environment can vary in time.
+    - path: assets/img/publication_preview/dispersal-evolution.png
+      alt: Dispersal phenotype of core and edge populations across environmental gradients
+      caption: Dispersal evolution along gradients of increasing steepness.
+  people: Beetle experimental evolution with Topher Weiss-Lehman (Wyoming) and Ruth Hufbauer (Colorado State).
+
+- key: flvs
+  name: Fifty years of change in Finger Lakes forests
+  latin: Finger Lakes Vegetation Survey
+  color: "#6d28d9"
+  thumb:
+  thumb_alt:
+  blurb: |
+    Around 1980, Peter Marks surveyed the plant communities of the central Finger Lakes region
+    in detail: nearly 200 stands, recorded by a systematist who knew the flora cold. The survey
+    became the basis of his regional guide to plant communities, and then effectively
+    disappeared. The underlying data has never been used in a journal publication; it survives
+    only inside the book's classification and on a set of backup discs recovered in early 2026.
+
+    That makes it unusually valuable. Half a century is close to the ideal interval for detecting
+    change driven by climate, land use, deer, and invasion, and comparable baselines for this
+    region are rare. We are digitizing the original records, working out where each plot actually
+    was, and preparing to resurvey them.
+  hook: A careful botanist surveyed these forests around 1980 and never published the data. We are recovering it, and going back.
+  methods:
+    - archival & resurvey
+    - community modeling
+    - long-term demography
+  funding: []
+  figures: []
+  people: With Peter L. Marks (Cornell, emeritus).

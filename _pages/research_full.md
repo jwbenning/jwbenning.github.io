@@ -6,27 +6,46 @@ published: false
 description:
 nav: false
 nav_order: 2
+last_updated: 2026-09-07
 ---
 
 <style>
+  /* ── lede ─────────────────────────────────────────────── */
   .research-lede{max-width:46rem;margin:0 auto;text-align:center;font-size:1.5rem;font-weight:700;line-height:1.35}
   .research-lede small{display:block;font-weight:400;font-size:1.05rem;color:var(--global-text-color-light);margin-top:.6rem;line-height:1.5}
-  .research-chain{max-width:54rem;margin:1.8rem auto .4rem;border:1px solid var(--global-divider-color);border-radius:16px;background:var(--global-card-bg-color);padding:1.6rem 1.3rem 1.3rem;position:relative}
-  .research-chain .dims{display:flex;justify-content:center;align-items:center;gap:.55rem;margin:0 0 1.1rem;flex-wrap:wrap}
-  .research-chain .dim{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--global-theme-color);color:#fff;padding:.2rem .8rem;border-radius:999px}
-  .research-chain .dims .amp{color:var(--global-text-color-light);font-size:.72rem;font-weight:700}
-  .research-tri{display:block;width:100%;height:auto;max-width:620px;margin:0 auto}
-  .research-tri .bx{fill:var(--global-bg-color);stroke-width:1.5}
-  .research-tri .lab{font-size:19px;font-weight:700}
-  .research-tri .sub{font-size:12.5px;fill:var(--global-text-color-light)}
-  .research-tri .edge{stroke:var(--global-text-color-light);stroke-width:1.6;fill:none}
-  .research-tri .ahead{fill:var(--global-text-color-light)}
-  .research-chain .cap{text-align:center;color:var(--global-text-color-light);font-size:.85rem;margin:1rem auto 0;max-width:42rem;line-height:1.5}
-  .research-philosophy{max-width:46rem;margin:1.5rem auto 2.4rem;text-align:center;line-height:1.65}
-  .research-q{margin-top:2.8rem;padding-left:.7rem;border-left:5px solid var(--global-theme-color)}
-  .research-sub{color:var(--global-text-color-light);margin:.2rem 0 0;max-width:48rem}
-  .research-strip{text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;font-weight:700;color:var(--global-text-color-light);margin:1.3rem 0 .6rem}
-  /* expandable project cards */
+  .research-philosophy{max-width:46rem;margin:1.2rem auto 1.8rem;text-align:center;line-height:1.65;color:var(--global-text-color-light)}
+
+  /* ── method tag vocabulary ────────────────────────────── */
+  .tags{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
+  .tag{display:inline-block;font-size:.7rem;line-height:1.5;padding:.1rem .55rem;border-radius:999px;white-space:nowrap}
+  .tag.method{background:transparent;color:var(--global-text-color-light);border:1px solid var(--global-divider-color);font-weight:600}
+  .method-key{border:1px solid var(--global-divider-color);border-radius:12px;padding:.75rem .95rem;margin:0 0 2.2rem;background:var(--global-card-bg-color);display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}
+  .method-key .lab{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--global-text-color-light)}
+
+  /* ── system section ───────────────────────────────────── */
+  .sys{margin:0 0 3.2rem;padding-top:1.4rem;border-top:1px solid var(--global-divider-color)}
+  .sys-head{display:grid;grid-template-columns:150px 1fr;gap:1.1rem;align-items:start}
+  .sys-thumb{width:150px;height:110px;border-radius:10px;overflow:hidden;background:#eef1f4}
+  .sys-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .sys-name{font-size:1.4rem;font-weight:700;line-height:1.2;margin:0}
+  .sys-name i{display:block;font-style:italic;font-weight:600;font-size:.72em;color:var(--global-text-color-light);margin-top:.15rem}
+  .sys-hook{color:var(--global-text-color-light);font-size:.98rem;line-height:1.5;margin:.5rem 0 .6rem;max-width:52ch}
+  .sys-body{margin:1.1rem 0 0}
+  .sys-body p{line-height:1.68;max-width:62ch}
+  .sys-figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.7rem;margin:1.1rem 0 0}
+  .sys-figs figure{margin:0}
+  .sys-figs img{border-radius:8px;aspect-ratio:4/3;object-fit:cover;width:100%;display:block}
+  .sys-figs figcaption{font-size:.76rem;color:var(--global-text-color-light);line-height:1.4;margin-top:.3rem}
+  .sys-people{font-size:.87rem;color:var(--global-text-color-light);font-style:italic;margin:1rem 0 0}
+  .sys-fund{margin:1rem 0 0;padding:.6rem .9rem;border:1px solid var(--global-divider-color);border-left:3px solid var(--global-theme-color);border-radius:0 8px 8px 0;background:var(--global-card-bg-color)}
+  .sys-fund .lab{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--global-text-color-light);display:block;margin-bottom:.15rem}
+  .sys-fund ul{margin:0;padding-left:1.05rem;font-size:.9rem}
+  .research-strip{text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;font-weight:700;color:var(--global-text-color-light);margin:1.6rem 0 .5rem}
+  .ph{display:flex;align-items:center;justify-content:center;text-align:center;height:100%;padding:.4rem;border-radius:10px;
+    background:repeating-linear-gradient(135deg,#f2f5f7,#f2f5f7 9px,#eaeef1 9px,#eaeef1 18px);
+    border:1px dashed #c3ccd4;color:#8a949e;font-size:.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+
+  /* ── expandable project rows ──────────────────────────── */
   .rp-list{display:flex;flex-direction:column;gap:.6rem;margin:.4rem 0}
   .rp-card{border:1px solid var(--global-divider-color);border-radius:12px;background:var(--global-card-bg-color);overflow:hidden;transition:border-color .15s ease,box-shadow .15s ease}
   .rp-card:hover{border-color:var(--global-theme-color)}
@@ -36,23 +55,23 @@ nav_order: 2
   .rp-head{flex:1;min-width:0}
   .rp-title{display:block;font-weight:700;font-size:1.05rem;line-height:1.25;color:var(--global-text-color)}
   .rp-desc{display:block;color:var(--global-text-color-light);font-size:.9rem;line-height:1.4;margin-top:.2rem}
+  .rp-tags{margin-top:.4rem}
   .rp-chevron{flex:none;margin-top:.35rem;width:.55rem;height:.55rem;border-right:2px solid var(--global-text-color-light);border-bottom:2px solid var(--global-text-color-light);transform:rotate(-45deg);transition:transform .15s ease}
   .rp-card[open] .rp-chevron{transform:rotate(45deg)}
   .rp-card>summary:hover .rp-title{color:var(--global-theme-color)}
   .rp-body{padding:0 1.05rem 1.05rem;border-top:1px solid var(--global-divider-color);margin-top:-.1rem}
   .rp-body>p:first-child{margin-top:.9rem}
-  .rp-body em{font-style:italic}
   .rp-links{margin-top:.6rem;font-size:.85rem}
   .rp-links a{color:var(--global-text-color-light)}
   .rp-links a:hover{color:var(--global-theme-color)}
-  /* "Key publications" heading + list inside an expanded card */
   .rp-body h2{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--global-text-color-light);margin:1.3rem 0 .3rem}
   .rp-body .publications{margin-top:.2rem}
   .rp-body .publications ol.bibliography{font-size:.92rem}
   .rp-body .publications ol.bibliography li{margin-bottom:.7rem}
-  @media(max-width:700px){
-    .research-tri .lab{font-size:22px}
-    .research-tri .sub{font-size:14px}
+
+  @media(max-width:620px){
+    .sys-head{grid-template-columns:1fr}
+    .sys-thumb{width:100%;height:150px}
   }
 </style>
 
@@ -61,86 +80,91 @@ nav_order: 2
   <small>How do changes in allele frequency, through time and across space, shape population abundances and species’ distributions?</small>
 </p>
 
-<div class="research-chain">
-  <div class="dims">
-    <span class="dim">across space</span>
-    <span class="amp">and</span>
-    <span class="dim">through time</span>
-  </div>
-  <svg class="research-tri" viewBox="0 0 640 372" role="img" aria-label="Evolution, demography, and ecology each act on one another">
-    <defs>
-      <marker id="tri-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
-        <path class="ahead" d="M0,0 L10,5 L0,10 z" />
-      </marker>
-    </defs>
-    <line class="edge" x1="258" y1="122" x2="158" y2="252" marker-start="url(#tri-ah)" marker-end="url(#tri-ah)" />
-    <line class="edge" x1="382" y1="122" x2="482" y2="252" marker-start="url(#tri-ah)" marker-end="url(#tri-ah)" />
-    <line class="edge" x1="238" y1="308" x2="402" y2="308" marker-start="url(#tri-ah)" marker-end="url(#tri-ah)" />
-
-    <rect class="bx" x="210" y="18" width="220" height="96" rx="12" stroke="#7c3aed" />
-    <text class="lab" x="320" y="52" text-anchor="middle" fill="#7c3aed">Evolution</text>
-    <text class="sub" x="320" y="76" text-anchor="middle">selection, drift,</text>
-    <text class="sub" x="320" y="94" text-anchor="middle">gene flow, mutation</text>
-
-    <rect class="bx" x="12" y="260" width="220" height="96" rx="12" stroke="#0d9488" />
-    <text class="lab" x="122" y="294" text-anchor="middle" fill="#0d9488">Demography</text>
-    <text class="sub" x="122" y="318" text-anchor="middle">birth, death,</text>
-    <text class="sub" x="122" y="336" text-anchor="middle">population growth</text>
-
-    <rect class="bx" x="408" y="260" width="220" height="96" rx="12" stroke="#1d6fb8" />
-    <text class="lab" x="518" y="288" text-anchor="middle" fill="#1d6fb8">Ecology</text>
-    <text class="sub" x="518" y="310" text-anchor="middle">distribution, abundance,</text>
-    <text class="sub" x="518" y="328" text-anchor="middle">range limits,</text>
-    <text class="sub" x="518" y="346" text-anchor="middle">species interactions</text>
-  </svg>
-  <p class="cap">Lorem ipsum</p>
-</div>
-
 <p class="research-philosophy">
-  We tackle questions with a broad suite of tools: theory and simulation, long-term field data, experiments in the field, and experimental evolution in the lab. We work across plants, insects, and microbes.
+  We work on four systems, with a broad suite of tools: theory and simulation, long-term field
+  data, experiments in the field, and experimental evolution in the lab. Every system below is
+  tagged by the methods we use on it.
 </p>
 
-<!-- ============ Natural systems ============ -->
-<h2 class="research-q">Natural systems</h2>
-<p class="research-sub">Lorem ipsum</p>
-
-<p class="research-strip">Projects — click to expand for details &amp; papers</p>
-<div class="rp-list">
-  {% assign natural_projects = site.projects | where: "category", "natural" | sort: "importance" %}
-  {% for project in natural_projects %}
-    {% include research_project.liquid %}
-  {% endfor %}
+<div class="method-key">
+  <span class="lab">Methods</span>
+  <span class="tags">
+    <span class="tag method">field experiments</span>
+    <span class="tag method">long-term demography</span>
+    <span class="tag method">population genomics</span>
+    <span class="tag method">experimental evolution</span>
+    <span class="tag method">common gardens</span>
+    <span class="tag method">modeling &amp; simulation</span>
+    <span class="tag method">archival &amp; resurvey</span>
+  </span>
 </div>
 
-<!-- ============ Experimental evolution ============ -->
-<h2 class="research-q">Experimental evolution</h2>
-<p class="research-sub">Lorem ipsum</p>
+{% for sys in site.data.systems %}
+<section class="sys" id="sys-{{ sys.key }}">
+  <div class="sys-head">
+    <div class="sys-thumb">
+      {% if sys.thumb %}
+        <img src="{{ sys.thumb | relative_url }}" alt="{{ sys.thumb_alt }}">
+      {% else %}
+        <span class="ph">Photo<br>needed</span>
+      {% endif %}
+    </div>
+    <div>
+      <h2 class="sys-name">{{ sys.name }}<i>{{ sys.latin }}</i></h2>
+      <p class="sys-hook">{{ sys.hook }}</p>
+      <span class="tags">
+        {% for m in sys.methods %}<span class="tag method">{{ m }}</span>{% endfor %}
+      </span>
+    </div>
+  </div>
 
-<p class="research-strip">Projects — click to expand for details &amp; papers</p>
-<div class="rp-list">
-  {% assign experimental_projects = site.projects | where: "category", "experimental" | sort: "importance" %}
-  {% for project in experimental_projects %}
-    {% include research_project.liquid %}
-  {% endfor %}
-</div>
+  <div class="sys-body">
+    {{ sys.blurb | markdownify }}
+  </div>
 
-<!-- ============ Theory and simulation ============ -->
-<h2 class="research-q">Theory and simulation</h2>
-<p class="research-sub">Lorem ipsum</p>
+  {% if sys.figures and sys.figures.size > 0 %}
+  <div class="sys-figs">
+    {% for f in sys.figures %}
+    <figure>
+      <img src="{{ f.path | relative_url }}" alt="{{ f.alt }}">
+      <figcaption>{{ f.caption }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+  {% endif %}
 
-<p class="research-strip">Projects — click to expand for details &amp; papers</p>
-<div class="rp-list">
-  {% assign modeling_projects = site.projects | where: "category", "modeling" | sort: "importance" %}
-  {% for project in modeling_projects %}
-    {% include research_project.liquid %}
-  {% endfor %}
-</div>
+  {% assign sys_projects = site.projects | where: "system", sys.key | sort: "importance" %}
+  {% if sys_projects.size > 0 %}
+  <p class="research-strip">Projects — click to expand for details &amp; papers</p>
+  <div class="rp-list">
+    {% for project in sys_projects %}
+      {% include research_project.liquid %}
+    {% endfor %}
+  </div>
+  {% endif %}
 
-<!-- ============ Foundations ============ -->
-<h2 class="research-q">Foundations &amp; collaborations</h2>
-<div class="rp-list">
-  {% assign foundation_projects = site.projects | where: "category", "foundations" | sort: "importance" %}
-  {% for project in foundation_projects %}
-    {% include research_project.liquid %}
-  {% endfor %}
-</div>
+  {% if sys.funding and sys.funding.size > 0 %}
+  <div class="sys-fund">
+    <span class="lab">Supported by</span>
+    <ul>{% for g in sys.funding %}<li>{{ g }}</li>{% endfor %}</ul>
+  </div>
+  {% endif %}
+
+  {% if sys.people %}<p class="sys-people">{{ sys.people }}</p>{% endif %}
+</section>
+{% endfor %}
+
+<section class="sys" id="sys-other">
+  <div class="sys-head" style="grid-template-columns:1fr">
+    <div>
+      <h2 class="sys-name">Other work and collaborations</h2>
+      <p class="sys-hook">Projects outside the four systems above, most of them led elsewhere.</p>
+    </div>
+  </div>
+  {% assign other_projects = site.projects | where: "system", "other" | sort: "importance" %}
+  <div class="rp-list">
+    {% for project in other_projects %}
+      {% include research_project.liquid %}
+    {% endfor %}
+  </div>
+</section>

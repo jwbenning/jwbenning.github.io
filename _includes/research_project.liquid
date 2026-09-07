@@ -3,6 +3,11 @@
     <span class="rp-head">
       <span class="rp-title">{{ project.title }}</span>
       <span class="rp-desc">{{ project.description }}</span>
+      {% if project.methods and project.methods.size > 0 %}
+      <span class="tags rp-tags">
+        {% for m in project.methods %}<span class="tag method">{{ m }}</span>{% endfor %}
+      </span>
+      {% endif %}
     </span>
     <span class="rp-chevron" aria-hidden="true"></span>
   </summary>

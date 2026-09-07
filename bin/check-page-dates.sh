@@ -20,7 +20,8 @@ DEPS=(
   "_pages/agentic_ai.md|_data/agentic_ai.yml"
   "_pages/publications.md|_bibliography/papers.bib"
   "_pages/updates.md|_updates"
-  "_pages/profiles.md|_pages/about_benning.md _pages/about_ore.md _pages/about_cha.md _pages/about_mancino.md _pages/about_delardi.md _pages/about_poplyk.md _pages/about_kim.md _pages/about_moshkovich.md _pages/about_you.md _pages/about_landis.md _pages/about_siegmund.md _pages/about_cohen.md"
+  "_pages/research_full.md|_data/systems.yml _projects"
+  "_pages/profiles.md|_pages/about_benning.md _pages/about_ore.md _pages/about_cha.md _pages/about_mancino.md _pages/about_delardi.md _pages/about_poplyk.md _pages/about_kim.md _pages/about_moshkovich.md _pages/about_landis.md _pages/about_siegmund.md _pages/about_cohen.md"
 )
 
 extra_paths_for() {
