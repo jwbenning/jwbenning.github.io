@@ -128,10 +128,9 @@
     - "**Herbicide resistance in ragweed.** Whole-genome sequencing of resistant and susceptible populations, asking whether resistance came from standing variation or new mutation, and reconstructing how the alleles moved across the landscape."
     - "**Dispersal evolution.** Models showing that environmental gradients oppose the evolution of increased dispersal during invasion, and that *reduced* dispersal can make an expansion faster by limiting maladaptive gene flow."
   funding: []
-  figures:
-    - path: assets/img/publication_preview/tansy-expansion-load.jpg
-      alt: Common tansy in flower, with the expansion-load result alongside
-      caption: Common tansy across its 150-year North American invasion.
+  # No tansy imagery: it is Ryan Briscoe Runquist's and Dave Moeller's project,
+  # not John's, so it stays in the text but does not carry the section visually.
+  figures: []
   people: Tansy with Ryan Briscoe Runquist and Dave Moeller (Minnesota).
 
 - key: flvs

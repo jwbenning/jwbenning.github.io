@@ -117,15 +117,15 @@ last_updated: 2026-09-08
       {% case sys.key %}
       {% when 'cx' %}
         <div class="sys-pubs"><h3>Publications</h3>
-        {% bibliography --query @*[keywords~=syscx] --group_by none --sort_by year --order descending %}
+        {% bibliography --query @*[keywords~=syscx] --group_by none %}
         </div>
       {% when 'expevo' %}
         <div class="sys-pubs"><h3>Publications</h3>
-        {% bibliography --query @*[keywords~=sysexpevo] --group_by none --sort_by year --order descending %}
+        {% bibliography --query @*[keywords~=sysexpevo] --group_by none %}
         </div>
       {% when 'invasions' %}
         <div class="sys-pubs"><h3>Publications</h3>
-        {% bibliography --query @*[keywords~=sysinvasions] --group_by none --sort_by year --order descending %}
+        {% bibliography --query @*[keywords~=sysinvasions] --group_by none %}
         </div>
       {% endcase %}
 
