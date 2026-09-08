@@ -63,6 +63,7 @@ last_updated: 2026-09-08
   .sys-fund .lab{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--global-text-color-light);display:block;margin-bottom:.15rem}
   .sys-fund ul{margin:0;padding-left:1.05rem;font-size:.9rem}
   .sys-people{font-size:.87rem;color:var(--global-text-color-light);font-style:italic;margin:1.1rem 0 0}
+  .sys-credit{font-size:.76rem;color:var(--global-text-color-light);margin:.45rem 0 0}
 </style>
 
 <p class="research-lede">
@@ -136,6 +137,7 @@ last_updated: 2026-09-08
       {% endif %}
 
       {% if sys.people %}<p class="sys-people">{{ sys.people }}</p>{% endif %}
+      {% if sys.thumb_credit %}<p class="sys-credit">Header photo by {{ sys.thumb_credit }}.</p>{% endif %}
     </div>
   </details>
 {% endunless %}{% endfor %}

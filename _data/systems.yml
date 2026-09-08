@@ -49,6 +49,7 @@
   color: "#1d4ed8"
   thumb: assets/img/gallery/gentian-bumblebee.jpg
   thumb_alt: A bumblebee on the fringed corolla of a fringed gentian flower
+  thumb_credit: Ella Mancino
   blurb: |
     The fringed gentian is a charismatic late-summer flower of wet meadows across eastern North
     America, and it is vanishing from sites where it was once reliable. Decline is easy to
@@ -107,6 +108,7 @@
   color: "#b45309"
   thumb: assets/img/gallery/ragweed-seedling.jpg
   thumb_alt: A young common ragweed plant with deeply dissected leaves, growing in bare soil
+  # John's own photo — no credit line needed.
   hook: When a population spreads fast into somewhere new, does natural selection keep up, or does chance take over?
   blurb: |
     Spread is an evolutionary process as much as an ecological one. A population moving into
