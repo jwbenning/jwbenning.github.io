@@ -193,6 +193,26 @@ schedule:
       research, writing, teaching, and lab work?
 
 links:
+  - date: 2026-09-08
+    title: "Statement on the Euler blowup results, and on what happened next"
+    source: Tristan Buckmaster, NYU Courant, September 2026 (4 pp.)
+    url: https://cims.nyu.edu/~tristanb/statement.pdf
+    tags: [debate, ethics]
+    note: >
+      Buckmaster and Levent Alpöge posted proofs of finite-time blowup under smooth forcing
+      for three fluid equations, including 3d incompressible Euler, built with heavy LLM
+      assistance on top of a program opened by Córdoba and Martínez-Zoroa, and checked in
+      Lean. Two things here are worth an hour of seminar. The first is the timeline and the
+      texture of the work: a year of slow progress, then Boussinesq and Euler inside a week,
+      from a machine-generated proof Buckmaster calls the most horrendous he has ever read,
+      written up in a form he himself labels AI slop because there was no time to make it
+      readable. He argues the result is not the news; a mathematician and a model doing this
+      in a month is. The second is everything after, a disputed account of calls with OpenAI
+      about who announces a related Navier-Stokes result and whose name is on it. OpenAI's
+      Sebastien Bubeck has publicly called the account false and inflammatory, so read it as
+      one side of a live dispute. Credit, priority and authorship are the part of this that
+      reaches our field first, well before the methods questions are settled.
+
   - date: 2026-09-03
     title: "AI for science needs reasoning, not just data"
     source: Eric Schmidt & Suhas Mahesh, MIT Technology Review, August 2026
