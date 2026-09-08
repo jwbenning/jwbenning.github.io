@@ -26,6 +26,10 @@
     edge by as much as precipitation does. Two decades of demographic monitoring and a growing
     body of genomic data let us ask the same questions through time as well as across space.
   hook: Why does a plant stop where it does? We take a range edge apart, factor by factor, in the field.
+  work:
+    - "**Space and time.** Pool-sequencing roughly 100 populations, sampled both historically and today, to ask whether the same loci track climate across the range and across decades."
+    - "**Two decades of demography.** Long-term census data from the Moeller and Geber labs, which puts a population trajectory behind every allele frequency."
+    - "**Biotic range limits.** Transplants beyond the margin that manipulate herbivores, pollinators and soil microbes one at a time, to measure what each contributes to lifetime fitness."
   methods:
     - field experiments
     - long-term demography
@@ -42,10 +46,10 @@
     - path: assets/img/gallery/flowering-drought-shift.jpg
       alt: Distribution of days to flowering before and after a drought
       caption: Flowering time before and after the drought.
-  people: With Dave Moeller (Minnesota), Monica Geber (Cornell), and Jacob Landis (Cornell).
+  people: With Dave Moeller (Minnesota), Monica Geber (Cornell), and Vince Eckhart (Grinnell).
 
 - key: gc
-  name: A wildflower in decline
+  name: Ecological genetics of a rare wildflower
   latin: Gentianopsis crinita
   color: "#1d4ed8"
   thumb:
@@ -59,16 +63,20 @@
     that feed each other, and separating them takes demography and genomics on the same
     populations.
   hook: The fringed gentian is disappearing from eastern wet meadows. We want to know which of the obvious explanations is right.
+  work:
+    - "**Demography.** Long-term monitoring across populations, to establish which are actually declining and how fast."
+    - "**Genomics.** A reference genome and whole-genome resequencing, to ask whether declining populations have lost variation or accumulated genetic load."
+    - "**Common garden.** Growing populations side by side, to test whether plants are still matched to the climates they came from."
   methods:
     - long-term demography
     - population genomics
     - common gardens
   funding: []
   figures: []
-  people: With Anurag Agrawal (Cornell) and Jacob Landis (Cornell).
+  people: With Anurag Agrawal (Cornell).
 
 - key: expevo
-  name: Evolution we can replicate
+  name: Experimental evolution in the lab
   latin: Tribolium castaneum & Escherichia coli
   color: "#0d9488"
   thumb: assets/img/gallery/tribolium-boxes.jpg
@@ -87,6 +95,10 @@
     Simulation models run alongside the experiments, both to generate the predictions and to ask
     what the results would have looked like under processes we did not impose.
   hook: Range-limit theory makes sharp predictions that are almost impossible to test in the field. So we build the landscape in the lab.
+  work:
+    - "**Beetle landscapes.** Replicate *Tribolium* range expansions across gradients of increasing steepness, with whole-genome sequencing of the evolved populations."
+    - "**Microbial expansions.** *E. coli* populations spreading across spatially and temporally varying environments, where a whole experiment fits in days rather than years."
+    - "**Theory alongside.** Models of how temporal variance and evolving dispersal set where a range stops, which generate the predictions the experiments test."
   methods:
     - experimental evolution
     - modeling & simulation
@@ -104,7 +116,7 @@
 
 - key: invasions
   name: Range expansions and invasions
-  latin: Tanacetum vulgare & Ambrosia artemisiifolia
+  latin:
   color: "#b45309"
   thumb: assets/img/publication_preview/tansy-expansion-load.jpg
   thumb_alt: Common tansy flowering in a field
@@ -122,6 +134,10 @@
     ragweed has repeatedly evolved herbicide resistance across its agricultural range, so what
     spreads there is not the species but an allele. Alongside both, we model how dispersal
     itself evolves during an expansion, which turns out to change the answer.
+  work:
+    - "**Expansion load in tansy.** A common garden spanning a 150-year invasion chronosequence, paired with genome-wide SNP data and demographic surveys of 173 populations. Fitness falls with distance from the invasion core, homozygosity rises, and we found no sign of local adaptation."
+    - "**Herbicide resistance in ragweed.** Whole-genome sequencing of resistant and susceptible populations, asking whether resistance came from standing variation or new mutation, and reconstructing how the alleles moved across the landscape."
+    - "**Dispersal evolution.** Models showing that environmental gradients oppose the evolution of increased dispersal during invasion, and that *reduced* dispersal can make an expansion faster by limiting maladaptive gene flow."
   methods:
     - common gardens
     - population genomics
@@ -132,6 +148,7 @@
   people: Tansy with Ryan Briscoe Runquist and Dave Moeller (Minnesota).
 
 - key: flvs
+  hidden: true   # held back 2026-09-08 on John's call; add back later
   name: Fifty years of change in Finger Lakes forests
   latin: Finger Lakes Vegetation Survey
   color: "#6d28d9"
