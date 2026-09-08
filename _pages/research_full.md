@@ -15,12 +15,6 @@ last_updated: 2026-09-08
   .research-lede small{display:block;font-weight:400;font-size:1.05rem;color:var(--global-text-color-light);margin-top:.6rem;line-height:1.5}
   .research-philosophy{max-width:48rem;margin:1.2rem auto 1.8rem;text-align:center;line-height:1.65;color:var(--global-text-color-light)}
 
-  /* ── method tag vocabulary ────────────────────────────── */
-  .tags{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
-  .tag{display:inline-block;font-size:.7rem;line-height:1.5;padding:.1rem .55rem;border-radius:999px;white-space:nowrap}
-  .tag.method{background:transparent;color:var(--global-text-color-light);border:1px solid var(--global-divider-color);font-weight:600}
-  .method-key{border:1px solid var(--global-divider-color);border-radius:12px;padding:.75rem .95rem;margin:0 0 1.6rem;background:var(--global-card-bg-color);display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}
-  .method-key .lab{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--global-text-color-light)}
 
   /* ── the tile grid ────────────────────────────────────── */
   .sys-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1rem;align-items:start}
@@ -82,18 +76,6 @@ last_updated: 2026-09-08
   in the lab.
 </p>
 
-<div class="method-key">
-  <span class="lab">Methods</span>
-  <span class="tags">
-    <span class="tag method">field experiments</span>
-    <span class="tag method">long-term demography</span>
-    <span class="tag method">population genomics</span>
-    <span class="tag method">experimental evolution</span>
-    <span class="tag method">common gardens</span>
-    <span class="tag method">modeling &amp; simulation</span>
-  </span>
-</div>
-
 <div class="sys-grid">
 {% for sys in site.data.systems %}{% unless sys.hidden %}
   <details class="sys" id="sys-{{ sys.key }}">
@@ -112,10 +94,6 @@ last_updated: 2026-09-08
 
     <div class="sys-panel">
       <p class="sys-hook">{{ sys.hook }}</p>
-      <span class="tags">
-        {% for m in sys.methods %}<span class="tag method">{{ m }}</span>{% endfor %}
-      </span>
-
       <div class="sys-body">{{ sys.blurb | markdownify }}</div>
 
       {% if sys.work and sys.work.size > 0 %}

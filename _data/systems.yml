@@ -30,11 +30,6 @@
     - "**Space and time.** Pool-sequencing roughly 100 populations, sampled both historically and today, to ask whether the same loci track climate across the range and across decades."
     - "**Two decades of demography.** Long-term census data from the Moeller and Geber labs, which puts a population trajectory behind every allele frequency."
     - "**Biotic range limits.** Transplants beyond the margin that manipulate herbivores, pollinators and soil microbes one at a time, to measure what each contributes to lifetime fitness."
-  methods:
-    - field experiments
-    - long-term demography
-    - population genomics
-    - modeling & simulation
   funding: []
   figures:
     - path: assets/img/gallery/clarkia-system.jpg
@@ -52,8 +47,8 @@
   name: Ecological genetics of a rare wildflower
   latin: Gentianopsis crinita
   color: "#1d4ed8"
-  thumb:
-  thumb_alt:
+  thumb: assets/img/gallery/gentian-bumblebee.jpg
+  thumb_alt: A bumblebee on the fringed corolla of a fringed gentian flower
   blurb: |
     The fringed gentian is a charismatic late-summer flower of wet meadows across eastern North
     America, and it is vanishing from sites where it was once reliable. Decline is easy to
@@ -67,10 +62,6 @@
     - "**Demography.** Long-term monitoring across populations, to establish which are actually declining and how fast."
     - "**Genomics.** A reference genome and whole-genome resequencing, to ask whether declining populations have lost variation or accumulated genetic load."
     - "**Common garden.** Growing populations side by side, to test whether plants are still matched to the climates they came from."
-  methods:
-    - long-term demography
-    - population genomics
-    - common gardens
   funding: []
   figures: []
   people: With Anurag Agrawal (Cornell).
@@ -99,10 +90,6 @@
     - "**Beetle landscapes.** Replicate *Tribolium* range expansions across gradients of increasing steepness, with whole-genome sequencing of the evolved populations."
     - "**Microbial expansions.** *E. coli* populations spreading across spatially and temporally varying environments, where a whole experiment fits in days rather than years."
     - "**Theory alongside.** Models of how temporal variance and evolving dispersal set where a range stops, which generate the predictions the experiments test."
-  methods:
-    - experimental evolution
-    - modeling & simulation
-    - population genomics
   funding:
     - "NSF DEB-2230806 (with Topher Weiss-Lehman, Wyoming)"
   figures:
@@ -118,8 +105,8 @@
   name: Range expansions and invasions
   latin:
   color: "#b45309"
-  thumb: assets/img/publication_preview/tansy-expansion-load.jpg
-  thumb_alt: Common tansy flowering in a field
+  thumb: assets/img/gallery/ragweed-seedling.jpg
+  thumb_alt: A young common ragweed plant with deeply dissected leaves, growing in bare soil
   hook: When a population spreads fast into somewhere new, does natural selection keep up, or does chance take over?
   blurb: |
     Spread is an evolutionary process as much as an ecological one. A population moving into
@@ -138,13 +125,11 @@
     - "**Expansion load in tansy.** A common garden spanning a 150-year invasion chronosequence, paired with genome-wide SNP data and demographic surveys of 173 populations. Fitness falls with distance from the invasion core, homozygosity rises, and we found no sign of local adaptation."
     - "**Herbicide resistance in ragweed.** Whole-genome sequencing of resistant and susceptible populations, asking whether resistance came from standing variation or new mutation, and reconstructing how the alleles moved across the landscape."
     - "**Dispersal evolution.** Models showing that environmental gradients oppose the evolution of increased dispersal during invasion, and that *reduced* dispersal can make an expansion faster by limiting maladaptive gene flow."
-  methods:
-    - common gardens
-    - population genomics
-    - modeling & simulation
-    - field experiments
   funding: []
-  figures: []
+  figures:
+    - path: assets/img/publication_preview/tansy-expansion-load.jpg
+      alt: Common tansy in flower, with the expansion-load result alongside
+      caption: Common tansy across its 150-year North American invasion.
   people: Tansy with Ryan Briscoe Runquist and Dave Moeller (Minnesota).
 
 - key: flvs
@@ -166,10 +151,6 @@
     region are rare. We are digitizing the original records, working out where each plot actually
     was, and preparing to resurvey them.
   hook: A careful botanist surveyed these forests around 1980 and never published the data. We are recovering it, and going back.
-  methods:
-    - archival & resurvey
-    - community modeling
-    - long-term demography
   funding: []
   figures: []
   people: With Peter L. Marks (Cornell, emeritus).
