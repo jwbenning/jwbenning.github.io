@@ -6,7 +6,7 @@
 # and the strip is omitted — better an absent strip than an invented grant.
 
 - key: cx
-  name: Range limits in a California annual
+  name: Range limits and population biology of a California endemic plant
   latin: Clarkia xantiana
   color: "#c2410c"
   thumb: assets/img/gallery/clarkia-xantiana.jpg
@@ -100,7 +100,7 @@
     - path: assets/img/publication_preview/dispersal-evolution.png
       alt: Dispersal phenotype of core and edge populations across environmental gradients
       caption: Dispersal evolution along gradients of increasing steepness.
-  people: Beetle experimental evolution with Topher Weiss-Lehman (Wyoming) and Ruth Hufbauer (Colorado State).
+  people: Beetle experimental evolution with Topher Weiss-Lehman (Wyoming).
 
 - key: invasions
   name: Range expansions and invasions
