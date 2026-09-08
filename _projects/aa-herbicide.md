@@ -3,9 +3,9 @@ layout: page
 title: Rapid adaptation to herbicide in ragweed
 description: Tracking the origin and spread of herbicide resistance in Ambrosia artemisiifolia
 img:
-importance: 7
+importance: 2
 category: natural
-system: other
+system: invasions
 methods:
   - field experiments
   - population genomics

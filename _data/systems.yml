@@ -102,6 +102,35 @@
       caption: Dispersal evolution along gradients of increasing steepness.
   people: Beetle experimental evolution with Topher Weiss-Lehman (Wyoming) and Ruth Hufbauer (Colorado State).
 
+- key: invasions
+  name: Range expansions and invasions
+  latin: Tanacetum vulgare & Ambrosia artemisiifolia
+  color: "#b45309"
+  thumb: assets/img/publication_preview/tansy-expansion-load.jpg
+  thumb_alt: Common tansy flowering in a field
+  hook: When a population spreads fast into somewhere new, does natural selection keep up, or does chance take over?
+  blurb: |
+    Spread is an evolutionary process as much as an ecological one. A population moving into
+    new territory does so through a chain of founder events, each one a small sample of the
+    last, which lets deleterious mutations accumulate and lets drift overwhelm selection. At
+    the same time the expanding front meets new conditions, which should favour local
+    adaptation if there is enough genetic variation to work with. Which of those wins helps
+    determine how fast a spread goes and how far it gets.
+
+    Two plants let us watch this at different scales. Common tansy has spread across North
+    America over roughly 150 years, a chronosequence written into the landscape. Common
+    ragweed has repeatedly evolved herbicide resistance across its agricultural range, so what
+    spreads there is not the species but an allele. Alongside both, we model how dispersal
+    itself evolves during an expansion, which turns out to change the answer.
+  methods:
+    - common gardens
+    - population genomics
+    - modeling & simulation
+    - field experiments
+  funding: []
+  figures: []
+  people: Tansy with Ryan Briscoe Runquist and Dave Moeller (Minnesota).
+
 - key: flvs
   name: Fifty years of change in Finger Lakes forests
   latin: Finger Lakes Vegetation Survey

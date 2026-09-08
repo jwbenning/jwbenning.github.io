@@ -3,9 +3,9 @@ layout: page
 title: Evolution during invasion in common tansy
 description: Phenotypic and genomic divergence between native and invasive Tanacetum vulgare
 img:
-importance: 8
+importance: 1
 category: natural
-system: other
+system: invasions
 methods:
   - common gardens
   - population genomics

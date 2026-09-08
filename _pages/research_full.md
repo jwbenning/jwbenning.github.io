@@ -81,7 +81,7 @@ last_updated: 2026-09-07
 </p>
 
 <p class="research-philosophy">
-  We work on four systems, with a broad suite of tools: theory and simulation, long-term field
+  We work on five systems, with a broad suite of tools: theory and simulation, long-term field
   data, experiments in the field, and experimental evolution in the lab. Every system below is
   tagged by the methods we use on it.
 </p>
@@ -153,18 +153,3 @@ last_updated: 2026-09-07
   {% if sys.people %}<p class="sys-people">{{ sys.people }}</p>{% endif %}
 </section>
 {% endfor %}
-
-<section class="sys" id="sys-other">
-  <div class="sys-head" style="grid-template-columns:1fr">
-    <div>
-      <h2 class="sys-name">Other work and collaborations</h2>
-      <p class="sys-hook">Projects outside the four systems above, most of them led elsewhere.</p>
-    </div>
-  </div>
-  {% assign other_projects = site.projects | where: "system", "other" | sort: "importance" %}
-  <div class="rp-list">
-    {% for project in other_projects %}
-      {% include research_project.liquid %}
-    {% endfor %}
-  </div>
-</section>

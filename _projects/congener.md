@@ -5,7 +5,7 @@ description: A multi-institution effort linking within-species genomic variation
 img:
 importance: 2
 category: foundations
-system: other
+system: none
 methods:
   - population genomics
 ---
