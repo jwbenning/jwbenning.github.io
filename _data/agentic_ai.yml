@@ -213,6 +213,27 @@ links:
       one side of a live dispute. Credit, priority and authorship are the part of this that
       reaches our field first, well before the methods questions are settled.
 
+  - date: 2026-09-08
+    title: "Remarks on the disproof of the unit distance conjecture"
+    source: Alon, Bloom, Gowers, Litt, Sawin, Shankar, Tsimerman, Wang & Wood 2026, arXiv:2605.20695
+    url: https://arxiv.org/abs/2605.20695
+    tags: [debate, evaluation]
+    note: >
+      Nine mathematicians read an OpenAI model's disproof of a $500 Erdős problem open since
+      1946, rewrite it into a human-legible nineteen pages, and then each sign a personal
+      reflection on it. Skip the class field theory and read Section 4 (Bloom) and Section 5
+      (Gowers). Bloom sets out why humans missed it, four unlikely things had to coincide in
+      one person, and gives the line worth stealing: the model "often produces the most
+      surprising results by persevering down paths that a human may have dismissed as not
+      worth their time to explore, combining superhuman levels of patience with familiarity
+      with a vast array of technical machinery." Gowers spends an evening believing
+      mathematics is finished, then relaxes on learning it was a counterexample rather than a
+      proof, and spends his section working out why that distinction consoled him. The shape
+      of the paper is the lesson for us: the output was correct and still had to be dug out,
+      verified and rewritten by nine experts before anyone could use it. Read alongside the
+      Buckmaster statement above, a different result from the same month where the checking
+      and the credit went much less smoothly.
+
   - date: 2026-09-03
     title: "AI for science needs reasoning, not just data"
     source: Eric Schmidt & Suhas Mahesh, MIT Technology Review, August 2026
