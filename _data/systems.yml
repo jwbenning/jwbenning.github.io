@@ -12,20 +12,32 @@
   thumb: assets/img/gallery/clarkia-xantiana.jpg
   thumb_alt: A pink Clarkia xantiana flower
   blurb: |
-    A species' range limit is where adaptation runs out. Before asking why adaptation fails
-    there, though, we have to answer something more basic: what is it about the environment
-    beyond the edge that keeps populations from establishing? Distribution models almost always
-    answer "climate," because climate is what is easy to measure. Most range edges are gradients
-    in many things at once, biotic and abiotic together.
+    Geographic range limits are relatively simple patterns resulting from the complex interplay
+    of genetics, ecological interactions, and demography. They often reflect maladaptation to
+    the novel environments beyond the range margin, but we rarely know which aspects of the
+    n-dimensional environment drive that maladaptation. Climate is the axis almost always
+    tested, partly because it is easy to measure, and it represents only a fraction of the
+    environment to which populations actually adapt.
 
-    *Clarkia xantiana* is an annual plant of the southern Sierra Nevada whose eastern range
-    margin falls across one of these compound gradients. Transplanting it beyond that margin,
-    and manipulating candidate factors one at a time, lets us measure what each contributes to
-    lifetime fitness. The answer has repeatedly been that the biotic environment matters as much
-    as the abiotic one: herbivores, pollinators, and soil microbes each move fitness beyond the
-    edge by as much as precipitation does. Two decades of demographic monitoring and a growing
-    body of genomic data let us ask the same questions through time as well as across space.
-  hook: Why does a plant stop where it does? We take a range edge apart, factor by factor, in the field.
+    *Clarkia xantiana* is a California annual whose eastern range margin falls across one of
+    these compound gradients. Reciprocal transplants beyond the margin, with the biotic
+    environment manipulated factor by factor, let us measure what each contributes to lifetime
+    fitness. Mammalian herbivory drives severalfold declines in fitness at and beyond the
+    boundary, and delayed phenology is what makes plants susceptible to it; in an abiotically
+    benign year, protection from herbivores plus supplemental pollen raised lifetime fitness
+    beyond the margin three- to sevenfold. The soil environment has effects on the same scale as
+    precipitation, and plants dispersing past the range limit meet novel microbial communities:
+    fewer pathogens, but also fewer mutualists.
+
+    Two decades of demographic monitoring and a growing body of genomic data let us ask these
+    questions through time as well as across space. A severe multi-year drought supplied one
+    natural experiment. Earlier flowering phenology evolved in one population and not in a
+    second, although both experienced similar drought severity and demographic declines and both
+    held considerable additive genetic variance for phenology. Pairing long-term demography with
+    a resurrection experiment and individual-based simulations pointed at the seed bank, which
+    stores gene flow through time and can hold a population in evolutionary stasis. We are now
+    asking the same question at the scale of the whole range, and through the genome.
+  hook: Combining experiments, long-term data, and genomics to understand the distribution and population dynamics of a species across its geographic range.
   work:
     - "**Space and time.** Pool-sequencing roughly 100 populations, sampled both historically and today, to ask whether the same loci track climate across the range and across decades."
     - "**Two decades of demography.** Long-term census data from the Moeller and Geber labs, which puts a population trajectory behind every allele frequency."

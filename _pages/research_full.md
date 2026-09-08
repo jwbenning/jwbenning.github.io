@@ -73,8 +73,8 @@ last_updated: 2026-09-08
 
 <p class="research-philosophy">
   We work across varied systems with a broad suite of tools: field experiments, theory and
-  simulation, long-term observational data on natural communities, and experimental evolution
-  in the lab.
+  simulation, long-term observational data on natural communities, population genomics, and
+  experimental evolution in the lab.
 </p>
 
 <div class="sys-grid">
