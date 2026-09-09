@@ -44,12 +44,14 @@ profiles:
     content: about_kim.md
     image_circular: false
     more_info:
+  # Ari Moshkovich pulled 2026-09-09 pending a photo and bio; restore this block
+  # (align: right) and flip Poplyk back to left when he sends them.
+  # - align: right
+  #   image: moshkovich.jpg
+  #   content: about_moshkovich.md
+  #   image_circular: false
+  #   more_info:
   - align: right
-    image: smiley_4.png  # TODO: replace with moshkovich.jpg once Ari sends a photo
-    content: about_moshkovich.md
-    image_circular: false
-    more_info:
-  - align: left
     image: poplyk.jpg
     content: about_poplyk.md
     image_circular: false
