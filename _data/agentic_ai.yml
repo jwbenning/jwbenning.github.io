@@ -24,6 +24,12 @@ announcement: >
   without registering.
 
 announcements:
+  - date: 2026-09-11
+    title: Week 1 slides are posted
+    body: >
+      <a href="https://claude.ai/code/artifact/4fd3f823-c09e-47d2-b725-ee94f5468e11">The slides
+      from the first session</a> are up. They open in the browser rather than as a PDF, so use
+      the arrow keys, the space bar, or a click to move through them.
   - date: 2026-09-04
     title: Room change, and announcements are moving to Slack
     body: >
