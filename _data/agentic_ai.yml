@@ -7,6 +7,8 @@
 #                  Slack carries the day-to-day; this is the durable record, so put
 #                  anything class-wide here too. `body` is HTML, `title` optional.
 #   schedule       the nine themed weeks; `date` may be blank until it is fixed
+#                  a week may carry `slides:` with `url:` and an optional `note:`;
+#                  the deck itself lives in assets/slides/agentic-ai/
 #   links          the running reading feed, newest first
 
 current_week: 1
@@ -47,6 +49,11 @@ schedule:
       A chatbot becomes an agent, live: first watch a model generate plausible text
       rather than verified fact, then give an agent a goal it can only meet by fetching
       real occurrence records.
+    slides:
+      url: /assets/slides/agentic-ai/week01.html
+      note: >
+        Public copy of the deck as shown in class, with class-specific detail removed.
+        Arrow keys or space to advance, f for fullscreen.
     readings:
       - title: "What is an agent? A primer for this seminar"
         source: Written by Claude for this seminar

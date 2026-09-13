@@ -44,6 +44,8 @@ icon: ai-eeb.png
   .ai-feed li:first-child{padding-top:0}
   .ai-feed .src{color:var(--global-text-color-light);font-size:.85rem}
   .fnote{display:block;color:var(--global-text-color-light);font-size:.88rem;margin:.3rem 0 0;padding-left:.7rem;border-left:2px solid var(--global-divider-color)}
+  .ai-deck{display:inline-block;font-weight:600;border:1px solid var(--global-divider-color);border-radius:8px;padding:.28rem .7rem;margin:.15rem 0 0;text-decoration:none}
+  .ai-deck:hover{border-color:var(--global-theme-color)}
   li > .fnote{margin:.3rem 0 .55rem}
   .post h2{margin-top:2.6rem}
   .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--global-divider-color);border-radius:999px;padding:.06rem .45rem;color:var(--global-text-color-light);margin-left:.35rem;vertical-align:.1em}
@@ -109,6 +111,10 @@ community guideline for responsible use of agentic AI.
 No computer-science background is assumed. A little R or Python helps you follow the coding
 demos but isn't required. **Bring a laptop.**
 
+**The slides go up here after each session**, linked from the week below, so anyone who cannot
+be in the room can follow the course. They are the decks as shown, with class-specific detail
+taken out.
+
 **Start with [what is an agent?]({{ '/teaching/agentic-ai/primer/' | relative_url }})** —
 a ten-minute primer written for this seminar, covering the vocabulary and the core ideas
 with no background assumed. It is the first of the Week 1 readings; read it before the rest.
@@ -122,6 +128,7 @@ with no background assumed. It is the first of the Week 1 readings; read it befo
   <div class="wk">Week {{ now.week }}{% if now.date %} · {{ now.date | date: "%B %-d" }}{% endif %}</div>
   <h3>{{ now.theme }}</h3>
   {% if now.framing %}<p><span class="ai-lbl">Framing</span><br>{{ now.framing }}</p>{% endif %}
+  {% if now.slides %}<p><span class="ai-lbl">Slides</span><br><a class="ai-deck" href="{{ now.slides.url | relative_url }}" target="_blank" rel="noopener">Week {{ now.week }} deck ↗</a>{% if now.slides.note %}<span class="fnote">{{ now.slides.note }}</span>{% endif %}</p>{% endif %}
   {% assign now_req = now.readings | where_exp: "r", "r.optional != true" %}
   {% assign now_opt = now.readings | where_exp: "r", "r.optional == true" %}
   {% if now_req.size > 0 %}
@@ -253,6 +260,7 @@ readings, and demo.
       <p><span class="ai-lbl">{{ w.part }}{% if w.date %} · {{ w.date | date: "%B %-d, %Y" }}{% else %} · date TBD{% endif %}</span></p>
       {% if w.framing %}<p>{{ w.framing }}</p>{% endif %}
       {% if w.demo %}<p><span class="ai-lbl">Demo</span><br>{{ w.demo }}</p>{% endif %}
+      {% if w.slides %}<p><span class="ai-lbl">Slides</span><br><a class="ai-deck" href="{{ w.slides.url | relative_url }}" target="_blank" rel="noopener">Week {{ w.week }} deck ↗</a>{% if w.slides.note %}<span class="fnote">{{ w.slides.note }}</span>{% endif %}</p>{% endif %}
       {% assign w_req = w.readings | where_exp: "r", "r.optional != true" %}
       {% assign w_opt = w.readings | where_exp: "r", "r.optional == true" %}
       {% if w_req.size > 0 %}

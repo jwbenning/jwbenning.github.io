@@ -16,7 +16,8 @@ try:
 except ImportError:
     sys.exit("Needs pyyaml:  pip install pyyaml")
 
-DATA = pathlib.Path(__file__).resolve().parent.parent / "_data" / "agentic_ai.yml"
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+DATA = ROOT / "_data" / "agentic_ai.yml"
 TAGS = {"foundations", "application", "evaluation", "ethics", "security",
         "reproducibility", "policy", "debate", "EEB"}
 
@@ -62,6 +63,24 @@ for w in sched:
             err(f"week {n}: date must be plain YYYY-MM-DD, not quoted")
         elif dt.weekday() != 4:
             warn(f"week {n}: {dt} is a {dt:%A}; the seminar meets on Fridays")
+    sl = w.get("slides")
+    if sl is not None:
+        if not isinstance(sl, dict):
+            err(f"week {n}: `slides:` must be a mapping with `url:` "
+                "(and optionally `note:`)")
+        else:
+            for field in sl:
+                if field not in {"url", "note"}:
+                    warn(f"week {n}: slides has unknown field `{field}:` -- "
+                         "it will not render")
+            u = sl.get("url")
+            if not u:
+                err(f"week {n}: `slides:` is missing `url:`")
+            elif not (u.startswith("http") or u.startswith("/")):
+                err(f"week {n}: slides url '{u}' should start with https:// or /")
+            elif u.startswith("/") and not (ROOT / u.lstrip("/")).exists():
+                err(f"week {n}: slides url '{u}' does not exist in the repo. "
+                    "The deck goes in assets/slides/agentic-ai/.")
 
 def check_reading(r, where):
     for field in ("title", "url", "tags"):
@@ -110,6 +129,7 @@ if errors:
     print(f"\n{len(errors)} problem(s). The site will not rebuild until these are fixed.")
     sys.exit(1)
 print(f"\nok    {len(sched)} weeks, "
+      f"{sum(1 for w in sched if w.get('slides'))} deck(s), "
       f"{sum(len(w.get('readings') or []) for w in sched)} assigned readings, "
       f"{len(links)} in the reading room, "
       f"{len(anns)} announcement(s).")
