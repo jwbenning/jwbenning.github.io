@@ -84,6 +84,27 @@ reading.
 **Add something to the reading room.** Same shape, under `links:` at the bottom, newest
 first, with a `date:`.
 
+**Post a week's slides.** Decks are posted after each session so people who cannot be in the
+room can follow the course. Put the deck's HTML file in `assets/slides/agentic-ai/` named
+`weekNN.html`, then add to that week:
+
+```yaml
+slides:
+  url: /assets/slides/agentic-ai/week01.html
+  note: >
+    Optional line under the link. Say anything the reader needs, such as how to drive it.
+```
+
+The check fails if the file named in `url:` is not actually in the repo, which is the way this
+goes wrong. The link renders in the week's panel in the Schedule, and in "This week" when that
+week is current.
+
+**What goes in a posted deck.** These are public pages, so the posted copy is not the file
+shown in class: survey demographics, verbatim free-text answers, and anything that identifies
+a particular person come out first. Paraphrase rather than quote, and say on the slide that
+you have. Working decks and the script that produces the public copy live in the course folder
+in Drive, not here.
+
 **Tags** must come from this list, or the check fails:
 `foundations`, `application`, `evaluation`, `ethics`, `security`, `reproducibility`,
 `policy`, `debate`, `EEB`. They drive the filter buttons on the page. Add a new one by
