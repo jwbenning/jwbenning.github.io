@@ -104,7 +104,7 @@ words are exactly the ones you would search the corpus for. On one 500-page manu
 1446 correct instances of "fitness" and zero mangled, where `pdftotext` mangled about 70%.
 
 So the rule became "use PyMuPDF, never pdftotext" — and then the next skill broke it. Those
-technical reports are old Type 1 LaTeX with no usable character map, so *every* extractor drops
+technical reports are old Type 1 LaTeX with no usable character map, so _every_ extractor drops
 ligatures, PyMuPDF included: one report came out with 17 mangled instances and zero intact. The fix
 was to build from the `.Rnw` and `.tex` sources the author ships on GitHub, which also yielded 634
 runnable code chunks as a side effect. The modern vignettes in the same project extract cleanly, so
@@ -156,7 +156,7 @@ That would have been a mistake, and noticing why is the useful part.
 Merging experts produces a generic wise skeptic. That is already what you get by asking for
 criticism, so the skill would add nothing. The value is that independent lenses attack **different
 axes and disagree with each other**, which means the output has to be separate signed memos plus a
-synthesis that *preserves* the conflict rather than resolving it. On the first real run, the single
+synthesis that _preserves_ the conflict rather than resolving it. On the first real run, the single
 most useful output was an unresolved disagreement between two lenses about a scope decision I had
 already made. The review's job there was to name the cost, not relitigate the decision.
 

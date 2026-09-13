@@ -21,21 +21,21 @@ and nothing in the writing tells you which you are looking at. This is not a cav
 move past. It is the design constraint for everything you build on top.
 
 Here is a measured example, from a demo I built for my seminar and ran on 2026-09-01. I asked a
-current frontier model, with no tools and no search, for herbarium specimens of *Clarkia xantiana*
-subsp. *parviflora* collected before 1980: collector, collection number, date, locality,
-herbarium. Then I checked every claim against all 452 preserved *Clarkia xantiana* specimens in
+current frontier model, with no tools and no search, for herbarium specimens of _Clarkia xantiana_
+subsp. _parviflora_ collected before 1980: collector, collection number, date, locality,
+herbarium. Then I checked every claim against all 452 preserved _Clarkia xantiana_ specimens in
 GBIF.
 
 Every run opened by stating it had no live database access. Every run then listed specimens
 anyway. One run warned that AI models are prone to hallucinating fake herbarium records, and then
 produced a list.
 
-| Claimed | Collector real? | Number in GBIF | That collector's real dates |
-|---|---|---|---|
-| Abrams 5361, 1915 | yes, 4 specimens | **absent** | 1900, 1908 |
-| Howell 5021, 1930 | yes, 17 | **absent** | 1958–1971 |
-| Munz 13345, 1934 | yes, 3 | **absent** | 1923 |
-| Lewis 412, 1947 | yes, 53 | **absent** | 1946–1956 |
+| Claimed           | Collector real?  | Number in GBIF | That collector's real dates |
+| ----------------- | ---------------- | -------------- | --------------------------- |
+| Abrams 5361, 1915 | yes, 4 specimens | **absent**     | 1900, 1908                  |
+| Howell 5021, 1930 | yes, 17          | **absent**     | 1958–1971                   |
+| Munz 13345, 1934  | yes, 3           | **absent**     | 1923                        |
+| Lewis 412, 1947   | yes, 53          | **absent**     | 1946–1956                   |
 
 Real collectors, real herbaria, real localities, the right genus. Not one collection number that
 exists, and dates off by decades. Two runs of the same question also disagreed about who
@@ -105,7 +105,7 @@ Do not assert what a model or a tool "will do" when running it is possible.
 
 I adopted this after writing a teaching example that asserted a bare model would confidently
 fabricate herbarium records. Testing it four days before class showed the behaviour had shifted:
-current models hedge about database access first, *then* fabricate. The tested version is better
+current models hedge about database access first, _then_ fabricate. The tested version is better
 material than the guess, and it is my own data rather than a claim from a paper.
 
 Model behaviour has a shelf life measured in months. Anything on this page that depends on it

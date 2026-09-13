@@ -28,12 +28,12 @@ how you get an analysis confidently run on the superseded file.
 
 ## The four files
 
-| File | Holds | Changes | Read |
-|---|---|---|---|
-| `CLAUDE.md` | The system, the data, the people, the conventions, settled decisions | Rarely | Automatically, every session |
-| `PROJECT_INDEX.md` | Overview, dated status, key links, decision log | Monthly | When asked, or when orienting |
-| `TODO.md` | Live kanban by workstream | Constantly | When planning work |
-| `handoff.md` | What the last session did, what is open | Every session | At startup, [via a hook]({{ '/agentic/hooks/' | relative_url }}) |
+| File               | Holds                                                                | Changes       | Read                                          |
+| ------------------ | -------------------------------------------------------------------- | ------------- | --------------------------------------------- | ---------------- |
+| `CLAUDE.md`        | The system, the data, the people, the conventions, settled decisions | Rarely        | Automatically, every session                  |
+| `PROJECT_INDEX.md` | Overview, dated status, key links, decision log                      | Monthly       | When asked, or when orienting                 |
+| `TODO.md`          | Live kanban by workstream                                            | Constantly    | When planning work                            |
+| `handoff.md`       | What the last session did, what is open                              | Every session | At startup, [via a hook]({{ '/agentic/hooks/' | relative_url }}) |
 
 **The split by rate of change is the whole trick.** One file holding all four kinds of
 information goes stale in the parts that move fastest, and once any part of it is wrong you stop
@@ -55,26 +55,30 @@ you do not want reopened.
 
 ```markdown
 ## Project
+
 - **Code:** cx-demo
 - **Question:** does seed-bank depth explain the failure of the range-edge
   population to track the climate shift?
 
 ## Where things live
+
 - **Data:** `Data/derived/census_2019_2026.csv` is canonical. `Data/raw/` is
   never edited. The 2021 coordinates are known bad; use the 2022 resurvey.
 - **Code:** ~/repos/cx-demo
 
 ## How this project works
+
 - Sample IDs are `SITE_YEAR_PLANT`, zero-padded to three digits.
 - Fitness is always lifetime, via an aster model, never a single stage.
 
 ## Decisions that are settled
+
 - **2026-04-12 —** Dropped the 2018 cohort. Census protocol changed mid-season
   and survival is not comparable. Do not re-add it for sample size.
 ```
 
 That last section does more work than it looks. Settled decisions are where an agent is most
-likely to be helpfully wrong, because adding the 2018 cohort back *would* improve the sample
+likely to be helpfully wrong, because adding the 2018 cohort back _would_ improve the sample
 size, and nothing in the data says not to.
 
 **Tell it how you want to be worked with, too.** Mine carries instructions that are about
@@ -158,9 +162,9 @@ a later session at the project root then had an arbitrary workstream's handoff i
 were its own. An audit found the pointer naming one of the eight sub-projects that had been worked
 in the previous six weeks.
 
-The fix was to notice that two different jobs had been conflated. *Which context do I load* was
+The fix was to notice that two different jobs had been conflated. _Which context do I load_ was
 already answered correctly by the working directory, which has always been ground truth. The job
-that actually needed state was *what else is in flight*, which is a list, not a pointer. So the
+that actually needed state was _what else is in flight_, which is a list, not a pointer. So the
 working directory routes, and the state file only reports. **If a piece of state is only consulted
 when it disagrees with the directory you are in, it is not routing, it is guessing.**
 

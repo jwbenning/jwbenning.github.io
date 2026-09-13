@@ -20,11 +20,11 @@ If you use one computer, skip this page. It buys nothing and adds moving parts.
 
 ## The split
 
-| | Where | Why |
-|---|---|---|
-| Hooks, settings, skills, commands, shell config | **git** | It executes. You want review, history, and an explicit step before it changes. |
-| Projects, notes, manuscripts, handoffs, data | **cloud drive** | Documents. You want them to appear on the other machine without thinking. |
-| Model weights, caches, session state, scheduled jobs | **neither** | Large, machine-specific, or per-host by nature. |
+|                                                      | Where           | Why                                                                            |
+| ---------------------------------------------------- | --------------- | ------------------------------------------------------------------------------ |
+| Hooks, settings, skills, commands, shell config      | **git**         | It executes. You want review, history, and an explicit step before it changes. |
+| Projects, notes, manuscripts, handoffs, data         | **cloud drive** | Documents. You want them to appear on the other machine without thinking.      |
+| Model weights, caches, session state, scheduled jobs | **neither**     | Large, machine-specific, or per-host by nature.                                |
 
 ## Why executable config belongs in git
 
@@ -61,7 +61,7 @@ For the document half, there is a failure mode specific to cloud drives that is 
 it happens to you.
 
 **A drive resolves concurrent writes by keeping both versions under the same name.** Each machine
-then pins to a different underlying object. The file reads correctly on *both* machines while
+then pins to a different underlying object. The file reads correctly on _both_ machines while
 silently diverging, and neither one can see the other's content. No error, no conflict marker, no
 duplicate filename.
 
@@ -109,7 +109,7 @@ Ordered, because two of these steps fail confusingly if done out of order.
    skipped.
 3. **Clone the config repo and run its installer.** Symlinks, not copies.
 4. **Install the terminal pieces** if you use them: `brew install tmux`, `brew install --cask
-   ghostty`, and source the launcher from your shell config.
+ghostty`, and source the launcher from your shell config.
 5. **Sign in to the drive client** and let the project folders materialise.
 6. **Connect any tool integrations**, which means authorising each one on this machine. Per-machine
    by design; tokens do not travel, and should not.

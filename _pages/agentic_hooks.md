@@ -90,7 +90,7 @@ running `session-log.md`.
 
 A command rather than a hook, because it is a judgment call: it has to decide what mattered, and
 it should not fire on every turn. The cost is that I have to remember to run it, which is why the
-*reading* half is a hook. Getting one of the two automatic is enough, because a missing handoff is
+_reading_ half is a hook. Getting one of the two automatic is enough, because a missing handoff is
 visible the moment the next session starts empty.
 
 What a good handoff holds, in the order I find useful: the session topic in a paragraph; decisions

@@ -51,6 +51,7 @@ everything else is an optimisation on top of it.
 ## The guides
 
 {% for g in w.groups %}
+
 <div class="wk-group-h">{{ g.title }}</div>
 <div class="wk-cards">
 {% for p in g.pages %}
