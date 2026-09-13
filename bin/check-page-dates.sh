@@ -18,6 +18,11 @@ cd "$(dirname "$0")/.." || exit 1
 #   <page file>|<extra path> <extra path> ...
 DEPS=(
   "_pages/agentic_ai.md|_data/agentic_ai.yml"
+  "_pages/agentic.md|_includes/agentic_wiki.liquid _data/agentic_wiki.yml"
+  "_pages/agentic_setup.md|_includes/agentic_wiki.liquid _data/agentic_wiki.yml"
+  "_pages/agentic_memory.md|_includes/agentic_wiki.liquid _data/agentic_wiki.yml"
+  "_pages/agentic_reports.md|_includes/agentic_wiki.liquid _data/agentic_wiki.yml"
+  "_pages/agentic_rules.md|_includes/agentic_wiki.liquid _data/agentic_wiki.yml"
   "_pages/publications.md|_bibliography/papers.bib"
   "_pages/updates.md|_updates"
   "_pages/profiles.md|_pages/about_benning.md _pages/about_ore.md _pages/about_cha.md _pages/about_mancino.md _pages/about_delardi.md _pages/about_poplyk.md _pages/about_kim.md _pages/about_moshkovich.md _pages/about_you.md _pages/about_landis.md _pages/about_siegmund.md _pages/about_cohen.md"

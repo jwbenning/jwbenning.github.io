@@ -1,0 +1,24 @@
+# Section nav for /agentic/. Adding a page means adding it here and creating
+# _pages/agentic_<slug>.md with `wiki_slug: <slug>` in its front matter.
+#
+# Flat list, in reading order — the section is small enough that grouping it
+# only added a layer to scan past.
+#
+# `repo` is the companion starter repo; pages link to it as
+# {{ site.data.agentic_wiki.repo }}.
+
+repo: https://github.com/benning-lab/agentic-starter
+
+pages:
+  - slug: setup
+    title: Getting set up
+    blurb: Install it, then the optional terminal setup with Ghostty and a project launcher.
+  - slug: memory
+    title: Project memory
+    blurb: The four files that make an agent remember a project, and the hooks that carry the handoff.
+  - slug: reports
+    title: Reports
+    blurb: Ask for one self-contained HTML file instead of output that scrolls away.
+  - slug: rules
+    title: Rules worth copying
+    blurb: CLAUDE.md rules that change what the agent actually does. Copy-pasteable.

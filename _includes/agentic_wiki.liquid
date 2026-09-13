@@ -1,9 +1,14 @@
 {% comment %}
-  Shared styling and section nav for the /agentic/ guides.
+  Shared styling, section nav and footer for the /agentic/ guides.
 
-  Include once near the top of every page in the section. The page declares which entry is
-  current with `wiki_slug: <slug>` in its front matter; the nav itself is driven by
-  _data/agentic_wiki.yml, so adding a page is a data edit plus a new _pages file.
+  Include once near the top of every page in the section. A page declares itself a
+  child by setting `wiki_slug: <slug>` in its front matter; the hub omits it and gets
+  neither breadcrumb nor nav, because its card grid does that job. The nav itself is
+  driven by _data/agentic_wiki.yml, so adding a page is a data edit plus a new
+  _pages file.
+
+  The authorship line is rendered here rather than written into each page, so it
+  cannot drift between pages or be forgotten on a new one.
 {% endcomment %}
 
 <style>
@@ -26,34 +31,33 @@
     border: 1px solid var(--global-divider-color);
     border-radius: 12px;
     background: var(--global-card-bg-color);
-    padding: 1rem 1.2rem;
+    padding: 0.9rem 1.2rem;
     margin: 0 0 2rem;
   }
-  .wk-nav .grp {
-    font-size: 0.66rem;
-    font-weight: 700;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--global-text-color-light);
-    margin: 0.9rem 0 0.35rem;
-  }
-  .wk-nav .grp:first-child {
-    margin-top: 0;
-  }
-  .wk-nav ul {
+  .wk-nav ol {
     list-style: none;
     padding: 0;
     margin: 0;
+    counter-reset: wk;
   }
   .wk-nav li {
-    margin: 0 0 0.2rem;
+    counter-increment: wk;
+    margin: 0 0 0.25rem;
     line-height: 1.45;
+  }
+  .wk-nav li:last-child {
+    margin-bottom: 0;
+  }
+  .wk-nav li::before {
+    content: counter(wk) '.';
+    color: var(--global-text-color-light);
+    font-size: 0.82rem;
+    margin-right: 0.4rem;
   }
   .wk-nav li.is-here {
     font-weight: 700;
   }
   .wk-nav li.is-here::before {
-    content: '▸ ';
     color: var(--global-theme-color);
   }
   .wk-nav a {
@@ -67,7 +71,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 0.9rem;
-    margin: 1.2rem 0 0;
+    margin: 1.4rem 0 0;
   }
   .wk-card {
     border: 1px solid var(--global-divider-color);
@@ -97,16 +101,9 @@
     line-height: 1.55;
     color: var(--global-text-color-light);
   }
-  .wk-group-h {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--global-text-color-light);
-    margin: 2rem 0 0;
-  }
 
-  .wk-note {
+  .wk-note,
+  .wk-warn {
     border: 1px solid var(--global-divider-color);
     border-left: 4px solid var(--global-theme-color);
     border-radius: 10px;
@@ -115,10 +112,15 @@
     margin: 1.4rem 0;
     line-height: 1.6;
   }
-  .wk-note p:last-child {
+  .wk-warn {
+    border-left-color: #b4541e;
+  }
+  .wk-note p:last-child,
+  .wk-warn p:last-child {
     margin-bottom: 0;
   }
-  .wk-note .lbl {
+  .wk-note .lbl,
+  .wk-warn .lbl {
     display: block;
     font-size: 0.66rem;
     font-weight: 700;
@@ -127,35 +129,17 @@
     color: var(--global-theme-color);
     margin-bottom: 0.25rem;
   }
-
-  .wk-warn {
-    border: 1px solid var(--global-divider-color);
-    border-left: 4px solid #b4541e;
-    border-radius: 10px;
-    background: var(--global-card-bg-color);
-    padding: 0.85rem 1.1rem;
-    margin: 1.4rem 0;
-    line-height: 1.6;
-  }
-  .wk-warn p:last-child {
-    margin-bottom: 0;
-  }
   .wk-warn .lbl {
-    display: block;
-    font-size: 0.66rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
     color: #b4541e;
-    margin-bottom: 0.25rem;
   }
 
-  .wk-tldr {
-    font-size: 1.02rem;
-    line-height: 1.65;
-    border-bottom: 1px solid var(--global-divider-color);
-    padding-bottom: 1.1rem;
-    margin-bottom: 1.6rem;
+  .wk-byline {
+    border-top: 1px solid var(--global-divider-color);
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--global-text-color-light);
   }
 
   /* Wide tables scroll inside their own box rather than pushing the page sideways. */
@@ -165,15 +149,11 @@
     -webkit-overflow-scrolling: touch;
     max-width: 100%;
   }
-  .post table td,
-  .post table th {
-    white-space: normal;
-  }
   .post h2 {
-    margin-top: 2.6rem;
+    margin-top: 2.4rem;
   }
   .post h3 {
-    margin-top: 1.8rem;
+    margin-top: 1.7rem;
   }
   .post pre {
     border-radius: 8px;
@@ -181,56 +161,28 @@
   body h2[id] {
     scroll-margin-top: 7rem;
   }
-
-  .wk-next {
-    border-top: 1px solid var(--global-divider-color);
-    margin-top: 3rem;
-    padding-top: 1.2rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-  .wk-byline {
-    border-top: 1px solid var(--global-divider-color);
-    margin-top: 2.5rem;
-    padding-top: 1rem;
-    font-size: 0.85rem;
-    line-height: 1.55;
-    color: var(--global-text-color-light);
-  }
-  .wk-next .lbl {
-    font-size: 0.66rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--global-text-color-light);
-    display: block;
-    margin-bottom: 0.3rem;
-  }
 </style>
 
 {% assign w = site.data.agentic_wiki %}
 
 {% if page.wiki_slug %}
-  <p class="wk-crumb"><a href="{{ '/agentic/' | relative_url }}">← agentic ai, the guides</a></p>
+  <p class="wk-crumb"><a href="{{ '/agentic/' | relative_url }}">← agentic ai</a></p>
 
   <nav class="wk-nav" aria-label="Guides in this section">
-    {% for g in w.groups %}
-      <div class="grp">{{ g.title }}</div>
-      <ul>
-        {% for p in g.pages %}
-          <li
-            {% if p.slug == page.wiki_slug %}
-              class="is-here"
-            {% endif %}
-          >
-            {% if p.slug == page.wiki_slug -%}
-              {{- p.title -}}
-            {%- else -%}
-              <a href="{{ '/agentic/' | append: p.slug | append: '/' | relative_url }}">{{ p.title }}</a>
-            {%- endif %}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endfor %}
+    <ol>
+      {% for p in w.pages %}
+        <li
+          {% if p.slug == page.wiki_slug %}
+            class="is-here"
+          {% endif %}
+        >
+          {% if p.slug == page.wiki_slug %}
+            {{ p.title }}
+          {% else %}
+            <a href="{{ '/agentic/' | append: p.slug | append: '/' | relative_url }}">{{ p.title }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
   </nav>
 {% endif %}
