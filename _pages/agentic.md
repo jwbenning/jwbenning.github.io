@@ -77,12 +77,12 @@ that has gone quiet. It is read-only; the draft is its only write.
 
 ## Credit
 
-I learned most of this from **[Chris Blattman](https://claudeblattman.com/)**, a political
-economist at UChicago Harris who published his own Claude Code setup in the open. A lot of what is
-here started as his and was adapted rather than invented — the context file as the centre of the
-setup, procedures written down as reusable commands, and publishing the files so someone can copy
-a working thing instead of assembling one. If you are starting from zero, read
-[his site](https://claudeblattman.com/) first; it is broader than this one.
+I started building my Claude Code workflow from
+**[Chris Blattman](https://claudeblattman.com/)**'s guide — he is a political economist at UChicago
+Harris who published his own setup in the open. A lot of what is here began there and was adapted
+rather than invented: the context file as the centre of the setup, procedures written down once as
+reusable commands, and publishing the actual files so someone can copy a working thing instead of
+assembling one. His site is worth a look.
 
 Worth reading alongside this: **[mycelium](https://github.com/arjunrajlaboratory/mycelium)** from
 the Arjun Raj lab, a fuller framework for the same problem — a knowledge layer that accumulates
