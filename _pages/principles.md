@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /principles/
-last_updated: 2026-09-03
+last_updated: 2026-09-04
 title: principles
 description:
 nav: true
