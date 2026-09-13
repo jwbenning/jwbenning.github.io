@@ -45,6 +45,15 @@ cd agentic-starter
 
 </div>
 
+## Credit
+
+I learned most of this from **[Chris Blattman](https://claudeblattman.com/)**, a political
+economist at UChicago Harris who published his own Claude Code setup in the open. A lot of what is
+here started as his and was adapted rather than invented — the context file as the centre of the
+setup, procedures written down as reusable commands, and publishing the files so someone can copy
+a working thing instead of assembling one. If you are starting from zero, read
+[his site](https://claudeblattman.com/) first; it is broader than this one.
+
 ## Corrections
 
 If something here is wrong or out of date, tell me; seminar students, use `#setup-help` on the
