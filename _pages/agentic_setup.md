@@ -5,7 +5,7 @@ title: getting set up
 description: install claude code, and the optional terminal setup
 nav: false
 wiki_slug: setup
-last_updated: 2026-09-12
+last_updated: 2026-09-13
 ---
 
 {% include agentic_wiki.liquid %}

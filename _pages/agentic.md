@@ -5,7 +5,7 @@ title: agentic ai
 description: how we actually use coding agents day to day, and the files to copy
 nav: true
 nav_order: 6
-last_updated: 2026-09-12
+last_updated: 2026-09-13
 ---
 
 {% include agentic_wiki.liquid %}

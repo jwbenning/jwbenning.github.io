@@ -5,7 +5,7 @@ title: project memory
 description: the files that make an agent remember a project between sessions
 nav: false
 wiki_slug: memory
-last_updated: 2026-09-12
+last_updated: 2026-09-13
 ---
 
 {% include agentic_wiki.liquid %}
