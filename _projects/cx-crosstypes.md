@@ -7,6 +7,6 @@ importance: 5
 category: natural
 ---
 
-At the edge of a species' range, gene flow from the range core can either fuel adaptation by importing useful variation or swamp it by overwhelming local selection. Using experimental crosses between core and edge populations of *Clarkia xantiana*, transplanted back into the range margin, we're directly measuring the fitness consequences of admixture across the species' range — and asking whether gene flow helps or hurts populations facing novel conditions.
+At the edge of a species' range, gene flow from the range core can either fuel adaptation by importing useful variation or swamp it by overwhelming local selection. Using experimental crosses between core and edge populations of _Clarkia xantiana_, transplanted back into the range margin, we're directly measuring the fitness consequences of admixture across the species' range — and asking whether gene flow helps or hurts populations facing novel conditions.
 
-*With Jacob Landis (Cornell).*
+_With Jacob Landis (Cornell)._

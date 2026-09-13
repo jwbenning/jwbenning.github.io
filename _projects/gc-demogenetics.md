@@ -7,6 +7,6 @@ importance: 3
 category: natural
 ---
 
-The fringed gentian (*Gentianopsis crinita*) is a charismatic late-summer wildflower of eastern North American wet meadows — and it's quietly disappearing. We're pairing long-term demographic monitoring across populations with whole-genome resequencing and a common-garden experiment to ask whether decline is driven by demographic stochasticity, loss of genetic variation, mismatch with a shifting climate, or some combination. A reference genome and population resequencing are underway.
+The fringed gentian (_Gentianopsis crinita_) is a charismatic late-summer wildflower of eastern North American wet meadows — and it's quietly disappearing. We're pairing long-term demographic monitoring across populations with whole-genome resequencing and a common-garden experiment to ask whether decline is driven by demographic stochasticity, loss of genetic variation, mismatch with a shifting climate, or some combination. A reference genome and population resequencing are underway.
 
-*With Anurag Agrawal (Cornell) and Jacob Landis (Cornell).*
+_With Anurag Agrawal (Cornell) and Jacob Landis (Cornell)._

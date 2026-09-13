@@ -50,4 +50,3 @@ Courses John teaches.
   </div>
 
 </div>
-

@@ -6,7 +6,6 @@ title: join
 description:
 nav: true
 nav_order: 8
-
 ---
 
 <style>

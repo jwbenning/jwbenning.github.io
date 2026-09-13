@@ -92,6 +92,7 @@ nav_order: 2
     <text class="sub" x="518" y="310" text-anchor="middle">distribution, abundance,</text>
     <text class="sub" x="518" y="328" text-anchor="middle">range limits,</text>
     <text class="sub" x="518" y="346" text-anchor="middle">species interactions</text>
+
   </svg>
   <p class="cap">Lorem ipsum</p>
 </div>

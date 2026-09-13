@@ -10,9 +10,9 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   #more_info: >
-    #<p>Department of Ecology and Evolutionary Biology</p>
-    #<p>Cornell University</p>
-    #<p>Ithaca, New York 14850</p>
+  #<p>Department of Ecology and Evolutionary Biology</p>
+  #<p>Cornell University</p>
+  #<p>Ithaca, New York 14850</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
@@ -35,6 +35,7 @@ latest_posts:
 ## Evolutionary ecology & ecological genetics
 
 Our research group seeks to understand the interplay between evolutionary processes and ecological patterns. We work on questions like
+
 - how does gene flow through space and time mediate adaptation?
 - how important are biotic interactions for constraining species' geographic distributions?
 - how do environmental gradients influence biological invasions?

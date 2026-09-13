@@ -9,7 +9,7 @@ Live pages:
 
 ## Two ways in
 
-**Markup Google Docs.** For changing the *writing* — prose, framing questions, the notes
+**Markup Google Docs.** For changing the _writing_ — prose, framing questions, the notes
 under each reading. John keeps a Doc per page holding every word that is live, and marks it
 up with suggestions and comments; the edits then get applied to this repo. If you mostly
 want to rewrite sentences rather than restructure the page, this is the easier route and you
@@ -37,11 +37,11 @@ if something is wrong. The site rebuilds itself a few minutes after a change lan
 
 ## The three files
 
-| File | What it holds | How often you touch it |
-| --- | --- | --- |
-| `_data/agentic_ai.yml` | Schedule, readings, reading room, banner | Constantly |
-| `_pages/agentic_ai.md` | Page prose and layout | Occasionally |
-| `_pages/agentic_ai_primer.md` | The whole primer | Occasionally |
+| File                          | What it holds                            | How often you touch it |
+| ----------------------------- | ---------------------------------------- | ---------------------- |
+| `_data/agentic_ai.yml`        | Schedule, readings, reading room, banner | Constantly             |
+| `_pages/agentic_ai.md`        | Page prose and layout                    | Occasionally           |
+| `_pages/agentic_ai_primer.md` | The whole primer                         | Occasionally           |
 
 ## Common edits
 
@@ -68,14 +68,14 @@ separate from `announcement` (singular), which is the pinned banner at the very 
 **Add a reading to a week.** Under that week's `readings:`:
 
 ```yaml
-      - title: "The title"
-        source: Author et al. 2026, Journal
-        url: https://doi.org/...
-        tags: [evaluation, EEB]
-        optional: true
-        note: >
-          What to do with it, and why it is here. Tell people what to skim —
-          this line is the most useful part of the entry.
+- title: "The title"
+  source: Author et al. 2026, Journal
+  url: https://doi.org/...
+  tags: [evaluation, EEB]
+  optional: true
+  note: >
+    What to do with it, and why it is here. Tell people what to skim —
+    this line is the most useful part of the entry.
 ```
 
 Leave `optional` out to make a reading required. Right now only Week 1 has a required

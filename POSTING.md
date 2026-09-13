@@ -43,7 +43,7 @@ image: assets/img/photos/2026-08-19_gentian-dawn.jpg
 alt: Gentianopsis crinita flower at sunrise
 ---
 
-*Gentianopsis crinita* at first light, Ithaca NY.
+_Gentianopsis crinita_ at first light, Ithaca NY.
 ```
 
 `alt:` is the description for screen readers and for when the image fails to

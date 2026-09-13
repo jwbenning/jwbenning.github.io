@@ -19,7 +19,7 @@ lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: darwin-tree.svg # Darwin's branching-tree sketch; lives in /assets/img/
 
 url: https://benninglab.org # the base hostname & protocol for your site
-baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
+baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
@@ -65,7 +65,7 @@ max_width: 930px
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
 # see https://schema.org/docs/faq.html for more information
-serve_og_meta: true  # Include Open Graph meta tags in the HTML head
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
 serve_schema_org: false # Include Schema.org in the HTML head
 og_image: https://benninglab.org/assets/img/gallery/clarkia-xantiana.jpg # site-wide Open Graph preview image; must be an absolute URL
 
@@ -267,8 +267,8 @@ display_categories: [] # these categories will be displayed on the front page of
 # -----------------------------------------------------------------------------
 
 scholar:
-#  last_name: [Benning]
-#  first_name: [John, John W, J., J.W., JW]
+  #  last_name: [Benning]
+  #  first_name: [John, John W, J., J.W., JW]
 
   style: apa
   locale: en
@@ -325,7 +325,7 @@ filtered_bibtex_keywords:
     supp,
     video,
     website,
-    preprint
+    preprint,
   ]
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)

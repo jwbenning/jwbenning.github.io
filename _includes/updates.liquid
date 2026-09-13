@@ -32,7 +32,7 @@
       {% elsif item.image %}
         {% assign item_images = item.image | split: '|' %}
       {% else %}
-        {% assign item_images = nil %}
+        {% assign item_images = null %}
       {% endif %}
 
       <div class="update-item">

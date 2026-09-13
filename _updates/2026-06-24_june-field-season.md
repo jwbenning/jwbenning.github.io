@@ -11,4 +11,4 @@ images:
 alt: Scenes from the June Clarkia field season in California
 ---
 
-June in California for the *Clarkia* field season — and Sean's find at the ranch.
+June in California for the _Clarkia_ field season — and Sean's find at the ranch.

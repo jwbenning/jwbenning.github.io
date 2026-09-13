@@ -7,6 +7,6 @@ importance: 2
 category: natural
 ---
 
-Long-term demographic data from ~20 populations of *Clarkia xantiana* — collected across two decades by the Moeller and Geber labs — let us ask how population dynamics vary across a species' range, how the range edge differs from the core, and whether demographic and genetic signals of stress co-localize. We're integrating these data with new genomic resequencing to bridge demography and evolution at landscape scale.
+Long-term demographic data from ~20 populations of _Clarkia xantiana_ — collected across two decades by the Moeller and Geber labs — let us ask how population dynamics vary across a species' range, how the range edge differs from the core, and whether demographic and genetic signals of stress co-localize. We're integrating these data with new genomic resequencing to bridge demography and evolution at landscape scale.
 
-*With Dave Moeller (Minnesota) and Monica Geber (Cornell).*
+_With Dave Moeller (Minnesota) and Monica Geber (Cornell)._

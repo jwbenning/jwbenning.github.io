@@ -350,7 +350,6 @@ Filter by topic.
   })();
 </script>
 
-
 <script>
   (function () {
     var bar = document.getElementById("aiJump");
