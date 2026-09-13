@@ -121,7 +121,7 @@ a ten-minute primer written for this seminar, covering the vocabulary and the co
 with no background assumed. It is the first of the Week 1 readings; read it before the rest.
 
 Separately, the [agentic AI guides]({{ '/agentic/' | relative_url }}) are how John sets this up
-for his own research — installing it, the files that give it project memory, and the rules worth
+for his own work — installing it, the files that give it project memory, and the rules worth
 copying. Not course material and not required; read them if you want to try this on your own work.
 
 {% assign now = c.schedule | where: "week", c.current_week | first %}

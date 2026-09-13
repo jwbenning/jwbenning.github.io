@@ -41,10 +41,10 @@ Courses John teaches.
   <div class="course">
     <div class="course-code">Public resource · ongoing</div>
     <div class="course-title">
-      <a href="{{ '/agentic/' | relative_url }}">Agentic AI for research</a>
+      <a href="{{ '/agentic/' | relative_url }}">Agentic AI, day to day</a>
     </div>
     <p class="course-meta">Four short guides, plus a repo of files to copy</p>
-    <p>How John runs his own research through a coding agent: installing it, the terminal
+    <p>How John runs his own work through a coding agent: installing it, the terminal
     setup, the files that give it memory of a project, and the rules worth putting in your
     own config. <a href="{{ '/agentic/' | relative_url }}">Read the guides →</a></p>
   </div>
