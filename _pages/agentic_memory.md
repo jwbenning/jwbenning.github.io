@@ -81,13 +81,53 @@ next actions rather than areas, and what did not work, so it does not get retrie
 
 ## Scaffold a project
 
+Ask for it in your own words. The agent has the templates and will write the files:
+
+```
+Scaffold a project here for the Clarkia demography work, code cx-demo.
+```
+
+There is also a script, for when you want the same result without a conversation about it:
+
 ```bash
 ./bin/new-project.sh ~/projects/2026_MyProject \
   --name "Clarkia demography" --code cx-demo
 ```
 
-It writes `PROJECT_INDEX.md`, `TODO.md` and `handoff.md` from the templates and skips anything
-that already exists. You write `CLAUDE.md` yourself, which is where most of the value is.
+Either way you get `PROJECT_INDEX.md`, `TODO.md` and `handoff.md` from the templates, and
+anything already there is left alone. You write `CLAUDE.md` yourself, which is where most of
+the value is.
+
+## Where the folders go
+
+The agent works on whatever folder you point it at, so the arrangement is yours. Mine, for
+reference: everything lives in Google Drive, one folder per project, with code in a separate
+tree of git repos.
+
+```
+My Drive/Work/
+├── Projects/
+│   ├── InProgress/
+│   │   ├── 2026_CxSpaceTime/     ← one folder per project
+│   │   │   ├── CLAUDE.md
+│   │   │   ├── PROJECT_INDEX.md
+│   │   │   ├── TODO.md
+│   │   │   ├── handoff.md
+│   │   │   ├── Data/  analysis/  Manuscript/  Meetings/
+│   │   │   └── cx-spacetime Notebook.gdoc
+│   │   └── 2026_Gentian/
+│   └── Exploratory/             ← not started, or may never start
+├── Lab Management/              ← protocols and equipment docs, shared across projects
+└── Teaching/
+
+~/GitHubRepos/
+└── cx-spacetime/                ← the code, a git repo, symlinked to the CLAUDE.md above
+```
+
+Two things about this are load-bearing rather than taste. The **year prefix** keeps the folder
+list in a useful order and makes a project name unambiguous when you fuzzy-match it from the
+launcher. And **anything reusable across projects lives outside them**, so there is one copy of
+a protocol rather than one per project that used it.
 
 ## Make the handoff automatic
 

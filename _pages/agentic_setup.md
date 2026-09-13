@@ -80,6 +80,27 @@ does it, which is how you learn where its judgment is good and where it is not.
   it first.</p>
 </div>
 
+## Put the folder in git
+
+The warning above is the single cheapest precaution available, and it is three commands:
+
+```bash
+cd ~/my-project
+git init
+git add -A && git commit -m "before I let an agent near this"
+```
+
+From then on `git diff` shows you exactly what the agent changed, and `git checkout -- <file>`
+undoes it. You do not need a GitHub account and you do not need to understand branches; a local
+repository is enough for the thing that matters, which is being able to get back.
+
+You can also just ask: **"commit this before we start"**, and **"show me what you changed"** when
+it reports done. Reviewing a diff is much faster than re-reading a file, and it is the habit that
+makes the permission prompts less necessary over time.
+
+If none of this is familiar, the [GitHub git guide](https://docs.github.com/en/get-started/using-git/about-git)
+covers it properly. Working on a duplicate folder is a fine substitute until you get to it.
+
 ## Optional: Ghostty, tmux, and a project launcher
 
 [tmux](https://github.com/tmux/tmux) owns the terminal rather than the window, so sessions survive
