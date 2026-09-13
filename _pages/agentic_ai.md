@@ -93,6 +93,7 @@ icon: ai-eeb.png
 <a href="#schedule">Schedule</a>
 <a href="#using-ai-in-this-course">Using AI here</a>
 <a href="#-reading-room">Reading room</a>
+<a href="{{ '/agentic/' | relative_url }}">Guides ↗</a>
 </nav>
 
 An **agent** is a large language model given tools, memory, and permission to plan and act
@@ -112,6 +113,11 @@ demos but isn't required. **Bring a laptop.**
 **Start with [what is an agent?]({{ '/teaching/agentic-ai/primer/' | relative_url }})** —
 a ten-minute primer written for this seminar, covering the vocabulary and the core ideas
 with no background assumed. It is the first of the Week 1 readings; read it before the rest.
+
+If you want to see how one of us actually works this way day to day, the
+[agentic AI guides]({{ '/agentic/' | relative_url }}) are John's own setup written up in public,
+with the files to copy. Not course material, and not required: read them if the demos make you
+want to try this on your own work.
 
 {% assign now = c.schedule | where: "week", c.current_week | first %}
 {% if now %}

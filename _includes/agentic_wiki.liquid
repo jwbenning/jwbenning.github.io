@@ -1,0 +1,72 @@
+{% comment %}
+Shared styling and section nav for the /agentic/ guides.
+
+Include once near the top of every page in the section. The page declares which entry is
+current with `wiki_slug: <slug>` in its front matter; the nav itself is driven by
+_data/agentic_wiki.yml, so adding a page is a data edit plus a new _pages file.
+{% endcomment %}
+
+<style>
+  .wk-crumb{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--global-text-color-light);margin:0 0 .9rem}
+  .wk-crumb a{color:var(--global-text-color-light)}
+  .wk-crumb a:hover{color:var(--global-theme-color)}
+
+  .wk-nav{border:1px solid var(--global-divider-color);border-radius:12px;background:var(--global-card-bg-color);padding:1rem 1.2rem;margin:0 0 2rem}
+  .wk-nav .grp{font-size:.66rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--global-text-color-light);margin:.9rem 0 .35rem}
+  .wk-nav .grp:first-child{margin-top:0}
+  .wk-nav ul{list-style:none;padding:0;margin:0}
+  .wk-nav li{margin:0 0 .2rem;line-height:1.45}
+  .wk-nav li.is-here{font-weight:700}
+  .wk-nav li.is-here::before{content:"▸ ";color:var(--global-theme-color)}
+  .wk-nav a{color:var(--global-text-color)}
+  .wk-nav a:hover{color:var(--global-theme-color)}
+
+  .wk-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.9rem;margin:1.2rem 0 0}
+  .wk-card{border:1px solid var(--global-divider-color);border-radius:12px;background:var(--global-card-bg-color);padding:1rem 1.1rem;transition:border-color .15s ease}
+  .wk-card:hover{border-color:var(--global-theme-color)}
+  .wk-card .t{font-weight:700;font-size:1.02rem;line-height:1.3;margin:0 0 .3rem}
+  .wk-card .t a{color:var(--global-text-color)}
+  .wk-card .t a:hover{color:var(--global-theme-color)}
+  .wk-card p{margin:0;font-size:.92rem;line-height:1.55;color:var(--global-text-color-light)}
+  .wk-group-h{font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--global-text-color-light);margin:2rem 0 0}
+
+  .wk-note{border:1px solid var(--global-divider-color);border-left:4px solid var(--global-theme-color);border-radius:10px;background:var(--global-card-bg-color);padding:.85rem 1.1rem;margin:1.4rem 0;line-height:1.6}
+  .wk-note p:last-child{margin-bottom:0}
+  .wk-note .lbl{display:block;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--global-theme-color);margin-bottom:.25rem}
+
+  .wk-warn{border:1px solid var(--global-divider-color);border-left:4px solid #b4541e;border-radius:10px;background:var(--global-card-bg-color);padding:.85rem 1.1rem;margin:1.4rem 0;line-height:1.6}
+  .wk-warn p:last-child{margin-bottom:0}
+  .wk-warn .lbl{display:block;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#b4541e;margin-bottom:.25rem}
+
+  .wk-tldr{font-size:1.02rem;line-height:1.65;border-bottom:1px solid var(--global-divider-color);padding-bottom:1.1rem;margin-bottom:1.6rem}
+
+  /* Wide tables scroll inside their own box rather than pushing the page sideways. */
+  .post table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+  .post table td,.post table th{white-space:normal}
+  .post h2{margin-top:2.6rem}
+  .post h3{margin-top:1.8rem}
+  .post pre{border-radius:8px}
+  body h2[id]{scroll-margin-top:7rem}
+
+  .wk-next{border-top:1px solid var(--global-divider-color);margin-top:3rem;padding-top:1.2rem;font-size:.95rem;line-height:1.6}
+  .wk-next .lbl{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--global-text-color-light);display:block;margin-bottom:.3rem}
+</style>
+
+{% assign w = site.data.agentic_wiki %}
+
+{% if page.wiki_slug %}
+<p class="wk-crumb"><a href="{{ '/agentic/' | relative_url }}">← agentic ai, the guides</a></p>
+
+<nav class="wk-nav" aria-label="Guides in this section">
+{% for g in w.groups %}
+  <div class="grp">{{ g.title }}</div>
+  <ul>
+  {% for p in g.pages %}
+    <li{% if p.slug == page.wiki_slug %} class="is-here"{% endif %}>
+      {% if p.slug == page.wiki_slug %}{{ p.title }}{% else %}<a href="{{ '/agentic/' | append: p.slug | append: '/' | relative_url }}">{{ p.title }}</a>{% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+{% endfor %}
+</nav>
+{% endif %}

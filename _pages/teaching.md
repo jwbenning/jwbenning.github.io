@@ -39,6 +39,18 @@ Courses John teaches.
   </div>
 
   <div class="course">
+    <div class="course-code">Public resource · ongoing</div>
+    <div class="course-title">
+      <a href="{{ '/agentic/' | relative_url }}">Agentic AI for research: how I actually use it</a>
+    </div>
+    <p class="course-meta">Guides + a companion repo of files to copy</p>
+    <p>The setup behind the seminar: project context files, session hooks, grounding an agent
+    in your own field's sources, the working norms that decide whether the output is
+    trustworthy, and what it is bad at.
+    <a href="{{ '/agentic/' | relative_url }}">Read the guides →</a></p>
+  </div>
+
+  <div class="course">
     <div class="course-code">BIOEE 1780 · Fall 2026</div>
     <div class="course-title">
       <a href="https://classes.cornell.edu/browse/roster/FA26/class/BIOEE/1780">An Introduction to Evolutionary Biology and Diversity</a>
