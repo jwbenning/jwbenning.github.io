@@ -186,6 +186,6 @@ ln -sfn "../../projects/2026_CxDemo/TODO.md" TODO.md
 Relative paths, so they resolve on any machine, and commit them. Two real copies means one of them
 is wrong and you will not know which.
 
-**Next:** [Reports]({{ '/agentic/reports/' | relative_url }}) — how to get output you can actually read.
+**Next:** [Output]({{ '/agentic/output/' | relative_url }}) — reports, published pages and docs.
 
 {% include agentic_byline.liquid %}

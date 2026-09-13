@@ -21,7 +21,7 @@ DEPS=(
   "_pages/agentic.md|_includes/agentic_wiki.liquid _data/agentic_wiki.yml"
   "_pages/agentic_setup.md|_includes/agentic_wiki.liquid _data/agentic_wiki.yml"
   "_pages/agentic_memory.md|_includes/agentic_wiki.liquid _data/agentic_wiki.yml"
-  "_pages/agentic_reports.md|_includes/agentic_wiki.liquid _data/agentic_wiki.yml"
+  "_pages/agentic_output.md|_includes/agentic_wiki.liquid _data/agentic_wiki.yml"
   "_pages/agentic_rules.md|_includes/agentic_wiki.liquid _data/agentic_wiki.yml"
   "_pages/publications.md|_bibliography/papers.bib"
   "_pages/updates.md|_updates"

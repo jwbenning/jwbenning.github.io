@@ -16,9 +16,9 @@ pages:
   - slug: memory
     title: Project memory
     blurb: The four files that make an agent remember a project, and the hooks that carry the handoff.
-  - slug: reports
-    title: Reports
-    blurb: Ask for one self-contained HTML file instead of output that scrolls away.
+  - slug: output
+    title: Output
+    blurb: Reports, published pages and docs — and picking by how you plan to revise.
   - slug: rules
     title: Rules worth copying
     blurb: CLAUDE.md rules that change what the agent actually does. Copy-pasteable.
