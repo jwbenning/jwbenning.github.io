@@ -132,15 +132,16 @@ a protocol rather than one per project that used it.
 ## Make the handoff automatic
 
 Writing the handoff at the end of a long session is the thing you will not do. Two hooks — shell
-commands the harness runs at defined moments, with whatever they print becoming part of the
-session's context — remove the need to remember.
+commands the harness runs, not the model, with whatever they print becoming part of the session's
+context — remove the need to remember.
 
-`session-start-handoff.sh` finds the project by walking up to the nearest `CLAUDE.md`, then pastes
-`handoff.md` into the new session with its age in days, so a stale one is visible instead of being
-read as current.
+| Hook                       | Fires            | What it does                                                                                                                                                                      |
+| -------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `session-start-handoff.sh` | Session start    | Walks up to the nearest `CLAUDE.md` to find the project, then pastes `handoff.md` into the new session with its age in days, so a stale one is visible instead of read as current |
+| `capture-session.sh`       | End of each turn | Saves a condensed transcript — real dialogue, one line per tool call — to `~/.claude-assistant/session-records/`                                                                  |
 
-`capture-session.sh` saves a condensed transcript to `~/.claude-assistant/session-records/`,
-outside the project, because a transcript is near-verbatim and a project folder can be shared.
+Transcripts go outside the project on purpose: they are near-verbatim, and a project folder can be
+shared. `handoff.md` is the artifact meant to be read by other people.
 
 ```bash
 git clone https://github.com/benning-lab/agentic-starter.git
