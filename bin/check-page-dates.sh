@@ -38,22 +38,53 @@ extra_paths_for() {
   done
 }
 
-# Date of the newest commit that changed something OTHER than the page's own
-# `last_updated:` line. Without this, the commit that bumps a stamp counts as a
-# content change, so every page would report stale again immediately — the
-# check would never come back clean.
+# Drop the stamp line, then reduce the text to what a reader would actually see:
+# unescape markdown punctuation, drop emphasis markers, collapse whitespace.
+#
+# This exists because a formatter rewrites the source without changing the page.
+# Prettier escapes a literal * as \*, and rewrites *italic* as _italic_. Both render
+# identically, so neither can be allowed to count as a content change. The cost is
+# that a change ONLY to emphasis is not detected, which is the right trade.
+norm_filter() {
+  grep -v '^last_updated:' |
+    sed 's/\\\([][*_`#+.!-]\)/\1/g' |
+    tr -d '*_' |
+    tr -s '[:space:]' ' '
+}
+
+# Normalized content of a path at a revision: whitespace collapsed and the
+# `last_updated:` stamp dropped. Handles a directory (a page can render from one,
+# e.g. _updates) by concatenating every file under it.
+norm_at() {
+  local rev="$1" path="$2" type
+  git cat-file -e "$rev:$path" 2>/dev/null || return 0
+  type=$(git cat-file -t "$rev:$path" 2>/dev/null)
+  if [ "$type" = "tree" ]; then
+    git ls-tree -r --name-only "$rev" -- "$path" 2>/dev/null | while read -r fp; do
+      git show "$rev:$fp" 2>/dev/null
+    done | norm_filter
+  else
+    git show "$rev:$path" 2>/dev/null | norm_filter
+  fi
+}
+
+# Date of the newest commit that made a real content change to a path.
+#
+# Two kinds of commit are deliberately not content changes:
+#   - one that only bumps a page's own `last_updated:` line, otherwise bumping a stamp
+#     would itself register as a change and the check could never come back clean;
+#   - one that only reformats. A Prettier run reflows paragraphs, which is a large diff
+#     and no change at all to what the page says.
+#
+# Both fall out of comparing normalized content against the commit's first parent.
 substantive_date() {
-  local f="$1" sha d
+  local p="$1" sha d
   while read -r sha d; do
-    if git show --format= --unified=0 "$sha" -- "$f" \
-         | grep -E '^[+-]' \
-         | grep -vE '^(\+\+\+|---)' \
-         | grep -vE '^[+-]last_updated:' \
-         | grep -q .; then
+    if [ "$(norm_at "$sha^" "$p")" != "$(norm_at "$sha" "$p")" ]; then
       printf '%s' "$d"
       return
     fi
-  done < <(git log --format='%H %cs' -- "$f")
+  done < <(git log --format='%H %cs' -- "$p")
 }
 
 stale=0
@@ -66,7 +97,7 @@ for f in _pages/*.md; do
   source_of="$(basename "$f")"
   for extra in $(extra_paths_for "$f"); do
     [ -e "$extra" ] || continue
-    d=$(git log -1 --format=%cs -- "$extra")
+    d=$(substantive_date "$extra")
     if [ -n "$d" ] && [[ "$d" > "$actual" ]]; then
       actual="$d"
       source_of="$extra"

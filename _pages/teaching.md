@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /teaching/
-last_updated: 2026-09-01
+last_updated: 2026-09-12
 title: teaching
 description:
 nav: true
@@ -36,6 +36,17 @@ Courses John teaches.
     trusted to do across the research lifecycle, and a conversation about what EEB
     might look like in a world with highly capable AI.
     <a href="{{ '/teaching/agentic-ai/' | relative_url }}">Course page →</a></p>
+  </div>
+
+  <div class="course">
+    <div class="course-code">Public resource · ongoing</div>
+    <div class="course-title">
+      <a href="{{ '/agentic/' | relative_url }}">Agentic AI for research</a>
+    </div>
+    <p class="course-meta">Four short guides, plus a repo of files to copy</p>
+    <p>How John runs his own research through a coding agent: installing it, the terminal
+    setup, the files that give it memory of a project, and the rules worth putting in your
+    own config. <a href="{{ '/agentic/' | relative_url }}">Read the guides →</a></p>
   </div>
 
   <div class="course">
