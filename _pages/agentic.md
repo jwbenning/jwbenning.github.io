@@ -2,7 +2,7 @@
 layout: page
 permalink: /agentic/
 title: agentic ai
-description: how I actually use coding agents day to day, and the files to copy
+description: how we actually use coding agents day to day, and the files to copy
 nav: true
 nav_order: 6
 last_updated: 2026-09-12
@@ -10,10 +10,10 @@ last_updated: 2026-09-12
 
 {% include agentic_wiki.liquid %}
 
-This is how I run my work through a coding agent, and the plain text files behind it:
-what the agent reads when a session opens, what it writes when one ends, and the rules I give it.
-It is for students in my seminar on [agentic AI in
-EEB]({{ '/teaching/agentic-ai/' | relative_url }}), people in my lab, and anyone who wants the
+This is how we run our work through a coding agent, and the plain text files behind it:
+what the agent reads when a session opens, what it writes when one ends, and the rules we give it.
+It is for students in our seminar on [agentic AI in
+EEB]({{ '/teaching/agentic-ai/' | relative_url }}), people in the lab, and anyone who wants the
 parts that transfer — and every file described here is in a companion repo you can clone.
 
 Not covered yet: skills, connected tools like email and calendar, and the assistant workflows
