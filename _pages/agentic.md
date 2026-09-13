@@ -84,14 +84,11 @@ rather than invented: the context file as the centre of the setup, procedures wr
 reusable commands, and publishing the actual files so someone can copy a working thing instead of
 assembling one. His site is worth a look.
 
-Worth reading alongside this: **[mycelium](https://github.com/arjunrajlaboratory/mycelium)** from
-the Arjun Raj lab, a fuller framework for the same problem — a knowledge layer that accumulates
-across analytical projects, with its own hooks and shareable convention packs. More machinery than
-what is here, and further along.
+Worth reading alongside this: **[mycelium](https://github.com/arjunrajlaboratory/mycelium)**, from
+the Arjun Raj lab.
 
 ## Corrections
 
-If something here is wrong or out of date, tell me; seminar students, use `#setup-help` on the
-course Slack.
+If something here is wrong or out of date, tell me.
 
 {% include agentic_byline.liquid %}

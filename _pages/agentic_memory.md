@@ -129,6 +129,24 @@ list in a useful order and makes a project name unambiguous when you fuzzy-match
 launcher. And **anything reusable across projects lives outside them**, so there is one copy of
 a protocol rather than one per project that used it.
 
+## What a session looks like
+
+Start to finish, on a project that is already set up:
+
+```bash
+cc gentian          # fuzzy-matches the project, opens a tmux window there, starts the agent
+```
+
+The handoff hook pastes the last session's note into the opening context, with its age in days, so
+the agent knows where things were left. Then the work. At the end:
+
+```
+/done
+```
+
+which writes `handoff.md` and appends a dated entry to the session log. Close the tab — the tmux
+session keeps running, and the next `cc gentian` lands back in it.
+
 ## Make the handoff automatic
 
 Writing the handoff at the end of a long session is the thing you will not do. Two hooks — shell
