@@ -17,7 +17,7 @@ EEB]({{ '/teaching/agentic-ai/' | relative_url }}), people in the lab, and anyon
 parts that transfer — and every file described here is in a companion repo you can clone.
 
 Not covered yet: skills, connected tools like email and calendar, and the assistant workflows
-those make possible.
+(inbox triage, for example) those make possible.
 
 {% assign w = site.data.agentic_wiki %}
 
