@@ -139,6 +139,20 @@ ccr spacetime    # same, but `claude --resume` to pick up a past session
 Matching ignores case, punctuation and a leading `YYYY_`, so `cc spacetime`, `cc CxSpaceTime` and
 `cc 2026_cx-spacetime` all land in the same folder.
 
+<figure class="wk-shot">
+  <img
+    src="{{ '/assets/img/agentic-ghostty.png' | relative_url }}"
+    alt="A Ghostty window running Claude Code. The tmux status bar along the bottom lists six
+         numbered windows, one per project, with the active one highlighted."
+    loading="lazy"
+  />
+  <figcaption>
+    One window per project, all of them live. The bar along the bottom is the tmux window list —
+    switching projects is <code>cc &lt;name&gt;</code> or Shift+arrow, and closing the terminal
+    leaves every session running.
+  </figcaption>
+</figure>
+
 One gotcha: Ghostty parses a trailing `# comment` on a value line into the value, so the setting
 becomes something you did not write. Put comments on their own line.
 
