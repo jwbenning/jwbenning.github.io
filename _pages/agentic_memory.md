@@ -5,7 +5,7 @@ title: project memory
 description: the files that make an agent remember a project between sessions
 nav: false
 wiki_slug: memory
-last_updated: 2026-09-13
+last_updated: 2026-09-17
 ---
 
 {% include agentic_wiki.liquid %}
@@ -161,14 +161,10 @@ context — remove the need to remember.
 Transcripts go outside the project on purpose: they are near-verbatim, and a project folder can be
 shared. `handoff.md` is the artifact meant to be read by other people.
 
-```bash
-git clone https://github.com/benning-lab/agentic-starter.git
-cd agentic-starter
-./install.sh
-```
-
-The installer merges this block into `~/.claude/settings.json`, substituting the repo path for
-`__REPO__`:
+Both hooks are in the starter repo, and
+[getting set up]({{ '/agentic/setup/' | relative_url }}) walks through installing it. What turns
+them on is this block in `~/.claude/settings.json`, with `__REPO__` replaced by the path to the
+repo on your own machine:
 
 ```json
 {
@@ -187,6 +183,10 @@ The installer merges this block into `~/.claude/settings.json`, substituting the
   }
 }
 ```
+
+The installer writes that file for you if you do not have one. If you do, it leaves your settings
+untouched and prints the block for you to paste in — it will not merge JSON into a file you already
+own.
 
 Restart any session that is already running, since hooks are read at session start.
 

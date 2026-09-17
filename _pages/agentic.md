@@ -5,7 +5,7 @@ title: agentic ai
 description: how we actually use coding agents day to day, and the files to copy
 nav: true
 nav_order: 6
-last_updated: 2026-09-13
+last_updated: 2026-09-17
 ---
 
 {% include agentic_wiki.liquid %}
@@ -32,15 +32,24 @@ parts that transfer — and every file described here is in a companion repo you
 <div class="wk-note" markdown="1">
 <span class="lbl">the files</span>
 
-The templates, hooks, launcher and terminal config are in
-[github.com/benning-lab/agentic-starter](https://github.com/benning-lab/agentic-starter), which
-installs by symlink into `~/.claude/` and never overwrites anything you already have.
+Every file these guides describe is in one companion repo,
+[benning-lab/agentic-starter](https://github.com/benning-lab/agentic-starter) — the templates, the
+hooks, the launcher and the terminal config. You do not need to know git to use it: the green
+**Code** button on that page has a **Download ZIP** option, which gets you the same files.
+
+Unpack it somewhere it can stay. The hooks run from that folder in place, so moving or deleting it
+later switches them off. Then:
 
 ```bash
-git clone https://github.com/benning-lab/agentic-starter.git
 cd agentic-starter
-./install.sh --check
+./install.sh --check      # prints what it would do, changes nothing
+./install.sh              # do it
 ```
+
+On a default run it makes a few empty folders and writes one file, `~/.claude/settings.json` — and
+only if you do not already have one. If you do, it changes nothing and prints the block for you to
+paste in yourself. The full walkthrough is on
+[getting set up]({{ '/agentic/setup/' | relative_url }}).
 
 </div>
 

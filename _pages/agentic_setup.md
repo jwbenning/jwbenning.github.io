@@ -5,7 +5,7 @@ title: getting set up
 description: install claude code, and the optional terminal setup
 nav: false
 wiki_slug: setup
-last_updated: 2026-09-13
+last_updated: 2026-09-17
 ---
 
 {% include agentic_wiki.liquid %}
@@ -101,6 +101,65 @@ makes the permission prompts less necessary over time.
 If none of this is familiar, the [GitHub git guide](https://docs.github.com/en/get-started/using-git/about-git)
 covers it properly. Working on a duplicate folder is a fine substitute until you get to it.
 
+## Get the starter files
+
+Everything these guides describe — the four templates, the hooks, the terminal config, the
+launcher — is in one repo:
+[benning-lab/agentic-starter](https://github.com/benning-lab/agentic-starter).
+
+**With git:**
+
+```bash
+git clone https://github.com/benning-lab/agentic-starter.git ~/agentic-starter
+```
+
+**Without git:** on that page, click the green **Code** button, then **Download ZIP**, and unzip
+it. The same files. The only thing you give up is updates — with a clone, `git pull` fetches
+them — which is a fine trade until you want them.
+
+<div class="wk-warn" markdown="1">
+<span class="lbl">put it somewhere it can stay</span>
+
+**The hooks run from this folder, in place.** Nothing is copied into a system directory, so if you
+later move the folder, rename it, or clear it out of `~/Downloads`, the hooks stop firing — with no
+error and no obvious sign. Your home directory, or wherever you keep projects, is the right kind of
+place.
+
+</div>
+
+Then look before you run:
+
+```bash
+cd ~/agentic-starter
+./install.sh --check      # prints what it would do, changes nothing
+```
+
+Reading a `--check` before running is worth doing with any install script you find on the internet,
+this one included. On a real run, this one:
+
+- writes `~/.claude/settings.json` from a template, pointing at the hooks in this folder —
+  **only if you do not already have that file**;
+- creates `~/.claude/commands`, `~/.claude/skills` and `~/.claude-assistant/session-records` if
+  they are missing;
+- with `--dotfiles`, links the tmux and Ghostty configs below.
+
+It never overwrites anything of yours: it reports the collision and skips.
+
+```bash
+./install.sh
+```
+
+**If you already had a `~/.claude/settings.json`** — most people who have run Claude Code before do
+— it will have changed nothing, and the hooks are not on yet. Open `settings.template.json`, copy
+the `hooks` block into your own settings file, and replace `__REPO__` with the full path to this
+folder (`pwd` prints it).
+
+One thing to know before you switch the hooks on: the session-capture hook writes a condensed
+transcript of every session to `~/.claude-assistant/session-records/`. That is deliberately outside
+your project folders, so a near-verbatim record of your work never gets swept into something you
+share — but it does mean those transcripts accumulate on your disk, and they are as sensitive as
+whatever you discussed. See [project memory]({{ '/agentic/memory/' | relative_url }}).
+
 ## Optional: Ghostty, tmux, and a project launcher
 
 [tmux](https://github.com/tmux/tmux) owns the terminal rather than the window, so sessions survive
@@ -113,13 +172,15 @@ brew install --cask ghostty
 brew install tmux
 ```
 
-The configs are in the [starter repo](https://github.com/benning-lab/agentic-starter):
+The configs come from the starter repo, and the installer will link them for you:
 
 ```bash
-mkdir -p ~/.config/ghostty
-ln -s /path/to/agentic-starter/dotfiles/tmux.conf ~/.tmux.conf
-ln -s /path/to/agentic-starter/dotfiles/ghostty.config ~/.config/ghostty/config
+cd ~/agentic-starter
+./install.sh --dotfiles
 ```
+
+That points `~/.tmux.conf` and `~/.config/ghostty/config` at the copies in the repo, skipping
+either one if you already have your own.
 
 `cc` is a shell function: fuzzy-match a project folder, open a tmux window there, start the agent
 in it. If a window for that project already exists, it switches to that one.
@@ -127,8 +188,12 @@ in it. If a window for that project already exists, it switches to that one.
 ```bash
 # in ~/.zshrc
 export CC_PROJECT_ROOTS="$HOME/projects"
-source /path/to/agentic-starter/dotfiles/shell-cc.zsh
+source ~/agentic-starter/dotfiles/shell-cc.zsh
 ```
+
+`CC_PROJECT_ROOTS` is where it looks for projects — set it to the folder your project folders sit
+in, or several, separated by colons. Open a new terminal tab afterwards, or run `source ~/.zshrc`,
+before the next command will work.
 
 ```bash
 cc spacetime     # matches 2026_CxSpaceTime, opens a window there, starts the agent
