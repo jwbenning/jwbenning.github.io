@@ -5,7 +5,7 @@ title: output
 description: reports, artifacts and docs, and picking by how you plan to revise
 nav: false
 wiki_slug: output
-last_updated: 2026-09-13
+last_updated: 2026-09-17
 ---
 
 {% include agentic_wiki.liquid %}
