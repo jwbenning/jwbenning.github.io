@@ -121,9 +121,10 @@ them — which is a fine trade until you want them.
 <span class="lbl">put it somewhere it can stay</span>
 
 **The hooks run from this folder, in place.** Nothing is copied into a system directory, so if you
-later move the folder, rename it, or clear it out of `~/Downloads`, the hooks stop firing — with no
-error and no obvious sign. Your home directory, or wherever you keep projects, is the right kind of
-place.
+later move the folder, rename it, or clear it out of `~/Downloads`, the hooks stop firing. The shell
+reports a missing file, but whether that reaches you depends on where the harness puts it — the
+symptom you will actually notice is that the handoff stops appearing. Your home directory, or
+wherever you keep projects, is the right kind of place.
 
 </div>
 
