@@ -37,6 +37,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
+        },{id: "nav-agentic-ai",
+          title: "agentic ai",
+          description: "how we actually use coding agents day to day, and the files to copy",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/agentic/";
+          },
         },{id: "nav-principles",
           title: "principles",
           description: "",
