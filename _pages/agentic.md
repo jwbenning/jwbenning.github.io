@@ -19,7 +19,9 @@ EEB needs to talk frankly about what the scientific enterprise will look like in
 highly capable agents, the risks and opportunities of AI, and the guidelines and norms we want to
 hold as individuals and as a field. That's why we're running the [Agentic AI in EEB
 course]({{ '/teaching/agentic-ai/' | relative_url }}) here at Cornell, and I encourage you to start
-similar discussions at your own institution.
+similar discussions at your own institution. If all of this is new, the [ten-minute
+primer]({{ '/teaching/agentic-ai/primer/' | relative_url }}) Claude wrote for that course assumes
+no background.
 
 If you're interested in experimenting with agentic AI, these guides (written by Claude) will tell
 you how I set things up and manage projects using Claude Code. This first set focuses on getting

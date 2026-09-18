@@ -15,11 +15,11 @@ away, is not searchable next month, and cannot be sent to anyone. Ask for a file
 pick the kind of file by **how you intend to revise it**, because that is what decides whether
 you can do anything with it afterwards.
 
-|                    | Use when                                                                   | You revise by                                                 |
-| ------------------ | -------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| **Published page** | You want to read it away from your desk, or mark it up over several passes | Commenting on the page; the agent reads the threads and edits |
-| **HTML file**      | It has to be self-contained, durable, or sent to someone                   | Asking for another pass, or editing it yourself               |
-| **Google Doc**     | Other people are in the revision loop                                      | Suggestions and comments, from everyone at once               |
+|                    | Use when                                                                   | You revise by                                                       |
+| ------------------ | -------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| **Published page** | You want to read it away from your desk, or mark it up over several passes | Commenting on the page; the agent reads the threads and edits       |
+| **HTML file**      | It has to be self-contained, durable, or sent to someone                   | Telling Claude what to change, since you cannot mark it up directly |
+| **Google Doc**     | Other people are in the revision loop                                      | Suggestions and comments, from everyone                             |
 
 ## A published page
 
