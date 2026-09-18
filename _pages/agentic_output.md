@@ -42,7 +42,7 @@ When it has to stand alone — emailed, archived, opened in five years with no b
 ```
 Write this up as a single self-contained HTML file. No external dependencies —
 everything inline. High information density, scannable, so I can find the one
-number I need. Light theme.
+number I need. Dark text on a white background.
 ```
 
 **Single file.** It opens anywhere, and you can email it.
@@ -52,8 +52,10 @@ number I need. Light theme.
 **Dense and scannable.** Tables, a summary at the top, headings you can jump between, rather than
 a blog post.
 
-**Light theme, stated explicitly.** Your terminal is probably dark; that is your environment,
-not a spec for the files you produce. Left unstated, the agent infers a theme and gets it wrong half the time.
+**Dark text on a white background, said explicitly.** Your terminal is probably dark; that is
+your environment, not a spec for the files you produce. Left unstated, the agent picks, and it
+will often hand back a dark page, or one that flips with whatever theme the reader's computer is
+set to. Anything that gets printed, projected or forwarded should look the same for everyone.
 
 ## A Google Doc
 
@@ -108,9 +110,9 @@ have forgotten how you got it.
 When I ask for a report, pick the form by how I will revise it. Something I
 will mark up over several passes: publish it as a page and give me the link.
 Something that has to stand alone or be sent on: a single self-contained HTML
-file, no external dependencies, dense and scannable, light theme. Something
-other people will edit with me: a Google Doc, authored as markdown and
-imported.
+file, no external dependencies, dense and scannable, dark text on a white
+background. Something other people will edit with me: a Google Doc, authored
+as markdown and imported.
 ```
 
 One block and you stop specifying it every time. More of these on

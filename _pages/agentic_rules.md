@@ -133,7 +133,8 @@ _Scaffolding prose that reads as helpful to the writer reads as padding to the p
 
 ```
 When I ask for a report, produce a single self-contained HTML file: no
-external dependencies, everything inline, dense and scannable, light theme.
+external dependencies, everything inline, dense and scannable, dark text on a
+white background.
 ```
 
 _Terminal output scrolls away and cannot be sent to anyone. More on [output]({{ '/agentic/output/' | relative_url }})._
