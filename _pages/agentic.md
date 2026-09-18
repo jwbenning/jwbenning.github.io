@@ -2,21 +2,38 @@
 layout: page
 permalink: /agentic/
 title: agentic ai
-description: how we actually use coding agents day to day, and the files to copy
+description: how John has been using agentic ai via Claude Code, and the files to copy
 nav: true
 nav_order: 6
-last_updated: 2026-09-17
+last_updated: 2026-09-18
 ---
 
 {% include agentic_wiki.liquid %}
 
-A coding agent will do an hour of real work and remember none of it: close the session and
-everything it knew about the project goes with it. This is how we run our work through one anyway
-— the plain text files that carry context across, what the agent reads when a session opens, what
-it writes when one ends, and the rules we give it.
-It is for students in our seminar on [agentic AI in
-EEB]({{ '/teaching/agentic-ai/' | relative_url }}), people in the lab, and anyone who wants the
-parts that transfer — and every file described here is in a companion repo you can clone.
+<div class="wk-note" markdown="1">
+<span class="lbl">a note from John</span>
+
+I've been experimenting with using Claude Code as a research and executive assistant since around
+May 2026. I've found agentic AI to be both exciting and unnerving, full of both promise and peril.
+EEB needs to talk frankly about what the scientific enterprise will look like in a world with
+highly capable agents, the risks and opportunities of AI, and the guidelines and norms we want to
+hold as individuals and as a field. That's why we're running the [Agentic AI in EEB
+course]({{ '/teaching/agentic-ai/' | relative_url }}) here at Cornell, and I encourage you to start
+similar discussions at your own institution. If all of this is new, the [ten-minute
+primer]({{ '/teaching/agentic-ai/primer/' | relative_url }}) Claude wrote for that course assumes
+no background.
+
+If you're interested in experimenting with agentic AI, these guides (written by Claude) will tell
+you how I set things up and manage projects using Claude Code. This first set focuses on getting
+things set up for efficient, multi-project management. Much of that efficiency relies on a good
+memory system, so that models do not lose important context between sessions and can be useful
+assistants on long-running, multi-faceted projects. We'll go over some tips on generating
+human-facing output like reports, and how to iteratively edit documents like these with Claude.
+I'll also share some general rules and tricks I've found useful. Moving forward, I'll keep adding
+potentially useful information here, so check back every once in a while. Please let me know about
+any errors you find.
+
+</div>
 
 {% assign w = site.data.agentic_wiki %}
 
@@ -53,10 +70,10 @@ paste in yourself. The full walkthrough is on
 
 </div>
 
-## Still to write
+## Commands, skills, hooks and routines
 
-The four pages above are the basics. The rest of what we run is not documented yet, and it comes
-in four kinds, which is worth knowing because they behave differently:
+The four pages above are the basics. The rest of what John runs comes in four kinds, which is worth
+knowing because they behave differently:
 
 |                       | What it is                                               | When it runs                                       |
 | --------------------- | -------------------------------------------------------- | -------------------------------------------------- |
@@ -66,38 +83,40 @@ in four kinds, which is worth knowing because they behave differently:
 | **Scheduled routine** | A prompt that runs in the cloud on a cron                | On a schedule, with none of your machines involved |
 
 Only the hooks are covered so far, on [project memory]({{ '/agentic/memory/' | relative_url }}).
-What is queued:
+
+## Still to write
+
+The other three are not documented yet. What is queued:
 
 **Commands.** _Inbox triage_ — reads a file of standing rules and then files, labels and summarises
 the inbox against what actually matters this week, rather than against generic importance.
-_Library search_ — searches my own reference library before the web, so the answer comes from the
+_Library search_ — searches John's own reference library before the web, so the answer comes from the
 paper on the shelf instead of an inference about it.
 
-**Skills.** _slim_ — forward population-genetic simulation, grounded in a version-pinned manual,
+**Skills.** Some examples of the ones John has built: _slim_ — forward population-genetic
+simulation, grounded in a version-pinned manual,
 204 official recipes and the complete 857-entry API index. _aster_ — life-history and fitness
 models, built from the method author's entire written record plus a layer restating it in the
 vocabulary of a census sheet. _panel_ — review through six reviewer lenses built from their
 published work, producing separate memos that are allowed to disagree with each other.
 
-**Scheduled routines.** _Weekly lint_ — runs Sunday evening with no machine of mine switched on,
+**Scheduled routines.** _Weekly lint_ — runs Sunday evening with none of John's machines switched on,
 reads the whole control plane (global config, goals, every active project's context and to-do
 list) and drafts one advisory email flagging contradictions, stale facts, deadline drift and work
 that has gone quiet. It is read-only; the draft is its only write.
 
 ## Credit
 
-I started building my Claude Code workflow from
-**[Chris Blattman](https://claudeblattman.com/)**'s guide — he is a political economist at UChicago
-Harris who published his own setup in the open. A lot of what is here began there and was adapted
-rather than invented: the context file as the centre of the setup, procedures written down once as
-reusable commands, and publishing the actual files so someone can copy a working thing instead of
-assembling one. His site is worth a look.
+John started building his Claude Code workflow from
+**[Chris Blattman](https://claudeblattman.com/)**'s guide. Blattman is a political economist at
+UChicago Harris who published his own setup in the open. A lot of what is here began there and was
+adapted. His site is worth a look.
 
 Worth reading alongside this: **[mycelium](https://github.com/arjunrajlaboratory/mycelium)**, from
 the Arjun Raj lab.
 
 ## Corrections
 
-If something here is wrong or out of date, tell me.
+If something here is wrong or out of date, let John know.
 
 {% include agentic_byline.liquid %}

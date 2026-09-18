@@ -5,7 +5,7 @@ title: project memory
 description: the files that make an agent remember a project between sessions
 nav: false
 wiki_slug: memory
-last_updated: 2026-09-17
+last_updated: 2026-09-18
 ---
 
 {% include agentic_wiki.liquid %}
@@ -190,7 +190,7 @@ own.
 
 Restart any session that is already running, since hooks are read at session start.
 
-The writing half is a slash command, `/done`, that I run when a session is finished: it writes
+The writing half is a slash command, `/done`, that John runs when a session is finished: it writes
 `handoff.md` and appends a dated entry to a running `session-log.md`.
 
 ## If the code and the data live in different places

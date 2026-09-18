@@ -5,13 +5,14 @@ title: getting set up
 description: install claude code, and the optional terminal setup
 nav: false
 wiki_slug: setup
-last_updated: 2026-09-17
+last_updated: 2026-09-18
 ---
 
 {% include agentic_wiki.liquid %}
 
 Claude Code is a coding agent: it reads and edits files on your computer, runs code, and checks the
-result before it answers you. This page installs it, then sets up the terminal environment I use.
+result before it answers you. This page installs it, then sets up the terminal
+environment John uses.
 
 ## Two ways to run it
 
@@ -165,8 +166,8 @@ whatever you discussed. See [project memory]({{ '/agentic/memory/' | relative_ur
 
 [tmux](https://github.com/tmux/tmux) owns the terminal rather than the window, so sessions survive
 closing the window, switching applications, and dropping an SSH connection. With a launcher on top,
-I keep one live session per project and reach each by typing a fragment of its name.
-[Ghostty](https://ghostty.org) is the terminal I run tmux inside.
+John keeps one live session per project and reaches each by typing a fragment of its name.
+[Ghostty](https://ghostty.org) is the terminal he runs tmux inside.
 
 ```bash
 brew install --cask ghostty
