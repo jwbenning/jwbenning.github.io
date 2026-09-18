@@ -117,6 +117,6 @@ the Arjun Raj lab.
 
 ## Corrections
 
-If something here is wrong or out of date, let John know.
+If something here is wrong or out of date, [email John](mailto:jbenning@cornell.edu).
 
 {% include agentic_byline.liquid %}
