@@ -91,7 +91,8 @@ the inbox against what actually matters this week, rather than against generic i
 _Library search_ — searches John's own reference library before the web, so the answer comes from the
 paper on the shelf instead of an inference about it.
 
-**Skills.** _slim_ — forward population-genetic simulation, grounded in a version-pinned manual,
+**Skills.** Some examples of the ones John has built: _slim_ — forward population-genetic
+simulation, grounded in a version-pinned manual,
 204 official recipes and the complete 857-entry API index. _aster_ — life-history and fitness
 models, built from the method author's entire written record plus a layer restating it in the
 vocabulary of a census sheet. _panel_ — review through six reviewer lenses built from their
@@ -106,10 +107,8 @@ that has gone quiet. It is read-only; the draft is its only write.
 
 John started building his Claude Code workflow from
 **[Chris Blattman](https://claudeblattman.com/)**'s guide. Blattman is a political economist at
-UChicago Harris who published his own setup in the open. A lot of what is here began there and was adapted
-rather than invented: the context file as the centre of the setup, procedures written down once as
-reusable commands, and publishing the actual files so someone can copy a working thing instead of
-assembling one. His site is worth a look.
+UChicago Harris who published his own setup in the open. A lot of what is here began there and was
+adapted. His site is worth a look.
 
 Worth reading alongside this: **[mycelium](https://github.com/arjunrajlaboratory/mycelium)**, from
 the Arjun Raj lab.
