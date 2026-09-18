@@ -81,11 +81,12 @@ knowing because they behave differently:
 | **Hook**              | A script the harness runs, not the model                 | At a defined moment, automatically                 |
 | **Scheduled routine** | A prompt that runs in the cloud on a cron                | On a schedule, with none of your machines involved |
 
-Only the hooks are covered so far, on [project memory]({{ '/agentic/memory/' | relative_url }}).
+The hooks are covered, on [project memory]({{ '/agentic/memory/' | relative_url }}), and so is
+one command: `/done`, which writes the handoff at the end of a session.
 
 ## Still to write
 
-The other three are not documented yet. What is queued:
+The rest is not. What is queued:
 
 **Commands.** _Inbox triage_ — reads a file of standing rules and then files, labels and summarises
 the inbox against what actually matters this week, rather than against generic importance.
