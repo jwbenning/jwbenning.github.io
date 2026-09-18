@@ -5,15 +5,14 @@ title: rules worth copying
 description: claude.md rules that change what the agent actually does
 nav: false
 wiki_slug: rules
-last_updated: 2026-09-17
+last_updated: 2026-09-18
 ---
 
 {% include agentic_wiki.liquid %}
 
 These go in `~/.claude/CLAUDE.md`, where they apply to every session in every project. They change
-what comes back, not just how it reads. Copy the ones you want and ignore the rest. The two that
-matter most are the first two: do not bend an analysis toward the result you think I am after, and
-do not be agreeable by default.
+what comes back, not just how it reads. Copy the ones you want and ignore the rest. The two that matter most are the first two: the agent must not bend an analysis toward the
+result it thinks you are after, and must not be agreeable by default.
 
 ## How to add them
 
@@ -153,7 +152,7 @@ discrete independently-actionable items. IDs must be unique across the whole
 message, so one reference resolves to exactly one item.
 ```
 
-_Then I can reply "do 1, 3, 4" instead of writing sentences about which part of a paragraph I meant._
+_Then you can reply "do 1, 3, 4" instead of writing sentences about which part of a paragraph you meant._
 
 ## Safety gates
 
