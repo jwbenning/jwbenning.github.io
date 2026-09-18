@@ -200,6 +200,24 @@ schedule:
       research, writing, teaching, and lab work?
 
 links:
+  - date: 2026-09-18
+    title: "Reimagining research papers as interactive and reliable AI agents"
+    source: Miao, Zou et al. 2026, Nature (Paper2Agent)
+    url: https://doi.org/10.1038/s41586-026-11044-y
+    tags: [application, reproducibility]
+    note: >
+      Xiangtao sent this. A pipeline that reads a paper and its codebase and emits an MCP
+      server, so the paper stops being a document and becomes something you can call: ask
+      it a question, run its method on your data, or point it at another paper's agent.
+      They have built over a hundred. In the demonstration two of them, a genomic
+      prediction paper and an ADHD association study, together flagged a variant near
+      MPHOSPH9 that the authors say had not been reported. Read it for what it implies
+      about our own output rather than for the framework. A paper that ships as a callable
+      tool only works if the code runs and the methods are stated precisely enough to
+      invoke, which is a higher bar than most supplementary material in our field clears.
+      The open question is what happens when one of these answers a question its paper
+      never tested, with the paper's authority still attached.
+
   - date: 2026-09-08
     title: "Statement on the Euler blowup results, and on what happened next"
     source: Tristan Buckmaster, NYU Courant, September 2026 (4 pp.)
