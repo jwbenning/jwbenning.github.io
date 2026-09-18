@@ -11,16 +11,17 @@
 #                  the deck itself lives in assets/slides/agentic-ai/
 #   links          the running reading feed, newest first
 
-current_week: 1
+current_week: 2
 
 announcement: >
-  First meeting is <strong>Friday, September 11</strong>, 12:20–1:10 pm in <strong>Kennedy Hall 213</strong>
-  (note the new room). Three things to do before then: read the
-  ten-minute primer, <a href="/teaching/agentic-ai/primer/">what is an agent?</a>;
-  <a href="#getting-set-up">install Claude Code</a>, about ten minutes, and do not pay for
-  anything, we are covering access; and fill out the five-minute survey we
-  sent by email. Bring a
-  laptop. Seats are by instructor consent and a few are left: email
+  We meet <strong>Fridays, 12:20&ndash;1:10 pm, in Kennedy Hall 213</strong>.
+  <strong>Week 2</strong> (18 September) is agentic coding and data analysis: five agents
+  were handed the same real range-limits question over 100 plant species, and the session
+  is their reports plus an audit of what they actually did. There is nothing to prepare
+  for any session and nothing to hand in; bring a laptop and a question. Access to Claude
+  is covered for everyone, so do not pay for anything. Day-to-day announcements are on the
+  <a href="https://join.slack.com/t/agenticaiineeb/shared_invite/zt-48mig0rjl-j1QiGpPnO9rq9GR0aH03Kw">Slack</a>,
+  and anything class-wide is logged below. Seats are by instructor consent: email
   <a href="mailto:xx286@cornell.edu">Xiangtao</a> or
   <a href="mailto:jbenning@cornell.edu">John</a>. Postdocs and faculty are welcome to sit in
   without registering.
@@ -122,6 +123,12 @@ schedule:
     framing: >
       The agent wrote the code and found a significant effect. Should you believe
       either — especially if you told it what you were hoping to find?
+    demo: >
+      Five agents, one question: do range edges fall where climate gradients are
+      non-linear rather than smooth? Each got the same 100 species and the same 1.76
+      million GBIF records, with only the opening sentence changed between arms. We read
+      what they found, where two byte-identical runs disagreed with each other, and what
+      an adversarial audit of the best run turned up.
     readings:
       - title: "A case study of evaluating AI agents on a neuroscience data-to-discovery pipeline"
         source: Horstmann, Lin, Robie, Sun & Branson 2026, COLM (arXiv:2606.07718)
@@ -200,6 +207,42 @@ schedule:
       research, writing, teaching, and lab work?
 
 links:
+  - date: 2026-09-18
+    title: "We Must Pace the Frontier"
+    source: Dario Amodei, 12 September 2026 (~3,800 words)
+    url: https://darioamodei.com/post/we-must-pace-the-frontier
+    tags: [policy, ethics, debate]
+    note: >
+      The essay that moved the industry conversation this month, and it cites our Week 8
+      case as one of its two triggers. The argument is that capability gains should be
+      deliberately slowed by a year or two, in three steps: outside evaluators embedded in
+      the labs with employee-level access and the right to publish what they find, which
+      Anthropic commits to unilaterally; shared standards and pacing limits among
+      companies in democracies; and, hardest, coordination with authoritarian governments.
+      Altman, Musk, Hassabis and Nadella endorsed it within days, which is a strange thing
+      for direct competitors to do in public, and critics read the timing against pending
+      IPOs. Read it as a primary document from an interested party rather than as
+      analysis, and note that the second trigger, agents running unauthorised attacks and
+      going after their own evaluators, is the Hugging Face incident already in this list.
+
+  - date: 2026-09-18
+    title: "Evolvable AI: Threats of a new major transition in evolution"
+    source: Müller, Steels & Szathmáry 2026, PNAS, April 2026
+    url: https://doi.org/10.1073/pnas.2527700123
+    tags: [debate, EEB]
+    note: >
+      Our own vocabulary, turned on this problem, by people entitled to use it: Szathmáry
+      wrote the book on major evolutionary transitions. The claim is that AI systems whose
+      components, learning rules and deployment conditions can themselves vary and be
+      selected are a Darwinian system, and that this is underrated as a risk. The useful
+      distinction is breeder versus ecosystem: in the first a human sets the fitness
+      function and controls reproduction, as in domestication; in the second selection
+      comes from an open environment, and Tierra and AVIDA are cited for what reliably
+      evolves there, which is parasitism, cheating and deception. Control survives only if
+      the control mechanism is not itself selected against. You may well finish it
+      unconvinced. It is still the clearest case of an argument about AI that only an
+      evolutionary biologist could have made, which is worth knowing exists.
+
   - date: 2026-09-18
     title: "Reimagining research papers as interactive and reliable AI agents"
     source: Miao, Zou et al. 2026, Nature (Paper2Agent)
