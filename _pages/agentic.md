@@ -17,9 +17,10 @@ I've been experimenting with using Claude Code as a research and executive assis
 May 2026. I've found agentic AI to be both exciting and unnerving, full of both promise and peril.
 EEB needs to talk frankly about what the scientific enterprise will look like in a world with
 highly capable agents, the risks and opportunities of AI, and the guidelines and norms we want to
-hold as individuals and as a field. That's why we're running the [Agentic AI in EEB
-course]({{ '/teaching/agentic-ai/' | relative_url }}) here at Cornell, and I encourage you to start
-similar discussions at your own institution. If all of this is new, the [ten-minute
+hold as individuals and as a field. That's why, with [Xiangtao Xu](https://xiangtaoxu.eeb.cornell.edu/),
+we're running the [Agentic AI in EEB course]({{ '/teaching/agentic-ai/' | relative_url }}) here at
+Cornell, and I encourage you to start similar discussions at your own institution. If all of this
+is new, the [ten-minute
 primer]({{ '/teaching/agentic-ai/primer/' | relative_url }}) for that course assumes no background.
 
 If you're interested in experimenting with agentic AI, these guides (written by Claude) will tell
