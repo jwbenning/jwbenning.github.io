@@ -68,10 +68,10 @@ paste in yourself. The full walkthrough is on
 
 </div>
 
-## Still to write
+## Commands, skills, hooks and routines
 
-The four pages above are the basics. The rest of what John runs is not documented yet, and it comes
-in four kinds, which is worth knowing because they behave differently:
+The four pages above are the basics. The rest of what John runs comes in four kinds, which is worth
+knowing because they behave differently:
 
 |                       | What it is                                               | When it runs                                       |
 | --------------------- | -------------------------------------------------------- | -------------------------------------------------- |
@@ -81,7 +81,10 @@ in four kinds, which is worth knowing because they behave differently:
 | **Scheduled routine** | A prompt that runs in the cloud on a cron                | On a schedule, with none of your machines involved |
 
 Only the hooks are covered so far, on [project memory]({{ '/agentic/memory/' | relative_url }}).
-What is queued:
+
+## Still to write
+
+The other three are not documented yet. What is queued:
 
 **Commands.** _Inbox triage_ — reads a file of standing rules and then files, labels and summarises
 the inbox against what actually matters this week, rather than against generic importance.
