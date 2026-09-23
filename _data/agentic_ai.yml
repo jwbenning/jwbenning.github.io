@@ -1,7 +1,8 @@
 # Living data for the BIOEE 7600-103 course page (/teaching/agentic-ai/).
 # Edit this file to update the page — the layout reads everything from here.
 #
-#   current_week   which week to highlight in the "This week" panel (0 = before term)
+#   current_week   which week to highlight in the "This week" panel (0 = before term);
+#                  advanced every Monday by .github/workflows/course-week.yml
 #   announcement   optional pinned banner at the top; delete the line to hide it
 #   announcements  dated log rendered as the Announcements section, newest first.
 #                  Slack carries the day-to-day; this is the durable record, so put
@@ -11,13 +12,11 @@
 #                  the deck itself lives in assets/slides/agentic-ai/
 #   links          the running reading feed, newest first
 
-current_week: 2
+current_week: 3
 
 announcement: >
   We meet <strong>Fridays, 12:20&ndash;1:10 pm, in Kennedy Hall 213</strong>.
-  <strong>Week 2</strong> (18 September) is agentic coding and data analysis: five agents
-  were handed the same real range-limits question over 100 plant species, and the session
-  is their reports plus an audit of what they actually did. There is nothing to prepare
+  What we are doing this week is in the box below. There is nothing to prepare
   for any session and nothing to hand in; bring a laptop and a question. Access to Claude
   is covered for everyone, so do not pay for anything. Day-to-day announcements are on the
   <a href="https://join.slack.com/t/agenticaiineeb/shared_invite/zt-48mig0rjl-j1QiGpPnO9rq9GR0aH03Kw">Slack</a>,

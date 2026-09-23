@@ -45,7 +45,7 @@ if something is wrong. The site rebuilds itself a few minutes after a change lan
 
 ## Common edits
 
-**Move the "This week" box.** Change `current_week` to the week number. `0` hides the box.
+**Move the "This week" box.** This happens automatically: every Monday morning the `Advance course week` workflow sets `current_week` to the week whose Friday is coming up, commits, and redeploys. To override, change `current_week` by hand (or run the workflow from the Actions tab). `0` hides the box.
 
 **Change the banner.** Edit `announcement`. HTML links are allowed. Delete the whole
 `announcement:` block to hide the banner.

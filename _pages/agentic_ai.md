@@ -145,7 +145,7 @@ copying. Not course material and not required; read them if you want to try this
     </ul>
   {% endif %}
   {% if now_opt.size > 0 %}
-    <p><span class="ai-lbl">Optional, and worth it</span></p>
+    <p><span class="ai-lbl">Optional</span></p>
     <ul>
       {% for r in now_opt %}
         <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>

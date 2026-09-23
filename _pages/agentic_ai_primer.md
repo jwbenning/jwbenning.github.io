@@ -142,7 +142,7 @@ The test: did it go and get something, and did what came back change what it did
 <summary>Try it yourself, optional — rungs 1 and 2, in a chat window</summary>
 <div class="inner">
 
-<p>Ten minutes, and worth it: reading that a model fabricates is different from watching
+<p>Ten minutes. Reading that a model fabricates is different from watching
 one do it to a species you know.</p>
 
 <p><b>1. Ask a model with no tools.</b> Turn search off, then paste:</p>
