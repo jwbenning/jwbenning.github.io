@@ -1,0 +1,37 @@
+name: Advance course week
+
+# Every Monday, move the BIOEE 7600-103 "This week" box to the week whose Friday
+# session is coming up (bin/advance-course-week.py), commit, and redeploy.
+# A push made with GITHUB_TOKEN does not trigger other workflows, so the deploy
+# is started explicitly with workflow_dispatch, which is exempt from that rule.
+
+on:
+  schedule:
+    - cron: "0 10 * * 1" # Mondays 10:00 UTC = 6 am Eastern (5 am in winter)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  advance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - run: python bin/advance-course-week.py
+      - run: python bin/check-course-data.py
+      - name: Commit and redeploy if the week changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then echo "No change"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Course page: advance current_week (scheduled)"
+          git push
+          gh workflow run deploy.yml --ref "${GITHUB_REF_NAME}"
