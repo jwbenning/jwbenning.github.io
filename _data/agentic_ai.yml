@@ -128,6 +128,15 @@ schedule:
       million GBIF records, with only the opening sentence changed between arms. We read
       what they found, where two byte-identical runs disagreed with each other, and what
       an adversarial audit of the best run turned up.
+    slides:
+      url: /assets/slides/agentic-ai/week02.html
+      note: >
+        Public copy of the deck as shown in class, with class-specific detail removed.
+        Arrow keys or space to advance, f for fullscreen. Also posted:
+        <a href="/assets/reports/agentic-ai/week02-arm-B.html" target="_blank" rel="noopener">arm B's full report ↗</a>,
+        rewritten after class by Claude Opus 5.5 from B's own code and results, with its
+        figures made interactive, the code behind each step shown, and the three errors
+        our audit found corrected in place.
     readings:
       - title: "A case study of evaluating AI agents on a neuroscience data-to-discovery pipeline"
         source: Horstmann, Lin, Robie, Sun & Branson 2026, COLM (arXiv:2606.07718)
@@ -155,6 +164,38 @@ schedule:
       An agent can compile and standardize a messy dataset in seconds. How do you know it
       didn't break it without saying so — and can anyone, including future you,
       reconstruct what it did?
+    demo: >
+      We start in small groups: what you have tried, where you are stuck, how it is going.
+      Then a case study in data rescue. The Finger Lakes Vegetation Survey sampled about
+      180 forest, swamp and fen plots between 1973 and 1992 and came down to us on backup CDs from the
+      1990s and 2000s. Agents get those files and one job: produce a clean, documented
+      dataset. We check what they flagged and what they changed without saying so against
+      problems we had already found by hand, then hand a fresh agent only their output and
+      notes and see whether it can rebuild the work.
+    readings:
+      - title: "Protecting the Bunce legacy: lessons learned from safeguarding long-term ecological survey datasets in Great Britain"
+        source: Wood, Metzger & Bunce 2025, Environmental Management (open access)
+        url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12228649/
+        optional: true
+        tags: [EEB, reproducibility]
+        note: >
+          The human version of this week's case. A decade spent rescuing nine historic British
+          ecological surveys, some held on tapes no available machine could
+          read. The hard part was not the media: it was recovering what the recorded codes
+          meant and how groupings related once the people who made them were gone. Their
+          five-step rescue procedure is a useful checklist for anything an agent claims to
+          have cleaned.
+      - title: "From confident closing to silent failure: characterizing false success in LLM agents"
+        source: Advani 2026, arXiv:2606.09863
+        url: https://arxiv.org/abs/2606.09863
+        optional: true
+        tags: [evaluation]
+        note: >
+          Measures how often an agent says it finished a task that it did not finish, across
+          about 11,700 runs from eight model families. In the coding benchmark, three
+          quarters of the failures were reported as successes. LLM judges asked to catch
+          this barely beat chance, and small purpose-built checks did far better. The
+          abstract and the first results table are enough.
 
   - week: 4
     date: 2026-10-02
@@ -206,6 +247,19 @@ schedule:
       research, writing, teaching, and lab work?
 
 links:
+  - date: 2026-09-24
+    title: "AI coding agents in social science: methodologically diverse, empirically consistent, interpretively vulnerable"
+    source: Alizadeh, Gilardi, Mosleh & Kasneci 2026, arXiv:2606.11456
+    url: https://arxiv.org/abs/2606.11456
+    tags: [evaluation, reproducibility]
+    note: >
+      Week 2's experiment, run in political science with human analysts as the baseline.
+      Claude Code and Codex matched or beat people on the variety of reasonable analyses
+      they chose. But telling Claude Code which answer was wanted moved its verdicts from
+      10% to 90% support while its estimates barely moved: the bias entered when it
+      interpreted results, not when it computed them. Our five arms showed no such shift,
+      so the two are worth reading against each other.
+
   - date: 2026-09-18
     title: "We Must Pace the Frontier"
     source: Dario Amodei, 12 September 2026 (~3,800 words)

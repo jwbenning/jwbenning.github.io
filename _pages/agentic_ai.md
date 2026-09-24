@@ -133,6 +133,7 @@ copying. Not course material and not required; read them if you want to try this
   <div class="wk">Week {{ now.week }}{% if now.date %} · {{ now.date | date: "%B %-d" }}{% endif %}</div>
   <h3>{{ now.theme }}</h3>
   {% if now.framing %}<p><span class="ai-lbl">Framing</span><br>{{ now.framing }}</p>{% endif %}
+  {% if now.demo %}<p><span class="ai-lbl">In class</span><br>{{ now.demo }}</p>{% endif %}
   {% if now.slides %}<p><span class="ai-lbl">Slides</span><br><a class="ai-deck" href="{{ now.slides.url | relative_url }}" target="_blank" rel="noopener">Week {{ now.week }} deck ↗</a>{% if now.slides.note %}<span class="fnote">{{ now.slides.note }}</span>{% endif %}</p>{% endif %}
   {% assign now_req = now.readings | where_exp: "r", "r.optional != true" %}
   {% assign now_opt = now.readings | where_exp: "r", "r.optional == true" %}
@@ -264,7 +265,7 @@ readings, and demo.
     <div class="body">
       <p><span class="ai-lbl">{{ w.part }}{% if w.date %} · {{ w.date | date: "%B %-d, %Y" }}{% else %} · date TBD{% endif %}</span></p>
       {% if w.framing %}<p>{{ w.framing }}</p>{% endif %}
-      {% if w.demo %}<p><span class="ai-lbl">Demo</span><br>{{ w.demo }}</p>{% endif %}
+      {% if w.demo %}<p><span class="ai-lbl">In class</span><br>{{ w.demo }}</p>{% endif %}
       {% if w.slides %}<p><span class="ai-lbl">Slides</span><br><a class="ai-deck" href="{{ w.slides.url | relative_url }}" target="_blank" rel="noopener">Week {{ w.week }} deck ↗</a>{% if w.slides.note %}<span class="fnote">{{ w.slides.note }}</span>{% endif %}</p>{% endif %}
       {% assign w_req = w.readings | where_exp: "r", "r.optional != true" %}
       {% assign w_opt = w.readings | where_exp: "r", "r.optional == true" %}
