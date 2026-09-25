@@ -175,6 +175,11 @@ schedule:
       dataset. We check what they flagged and what they changed without saying so against
       problems we had already found by hand, then hand a fresh agent only their output and
       notes and see whether it can rebuild the work.
+    slides:
+      url: /assets/slides/agentic-ai/week03.html
+      note: >
+        Public copy of the deck as shown in class, with class-specific detail removed.
+        Arrow keys or space to advance, f for fullscreen.
     readings:
       - title: "Ways to improve mathematics (an introduction)"
         date: 2026-09-25
