@@ -176,18 +176,6 @@ schedule:
       problems we had already found by hand, then hand a fresh agent only their output and
       notes and see whether it can rebuild the work.
     readings:
-      - title: "Protecting the Bunce legacy: lessons learned from safeguarding long-term ecological survey datasets in Great Britain"
-        date: 2026-09-24
-        source: Wood, Metzger & Bunce 2025, Environmental Management (open access)
-        url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12228649/
-        tags: [EEB, reproducibility]
-        note: >
-          The human version of this week's case. A decade spent rescuing nine historic British
-          ecological surveys, some held on tapes no available machine could
-          read. The hard part was not the media: it was recovering what the recorded codes
-          meant and how groupings related once the people who made them were gone. Their
-          five-step rescue procedure is a useful checklist for anything an agent claims to
-          have cleaned.
       - title: "From confident closing to silent failure: characterizing false success in LLM agents"
         date: 2026-09-24
         source: Advani 2026, arXiv:2606.09863
