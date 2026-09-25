@@ -240,6 +240,23 @@ schedule:
 
 links:
   - date: 2026-09-25
+    title: "Report of the Summit on PhD Math Education in the Age of AI"
+    source: Freed, Harris, Kisin, Wood et al., Harvard CMSA, 17–18 September 2026 (8 pp.)
+    url: https://cmsa.fas.harvard.edu/aimathphd_summit/
+    tags: [policy, debate]
+    note: >
+      Twenty-four mathematicians, with graduate students and postdocs on a panel, on how a
+      PhD program should change. Nine recommendations, most of which carry straight over
+      to us: provide AI access to every student but never require it; advisors and
+      students discuss AI use regularly and in detail; assess understanding in person
+      rather than through written work, down to not awarding a PhD mainly on the text of
+      the dissertation; and three ethical rules. Those are to stay responsible for the
+      correctness and understanding of anything under your name, always disclose AI use,
+      and get agreement from everyone involved before putting their material into an AI
+      system. A worked example of what our Week 9 guideline could look like. The report
+      PDF is linked from the page.
+
+  - date: 2026-09-25
     title: "Josh's Wedding: an OpenAI engineer and his friends debate the future"
     source: Brent Katz, The New Yorker documentary, 23 September 2026 (27 min, video)
     url: https://www.youtube.com/watch?v=UZ2duRYykkk
