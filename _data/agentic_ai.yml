@@ -176,17 +176,18 @@ schedule:
       problems we had already found by hand, then hand a fresh agent only their output and
       notes and see whether it can rebuild the work.
     readings:
-      - title: "From confident closing to silent failure: characterizing false success in LLM agents"
-        date: 2026-09-24
-        source: Advani 2026, arXiv:2606.09863
-        url: https://arxiv.org/abs/2606.09863
-        tags: [evaluation]
+      - title: "Ways to improve mathematics (an introduction)"
+        date: 2026-09-25
+        source: Frank Calegari (Persiflage), 17 September 2026
+        url: https://galoisrepresentations.org/2026/09/17/ways-to-improve-mathematics-an-introduction/
+        tags: [debate, policy]
         note: >
-          Measures how often an agent says it finished a task that it did not finish, across
-          about 11,700 runs from eight model families. In the coding benchmark, three
-          quarters of the failures were reported as successes. LLM judges asked to catch
-          this barely beat chance, and small purpose-built checks did far better. The
-          abstract and the first results table are enough.
+          A number theorist opening a series on what mathematics should change now that
+          proving theorems is getting cheaper. His premise is that understanding stays hard
+          even when proof does not, so the field has to stop treating proof production as
+          evidence of understanding. He names four places to start: journals and refereeing,
+          seminar talks, insularity between subfields, and priority. Most of the list carries
+          over to ecology unchanged.
 
   - week: 4
     date: 2026-10-02
@@ -254,18 +255,17 @@ links:
       Fields medallists' statement and OpenAI's new advisory group, which will not advise
       on how fast the company moves.
 
-  - date: 2026-09-25
-    title: "Ways to improve mathematics (an introduction)"
-    source: Frank Calegari (Persiflage), 17 September 2026
-    url: https://galoisrepresentations.org/2026/09/17/ways-to-improve-mathematics-an-introduction/
-    tags: [debate, policy]
+  - date: 2026-09-24
+    title: "From confident closing to silent failure: characterizing false success in LLM agents"
+    source: Advani 2026, arXiv:2606.09863
+    url: https://arxiv.org/abs/2606.09863
+    tags: [evaluation]
     note: >
-      A number theorist opening a series on what mathematics should change now that
-      proving theorems is getting cheaper. His premise is that understanding stays hard
-      even when proof does not, so the field has to stop treating proof production as
-      evidence of understanding. He names four places to start: journals and refereeing,
-      seminar talks, insularity between subfields, and priority. Most of the list carries
-      over to ecology unchanged.
+      Measures how often an agent says it finished a task that it did not finish, across
+      about 11,700 runs from eight model families. In the coding benchmark, three
+      quarters of the failures were reported as successes. LLM judges asked to catch
+      this barely beat chance, and small purpose-built checks did far better. The
+      abstract and the first results table are enough.
 
   - date: 2026-09-24
     title: "AI coding agents in social science: methodologically diverse, empirically consistent, interpretively vulnerable"
