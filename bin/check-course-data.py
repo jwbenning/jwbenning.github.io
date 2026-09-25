@@ -92,16 +92,21 @@ def check_reading(r, where):
     u = r.get("url") or ""
     if u and not (u.startswith("http") or u.startswith("/")):
         err(f"{where}: url '{u}' should start with https:// or /")
-    if "optional" in r and not isinstance(r["optional"], bool):
-        err(f"{where}: `optional:` must be true or false, unquoted")
+    if "optional" in r:
+        warn(f"{where}: '{str(r.get('title'))[:40]}' has `optional:`, which no longer "
+             "does anything -- every reading is optional. Delete the line.")
+    dt = r.get("date")
+    if dt is None:
+        warn(f"{where}: '{str(r.get('title'))[:40]}' has no `date:`, so it will not "
+             "appear in the reading room")
+    elif not isinstance(dt, datetime.date):
+        err(f"{where}: date must be plain YYYY-MM-DD, not quoted")
 
 for w in sched:
     for r in w.get("readings") or []:
         check_reading(r, f"week {w.get('week')}")
 for l in links:
     check_reading(l, "reading room")
-    if not l.get("date"):
-        warn(f"reading room: '{str(l.get('title'))[:40]}' has no `date:`")
 
 for i, a in enumerate(anns, 1):
     where = f"announcement {i}"
@@ -130,6 +135,6 @@ if errors:
     sys.exit(1)
 print(f"\nok    {len(sched)} weeks, "
       f"{sum(1 for w in sched if w.get('slides'))} deck(s), "
-      f"{sum(len(w.get('readings') or []) for w in sched)} assigned readings, "
+      f"{sum(len(w.get('readings') or []) for w in sched)} week readings, "
       f"{len(links)} in the reading room, "
       f"{len(anns)} announcement(s).")

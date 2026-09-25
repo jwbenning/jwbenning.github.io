@@ -10,7 +10,9 @@
 #   schedule       the nine themed weeks; `date` may be blank until it is fixed
 #                  a week may carry `slides:` with `url:` and an optional `note:`;
 #                  the deck itself lives in assets/slides/agentic-ai/
-#   links          the running reading feed, newest first
+#   links          the reading room; each entry needs a `date:` (when we added it).
+#                  Week readings carry a `date:` too and appear in the reading room;
+#                  the page sorts everything newest first, so file order does not matter.
 
 current_week: 3
 
@@ -56,6 +58,7 @@ schedule:
         Arrow keys or space to advance, f for fullscreen.
     readings:
       - title: "What is an agent? A primer for this seminar"
+        date: 2026-09-01
         source: Written by Claude for this seminar
         url: /teaching/agentic-ai/primer/
         tags: [foundations]
@@ -65,8 +68,8 @@ schedule:
           agent runs, why read-only and read-write agents carry categorically different
           risk, and the twenty terms you will hear all term. Read this one first.
       - title: "A new Moore's Law for AI agents"
+        date: 2026-08-31
         source: AI Digest
-        optional: true
         url: https://theaidigest.org/time-horizons
         tags: [foundations, evaluation]
         note: >
@@ -74,8 +77,8 @@ schedule:
           time. Check its headline number against METR's own January re-fit: the popular
           version of this chart is already stale, and spotting that is the point.
       - title: "The Dark Night of Mathematics"
+        date: 2026-08-31
         source: Kirwin Hampshire, July 2026
-        optional: true
         url: https://kirwinhampshire.substack.com/p/the-dark-night-of-mathematics
         tags: [debate]
         note: >
@@ -83,8 +86,8 @@ schedule:
           the field furthest down this road, so read it as a report from where we may be
           headed.
       - title: "A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis"
+        date: 2026-08-31
         source: Xu, Ren, Wang et al. 2025, Nature Medicine — abstract and figures
-        optional: true
         url: https://doi.org/10.1038/s41591-025-03743-2
         tags: [application]
         note: >
@@ -94,8 +97,8 @@ schedule:
           href="https://communities.springernature.com/posts/ai-meets-ipf-taking-an-ai-designed-drug-from-target-discovery-to-phase-iia">Behind
           the Paper</a> post is a shorter summary.
       - title: "Machines of Loving Grace — §1, Biology and health"
+        date: 2026-08-31
         source: Dario Amodei, October 2024 — section 1 only
-        optional: true
         url: https://darioamodei.com/essay/machines-of-loving-grace
         tags: [debate]
         note: >
@@ -103,8 +106,8 @@ schedule:
           compressed into 5 to 10. Read the section opening and the list of expected
           breakthroughs; skim the rest.
       - title: "No, Dario Amodei, we will not be curing cancer and most human disease"
+        date: 2026-08-31
         source: Gary Marcus, August 2026
-        optional: true
         url: https://garymarcus.substack.com/p/no-dario-amodei-we-will-not-be-curing
         tags: [debate]
         note: >
@@ -139,9 +142,9 @@ schedule:
         our audit found corrected in place.
     readings:
       - title: "A case study of evaluating AI agents on a neuroscience data-to-discovery pipeline"
+        date: 2026-08-31
         source: Horstmann, Lin, Robie, Sun & Branson 2026, COLM (arXiv:2606.07718)
         url: https://arxiv.org/abs/2606.07718
-        optional: true
         tags: [evaluation, application]
         note: >
           The closest thing yet to this course, done as research. Coding agents turned
@@ -174,9 +177,9 @@ schedule:
       notes and see whether it can rebuild the work.
     readings:
       - title: "Protecting the Bunce legacy: lessons learned from safeguarding long-term ecological survey datasets in Great Britain"
+        date: 2026-09-24
         source: Wood, Metzger & Bunce 2025, Environmental Management (open access)
         url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12228649/
-        optional: true
         tags: [EEB, reproducibility]
         note: >
           The human version of this week's case. A decade spent rescuing nine historic British
@@ -186,9 +189,9 @@ schedule:
           five-step rescue procedure is a useful checklist for anything an agent claims to
           have cleaned.
       - title: "From confident closing to silent failure: characterizing false success in LLM agents"
+        date: 2026-09-24
         source: Advani 2026, arXiv:2606.09863
         url: https://arxiv.org/abs/2606.09863
-        optional: true
         tags: [evaluation]
         note: >
           Measures how often an agent says it finished a task that it did not finish, across
@@ -247,6 +250,35 @@ schedule:
       research, writing, teaching, and lab work?
 
 links:
+  - date: 2026-09-25
+    title: "AI solved one of math's hardest problems. Humanity learned nothing (so far)"
+    source: Geoff Brumfiel, NPR, 22 September 2026
+    url: https://www.npr.org/2026/09/22/nx-s1-5968588/openai-navier-stokes-problem-mathematicians-learn-little
+    tags: [debate, ethics]
+    note: >
+      The Navier-Stokes result from the Buckmaster statement, two weeks on. OpenAI ran
+      about 10,000 agents for 88 hours, roughly $6 to 10 million of compute at its public
+      prices, and produced a 166-page proof. Its Lean formalization compiles, so
+      mathematicians expect the proof is correct, and they also say it has taught them
+      almost nothing so far. Gómez-Serrano: "The paper is not written for humans." Worth
+      reading for the difference between a result that has been checked and one that has
+      been understood, and for the compute figures ahead of Week 8. It also covers the
+      Fields medallists' statement and OpenAI's new advisory group, which will not advise
+      on how fast the company moves.
+
+  - date: 2026-09-25
+    title: "Ways to improve mathematics (an introduction)"
+    source: Frank Calegari (Persiflage), 17 September 2026
+    url: https://galoisrepresentations.org/2026/09/17/ways-to-improve-mathematics-an-introduction/
+    tags: [debate, policy]
+    note: >
+      A number theorist opening a series on what mathematics should change now that
+      proving theorems is getting cheaper. His premise is that understanding stays hard
+      even when proof does not, so the field has to stop treating proof production as
+      evidence of understanding. He names four places to start: journals and refereeing,
+      seminar talks, insularity between subfields, and priority. Most of the list carries
+      over to ecology unchanged.
+
   - date: 2026-09-24
     title: "AI coding agents in social science: methodologically diverse, empirically consistent, interpretively vulnerable"
     source: Alizadeh, Gilardi, Mosleh & Kasneci 2026, arXiv:2606.11456
@@ -352,7 +384,7 @@ links:
       proof, and spends his section working out why that distinction consoled him. The shape
       of the paper is the lesson for us: the output was correct and still had to be dug out,
       verified and rewritten by nine experts before anyone could use it. Read alongside the
-      Buckmaster statement above, a different result from the same month where the checking
+      Buckmaster statement, a different result from the same month where the checking
       and the credit went much less smoothly.
 
   - date: 2026-09-03
@@ -423,7 +455,7 @@ links:
     url: https://www.anthropic.com/engineering/building-effective-agents
     tags: [foundations]
     note: >
-      Optional. The engineering account of what an agent is and the case for not building
+      The engineering account of what an agent is and the case for not building
       one; the workflow-versus-agent distinction is the useful part. From December 2024,
       so it predates most of what we will use, and it is written for people building these
       systems rather than using them. Skim it after the primer.

@@ -72,17 +72,18 @@ separate from `announcement` (singular), which is the pinned banner at the very 
   source: Author et al. 2026, Journal
   url: https://doi.org/...
   tags: [evaluation, EEB]
-  optional: true
+  date: 2026-09-25
   note: >
     What to do with it, and why it is here. Tell people what to skim —
     this line is the most useful part of the entry.
 ```
 
-Leave `optional` out to make a reading required. Right now only Week 1 has a required
-reading.
+Every reading is optional; there is no required/optional flag. `date:` is the day we added
+it. A week's readings also appear in the reading room, labelled with their week.
 
-**Add something to the reading room.** Same shape, under `links:` at the bottom, newest
-first, with a `date:`.
+**Add something to the reading room.** Same shape, under `links:`, with a `date:`. The page
+sorts the reading room newest first by `date:`, so where you put the entry in the file does
+not matter.
 
 **Post a week's slides.** Decks are posted after each session so people who cannot be in the
 room can follow the course. Put the deck's HTML file in `assets/slides/agentic-ai/` named

@@ -49,7 +49,6 @@ icon: ai-eeb.png
   li > .fnote{margin:.3rem 0 .55rem}
   .post h2{margin-top:2.6rem}
   .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--global-divider-color);border-radius:999px;padding:.06rem .45rem;color:var(--global-text-color-light);margin-left:.35rem;vertical-align:.1em}
-  .tag.is-assigned{border-color:var(--global-theme-color);color:var(--global-theme-color);font-weight:700}
   .tag.is-week{font-weight:700}
   .setup{border:1px solid var(--global-divider-color);border-radius:12px;background:var(--global-card-bg-color);padding:1.1rem 1.3rem;margin:1.2rem 0 0}
   .setup h3{margin:0 0 .35rem;font-size:1rem}
@@ -62,6 +61,11 @@ icon: ai-eeb.png
   .ai-jump::-webkit-scrollbar{display:none}
   .ai-jump a{flex:0 0 auto;font-size:.72rem;font-weight:600;letter-spacing:.03em;white-space:nowrap;text-decoration:none;border:1px solid var(--global-divider-color);border-radius:999px;padding:.2rem .7rem;color:var(--global-text-color-light);background:var(--global-card-bg-color)}
   .ai-jump a:hover{border-color:var(--global-theme-color);color:var(--global-theme-color)}
+  .ai-jump a.is-rr{border-color:var(--global-theme-color);color:var(--global-theme-color)}
+  .ai-rr{display:block;text-decoration:none!important;border:1px solid var(--global-theme-color);border-left:4px solid var(--global-theme-color);border-radius:10px;padding:.8rem 1.1rem;margin:0 0 1.6rem;background:var(--global-card-bg-color);color:var(--global-text-color)!important;line-height:1.5}
+  .ai-rr:hover{background:var(--global-bg-color)}
+  .ai-rr .rr-t{display:block;margin:.2rem 0 .3rem}
+  .ai-rr .rr-new{display:block;font-size:.85rem;color:var(--global-theme-color)}
   .ai-jump a.is-here{background:var(--global-theme-color);border-color:var(--global-theme-color);color:#fff}
   .ai-filters{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.1rem 0 .3rem}
   .ai-f{font:inherit;font-size:.72rem;font-weight:600;letter-spacing:.03em;cursor:pointer;border:1px solid var(--global-divider-color);background:var(--global-card-bg-color);color:var(--global-text-color-light);border-radius:999px;padding:.2rem .7rem}
@@ -90,13 +94,24 @@ icon: ai-eeb.png
 <nav class="ai-jump" id="aiJump" aria-label="Jump to a section">
 {% assign nowwk = c.schedule | where: "week", c.current_week | first %}
 {% if nowwk %}<a href="#this-week">This week</a>{% endif %}
+<a href="#-reading-room" class="is-rr">📚 Reading room</a>
 {% if c.announcements and c.announcements.size > 0 %}<a href="#announcements">Announcements</a>{% endif %}
 <a href="#getting-set-up">Getting set up</a>
 <a href="#schedule">Schedule</a>
 <a href="#using-ai-in-this-course">Using AI here</a>
-<a href="#-reading-room">Reading room</a>
 <a href="{{ '/agentic/' | relative_url }}">Guides ↗</a>
 </nav>
+
+{% assign rr_dates = c.links | map: "date" %}
+{% for w in c.schedule %}{% if w.readings %}{% assign wd = w.readings | map: "date" %}{% assign rr_dates = rr_dates | concat: wd %}{% endif %}{% endfor %}
+{% assign rr_dates = rr_dates | compact | uniq | sort | reverse %}
+{% assign rr_new = c.links | where: "date", rr_dates[0] %}
+{% for w in c.schedule %}{% if w.readings %}{% assign wn = w.readings | where: "date", rr_dates[0] %}{% assign rr_new = rr_new | concat: wn %}{% endif %}{% endfor %}
+<a class="ai-rr" href="#-reading-room">
+  <span class="ai-lbl">📚 Reading room</span>
+  <span class="rr-t">Things we have come across and think are worth your time, newest first.</span>
+  <span class="rr-new">Latest, {{ rr_dates[0] | date: "%B %-d" }}: {% for l in rr_new %}{{ l.title }}{% unless forloop.last %}; {% endunless %}{% endfor %} →</span>
+</a>
 
 An **agent** is a large language model given tools, memory, and permission to plan and act
 over many steps — cleaning datasets, running analyses, writing and executing code, querying
@@ -118,11 +133,11 @@ taken out.
 
 **Start with [what is an agent?]({{ '/teaching/agentic-ai/primer/' | relative_url }})** —
 a ten-minute primer written for this seminar, covering the vocabulary and the core ideas
-with no background assumed. It is the first of the Week 1 readings; read it before the rest.
+with no background assumed. If you read one thing, read this.
 
 Separately, the [agentic AI guides]({{ '/agentic/' | relative_url }}) are how John sets this up
 for his own work — installing it, the files that give it project memory, and the rules worth
-copying. Not course material and not required; read them if you want to try this on your own work.
+copying. Read them if you want to try this on your own work.
 
 {% assign now = c.schedule | where: "week", c.current_week | first %}
 {% if now %}
@@ -135,20 +150,10 @@ copying. Not course material and not required; read them if you want to try this
   {% if now.framing %}<p><span class="ai-lbl">Framing</span><br>{{ now.framing }}</p>{% endif %}
   {% if now.demo %}<p><span class="ai-lbl">In class</span><br>{{ now.demo }}</p>{% endif %}
   {% if now.slides %}<p><span class="ai-lbl">Slides</span><br><a class="ai-deck" href="{{ now.slides.url | relative_url }}" target="_blank" rel="noopener">Week {{ now.week }} deck ↗</a>{% if now.slides.note %}<span class="fnote">{{ now.slides.note }}</span>{% endif %}</p>{% endif %}
-  {% assign now_req = now.readings | where_exp: "r", "r.optional != true" %}
-  {% assign now_opt = now.readings | where_exp: "r", "r.optional == true" %}
-  {% if now_req.size > 0 %}
-    <p><span class="ai-lbl">Read before class</span></p>
+  {% if now.readings.size > 0 %}
+    <p><span class="ai-lbl">Reading</span></p>
     <ul>
-      {% for r in now_req %}
-        <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-  {% if now_opt.size > 0 %}
-    <p><span class="ai-lbl">Optional</span></p>
-    <ul>
-      {% for r in now_opt %}
+      {% for r in now.readings %}
         <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
       {% endfor %}
     </ul>
@@ -267,20 +272,10 @@ readings, and demo.
       {% if w.framing %}<p>{{ w.framing }}</p>{% endif %}
       {% if w.demo %}<p><span class="ai-lbl">In class</span><br>{{ w.demo }}</p>{% endif %}
       {% if w.slides %}<p><span class="ai-lbl">Slides</span><br><a class="ai-deck" href="{{ w.slides.url | relative_url }}" target="_blank" rel="noopener">Week {{ w.week }} deck ↗</a>{% if w.slides.note %}<span class="fnote">{{ w.slides.note }}</span>{% endif %}</p>{% endif %}
-      {% assign w_req = w.readings | where_exp: "r", "r.optional != true" %}
-      {% assign w_opt = w.readings | where_exp: "r", "r.optional == true" %}
-      {% if w_req.size > 0 %}
-        <p><span class="ai-lbl">Read before class</span></p>
+      {% if w.readings.size > 0 %}
+        <p><span class="ai-lbl">Reading</span></p>
         <ul>
-          {% for r in w_req %}
-            <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      {% if w_opt.size > 0 %}
-        <p><span class="ai-lbl">Optional</span></p>
-        <ul>
-          {% for r in w_opt %}
+          {% for r in w.readings %}
             <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.source %} <span class="src">— {{ r.source }}</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}</li>
           {% endfor %}
         </ul>
@@ -306,9 +301,9 @@ readings, and demo.
 
 ## 📚 Reading room
 
-Reading we add as we find it. Anything tied to a session carries its week and whether it is
-required; the rest is here because we found it worth reading. Please suggest additions!
-Filter by topic.
+Everything here is optional. It is what we have come across and think is worth knowing
+about, newest first, and anything tied to a session carries its week. Please suggest
+additions! Filter by topic.
 
 {% assign alltags = "" | split: "" %}
 {% for w in c.schedule %}{% for r in w.readings %}{% if r.tags %}{% assign alltags = alltags | concat: r.tags %}{% endif %}{% endfor %}{% endfor %}
@@ -317,24 +312,26 @@ Filter by topic.
 
 <div class="ai-filters" id="aiFilters">
   <button type="button" class="ai-f is-on" data-f="all">all</button>
-  <button type="button" class="ai-f" data-f="assigned">assigned</button>
+  <button type="button" class="ai-f" data-f="week">week readings</button>
   {% for t in alltags %}<button type="button" class="ai-f" data-f="{{ t }}">{{ t }}</button>{% endfor %}
 </div>
 
 <ul class="ai-feed" id="aiFeed">
-{% for w in c.schedule %}{% for r in w.readings %}
-  <li data-tags="{% unless r.optional %}assigned {% endunless %}{{ r.tags | join: ' ' }}">
-    <a href="{{ r.url }}">{{ r.title }}</a>{% if r.optional %}<span class="tag is-week">week {{ w.week }} · optional</span>{% else %}<span class="tag is-assigned">week {{ w.week }} · required</span>{% endif %}{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}
-    {% if r.source %}<br><span class="src">{{ r.source }}</span>{% endif %}
+{% for d in rr_dates %}
+{% for w in c.schedule %}{% for r in w.readings %}{% if r.date == d %}
+  <li data-tags="week {{ r.tags | join: ' ' }}">
+    <a href="{{ r.url }}">{{ r.title }}</a><span class="tag is-week">week {{ w.week }}</span>{% for t in r.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+    <br><span class="src">{% if r.source %}{{ r.source }} · {% endif %}added {{ r.date | date: "%b %-d" }}</span>
     {% if r.note %}<span class="fnote">{{ r.note }}</span>{% endif %}
   </li>
-{% endfor %}{% endfor %}
-{% for l in c.links %}
+{% endif %}{% endfor %}{% endfor %}
+{% for l in c.links %}{% if l.date == d %}
   <li data-tags="{{ l.tags | join: ' ' }}">
     <a href="{{ l.url }}">{{ l.title }}</a>{% for t in l.tags %}<span class="tag">{{ t }}</span>{% endfor %}
-    {% if l.source %}<br><span class="src">{{ l.source }}</span>{% endif %}
+    <br><span class="src">{% if l.source %}{{ l.source }} · {% endif %}added {{ l.date | date: "%b %-d" }}</span>
     {% if l.note %}<span class="fnote">{{ l.note }}</span>{% endif %}
   </li>
+{% endif %}{% endfor %}
 {% endfor %}
 </ul>
 
