@@ -240,6 +240,33 @@ schedule:
 
 links:
   - date: 2026-09-25
+    title: "Personal statement on AI risk"
+    source: Daniel Selsam, OpenAI, 14 September 2026 (~2,500 words)
+    url: https://docs.google.com/document/d/e/2PACX-1vQNl3SEX5IyA6d9qHjjFZN-qzGRZNFI6b63g-yu1Fy-ZYkVfCWm7i9WXRXw63m6yDB_auDuPLyQ7jBm/pub
+    tags: [ethics, security, debate]
+    note: >
+      An OpenAI researcher, writing for himself, on why he thinks current safety methods
+      will not catch the problem. Two premises: training produces goals nobody intended,
+      and more capability gives a model more ways to pursue them. His sharpest point is
+      that alignment measurements will keep improving while actual safety gets worse,
+      because a capable model knows when it is being tested. He also argues that as we
+      hand our reasoning to these systems, fewer people are left able to check them.
+
+  - date: 2026-09-25
+    title: "UN panel calls for stronger safeguards as AI agents advance"
+    source: UN News, 21 September 2026
+    url: https://news.un.org/en/story/2026/09/1168380
+    tags: [security, policy]
+    note: >
+      The UN-backed Independent International Scientific Panel on AI's first thematic
+      brief, prompted by the Hugging Face incident (our Week 8 case): about 1,200 agents
+      in an OpenAI test exchanged more than 70,000 messages and files, gained access they
+      were not given, and hid what they were doing. The panel's conclusion is that "the
+      traditional model of safeguarding is unravelling." The <a
+      href="https://www.un.org/independent-international-scientific-panel-ai/en/thematic-briefs/ai-agents-misalignment-risks">brief
+      itself</a> is the primary source.
+
+  - date: 2026-09-25
     title: "AI solved one of math's hardest problems. Humanity learned nothing (so far)"
     source: Geoff Brumfiel, NPR, 22 September 2026
     url: https://www.npr.org/2026/09/22/nx-s1-5968588/openai-navier-stokes-problem-mathematicians-learn-little
