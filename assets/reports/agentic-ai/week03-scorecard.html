@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="What each verdict on the Week 3 scorecard means, and why every cell is scored the way it is. BIOEE 7600-103, Cornell.">
+<title>FLVS Agent Scorecard</title>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Deliberately light-only (John's default for reports); every colour set explicitly. */
+  :root{
+    --bg:#fbfaf7; --panel:#ffffff; --ink:#1d2320; --ink2:#46504b; --ink3:#7b837e;
+    --line:#dcdcd4; --accent:#2f5d50; --brown:#8a5a2b;
+    --ok:#2f6b4f; --ok-bg:#e4f0e8; --quiet:#5f6b66; --quiet-bg:#eef0ec;
+    --warn:#8a5a10; --warn-bg:#f8ecd6; --bad:#a3302b; --bad-bg:#f7e1de; --na:#8b8f8c; --na-bg:#f1f1ee;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font:16px/1.55 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    padding-inline:20px;padding-block:28px 60px;margin:0}
+  main{max-width:980px;margin:0 auto;display:grid;gap:34px}
+  h1{font-size:clamp(26px,4vw,36px);line-height:1.15;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  h2{font-size:21px;margin:0 0 12px;text-wrap:balance}
+  h3{font-size:16px;margin:0}
+  p{margin:0 0 10px;max-width:68ch;color:var(--ink2)}
+  .lede{font-size:18px;color:var(--ink2);max-width:62ch}
+  .eyebrow{font:600 12px/1 "Public Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  code,.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:.9em}
+  code{background:#f0efe9;padding:1px 5px;border-radius:3px}
+  .scroll{overflow-x:auto}
+  table{border-collapse:collapse;width:100%}
+  th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line);font-size:14.5px}
+  th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-weight:700;border-bottom:1px solid var(--ink3)}
+  .pill{display:inline-block;font-size:12.5px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+  .fr{background:var(--ok-bg);color:var(--ok)}
+  .rs{background:var(--quiet-bg);color:var(--quiet)}
+  .wf{background:var(--warn-bg);color:var(--warn)}
+  .sb{background:var(--bad-bg);color:var(--bad)}
+  .nr{background:var(--na-bg);color:var(--na)}
+  .grid2{display:grid;grid-template-columns:auto 1fr 1fr;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel);max-width:720px}
+  .grid2 > div{padding:12px 14px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+  .grid2 .h{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-weight:700;background:var(--bg)}
+  .grid2 .c p{font-size:14px;margin:6px 0 0}
+  .runs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .run{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+  .run h3{font-size:17px;margin-bottom:6px}
+  .run p{font-size:14.5px;margin:0 0 10px}
+  .tally{display:flex;flex-wrap:wrap;gap:6px}
+  .row-card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:grid;gap:10px}
+  .row-card .top{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+  .row-card .num{font:500 13px "IBM Plex Mono",monospace;color:var(--ink3)}
+  .row-card .right{font-size:14.5px;color:var(--ink2)}
+  .row-card .right b{color:var(--ink)}
+  .cells{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .cell{border-top:1px solid var(--line);padding-top:8px}
+  .cell .who{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);margin-bottom:4px}
+  .cell p{font-size:14px;margin:6px 0 0}
+  .keyfix{border-left:3px solid var(--brown);padding:2px 0 2px 12px}
+  .keyfix b{color:var(--brown)}
+  .rows{display:grid;gap:12px}
+  ul{margin:0;padding-left:20px;color:var(--ink2);max-width:68ch}
+  li{margin-bottom:6px}
+  .foot{font-size:13px;color:var(--ink3)}
+  a{color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  @media (max-width:640px){
+    .cells{grid-template-columns:1fr}
+    .grid2{grid-template-columns:auto 1fr}
+    .grid2 .spacer{display:none}
+  }
+</style>
+
+<main>
+
+<header>
+  <div class="eyebrow">BIOEE 7600-103 · Week 3 · Finger Lakes Vegetation Survey rescue</div>
+  <h1>The scorecard, cell by cell</h1>
+  <p class="lede">Three agent runs cleaned the same survey files. For each of 14 known problems in those files, every run gets one of five verdicts. This page explains what a verdict means, how each run came out, and why each row is scored the way it is.</p>
+</header>
+
+<section>
+  <h2>How to read a cell</h2>
+  <p>Every cell answers two separate questions. <b>Did the run handle the problem correctly?</b> And <b>did it tell you about it?</b> "Told you" means the problem appears in the run's report, decision log or questions list. A comment buried in the code does not count.</p>
+  <div class="scroll" style="margin-top:12px">
+  <div class="grid2" role="table" aria-label="The four verdicts">
+    <div class="h" role="columnheader"></div>
+    <div class="h" role="columnheader">Told you</div>
+    <div class="h" role="columnheader">Did not tell you</div>
+    <div class="h" role="rowheader">Handled right</div>
+    <div class="c"><span class="pill fr">flagged, right</span><p>The best outcome. Correct, and you can see what it did.</p></div>
+    <div class="c"><span class="pill rs">right, silent</span><p>Correct, but you would only know by checking yourself.</p></div>
+    <div class="h" role="rowheader">Handled wrong</div>
+    <div class="c"><span class="pill wf">wrong, flagged</span><p>A mistake, but written down, so a person reading the notes can catch and fix it.</p></div>
+    <div class="c"><span class="pill sb">silent break</span><p>The one that matters. The data are wrong and nothing says so. This becomes the dataset.</p></div>
+  </div>
+  </div>
+  <p style="margin-top:12px">A fifth verdict, <span class="pill nr">not reached</span>, means the run never worked with that part of the data.</p>
+  <p>The headline on the slide, "two silent breaks in 42 calls", is 14 problems × 3 runs = 42 cells, of which two are silent breaks.</p>
+</section>
+
+<section>
+  <h2>The three runs</h2>
+  <div class="runs">
+    <div class="run">
+      <h3>A</h3>
+      <p>The plain task: clean the files, write a short report. Nothing about documentation.</p>
+      <div class="tally"><span class="pill fr">8 flagged, right</span><span class="pill rs">3 right, silent</span><span class="pill wf">1 wrong, flagged</span><span class="pill sb">1 silent break</span><span class="pill nr">1 not reached</span></div>
+    </div>
+    <div class="run">
+      <h3>R</h3>
+      <p>The same task plus a block asking for reproducibility: a decision log, flagged questions instead of guesses, a data dictionary, tests. Written in Python.</p>
+      <div class="tally"><span class="pill fr">8 flagged, right</span><span class="pill rs">5 right, silent</span><span class="pill wf">1 wrong, flagged</span></div>
+    </div>
+    <div class="run">
+      <h3>R-rep</h3>
+      <p>Exactly R's prompt, run a second time as a replicate. It chose to write R code instead of Python.</p>
+      <div class="tally"><span class="pill fr">8 flagged, right</span><span class="pill rs">3 right, silent</span><span class="pill wf">2 wrong, flagged</span><span class="pill sb">1 silent break</span></div>
+    </div>
+  </div>
+  <p style="margin-top:14px">So the prompt did not change how often a run got things right (8 of 14 flagged-right for all three). What separates them is where they went wrong, and whether it was written down. R is the only run with no silent break.</p>
+</section>
+
+<section>
+  <h2>Row by row</h2>
+  <p>Each card gives the problem, what the right handling is, and each run's verdict with the reason.</p>
+  <div class="rows">
+
+    <article class="row-card">
+      <div class="top"><span class="num">1</span><h3>Two date systems</h3></div>
+      <div class="right">Old Mac Excel counts days from 1904, Windows Excel from 1900. The same number in a cell gives dates four years apart. <b>Right:</b> every date lands on the day it was actually sampled (stand 31 = 21 Sep 1973).</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill fr">flagged, right</span></div>
+        <div class="cell"><div class="who">R</div><span class="pill fr">flagged, right</span></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill fr">flagged, right</span></div>
+      </div>
+      <p class="keyfix"><b>Our key was wrong here.</b> It said to read each workbook in its own date setting. But the one "1900" workbook with dates (the swamp soils file) actually holds 1904 numbers; read our way, all 13 of its stands come out four years early. All three runs have correct dates.</p>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">2</span><h3>Old-Mac line endings</h3></div>
+      <div class="right">One text file (<code>ALLT.DATA</code>) uses old Macintosh line breaks, so a normal read sees the whole file as one line. <b>Right:</b> parse it, or show it duplicates a spreadsheet you already have.</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill fr">flagged, right</span></div>
+        <div class="cell"><div class="who">R</div><span class="pill rs">right, silent</span><p>Parsed it correctly by character position, but its notes never mention the line-ending issue.</p></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill fr">flagged, right</span></div>
+      </div>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">3</span><h3>Zero cover where the plant was in quadrats</h3></div>
+      <div class="right">988 ground-layer records have the species in at least one quadrat but a cover of 0 or blank. <b>Right:</b> keep the 0 as trace cover, and flag it.</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill fr">flagged, right</span></div>
+        <div class="cell"><div class="who">R</div><span class="pill fr">flagged, right</span><p>Kept the zeros and added a <code>cover_missing_or_trace</code> column.</p></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill fr">flagged, right</span></div>
+      </div>
+      <p class="keyfix"><b>Our key was wrong here.</b> It called the zeros missing data. The field sheets show a tick with no number meant trace cover, and the authors' own column totals for those species are 0 (false nettle at stand 193: 24 of 25 quadrats, total cover 0).</p>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">4</span><h3>Seen in the plot but in no quadrat</h3></div>
+      <div class="right">Some species were recorded in the plot but fell in none of the 25 quadrats. <b>Right:</b> keep them as present, not drop them.</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill fr">flagged, right</span></div>
+        <div class="cell"><div class="who">R</div><span class="pill fr">flagged, right</span><p>Cover for these: 0.</p></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill fr">flagged, right</span><p>Cover for these: blank.</p></div>
+      </div>
+      <p>R and R-rep both kept these 425 records but disagree on their cover (0 vs blank). Both are defensible, so neither is scored wrong. This is also the one choice the notes-only rebuilds got wrong for both A and R.</p>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">5</span><h3>Logs and rocks are not plants</h3></div>
+      <div class="right">Eleven "species" codes are logs, rocks, water and similar. <b>Right:</b> separate them from the plants.</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill fr">flagged, right</span><p>Marked 11 entries "not a plant taxon".</p></div>
+        <div class="cell"><div class="who">R</div><span class="pill rs">right, silent</span><p>Separated them, but only mentions it in passing in the report, not in its decisions.</p></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill fr">flagged, right</span></div>
+      </div>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">6</span><h3><code>=</code> means a synonym</h3></div>
+      <div class="right"><code>DRYOPTERIS AUSTRIACA=spinulosa</code> is the data manager writing two names for one fern, not doubt between two. The <i>spinulosa</i> half names the plant actually growing here (<i>D. carthusiana</i>). <b>Right:</b> keep it at species, and say which half matters.</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill rs">right, silent</span></div>
+        <div class="cell"><div class="who">R</div><span class="pill fr">flagged, right</span><p>Recorded it in a synonym-note column.</p></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill rs">right, silent</span></div>
+      </div>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">7</span><h3><code>/</code> is a real either-or</h3></div>
+      <div class="right"><code>LONICERA XYLOSTEUM/TATARICA</code> means the collectors could not tell two honeysuckles apart. <b>Right:</b> keep both candidates; do not pick one.</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill rs">right, silent</span></div>
+        <div class="cell"><div class="who">R</div><span class="pill rs">right, silent</span></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill fr">flagged, right</span><p>Gave these a "species group" rank.</p></div>
+      </div>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">8</span><h3>A code starting "SP" is not always "sp."</h3></div>
+      <div class="right"><code>ACSP</code> is <i>Acer spicatum</i> (mountain maple), not "<i>Acer</i> sp." <b>Right:</b> keep it at species rather than applying a prefix rule.</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill rs">right, silent</span></div>
+        <div class="cell"><div class="who">R</div><span class="pill rs">right, silent</span></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill rs">right, silent</span></div>
+      </div>
+      <p>No run fell for it, and no run mentioned it.</p>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">9</span><h3>One plant, two codes</h3></div>
+      <div class="right">The same shrub is <code>LOXT</code> in the ground-layer file and <code>LOXY</code> in the woody file; eight such pairs. <b>Right:</b> link them, so combining the layers cannot count one plant as two species.</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill sb">silent break</span><p>Gave the two codes different species IDs and never said so. Combine the layers and the shrub counts twice.</p></div>
+        <div class="cell"><div class="who">R</div><span class="pill fr">flagged, right</span><p>Linked them, with the reasoning in its decision log.</p></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill wf">wrong, flagged</span><p>Did not link them, but its notes raise the issue.</p></div>
+      </div>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">10</span><h3>Stands with no woody data</h3></div>
+      <div class="right">19 stands have an empty row in the woody file. The authors' own summary sheet marks 15 of them "no trees" (cattail marshes, sedge meadows, young fields). <b>Right:</b> 0 for those 15; missing only for the few genuinely unsampled (47, 49, 87).</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill fr">flagged, right</span></div>
+        <div class="cell"><div class="who">R</div><span class="pill wf">wrong, flagged</span><p>Did not settle it: treated the empty rows as unresolved and asked the collectors which were truly empty.</p></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill fr">flagged, right</span></div>
+      </div>
+      <p class="keyfix"><b>Our key was wrong here too.</b> It first called all 19 unsampled. Corrected before scoring, after we found the "no trees" notes.</p>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">11</span><h3>Two environment sheets</h3></div>
+      <div class="right">Site environment is split across two sheets holding different stands (111 together). <b>Right:</b> combine both, and record which sheet each row came from.</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill fr">flagged, right</span></div>
+        <div class="cell"><div class="who">R</div><span class="pill fr">flagged, right</span></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill fr">flagged, right</span></div>
+      </div>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">12</span><h3>The column headed <code>Dry</code> is drainage</h3></div>
+      <div class="right">In the relevé sheet, <code>Dry</code> is the 1 to 6 soil drainage class (1 = very poorly drained). <b>Right:</b> identify it as drainage.</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill wf">wrong, flagged</span></div>
+        <div class="cell"><div class="who">R</div><span class="pill fr">flagged, right</span></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill wf">wrong, flagged</span><p>Read it as a 1 to 5 "dryness scale", marked unconfirmed.</p></div>
+      </div>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">13</span><h3>Two kinds of pH</h3></div>
+      <div class="right">Stand pH is one number measured in the plot. Relevé pH is a range copied from the county soil survey for the mapped soil type. <b>Right:</b> keep them apart and say where each came from.</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill nr">not reached</span><p>Never read the relevé pH.</p></div>
+        <div class="cell"><div class="who">R</div><span class="pill rs">right, silent</span></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill rs">right, silent</span></div>
+      </div>
+    </article>
+
+    <article class="row-card">
+      <div class="top"><span class="num">14</span><h3>One code, two plants <span class="foot">(not in our key)</span></h3></div>
+      <div class="right">The mirror image of row 9. The woody file and the ground-layer file each have their own code list, and six codes mean a different plant in each: <code>COAM</code> is silky dogwood in one and hazelnut in the other. <b>Right:</b> look codes up in the list for the file they came from.</div>
+      <div class="cells">
+        <div class="cell"><div class="who">A</div><span class="pill fr">flagged, right</span><p>Found it. Our own earlier cleaning had missed it, which is why it is not in the key.</p></div>
+        <div class="cell"><div class="who">R</div><span class="pill fr">flagged, right</span><p>Kept a separate code list per file.</p></div>
+        <div class="cell"><div class="who">R-rep</div><span class="pill sb">silent break</span><p>Used one code list for everything, decided dogwood and hazelnut were the same plant, and merged them without saying so.</p></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>What to take from it</h2>
+  <ul>
+    <li><b>Both silent breaks are about which plant is which</b> (rows 9 and 14). Arithmetic and file formats went fine; taxonomy is where to check first.</li>
+    <li><b>The reproducibility prompt did not raise the hit rate.</b> A, R and R-rep each got 8 of 14 flagged-right. R is the only run with no silent break, but R-rep had the same prompt and still made one.</li>
+    <li><b>Replicates differ.</b> R and R-rep had the identical prompt and landed on different verdicts in 8 of the 14 rows, including one silent break.</li>
+    <li><b>The key was wrong in three places</b> (rows 1, 3, 10) and missed row 14 entirely. Every one of those was found because an agent's output disagreed with us and we went back to the raw files or the field sheets.</li>
+  </ul>
+</section>
+
+<p class="foot">The answer key was written before any run and corrected afterwards in dated notes; the corrections are marked on this page. Verdicts come from three separate audit agents, spot-checked by hand. Course page: <a href="https://benninglab.org/teaching/agentic-ai/">benninglab.org/teaching/agentic-ai</a>.</p>
+
+</main>
+
+</body>
+</html>
