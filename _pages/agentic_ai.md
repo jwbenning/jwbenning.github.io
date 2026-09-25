@@ -109,7 +109,7 @@ icon: ai-eeb.png
 {% for w in c.schedule %}{% if w.readings %}{% assign wn = w.readings | where: "date", rr_dates[0] %}{% assign rr_new = rr_new | concat: wn %}{% endif %}{% endfor %}
 <a class="ai-rr" href="#-reading-room">
   <span class="ai-lbl">📚 Reading room</span>
-  <span class="rr-t">Things we have come across and think are worth your time, newest first.</span>
+  <span class="rr-t">Pieces to peruse.</span>
   <span class="rr-new">Latest, {{ rr_dates[0] | date: "%B %-d" }}: {% for l in rr_new %}{{ l.title }}{% unless forloop.last %}; {% endunless %}{% endfor %} →</span>
 </a>
 
