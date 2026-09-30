@@ -6,7 +6,7 @@ description: how John has been using agentic ai via Claude Code, and the files t
 nav: true
 nav_title: ai
 nav_order: 6
-last_updated: 2026-09-18
+last_updated: 2026-09-30
 ---
 
 {% include agentic_wiki.liquid %}
