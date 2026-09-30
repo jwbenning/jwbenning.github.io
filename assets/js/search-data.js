@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "nav-agentic-ai",
           title: "agentic ai",
-          description: "how John has been using agentic AI via Claude Code, and how to get setup yourself",
+          description: "how John has been using agentic AI via Claude Code, and how to get set up yourself",
           section: "Navigation",
           handler: () => {
             window.location.href = "/agentic/";
