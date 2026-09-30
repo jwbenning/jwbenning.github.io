@@ -133,6 +133,29 @@
     color: #b4541e;
   }
 
+  .wk-win {
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    margin: -0.4rem 0 1.2rem;
+    font-size: 0.92rem;
+  }
+  .wk-win > summary {
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    color: var(--global-text-color-light);
+    font-weight: 600;
+  }
+  .wk-win[open] > summary {
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .wk-win > *:not(summary) {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+  }
+  .wk-win > :last-child {
+    margin-bottom: 0.8rem;
+  }
+
   .wk-shot {
     margin: 1.6rem 0;
   }

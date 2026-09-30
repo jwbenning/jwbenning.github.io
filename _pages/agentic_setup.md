@@ -19,6 +19,10 @@ environment John uses.
 The desktop app or the terminal. Pick one; they are the same tool. The app is the shorter path if
 you do not already work in a terminal, and you can stop after **First run**.
 
+Commands on these pages are for macOS, and work on Linux too. Where Windows differs, an
+**On Windows** box under the command gives the version to use. `~` means your home folder:
+`/Users/you` on a Mac, `C:\Users\you` on Windows.
+
 ## Install: the app
 
 1. Download from [claude.com/download](https://claude.com/download) and run the installer.
@@ -35,8 +39,10 @@ open a local folder. macOS ships with Git. On Linux the desktop app is in beta; 
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-That line is for macOS, Linux and Windows WSL. On Windows, use the line for your shell.
-PowerShell (the prompt starts `PS C:\`):
+<details class="wk-win" markdown="1">
+<summary>On Windows</summary>
+
+Use the line for your shell. PowerShell (the prompt starts `PS C:\`):
 
 ```powershell
 irm https://claude.ai/install.ps1 | iex
@@ -47,6 +53,11 @@ Command Prompt (the prompt starts `C:\`, with no `PS`):
 ```bat
 curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
+
+Install [Git for Windows](https://git-scm.com/downloads/win) as well. It gives Claude Code a
+bash shell to run commands in, and the rest of these pages assume you have it.
+
+</details>
 
 On a Mac, `brew install --cask claude-code` works too. Then:
 
@@ -63,6 +74,21 @@ source ~/.zshrc
 which claude
 ```
 
+On Linux, where the shell is usually bash, use `~/.bashrc` in place of `~/.zshrc`.
+
+<details class="wk-win" markdown="1">
+<summary>On Windows</summary>
+
+The installer puts `claude.exe` in `%USERPROFILE%\.local\bin`. Add that folder to your PATH from
+PowerShell, then close and reopen the terminal:
+
+```powershell
+$p = [Environment]::GetEnvironmentVariable('PATH', 'User')
+[Environment]::SetEnvironmentVariable('PATH', "$p;$env:USERPROFILE\.local\bin", 'User')
+```
+
+</details>
+
 `claude doctor` reports what is wrong if something else is. Claude Code is not in the free plan, so
 sign-in will fail on a free account.
 
@@ -73,6 +99,21 @@ mkdir ~/agent-test && cd ~/agent-test
 cp ~/somewhere/your-data.csv .
 claude
 ```
+
+<details class="wk-win" markdown="1">
+<summary>On Windows</summary>
+
+In PowerShell, run the steps one at a time, since the PowerShell built into Windows does not
+accept `&&`:
+
+```powershell
+mkdir ~\agent-test
+cd ~\agent-test
+copy C:\path\to\your-data.csv .
+claude
+```
+
+</details>
 
 In the app, open that folder instead. Then ask for something specific:
 
@@ -101,7 +142,8 @@ The warning above is the single cheapest precaution available, and it is three c
 ```bash
 cd ~/my-project
 git init
-git add -A && git commit -m "before I let an agent near this"
+git add -A
+git commit -m "before I let an agent near this"
 ```
 
 From then on `git diff` shows you exactly what the agent changed, and `git checkout -- <file>`
@@ -149,6 +191,16 @@ cd ~/agentic-starter
 ./install.sh --check      # prints what it would do, changes nothing
 ```
 
+<details class="wk-win" markdown="1">
+<summary>On Windows</summary>
+
+The installer and the hooks are bash scripts, written and tested on macOS. Run them from
+**Git Bash**, which comes with Git for Windows, not from PowerShell. They have not been tested
+on Windows; if one fails, [open an issue](https://github.com/benning-lab/agentic-starter/issues)
+with the error.
+
+</details>
+
 Reading a `--check` before running is worth doing with any install script you find on the internet,
 this one included. On a real run, this one:
 
@@ -176,6 +228,8 @@ share — but it does mean those transcripts accumulate on your disk, and they a
 whatever you discussed. See [project memory]({{ '/agentic/memory/' | relative_url }}).
 
 ## Optional: Ghostty, tmux, and a project launcher
+
+macOS and Linux only. tmux does not run on Windows outside WSL, so skip this section there.
 
 [tmux](https://github.com/tmux/tmux) owns the terminal rather than the window, so sessions survive
 closing the window, switching applications, and dropping an SSH connection. With a launcher on top,

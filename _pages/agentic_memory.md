@@ -31,7 +31,7 @@ also the one that almost never needs editing.
 ## CLAUDE.md
 
 Claude Code reads `CLAUDE.md` from the folder you start it in, before you type anything. A global
-file at `~/.claude/CLAUDE.md` applies everywhere and a project one applies in that project; they
+file at `~/.claude/CLAUDE.md` (on Windows, `C:\Users\you\.claude\CLAUDE.md`) applies everywhere and a project one applies in that project; they
 stack.
 
 ```markdown
@@ -201,6 +201,21 @@ Keep one canonical copy and symlink from the other. From inside the code repo:
 ln -sfn "../../projects/2026_CxDemo/CLAUDE.md" CLAUDE.md
 ln -sfn "../../projects/2026_CxDemo/TODO.md" TODO.md
 ```
+
+<details class="wk-win" markdown="1">
+<summary>On Windows</summary>
+
+Windows only creates symlinks with **Developer Mode** on (Settings → System → For developers),
+and Git needs `core.symlinks` set to keep them. With both in place, in Command Prompt:
+
+```bat
+mklink CLAUDE.md ..\..\projects\2026_CxDemo\CLAUDE.md
+mklink TODO.md ..\..\projects\2026_CxDemo\TODO.md
+```
+
+Without Developer Mode, keep the one copy in the code repo instead.
+
+</details>
 
 Relative paths, so they resolve on any machine, and commit them. Two real copies means one of them
 is wrong and you will not know which.

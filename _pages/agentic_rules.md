@@ -16,7 +16,7 @@ result it thinks you are after, and must not be agreeable by default.
 
 ## How to add them
 
-Open `~/.claude/CLAUDE.md`, creating it if it does not exist, and paste the rules you want under a
+Open `~/.claude/CLAUDE.md` (on Windows, `C:\Users\you\.claude\CLAUDE.md`), creating it if it does not exist, and paste the rules you want under a
 heading:
 
 ```
