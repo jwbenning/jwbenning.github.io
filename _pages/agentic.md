@@ -59,14 +59,16 @@ Unpack it somewhere it can stay. The hooks run from that folder in place, so mov
 later switches them off. Then:
 
 ```bash
-cd agentic-starter
+cd ~/agentic-starter
 ./install.sh --check      # prints what it would do, changes nothing
 ./install.sh              # do it
 ```
 
+On Windows, run these in Git Bash; see [getting set up]({{ '/agentic/setup/' | relative_url }}).
+
 On a default run it makes a few empty folders and writes one file, `~/.claude/settings.json` — and
-only if you do not already have one. If you do, it changes nothing and prints the block for you to
-paste in yourself. The full walkthrough is on
+only if you do not already have one. If you do, it changes nothing and tells you where the hooks block
+is and what to replace `__REPO__` with. The full walkthrough is on
 [getting set up]({{ '/agentic/setup/' | relative_url }}).
 
 </div>

@@ -29,8 +29,9 @@ Commands on these pages are for macOS, and work on Linux too. Where Windows diff
 2. Click the **Code** tab.
 3. Open the folder you want to work in.
 
-On Windows, install [Git for Windows](https://git-scm.com/downloads/win) first, or the app cannot
-open a local folder. macOS ships with Git. On Linux the desktop app is in beta; follow
+The app does not need Git to open a folder. You will want it for the git steps further down: on
+Windows, install [Git for Windows](https://git-scm.com/downloads/win); on a Mac, the first `git`
+command offers to install Apple's Command Line Tools, so accept. On Linux the desktop app is in beta; follow
 [these steps](https://code.claude.com/docs/en/desktop-linux).
 
 ## Install: the terminal
@@ -65,7 +66,7 @@ On a Mac, `brew install --cask claude-code` works too. Then:
 claude --version
 ```
 
-If that prints nothing, the installer put the binary in `~/.local/bin`, which is not on `PATH` on a
+If that says `command not found`, the installer put the binary in `~/.local/bin`, which is not on `PATH` on a
 fresh machine:
 
 ```bash
@@ -86,6 +87,8 @@ PowerShell, then close and reopen the terminal:
 $p = [Environment]::GetEnvironmentVariable('PATH', 'User')
 [Environment]::SetEnvironmentVariable('PATH', "$p;$env:USERPROFILE\.local\bin", 'User')
 ```
+
+Check with `where.exe claude` in place of `which claude`.
 
 </details>
 
@@ -195,7 +198,8 @@ cd ~/agentic-starter
 <summary>On Windows</summary>
 
 The installer and the hooks are bash scripts, written and tested on macOS. Run them from
-**Git Bash**, which comes with Git for Windows, not from PowerShell. They have not been tested
+**Git Bash**, which comes with Git for Windows, not from PowerShell. The hooks also need Python
+(`python3` should run in Git Bash). They have not been tested
 on Windows; if one fails, [open an issue](https://github.com/benning-lab/agentic-starter/issues)
 with the error.
 
@@ -229,7 +233,8 @@ whatever you discussed. See [project memory]({{ '/agentic/memory/' | relative_ur
 
 ## Optional: Ghostty, tmux, and a project launcher
 
-macOS and Linux only. tmux does not run on Windows outside WSL, so skip this section there.
+macOS and Linux only. tmux does not run on Windows outside WSL, so skip this section there. On
+Linux, install both with your package manager; `cc` needs zsh.
 
 [tmux](https://github.com/tmux/tmux) owns the terminal rather than the window, so sessions survive
 closing the window, switching applications, and dropping an SSH connection. With a launcher on top,
@@ -296,7 +301,6 @@ becomes something you did not write. Put comments on their own line.
 | -------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `which claude` is empty after a successful install | The installer puts the binary in `~/.local/bin`; add that to `PATH` and open a new tab. |
 | Sign-in fails with an account that works elsewhere | Claude Code is not in the free plan.                                                    |
-| The app cannot open a folder on Windows            | Install [Git for Windows](https://git-scm.com/downloads/win).                           |
 | `cc` opens a window but nothing starts             | The desktop app's bundled binary is not on `PATH`; install the standalone CLI above.    |
 
 **Next:** [Project memory]({{ '/agentic/memory/' | relative_url }}) — the files that make it remember your project.

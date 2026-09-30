@@ -31,7 +31,7 @@ also the one that almost never needs editing.
 ## CLAUDE.md
 
 Claude Code reads `CLAUDE.md` from the folder you start it in, before you type anything. A global
-file at `~/.claude/CLAUDE.md` (on Windows, `C:\Users\you\.claude\CLAUDE.md`) applies everywhere and a project one applies in that project; they
+file at `~/.claude/CLAUDE.md` applies everywhere and a project one applies in that project; they
 stack.
 
 ```markdown
@@ -90,13 +90,13 @@ Scaffold a project here for the Clarkia demography work, code cx-demo.
 There is also a script, for when you want the same result without a conversation about it:
 
 ```bash
-./bin/new-project.sh ~/projects/2026_MyProject \
+~/agentic-starter/bin/new-project.sh ~/projects/2026_MyProject \
   --name "Clarkia demography" --code cx-demo
 ```
 
-Either way you get `PROJECT_INDEX.md`, `TODO.md` and `handoff.md` from the templates, and
-anything already there is left alone. You write `CLAUDE.md` yourself, which is where most of
-the value is.
+Either way you get `CLAUDE.md`, `PROJECT_INDEX.md` and `TODO.md` from the templates, and
+anything already there is left alone. `handoff.md` is written at the end of the first session.
+Fill in `CLAUDE.md`; that is where most of the value is.
 
 ## Where the folders go
 
@@ -185,8 +185,8 @@ repo on your own machine:
 ```
 
 The installer writes that file for you if you do not have one. If you do, it leaves your settings
-untouched and prints the block for you to paste in — it will not merge JSON into a file you already
-own.
+untouched and tells you where the hooks block is and what to replace `__REPO__` with. It will not
+merge JSON into a file you already own.
 
 Restart any session that is already running, since hooks are read at session start.
 
@@ -206,7 +206,8 @@ ln -sfn "../../projects/2026_CxDemo/TODO.md" TODO.md
 <summary>On Windows</summary>
 
 Windows only creates symlinks with **Developer Mode** on (Settings → System → For developers),
-and Git needs `core.symlinks` set to keep them. With both in place, in Command Prompt:
+and Git keeps them only with `git config --global core.symlinks true`, set before you clone. Use
+Command Prompt, not Git Bash, where `ln -s` silently makes a copy:
 
 ```bat
 mklink CLAUDE.md ..\..\projects\2026_CxDemo\CLAUDE.md
