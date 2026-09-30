@@ -1,7 +1,7 @@
 ---
 layout: profiles
 permalink: /people/
-last_updated: 2026-09-09
+last_updated: 2026-09-30
 title: people
 description:
 nav: true
