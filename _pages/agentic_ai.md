@@ -50,12 +50,6 @@ icon: ai-eeb.png
   .post h2{margin-top:2.6rem}
   .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--global-divider-color);border-radius:999px;padding:.06rem .45rem;color:var(--global-text-color-light);margin-left:.35rem;vertical-align:.1em}
   .tag.is-week{font-weight:700}
-  .setup{border:1px solid var(--global-divider-color);border-radius:12px;background:var(--global-card-bg-color);padding:1.1rem 1.3rem;margin:1.2rem 0 0}
-  .setup h3{margin:0 0 .35rem;font-size:1rem}
-  .setup p{margin:.5rem 0 0;line-height:1.6}
-  .setup pre{margin:.55rem 0 0;padding:.6rem .8rem;border-radius:8px;background:var(--global-bg-color);border:1px solid var(--global-divider-color);overflow-x:auto}
-  .setup code{font-size:.86rem}
-  .setup .why{color:var(--global-text-color-light);font-size:.9rem}
   body h2[id]{scroll-margin-top:7rem}
   .ai-jump{position:sticky;top:56px;z-index:20;display:flex;gap:.3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:.5rem 0;margin:0 0 1.6rem;background:var(--global-bg-color);border-bottom:1px solid var(--global-divider-color)}
   .ai-jump::-webkit-scrollbar{display:none}
@@ -96,8 +90,8 @@ icon: ai-eeb.png
 {% if nowwk %}<a href="#this-week">This week</a>{% endif %}
 <a href="#-reading-room" class="is-rr">📚 Reading room</a>
 {% if c.announcements and c.announcements.size > 0 %}<a href="#announcements">Announcements</a>{% endif %}
-<a href="#getting-set-up">Getting set up</a>
 <a href="#schedule">Schedule</a>
+<a href="#getting-set-up">Getting set up</a>
 <a href="#using-ai-in-this-course">Using AI here</a>
 <a href="{{ '/agentic/' | relative_url }}">Guides ↗</a>
 </nav>
@@ -180,81 +174,6 @@ Day-to-day chatter lives on the Slack; this is the record, so nothing is lost if
 </ul>
 {% endif %}
 
-## Getting set up
-
-**Do this before Friday.** About ten minutes. You can install without an account; you sign
-in later.
-
-We use [Claude Code](https://code.claude.com/docs/), an agent that reads and writes files on
-your own machine. That read-write part is the whole reason we use it rather than a chat
-window, and it is what we spend the term auditing. Two ways to run it — pick one.
-
-<div class="setup">
-  <h3>The app</h3>
-  <p class="why">A normal application window, no terminal involved. Start here unless you
-  already work in a terminal every day.</p>
-  <p><strong>macOS and Windows:</strong> download from
-  <a href="https://claude.com/download">claude.com/download</a> and run the installer. There
-  is a separate build for Windows on ARM on that same page.
-  <strong>Linux:</strong> the desktop app is still in beta — use
-  <a href="https://code.claude.com/docs/en/desktop-linux">these steps</a> instead of the
-  download page.</p>
-  <p><strong>On Windows you also need <a href="https://git-scm.com/downloads/win">Git for
-  Windows</a></strong>, or the app cannot open a local folder. Install it first. Macs
-  already have Git.</p>
-  <p>Open the app and click the <strong>Code</strong> tab at the top. If it asks you to sign
-  in or to upgrade, that is as far as you can get for now; see the note below. There is a
-  <a href="https://code.claude.com/docs/en/desktop-quickstart">two-minute walkthrough</a> if
-  you want one.</p>
-</div>
-
-<div class="setup">
-  <h3>The terminal</h3>
-  <p class="why">Same tool, more control. If you already use a terminal for R or bash, use
-  this.</p>
-  <p>macOS, Linux, or Windows WSL:</p>
-  <pre><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre>
-  <p>Windows PowerShell — your prompt starts <code>PS C:\</code>:</p>
-  <pre><code>irm https://claude.ai/install.ps1 | iex</code></pre>
-  <p>Windows CMD — your prompt starts <code>C:\</code>, with no <code>PS</code>:</p>
-  <pre><code>curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd</code></pre>
-  <p>Then run <code>claude --version</code>, which should print a version number. If it does
-  not, <code>claude doctor</code> says why. On a Mac,
-  <code>brew install --cask claude-code</code> works too. Never used a terminal? Read the
-  <a href="https://code.claude.com/docs/en/terminal-guide">terminal guide</a> first, or just
-  use the app.</p>
-</div>
-
-<div class="setup">
-  <h3>Then try one thing</h3>
-  <p class="why">Not required, and worth the two minutes: it turns the first session from a
-  demo you watch into something you have already done.</p>
-  <p>Make a folder, drop in any CSV you have lying around, point Claude Code at that folder,
-  and ask it:</p>
-  <pre><code>Describe this file: how many rows and columns, what each column
-appears to contain, and anything that looks wrong or inconsistent.</code></pre>
-  <p>Watch what it does <em>before</em> it answers — it will read the file, probably write and
-  run a few lines of code, and only then reply. That is the loop the primer describes,
-  running on your own data. Bring what it got wrong.</p>
-</div>
-
-You need macOS 13 or later, Windows 10 build 1809 or later, or Ubuntu 20.04 / Debian 10 or
-later, on an x64 or ARM processor, with 4 GB of RAM. **ChromeOS is not supported.** If you
-have a Chromebook, no laptop, or a machine older than that, tell us now and we will pair you
-with someone.
-
-**Do not pay for anything.** Claude Code is not included in the free plan, so it will ask you
-to sign in and the account you have will not work. That is expected, and it is not a broken
-install. We are covering access for everyone in the seminar: an invitation is on its way by
-email, and you will need to accept it **with your Cornell address**. Ignore it if you already
-pay for Claude.
-
-**If it will not install,** the official
-[troubleshooting page](https://code.claude.com/docs/en/troubleshoot-install) matches most
-errors to a fix. Failing that, ask in **#setup-help** on the course Slack (the invite is in
-our email), or come ten minutes early on Friday with the error message. Do not skip a session
-over a broken install; you can share someone's screen for a week.
-
 ## Schedule
 
 Nine themed weeks. Dates firm up as the term does; expand a week for its framing question,
@@ -285,6 +204,23 @@ readings, and demo.
   </details>
 {% endfor %}
 </div>
+
+## Getting set up
+
+Install Claude Code by following [getting set up]({{ '/agentic/setup/' | relative_url }}) in the
+guides, and stop after **First run**. The rest of that page is optional terminal setup. The app is
+the shorter path if you do not already work in a terminal.
+
+- **Access is covered.** Claude Code is not in the free plan, so sign-in fails on a free account.
+  Do not pay for anything: accept the invitation we emailed, using your Cornell address. Ignore it
+  if you already pay for Claude. If you joined late and have no invitation, tell us.
+- **Requirements:** macOS 13 or later, Windows 10 build 1809 or later, or Ubuntu 20.04 / Debian
+  10 or later, on x64 or ARM, with 4 GB of RAM. **ChromeOS is not supported.** If you have a
+  Chromebook or no laptop, tell us and we will pair you with someone.
+- **If it will not install,** the official
+  [troubleshooting page](https://code.claude.com/docs/en/troubleshoot-install) matches most errors
+  to a fix. Failing that, ask in **#setup-help** on the course Slack, or come ten minutes early on
+  Friday with the error message.
 
 ## Using AI in this course
 

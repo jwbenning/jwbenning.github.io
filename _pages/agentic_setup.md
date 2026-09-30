@@ -5,7 +5,7 @@ title: getting set up
 description: install claude code, and the optional terminal setup
 nav: false
 wiki_slug: setup
-last_updated: 2026-09-18
+last_updated: 2026-09-30
 ---
 
 {% include agentic_wiki.liquid %}
@@ -35,7 +35,20 @@ open a local folder. macOS ships with Git. On Linux the desktop app is in beta; 
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-On Windows PowerShell, `irm https://claude.ai/install.ps1 | iex`. Then:
+That line is for macOS, Linux and Windows WSL. On Windows, use the line for your shell.
+PowerShell (the prompt starts `PS C:\`):
+
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+Command Prompt (the prompt starts `C:\`, with no `PS`):
+
+```bat
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
+On a Mac, `brew install --cask claude-code` works too. Then:
 
 ```bash
 claude --version
