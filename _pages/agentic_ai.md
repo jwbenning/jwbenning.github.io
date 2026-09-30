@@ -69,7 +69,7 @@ icon: ai-eeb.png
   .ai-empty{color:var(--global-text-color-light);padding:.9rem 0}
 </style>
 
-<span class="ai-live"><span class="dot"></span>Live page — updated through the semester</span>
+<span class="ai-live"><span class="dot"></span>Live page — updated through the semester (mostly by Claude)</span>
 
 <dl class="ai-meta">
   <div><dt>Course</dt><dd>BIOEE 7600-103</dd></div>
