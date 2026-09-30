@@ -4,6 +4,7 @@ permalink: /agentic/
 title: agentic ai
 description: how John has been using agentic ai via Claude Code, and the files to copy
 nav: true
+nav_title: ai
 nav_order: 6
 last_updated: 2026-09-18
 ---
