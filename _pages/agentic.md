@@ -2,7 +2,7 @@
 layout: page
 permalink: /agentic/
 title: agentic ai
-description: how John has been using agentic ai via Claude Code, and the files to copy
+description: how John has been using agentic AI via Claude Code, and how to get setup yourself
 nav: true
 nav_title: ai
 nav_order: 6
