@@ -201,6 +201,11 @@ schedule:
     framing: >
       Where does an agent legitimately speed up finding, screening, and synthesizing
       literature — and where does it corrupt the record?
+    demo: >
+      Optional before class: give Claude Code <a href="/teaching/agentic-ai/lit-review/">one
+      prompt</a> that has it write a critical review of a topic you know well, then judge what
+      it wrote. In class we compare notes, look at John's runs on adaptation at range edges,
+      scored against a published review, and watch Claude read papers through the library proxy.
 
   - week: 5
     date: 2026-10-09
