@@ -77,7 +77,7 @@ icon: ai-eeb.png
   <div><dt>Room</dt><dd>Kennedy Hall 213</dd></div>
   <div><dt>Credits</dt><dd>1 credit, S/U</dd></div>
   <div><dt>Instructors</dt><dd><a href="{{ '/people/' | relative_url }}">John Benning</a> · <a href="https://xiangtaoxu.eeb.cornell.edu/">Xiangtao Xu</a></dd></div>
-  <div><dt>Enrollment</dt><dd>Capped at 20, by instructor consent; graduate students and above</dd></div>
+  <div><dt>Enrollment</dt><dd>By instructor consent; graduate students and above</dd></div>
 </dl>
 
 {% if c.announcement %}
