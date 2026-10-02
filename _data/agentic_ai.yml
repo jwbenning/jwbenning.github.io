@@ -249,6 +249,45 @@ schedule:
       research, writing, teaching, and lab work?
 
 links:
+  - date: 2026-10-02
+    title: "Claude-shaped science"
+    source: Matthew Schwartz, guest post on Anthropic's research blog, 1 October 2026 (~6,500 words)
+    url: https://www.anthropic.com/research/claude-shaped-science
+    tags: [application, debate]
+    note: >
+      A Harvard physicist's argument that current models are good at science but are not
+      scientists, so the useful move is to pick problems that suit what they do well
+      rather than treat them as research collaborators. He describes a toolkit for doing
+      that and a run of results across physics, ecology, population genetics, economics
+      and linguistics, including a test of neutral theory on the Barro Colorado Island
+      forest plot. Published by Anthropic, so read it as an advocate's case.
+
+  - date: 2026-10-02
+    title: "Thinking outside the black box: seven guidelines for GenAI use in the ecological sciences"
+    source: Ferrari, Conklin, Fitch et al. 2026, Ecology and Evolution 16(8):e74118
+    url: https://doi.org/10.1002/ece3.74118
+    tags: [EEB, policy, reproducibility]
+    note: >
+      Ten ecologists on what generative AI changes at each stage of ecological research,
+      from hypothesis generation to peer review. Their main worry is that it pushes the
+      field toward large-scale pattern detection and away from theory-driven questions,
+      with costs to reproducibility and to time spent with the systems we study. Ends
+      with seven guidelines for responsible use, a direct comparison for our Week 9
+      guideline.
+
+  - date: 2026-10-02
+    title: "Harnessing artificial intelligence to fill global shortfalls in biodiversity knowledge"
+    source: Pollock, Kitzes, Beery et al. 2025, Nature Reviews Biodiversity 1:166–182
+    url: https://doi.org/10.1038/s44358-025-00022-3
+    tags: [EEB, application]
+    note: >
+      A review organised around the seven recognised shortfalls in biodiversity knowledge
+      (what species exist, where they occur, how they interact, and so on) and where AI
+      could help with each. Most biodiversity uses of AI so far are monitoring; the
+      authors argue the larger gains are in questions that need images, audio, text and
+      DNA combined. Predates agents, but a good map of which EEB problems are worth
+      pointing them at.
+
   - date: 2026-09-25
     title: "Report of the Summit on PhD Math Education in the Age of AI"
     source: Freed, Harris, Kisin, Wood et al., Harvard CMSA, 17–18 September 2026 (8 pp.)
