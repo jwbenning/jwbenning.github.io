@@ -14,7 +14,7 @@
 #                  Week readings carry a `date:` too and appear in the reading room;
 #                  the page sorts everything newest first, so file order does not matter.
 
-current_week: 4
+current_week: 5
 
 announcement: >
   We meet <strong>Fridays, 12:20&ndash;1:10 pm, in Kennedy Hall 213</strong>.
