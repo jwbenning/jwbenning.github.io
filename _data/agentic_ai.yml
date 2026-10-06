@@ -249,6 +249,19 @@ schedule:
       research, writing, teaching, and lab work?
 
 links:
+  - date: 2026-10-06
+    title: "Quo Vadis, Mathematics?"
+    source: Christian Szegedy, 3 October 2026 (~2,000 words)
+    url: https://docs.google.com/document/d/e/2PACX-1vTSh-pyNP3Gi99WMmsinnLmE9V5CDI0HEm6WGbIPMNt3V5SGlClHF8-BetotKHOImrvQDSXmFdiOw8D/pub
+    tags: [debate]
+    note: >
+      An AI researcher who has long worked on machine theorem proving, arguing that AI will
+      turn mathematics from a field of individual problem-solving into infrastructure for
+      the rest of science, with the work shifting to choosing directions, managing fleets
+      of AI provers and explaining results. He acknowledges the grief this causes people
+      who valued the struggle. Read it next to "The Dark Night of Mathematics" from Week 1,
+      which is the same transition seen from inside a PhD.
+
   - date: 2026-10-02
     title: "Claude-shaped science"
     source: Matthew Schwartz, guest post on Anthropic's research blog, 1 October 2026 (~6,500 words)
