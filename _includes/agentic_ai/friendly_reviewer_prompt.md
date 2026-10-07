@@ -47,12 +47,13 @@ browser.
 Give a fresh subagent (`model: "opus"`) only `original.md` and `revised.md`, not the comments. It
 lists every claim in the original and writes `drift_check.md`, a table of `claim, original
 wording, revised wording, verdict (same / stronger / weaker / changed / dropped / added)`. Restore
-the original wording for every claim not marked "same", update `revised.md` and `diff.html`, and
-note each restoration.
+the original wording for every claim marked stronger, weaker, dropped or added, and update
+`revised.md` and `diff.html`. Do not restore claims marked "changed"; list them for me in
+`comments.md` with the checker's reason, so I decide.
 
 ### 5. Finish
-Tell me how many changes you made, how many claims the drift check flagged, and which flagged
-change you are least sure you fixed correctly.
+Tell me how many changes you made, what the drift check restored, and which "changed" claims I
+should look at.
 
 === MY TEXT START ===
 
