@@ -67,11 +67,3 @@ or proposal you are reviewing.
 ```
 
 </details>
-
-## For Friday
-
-Nothing to hand in. Bring your laptop with the Summary, and look for:
-
-1. **One sentence you could not defend in front of a panel.**
-2. **One thing it wrote better than you would have.**
-3. **One line in the claims ledger you disagree with.**
