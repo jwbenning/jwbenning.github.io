@@ -24,8 +24,8 @@ icon: ai-eeb.png
 
 <p class="pr-lede"><b>Optional.</b> Last week Claude Code wrote a review of a topic you know.
 This week it turns that review into the one-page Project Summary of a research proposal. You judge
-whether you could defend every sentence in it. Bring what you found on Friday 9 October, or run it
-in class; it takes about 10 minutes.</p>
+whether you could defend every sentence in it. Run it before Friday 9 October if you want, or do
+it in class with us; it takes about 10 minutes.</p>
 
 ## How
 
