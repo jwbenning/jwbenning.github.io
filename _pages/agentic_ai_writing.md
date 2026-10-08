@@ -23,8 +23,7 @@ icon: ai-eeb.png
 <a class="pr-back" href="{{ '/teaching/agentic-ai/' | relative_url }}">← back to the course page</a>
 
 <p class="pr-lede"><b>Optional.</b> Last week Claude Code wrote a review of a topic you know.
-This week it turns that review into the one-page Project Summary of a research proposal. You judge
-whether you could defend every sentence in it. Run it before Friday 9 October if you want, or do
+This week it turns that review into the one-page Project Summary of a research proposal. Run it before Friday 9 October if you want, or do
 it in class with us; it takes about 10 minutes.</p>
 
 ## How
