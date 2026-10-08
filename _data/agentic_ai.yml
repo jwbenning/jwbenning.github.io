@@ -215,11 +215,11 @@ schedule:
       Where does AI-assisted drafting genuinely help — including for researchers
       writing in a second language — and where does it cross into misrepresentation?
     demo: >
-      Optional before class: give Claude Code <a href="/teaching/agentic-ai/writing/">one
-      prompt</a> that turns last week's review into the one-page Summary of a research
-      proposal, then find the sentence you could not defend. Or run it in class; it takes about
-      ten minutes. In class: methods written from a real code archive and checked against the
-      paper, and what a clarity rewrite does to hedged claims.
+      Optional, before class or in class: <a href="/teaching/agentic-ai/writing/">three
+      prompts</a>, from Claude as a friendly reviewer of one of your paragraphs, to methods
+      written from your code, to a proposal drafted from last week's review. In class: methods
+      written from a real code archive and checked against the paper, and what a clarity rewrite
+      does to hedged claims.
 
   - week: 6
     date: 2026-10-16
