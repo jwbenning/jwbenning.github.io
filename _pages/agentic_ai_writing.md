@@ -22,7 +22,7 @@ icon: ai-eeb.png
 
 <a class="pr-back" href="{{ '/teaching/agentic-ai/' | relative_url }}">← back to the course page</a>
 
-<p class="pr-lede"><b>Optional.</b> Three exercises, in order of how much of the writing Claude
+<p class="pr-lede">Three exercises, in order of how much of the writing Claude
 does: first it reviews your writing, then it writes methods from your code, then it drafts a
 proposal from last week's review. Start with the first; the other two are there if you want more.
 Run them before Friday 9 October if you want, or do them in class with us.</p>
