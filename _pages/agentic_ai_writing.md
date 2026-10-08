@@ -36,7 +36,7 @@ that compares the claims in the two versions. If English is your second language
 each change, in English or another language.
 
 1. **Open Claude Code in a new, empty folder**, set to Opus 5.5 (`/model` to check).
-2. **Paste the prompt below with its six lines filled in.** For the first line, drag your document
+2. **Paste the prompt below with its five lines filled in.** For the first line, drag your document
    into the Claude Code window. PDF, Markdown or plain text work best.
 
 Only use a document you are free to share, all of it: your own, a published paper, or co-authored

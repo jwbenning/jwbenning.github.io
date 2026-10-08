@@ -1,9 +1,8 @@
-# Fill in these six lines, then paste everything into Claude Code
+# Fill in these five lines, then paste everything into Claude Code
 
 MY DOCUMENT: [drag the whole paper or draft into this window here; PDF, Markdown or plain text work best]
 PARAGRAPH TO EDIT: [its first few words, or e.g. "second paragraph of the Discussion"]
 KIND OF TEXT: [e.g. "manuscript draft", "published paper", "proposal"] for [venue, e.g. "Evolution", "NSF DEB"]
-WHOSE TEXT: [one of: "mine" / "published" / "co-authored, my co-authors agreed"]
 ENGLISH IS MY: [first language / second language]
 EXPLAIN CHANGES IN: [English / another language, e.g. "Spanish"]
 
