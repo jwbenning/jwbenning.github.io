@@ -29,11 +29,13 @@ in class; it takes about 10 minutes.</p>
 
 ## How
 
-1. **Open Claude Code in your Week 4 folder** (the one with `review.md` and `evidence_table.csv`),
-   set to Opus 5.5 (`/model` to check). No Week 4 folder? Use an empty folder and choose
-   `new topic` below; it does a quick search first.
-2. **Paste the prompt below with its three lines filled in.**
-3. **When it finishes, it gives you a link to the Summary as an Artifact,** a page on claude.ai only
+1. **Find last week's review.** The best file is `review_original.html` in your Week 4 folder,
+   because its reference list carries the DOIs. `review.md` or a PDF of the page also works. No
+   review? Choose `new topic` below; it does a quick search first.
+2. **Open Claude Code in a new, empty folder**, set to Opus 5.5 (`/model` to check).
+3. **Paste the prompt below with its four lines filled in.** For the first line, drag your review
+   file into the Claude Code window; that puts its location in the prompt.
+4. **When it finishes, it gives you a link to the Summary as an Artifact,** a page on claude.ai only
    you can see. The folder also holds `claims_ledger.csv`, which says where each claim came from,
    and `panel_review.md`, an AI panelist's review.
 
@@ -49,13 +51,16 @@ in class; it takes about 10 minutes.</p>
 <details class="lr-more" markdown="1">
 <summary>Also optional: a friendly reviewer for your own writing (about 5 minutes)</summary>
 
-Paste an abstract or a paragraph at the bottom of this prompt. Claude comments on it the way a
-helpful reviewer would, then revises it for clarity, without changing what it claims. You get
-tracked changes as `diff.html`, and a second check that compares the claims in the two versions.
-If English is your second language, it can explain each change, in English or another language.
+Give Claude a whole paper or draft, and name one paragraph in it. Claude reads the whole document
+for context, comments on that paragraph the way a helpful reviewer would, then revises it for
+clarity without changing what it claims. You get tracked changes as `diff.html`, and a second check
+that compares the claims in the two versions. If English is your second language, it can explain
+each change, in English or another language.
 
-Only paste text you are free to share: your own, published text, or co-authored work your
-co-authors have agreed to. Never paste a manuscript or proposal you are reviewing.
+Open Claude Code in a new, empty folder and drag your document into the window for the first line.
+PDF, Markdown or plain text work best. Only use a document you are free to share, all of it: your
+own, a published paper, or co-authored work your co-authors have agreed to. Never use a manuscript
+or proposal you are reviewing.
 
 ```markdown
 {% include agentic_ai/friendly_reviewer_prompt.md %}

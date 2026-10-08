@@ -1,20 +1,23 @@
-# Fill in these three lines, then paste everything into Claude Code
+# Fill in these four lines, then paste everything into Claude Code
 
-STARTING POINT: [one of: "my week 4 folder" (open Claude Code in that folder) / "new topic: ..." (an empty folder; a quick search builds a small evidence base first)]
+MY REVIEW: [drag last week's review file into this window here, ideally review_original.html; or write "none"]
+STARTING POINT: [one of: "my review" / "new topic: ..." (a quick search builds a small evidence base first)]
 PROGRAM: [e.g. "NSF DEB core, standard grant"]
 MY IDEA: [a sentence or two on what you would want to test, or "propose it from the review"]
 
 ---
 
 You are drafting the one-page Project Summary of a research proposal, grounded in the literature
-evidence in this folder. It is a starting point for me to edit, not a submission.
+review I attached. It is a starting point for me to edit, not a submission.
 
 ## Rules
 
-- **Prior work comes only from `evidence_table.csv`.** Every claim about what is known must trace
-  to a row in that table. No new references, no citing from memory.
+- **Prior work comes only from my review.** Every claim about what is known must trace to a
+  reference cited in the review, or to a row of `evidence_table.csv` if you build one in step 0.
+  No new references, no citing from memory, no adding DOIs the review does not give.
 - **Mark what only I can supply** as `[YOU: what is needed]`.
-- Do not edit `review.md`, `evidence_table.csv` or `references.csv`. Work only in the current folder.
+- Copy my review into the current folder as `review_input` (keep its file extension) and do not
+  edit it. Work only in the current folder.
 
 ## Budget
 
@@ -31,9 +34,10 @@ writes `evidence_table.csv` with columns `doi, year, authors, title, system, stu
 main_result, evidence_strength, read_as`. Check every DOI at Crossref and drop failures.
 
 ### 1. Plan (you)
-Read `evidence_table.csv` (and `review.md` if present). Choose the question and two aims that
-follow from a real disagreement or gap in the table and fit MY IDEA. Write them to
-`proposal_log.md` with the table rows each aim rests on.
+Read my review. Write `review_refs.csv` listing every reference it cites (`ref_id, authors, year,
+title, doi`), copying the DOI only where the review gives one. Choose the question and two aims
+that follow from a real disagreement or gap in the review and fit MY IDEA. Write them to
+`proposal_log.md` with the references and review sections each aim rests on.
 
 ### 2. Draft (you, on Opus)
 Write `summary.md` under NSF's three headings: **Overview** (question, two aims, approach),
@@ -41,14 +45,14 @@ Write `summary.md` under NSF's three headings: **Overview** (question, two aims,
 
 ### 3. Claims ledger
 Write `claims_ledger.csv`, one row per sentence that makes a claim: `claim, type (prior work / gap /
-hypothesis / approach / feasibility / impact), source (a DOI from the table, "assumption", or
-"YOU")`.
+hypothesis / approach / feasibility / impact), source (a ref_id from review_refs.csv, "assumption",
+or "YOU")`.
 
 ### 4. Panelist (1 subagent, on Opus)
-Give a fresh subagent (`model: "opus"`) only `summary.md` and `evidence_table.csv`. It reviews the
-Summary as an NSF DEB panelist would: a rating (Excellent to Poor), strengths and weaknesses for
-Intellectual Merit and Broader Impacts, and a check of three claims about prior work against their
-table rows. Save as `panel_review.md`. Revise once, and log what you changed and declined in
+Give a fresh subagent (`model: "opus"`) only `summary.md` and my review. It reviews the Summary as
+an NSF DEB panelist would: a rating (Excellent to Poor), strengths and weaknesses for Intellectual
+Merit and Broader Impacts, and a check of three claims about prior work against what the review
+actually says. Save as `panel_review.md`. Revise once, and log what you changed and declined in
 `proposal_log.md`.
 
 ### 5. Publish it
