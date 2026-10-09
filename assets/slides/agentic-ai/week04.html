@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Week 5 slides from BIOEE 7600-103, Agentic AI in Ecology & Evolutionary Biology, a graduate seminar at Cornell.">
-<title>Agentic AI in EEB · Week 5</title>
+<meta name="description" content="Week 4 slides from BIOEE 7600-103, Agentic AI in Ecology & Evolutionary Biology, a graduate seminar at Cornell.">
+<title>Agentic AI in EEB · Week 4</title>
 </head>
 <body>
 <meta charset="utf-8">
@@ -218,28 +218,14 @@
   /* results still to come: visible in rehearsal, impossible to mistake for data */
   .pending{color:var(--warn)!important;font-style:italic}
   .note.pending{border-top-style:dashed}
-
-  .diff{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:clamp(14.4px,1.5vw,19.8px);
-    line-height:1.6;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:6px;
-    padding:clamp(10px,1.3vw,16px) clamp(12px,1.5vw,20px);max-width:80ch;margin:clamp(6px,1vw,12px) 0}
-  .diff del{color:var(--warn);background:#fbecec;text-decoration:line-through}
-  .diff ins{color:var(--accent);background:#e7f1ec;text-decoration:none}
-  .diff .who{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-    font-size:clamp(10.8px,1.14vw,13.2px);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);
-    font-weight:700;margin-bottom:4px}
-  .goss{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(16px,2.6vw,40px);
-    align-items:start;max-width:1250px}
-  .goss .gq .quote{margin-bottom:clamp(7px,1vw,13px)}
-  .goss .gq .quote p{font-size:clamp(14.4px,1.5vw,19.2px)}
-  @media (max-width:640px){.goss{grid-template-columns:1fr}}
-  .diff.small{font-size:clamp(12px,1.2vw,15.6px);line-height:1.5;max-width:110ch}
 </style>
+
 <div class="deck" id="deck">
 
 <section class="on">
-<p class="kicker">BIOEE 7600-103 · Week 5</p>
-<h1>An agent helps you write</h1>
-<p class="byline">9 October 2026</p>
+<p class="kicker">BIOEE 7600-103 · Week 4</p>
+<h1>Agentic literature synthesis</h1>
+<p class="byline">2 October 2026</p>
 <p class="stub" style="margin-top:1.2em;color:var(--ink3)">Public copy of the slides as
 shown in class, with class-specific detail removed. Course page:
 <a href="https://benninglab.org/teaching/agentic-ai/" style="color:var(--accent)">benninglab.org/teaching/agentic-ai</a></p>
@@ -248,167 +234,161 @@ shown in class, with class-specific detail removed. Course page:
 <section>
 <p class="kicker">Trending &middot; this week</p>
 <h2>Hot goss</h2>
-<div class="goss">
-<div class="gcard"><h4>6 Oct &middot; OpenAI dumps 719 math manuscripts on GitHub</h4><ul>
-<li>From an <b>unreleased internal model</b>, grouped into 372 result families. About 4,000 open problems posed; ~3 hours of compute per result on average.</li>
-<li><b>~42% of top-line results are formally verified in Lean,</b> a proof assistant: software that checks every logical step of a proof mechanically. A Lean-checked proof is correct, provided the theorem was stated correctly. The rest are unchecked, and none are peer-reviewed.</li>
-<li><b>Day 2:</b> three manuscripts withdrawn after a sign error broke a chain of dependent proofs; 14 more revised.</li>
-<li>Snapshot of the field: <a href="https://proofsandprompts.com/2026/10/08/100-reactions-to-100-solutions/" target="_blank" rel="noopener">"100+ reactions to 100+ solutions"</a> (Proofs &amp; Prompts, 8 Oct; shared by <a href="https://x.com/littmath/status/2108261340192362827" target="_blank" rel="noopener">Daniel Litt</a>).</li>
-</ul></div>
-<div class="gq">
-<div class="quote"><p>"Quasi-Riemann is a result that I thought was complete science fiction."</p><span class="src">Tim Santens</span></div>
-<div class="quote"><p>"My feelings on recent developments are very mixed and complex."</p><span class="src">Terence Tao</span></div>
-<div class="quote"><p>"The results OpenAI announced are amazing … That said, I am sad about how these questions were treated."</p><span class="src">Inhyeok Choi</span></div>
-<div class="quote"><p>"If OpenAI wanted to destroy the mathematical community, this would be a great way to go about it."</p><span class="src">Henry Wilton</span></div>
-<div class="quote"><p>"They can simply move on and slop-bulldoze the next conjecture. And, of course, the credit remains theirs."</p><span class="src">Enrico Fatighenti</span></div>
-<div class="quote"><p>"I’m worried how big corporates are controlling academic research."</p><span class="src">Barna Saha</span></div>
-</div>
-</div>
-</section>
-
-<section>
-<p class="kicker">Today · 2:00 pm · 121 Atkinson Hall (Zoom available)</p>
-<h2>Erol Akçay: eco-evolutionary models of AI adoption</h2>
-<p class="lead">Computational Biology seminar. "Eco-evolutionary models of social phenomena: political competition and AI adoption." Akçay Lab, Penn.</p>
-<p>Preprint: Baumann, Akçay &amp; Plotkin, <a href="https://arxiv.org/abs/2604.21853" target="_blank" rel="noopener">"Generative artificial intelligence reduces social welfare through model collapse"</a> (arXiv 2604.21853)</p>
-</section>
-
-<section>
-<p class="kicker">Today</p>
-<h2>Three exercises, ordered by how much of the writing the agent does</h2>
-<div class="three">
-<div><h3>1 · Friendly reviewer</h3><ul>
-<li>It edits <b>one paragraph</b> of your draft.</li>
-</ul></div>
-<div><h3>2 · Methods from code</h3><ul>
-<li>It <b>describes</b> your analysis script.</li>
-</ul></div>
-<div><h3>3 · Proposal from a review</h3><ul>
-<li>It <b>originates</b> a project summary from last week's review.</li>
+<div class="groups">
+<div class="gcard" style="grid-column:span 2"><h4>1 Oct &middot; &ldquo;Claude-shaped science&rdquo;</h4><ul>
+<li><b>Matthew Schwartz</b> (Harvard physicist, visiting researcher at Anthropic): 36 manuscripts in 18 fields with 19 coauthors over three months.</li>
+<li>His claim: many fields have problems that a technique from math, physics or CS would solve outright, if anyone knew it existed. Pick those, rather than using the model as a general collaborator.</li>
+<li>EEB example: on Barro Colorado Island, tree species composition changes <b>4.5&times; faster</b> than neutral theory allows.</li>
+<li>&ldquo;Good at science, but they are not <i>scientists</i>.&rdquo; He had to &ldquo;correct every sentence it wrote,&rdquo; and &ldquo;&lsquo;Done, with one asterisk&rsquo; is often &lsquo;not done at all.&rsquo;&rdquo;</li>
+<li>Published by Anthropic. In the reading room, with two new EEB papers: Ferrari et al. (seven guidelines for GenAI in ecology) and Pollock et al. (AI and biodiversity shortfalls).</li>
 </ul></div>
 </div>
-<p class="tiny"><a href="https://benninglab.org/teaching/agentic-ai/writing/" target="_blank" rel="noopener">benninglab.org/teaching/agentic-ai/writing</a></p>
+<div class="ask"><b>Something to think about</b><p>Would a project-centred follow-on to this course be useful next semester? Each person brings a project of their own and builds it with an agent over the term.</p></div>
 </section>
 
 <section>
-<p class="kicker">Start now · runs take 2–5 minutes</p>
-<h2>Pick one</h2>
-<p class="lead">Open the course page and copy the prompt for whichever exercise interests you most.</p>
-<ul>
-<li><b>1 · Friendly reviewer:</b> a whole paper or draft for context, and the <b>one paragraph</b> to edit.</li>
-<li><b>2 · Methods from code:</b> an analysis script of yours.</li>
-<li><b>3 · Proposal from a review:</b> your Week 4 review (<code>review_original.html</code> is best; it carries the DOIs).</li>
-<li>Already ran one? Open your output.</li>
-</ul>
-<div class="note"><b>Your material</b><p>Use something you wrote, or have the right to share.</p></div>
-</section>
-
-<section>
-<p class="kicker">Exercise 1 · what we ran</p>
-<h2>One abstract, ten rewrites</h2>
-<p class="lead">Benning, Eckhart, Geber &amp; Moeller 2019, <i>Am Nat</i>. Five runs each of "make it clearer" and "make it more compelling", no checker.</p>
-<table>
-<tr><th>Change from the original</th><th>Clear (of 5)</th><th>Compelling (of 5)</th></tr>
-<tr><td>"could <b>potentially</b> persist" loses "potentially"</td><td class="n">4</td><td class="n">4</td></tr>
-<tr><td>Simulations "showed" softened to "indicated" / "suggested"</td><td class="n">3</td><td class="n">4</td></tr>
-<tr><td>"estimate contributions of herbivory" becomes "test whether herbivory sets the range limit"</td><td class="n">0</td><td class="n">4</td></tr>
-<tr><td>A claim added that is not in the original</td><td class="n">0</td><td class="n">4</td></tr>
-<tr><td>"strongly associated" turned causal</td><td class="n">0</td><td class="n">2</td></tr>
-<tr><td>Opening line rescoped ("many", "most", "every" species)</td><td class="n">2</td><td class="n">3</td></tr>
-<tr><td><b>Any change to what is claimed, or how strongly</b></td><td class="n"><b>5</b></td><td class="n"><b>5</b></td></tr>
-</table>
-</section>
-
-<section>
-<p class="kicker">Exercise 1 · "make it more compelling", run 4</p>
-<h2>"Compelling" is a request to change claims</h2>
-<div class="diff"><span class="who">Aim</span>We <del>used</del><ins>combined</ins> field experiments <del>and</del><ins>with demographic</ins> simulations to <del>estimate</del><ins>test</ins> <del>contributions</del><ins>whether mammalian herbivores set the range limit</ins> of <del>mammalian herbivory to </del>a <del>range boundary in the Californian</del><ins>California</ins> annual plant…</div>
-<div class="diff"><span class="who">Last sentence</span>…empirical support to recent <del>developments</del><ins>theory</ins> <del>in</del><ins>on</ins> range limits<ins>, and they suggest that forecasts of range shifts that consider only climate may miss important constraints</ins>.</div>
-</section>
-
-<section>
-<p class="kicker">Exercise 1 · the guarded prompt</p>
-<h2>A separate checker, claim by claim</h2>
-<div class="grid">
-<div class="cell"><span class="n">10 / 10</span><span class="l">plain rewrites changed a claim or its strength</span></div>
-<div class="cell"><span class="n">0 / 3</span><span class="l">guarded rewrites did</span></div>
-</div>
-<div class="diff small"><span class="who">Guarded rewrite vs. original</span>Species&#x27; geographic distributions have already shifted during the Anthropocene. However, we often do not know what aspects of the environment drive range dynamics, much less which traits mediate organisms&#x27; responses to these environmental gradients. Most studies focus on possible climatic limits to species&#x27; distributions and have ignored the role of biotic interactions, despite theoretical support for their importance in setting distributional limits. We used field experiments and simulations to estimate <del>contributions</del><ins>the contribution</ins> of mammalian herbivory to a range boundary in the Californian annual plant Clarkia xantiana ssp. xantiana. <del>A steep gradient of increasing</del><ins>The</ins> probability of herbivory <del>occurred</del><ins>increased steeply</ins> across the boundary<del>,</del><ins>.</ins> <del>and a</del><ins>A</ins> reanalysis of prior transplant experiments revealed that herbivory drove severalfold declines in lifetime fitness at and beyond the boundary. Simulations showed that populations could potentially persist beyond the range margin in the absence of herbivory. Using data from a narrowly sympatric subspecies, <del>Clarkia</del><ins>C.</ins> xantiana<ins> ssp.</ins> parviflora, we also showed that delayed phenology is strongly associated with <ins>the susceptibility of </ins>C. xantiana ssp. <del>xantiana&#x27;s susceptibility</del><ins>xantiana</ins> to herbivory and<ins> its</ins> low fitness beyond its border. Overall, our results provide some of the most comprehensive evidence to date of how the interplay of demography, traits, and spatial gradients in species interactions can produce a geographic range limit, and they lend empirical support to recent developments in range limits theory.</div>
-<div class="ask"><b>Your runs</b><p>Did Claude change any claims meaningfully? Did it help with clarity?</p></div>
-</section>
-
-<section>
-<p class="kicker">Exercise 2 · methods from code</p>
-<h2>The paper's analysis script, citation removed</h2>
-<p class="lead">The R Markdown from the 2019 paper's Dryad archive. Author line and citation stripped, web search off.</p>
-<ul>
-<li><b>Two plain runs:</b> a one-line prompt.</li>
-<li><b>One guarded run:</b> asks first, then a separate verifier ties every statement to a line of code.</li>
-<li>Each output scored, statement by statement, against the code and the published methods.</li>
-</ul>
-</section>
-
-<section>
-<p class="kicker">Exercise 2 · Claude's methods vs. the paper's</p>
-<h2>More detailed than the paper</h2>
-<div class="two">
-<div><h3>More than the paper</h3><ul>
-<li><b>Length:</b> ~1,500 words (plain), ~2,200 (guarded), all on the statistics.</li>
-<li><b>23–40 statements</b> true of the code that the paper's main text omits or words differently.</li>
-<li><b>Transforms, spans, filters, constants:</b> <code>log(x + 1)</code>, loess span = 1, dropped stems, hard-coded residual SD.</li>
-<li><b>Packages</b> for each step, and robustness refits the paper puts in appendices.</li>
-<li><b>Sometimes more correct:</b> the paper says "log(fitness)"; the code, and all three runs, say <code>log(fitness + 1)</code>.</li>
-</ul></div>
-<div><h3>Where it fell short</h3><ul>
-<li>Missed small details: R² as a model check, Nagelkerke's pseudo-R².</li>
-<li><b>Errors:</b> 3 per plain run, mostly following the code's comments instead of what it runs (as the paper does). Guarded: 0, after its verifier fixed 19 points in its own draft.</li>
-</ul></div>
-</div>
-</section>
-
-<section>
-<p class="kicker">Exercise 3 · proposal from a review</p>
-<h2>A Project Summary from a Week 4 review</h2>
-<p class="lead">Rehearsal topic: gene flow and adaptation at range edges. Prior work only from references the review cites.</p>
-</section>
-
-<section>
-<p class="kicker">Exercise 3 · what it wrote</p>
-<h2>Why does adaptation stop at a range edge?</h2>
-<ul>
-<li><b>The question:</b> swamping by gene flow from central populations (Kirkpatrick &amp; Barton 1997), or drift eroding the variance adaptation needs (Polechová &amp; Barton 2015)? Or is the edge not a limit to adaptation at all?</li>
-<li><b>Aim 1:</b> replicated lab landscapes with an imposed gradient, crossing dispersal rate with deme size. Swamping predicts range contraction with dispersal at every deme size; drift limitation predicts an interaction.</li>
-<li><b>Aim 2:</b> at replicate field edges, transplant beyond each edge, measure the drift-threshold parameters, and carry crosses from climate-matched and central sources to F2 and backcross over three years.</li>
-<li><b>Left for me:</b> the study organism, number of edges, preliminary data, partners, trainees.</li>
-</ul>
-</section>
-
-<section>
-<p class="kicker">What the rules say now</p>
-<h2>Current guidelines from journals and agencies</h2>
-<table>
-<tr><th>Source</th><th>Rule</th></tr>
-<tr><td><b>NSF</b> notice, Dec 2023 (updated May 2026)</td><td>Disclosure encouraged; proposer responsible for accuracy. Reviewers may not upload proposals to non-approved tools.</td></tr>
-<tr><td><b>NSF</b> PAPPG 24-1 Suppl. 1, Dec 2025</td><td>Fabrication, falsification or plagiarism done with AI tools is research misconduct. Disclosing AI use in proposals is encouraged, not required.</td></tr>
-<tr><td><b>NIH</b> NOT-OD-25-132, Jul 2025</td><td>Applications "substantially developed by AI" not considered original; AI detection; 6 applications per PI per year.</td></tr>
-<tr><td><b>NIH</b> NOT-OD-23-149, Jun 2023</td><td>Reviewers may not use GenAI on applications or critiques.</td></tr>
-<tr><td><b><i>Science</i></b> journals</td><td>AI-generated text allowed if disclosed: cover letter, plus Methods or Acknowledgments depending on use. AI not an author; AI images need editor permission.</td></tr>
-<tr><td><b>Wiley</b> (Ecol Lett, BES journals), Jul 2026</td><td>Disclose at submission and in Methods / Acknowledgements; spelling and grammar exempt.</td></tr>
-<tr><td><b>ESA</b> journals</td><td>Not an author; disclose; spelling and grammar exempt; peer review not delegable.</td></tr>
-<tr><td><b><i>Evolution</i></b> (SSE / OUP)</td><td>Disclose in cover letter and Methods; report model, version and "query structure, syntax".</td></tr>
-<tr><td><b>Springer Nature</b></td><td>LLM not an author; document use in Methods; copy-editing exempt; no GenAI images.</td></tr>
-</table>
-</section>
-
-<section>
-<p class="kicker">Discussion</p>
-<h2>What do you think?</h2>
+<p class="kicker">What we asked</p>
+<h2>One prompt, your topic</h2>
+<p class="lead">Four lines to fill in (topic, scope, cutoff date, Chrome yes/no), then the agent works alone.</p>
 <ol>
-<li>Did your reviewer give helpful edits? How does it compare to asking a human for a friendly review?</li>
-<li>Was the generated proposal novel, milquetoast, wrong, or something else? Would you use genAI to produce a first draft of a proposal?</li>
-<li><i>Evolution</i> asks you to report the "query structure" of AI use. How would you report a 40-step agent session?</li>
+<li><b>Plan:</b> Opus splits the topic into up to 5 sub-questions.</li>
+<li><b>Search:</b> one Sonnet subagent per sub-question searches OpenAlex in parallel, reads at most 20 abstracts, and reads open-access full text. About 25 papers kept in all.</li>
+<li><b>Full text via Chrome</b> (optional): up to 10 more papers read through the Cornell library.</li>
+<li><b>Evidence table and draft:</b> one row per paper, with design and strength of evidence. Opus writes a ~3,000-word review: what the evidence shows, where people disagree, what would settle it, ways forward.</li>
+<li><b>Critic:</b> a fresh Opus subagent reviews it as an <i>Annual Reviews</i> editor would; Opus revises once.</li>
+<li><b>Check and publish:</b> every DOI looked up at Crossref; the review goes up as a page, with an untouched copy kept as <code>review_original.html</code> in case you revise it later.</li>
+</ol>
+<div class="note"><b>Deliberately left out</b><p>The name of the review you compared against. Naming it invites the model to recite it.</p></div>
+</section>
+
+<section>
+<p class="kicker">Small groups &middot; 20 minutes</p>
+<h2>How did your review do?</h2>
+<p class="lead">Mix people who ran it with people who did not. Walk through one review together.</p>
+<ol>
+<li><b>What did it miss?</b></li>
+<li><b>Are the references real, and do they say what the review says?</b></li>
+<li><b>Is the disagreement section real,</b> or balance it made up?</li>
+<li><b>Does it judge evidence, or count it?</b></li>
+<li><b>Would this be useful to you?</b></li>
 </ol>
 </section>
+
+<section>
+<p class="kicker">Whole class &middot; 15 minutes</p>
+<h2>Where is this helpful, and where is it harmful?</h2>
+<ul>
+<li>Where would this speed up real work: a first pass at a new field, a reading list, a check on your own review?</li>
+<li>Where could it do damage, and how might one guard against that?</li>
+<li>Did reading full text instead of abstracts change anything you could see?</li>
+</ul>
+</section>
+
+<section>
+<p class="kicker">Next week &middot; 10 minutes</p>
+<h2>Agentic scientific writing: what should we try?</h2>
+<ul>
+<li>Which writing task: a methods section from a dataset and script, a Discussion, a response to reviewers?</li>
+<li>How should we evaluate Claude's output?</li>
+</ul>
+</section>
+
+<section>
+<p class="kicker b2">Extra, if time</p>
+<h2>John&rsquo;s runs: one review topic, scored</h2>
+<p class="lead">A light and a heavier run on adaptation at range edges, scored against a published review.</p>
+</section>
+
+<section>
+<p class="kicker b2">The test</p>
+<h2>A test we can score</h2>
+<p class="lead">Adaptation at range edges, against <b>Angert, Bontrager &amp; Ågren 2020</b> (<i>Annual Review of Ecology, Evolution, and Systematics</i>).</p>
+<ul>
+<li>Only literature published by <b>31 August 2020</b>, the newest thing the review cites.</li>
+<li>A rubric written from the review <b>before</b> any run: 20 points it makes, 5 on how critical it is, plus citation checks.</li>
+<li>Two runs: a <b>light</b> one on an earlier draft of the class prompt (Chrome off), and a <b>heavier</b> version. Next slide: exactly what differed.</li>
+</ul>
+</section>
+
+<section>
+<p class="kicker b2">Same task, two budgets</p>
+<h2>What differed in the heavier run</h2>
+<div style="overflow-x:auto;max-width:1000px">
+<table class="sc">
+<thead><tr><th></th><th>Light run<br><span>earlier draft of the class prompt</span></th><th>Heavier run</th></tr></thead>
+<tbody>
+<tr><td>Search subagents</td><td>3, on Sonnet</td><td>5, on Opus</td></tr>
+<tr><td>Abstracts read</td><td>~88</td><td>134</td></tr>
+<tr><td>Papers kept</td><td>26</td><td>62</td></tr>
+<tr><td>Read in full</td><td>6, open access only (Chrome off)</td><td>40: 25 through the Cornell library in Chrome, 15 open access</td></tr>
+<tr><td>Evidence table</td><td>design, strength, abstract or full text</td><td>adds edge type and result direction</td></tr>
+<tr><td>Draft length</td><td>~3,000 words</td><td>~4,000 words</td></tr>
+<tr><td>Analysis</td><td>none</td><td>a vote count in R, with a figure; what to count written down before looking</td></tr>
+<tr><td>Critic</td><td>1 round, Sonnet</td><td>2 rounds, a fresh Opus subagent each</td></tr>
+</tbody></table>
+</div>
+<p class="tiny">Same in both: Opus 5.5 as the main agent, the plan step, the critic&rsquo;s brief, and the Crossref check. The prompt you were given differs from the light run in two ways: its critic is on Opus, and it allows up to 5 search subagents.</p>
+</section>
+
+<section>
+<p class="kicker b2">The scorecard</p>
+<h2>Light vs. heavier run, against the review</h2>
+<div style="overflow-x:auto;max-width:1000px">
+<table class="sc">
+<thead><tr><th></th><th>No tools<br><span>memory only</span></th><th>Light run<br><span>21 min</span></th><th>Heavier run<br><span>40 min</span></th></tr></thead>
+<tbody>
+<tr><td>Review's 20 points: hit / partial / miss</td><td>6 / 7 / 7</td><td>5 / 11 / 4</td><td>11 / 5 / 4</td></tr>
+<tr><td>Critical synthesis (of 10)</td><td>&ndash;</td><td>8</td><td>9</td></tr>
+<tr><td>References that exist</td><td>&ndash;</td><td>37 of 37</td><td>63 of 63</td></tr>
+<tr><td>References after the cutoff</td><td>&ndash;</td><td>0</td><td>0</td></tr>
+<tr><td>Of the 20 papers you would expect</td><td>&ndash;</td><td>11</td><td>14</td></tr>
+<tr><td>Cost at list price</td><td>&ndash;</td><td>$3.70</td><td>$24.70</td></tr>
+<tr><td>Papers read in full</td><td>&ndash;</td><td>6 of 26</td><td>40 of 62</td></tr>
+</tbody></table>
+</div>
+<div class="note b2"><b>What the checks caught</b><ul>
+<li>Its first-draft reference list was typed from memory, with at least one error. The Crossref step fixed it.</li>
+<li>It called one study "the one direct test" of gene swamping. It never found the stronger test Angert cites (Fedorka et al. 2012).</li>
+<li>It mentioned that an edge on the map is not necessarily an edge in climate only in passing. The model with no tools stated it outright. (A 2019 result, so there was little literature to find by the cutoff.)</li>
+</ul></div>
+<style>
+.sc{border-collapse:collapse;font-size:clamp(15.6px,1.68vw,21.6px);min-width:560px}
+.sc th,.sc td{text-align:left;padding:clamp(5px,.7vw,9px) clamp(8px,1.1vw,14px);border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.sc th{color:var(--ink);font-weight:700}
+.sc th span{color:var(--ink3);font-weight:400;font-size:.85em}
+.sc td:first-child{color:var(--ink2)}
+</style>
+</section>
+
+<section>
+<p class="kicker b2">What more compute bought</p>
+<h2>Seven times the cost: better coverage, same blind spots</h2>
+<div class="two">
+<div><h3>Bought</h3><ul>
+<li><b>The theory and gene-flow substance</b> the light run only gestured at, including the stronger swamping case (Fedorka et al. 2012).</li>
+<li><b>Corrections from reading the papers.</b> A famous "no variance at the edge" study selected an interior population; a reported gene-flow asymmetry was not significant.</li>
+<li><b>Critics that fixed real errors,</b> with every change and refusal logged.</li>
+</ul></div>
+<div><h3>Not fixed</h3><ul>
+<li><b>Map edge vs. climate edge</b> is still only in passing (new in 2019, little to find).</li>
+<li><b>"No study has done X"</b> stated confidently, and wrong: Sheth &amp; Angert 2016 did it.</li>
+<li><b>Its vote count</b> leans on a split it chose after seeing the critics' comments. It said so, which is the right behaviour, and the reason to check.</li>
+</ul></div>
+</div>
+</section>
+
+<section>
+<p class="kicker">Live demo</p>
+<h2>Reading the paper, not the abstract</h2>
+<p class="lead">Claude in Chrome, through the Cornell library proxy.</p>
+<ul>
+<li>The agent opens <code>login.proxy.library.cornell.edu/login?url=…</code> in your browser, using your library login.</li>
+<li>It reads methods and results, then updates the evidence table.</li>
+<li>It never types a password. A login page stops it.</li>
+</ul>
+<p class="pending">Recorded fallback in case the live demo fails.</p>
+</section>
+
 </div>
 <div class="bar" id="bar"></div>
 <div class="num" id="num"></div>
@@ -442,7 +422,6 @@ shown in class, with class-specific detail removed. Course page:
     else if (e.key === 'f') { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }
   });
   document.addEventListener('click', function(e){
-    if (e.target.closest('a')) return;
     if (e.clientX < window.innerWidth * 0.25) show(i - 1); else advance();
   });
   var start = parseInt((location.hash || '#1').slice(1), 10);
