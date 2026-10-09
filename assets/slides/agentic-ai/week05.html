@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Week 5 slides from BIOEE 7600-103, Agentic AI in Ecology & Evolutionary Biology, a graduate seminar at Cornell.">
+<title>Agentic AI in EEB · Week 5</title>
+</head>
+<body>
+<meta charset="utf-8">
+<style>
+  :root{
+    --ink:#1a1a1a; --ink2:#454545; --ink3:#7a7a7a;
+    --bg:#fbfaf8; --line:#ddd9d2; --accent:#2f5d50; --accent2:#8a5a2b; --warn:#9b2c2c;
+    --chip:#f0efeb;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);overflow:hidden;
+    font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .deck{height:100%;position:relative}
+  section{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+    overflow-y:auto;
+    padding:clamp(28px,5vw,70px) clamp(34px,7vw,110px) clamp(52px,7vw,90px)}
+  section.on{display:flex}
+  .kicker{font-size:clamp(12px,1.32vw,15.6px);letter-spacing:.13em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:clamp(8px,1.4vw,16px)}
+  .kicker.b2{color:var(--accent2)}
+  h1{font-size:clamp(36px,5.52vw,72px);line-height:1.08;margin:0 0 clamp(12px,1.8vw,22px);
+    letter-spacing:-.02em;font-weight:700}
+  h2{font-size:clamp(26.4px,3.72vw,48px);line-height:1.12;margin:0 0 clamp(14px,2vw,26px);
+    letter-spacing:-.015em;font-weight:700}
+  p{font-size:clamp(18px,1.98vw,26.4px);line-height:1.5;margin:0 0 clamp(10px,1.3vw,16px);
+    color:var(--ink2);max-width:56ch}
+  p.lead{color:var(--ink);max-width:52ch}
+  ul{margin:0;padding-left:clamp(20px,1.8vw,28px);max-width:62ch}
+  li{font-size:clamp(16.8px,1.86vw,25.2px);line-height:1.45;margin-bottom:clamp(8px,1.1vw,15px);
+    color:var(--ink2)}
+  li b,p b{color:var(--ink);font-weight:600}
+  .warn{color:var(--warn);font-weight:600}
+  code{font:inherit;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:.9em;background:var(--chip);padding:1px 5px;border-radius:3px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:clamp(10px,1.5vw,20px);margin-top:clamp(8px,1.4vw,18px);max-width:1000px}
+  .cell{background:#fff;border:1px solid var(--line);border-radius:8px;
+    padding:clamp(10px,1.4vw,18px)}
+  .cell .n{font-size:clamp(28.8px,4.08vw,52.8px);font-weight:700;letter-spacing:-.02em;
+    font-variant-numeric:tabular-nums;line-height:1;display:block}
+  .cell .l{font-size:clamp(13.2px,1.38vw,16.8px);color:var(--ink3);margin-top:6px;display:block;
+    line-height:1.3}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,46px);align-items:start;
+    max-width:1100px}
+  .two h3{font-size:clamp(15.6px,1.56vw,20.4px);margin:0 0 10px;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--ink3)}
+  .two ul{padding-left:20px}
+  .two li{font-size:clamp(15.6px,1.62vw,21.6px)}
+  .note{margin-top:clamp(12px,2vw,26px);padding-top:clamp(10px,1.4vw,16px);
+    border-top:1px solid var(--line);font-size:clamp(15.6px,1.62vw,21.6px);color:var(--ink2);
+    max-width:60ch}
+  .note b{color:var(--accent);text-transform:uppercase;letter-spacing:.09em;
+    font-size:clamp(12px,1.26vw,14.4px);display:block;margin-bottom:5px}
+  .note.b2 b{color:var(--accent2)}
+  .note ul{margin-top:7px;padding-left:clamp(18px,1.6vw,24px);max-width:62ch}
+  .note li{font-size:inherit;line-height:1.4;margin-bottom:clamp(4px,.6vw,8px);
+    color:var(--ink2)}
+  .byline{color:var(--ink3);font-size:clamp(15.6px,1.68vw,21.6px);margin-top:clamp(14px,2.4vw,30px)}
+  ol{margin:0;padding-left:clamp(22px,2vw,30px);max-width:62ch}
+  ol li{margin-bottom:clamp(9px,1.3vw,17px)}
+  /* bar chart for survey slides */
+  .bars{display:grid;gap:clamp(6px,.9vw,11px);max-width:900px;margin-top:clamp(6px,1vw,14px)}
+  .row{display:grid;grid-template-columns:minmax(150px,20ch) 1fr auto;align-items:center;
+    gap:clamp(8px,1.2vw,16px)}
+  .row .lab{font-size:clamp(14.4px,1.56vw,20.4px);color:var(--ink2);text-align:right;line-height:1.25}
+  .row .track{display:block;background:var(--chip);border-radius:3px;
+    height:clamp(14px,1.7vw,24px);overflow:hidden}
+  /* display:block is load-bearing — .fill is a span element, and an inline box ignores
+     width, so without it every bar renders at zero length and only the grey track shows */
+  .row .fill{display:block;background:var(--accent);height:100%;border-radius:3px;min-width:2px}
+  .row .fill.b2{background:var(--accent2)}
+  .row .fill.mute{background:#b9b4ab}
+  .row .v{font-size:clamp(14.4px,1.56vw,20.4px);color:var(--ink3);font-variant-numeric:tabular-nums;
+    min-width:2.5ch}
+  /* group cards */
+  .groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:clamp(9px,1.2vw,16px);max-width:1150px;margin-top:clamp(6px,1vw,14px)}
+  .gcard{background:#fff;border:1px solid var(--line);border-radius:8px;
+    padding:clamp(9px,1.1vw,15px)}
+  .gcard h4{margin:0 0 8px;font-size:clamp(13.2px,1.32vw,16.8px);letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent)}
+  .gcard ul{padding-left:16px;margin:0}
+  .gcard li{font-size:clamp(14.4px,1.5vw,19.2px);margin-bottom:5px;color:var(--ink2)}
+  .gcard li b{color:var(--ink)}
+  .prompt{background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent2);
+    border-radius:6px;padding:clamp(10px,1.3vw,16px) clamp(12px,1.5vw,20px);
+    margin:clamp(8px,1.1vw,14px) 0;max-width:74ch}
+  .prompt.full p{margin-bottom:8px}
+  .prompt.full p:last-child{margin-bottom:0}
+  .prompt p{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:clamp(13.8px,1.38vw,18px);line-height:1.5;color:var(--ink);margin:0;max-width:none}
+  .prompt .tag{display:block;font-size:clamp(10.8px,1.14vw,13.2px);letter-spacing:.1em;
+    text-transform:uppercase;color:var(--accent2);font-weight:700;margin-bottom:7px}
+  .audit{margin-top:clamp(8px,1.1vw,14px)}
+  .audit h3{font-size:clamp(13.2px,1.32vw,16.8px);margin:0 0 8px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink3)}
+  .audit ul{padding-left:clamp(18px,1.6vw,24px);max-width:74ch}
+  .audit li{font-size:clamp(14.4px,1.56vw,20.4px);margin-bottom:clamp(5px,.7vw,9px)}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.2vw,34px);
+    align-items:start;max-width:1180px}
+  .three h3{font-size:clamp(14.4px,1.5vw,19.2px);margin:0 0 9px;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--accent)}
+  .three ul{padding-left:18px;max-width:none}
+  .three li{font-size:clamp(14.4px,1.56vw,20.4px);margin-bottom:clamp(6px,.9vw,11px)}
+  .quote{border-left:3px solid var(--line);padding-left:clamp(12px,1.4vw,18px);
+    margin:0 0 clamp(10px,1.4vw,18px);max-width:66ch}
+  .quote p{margin:0 0 4px;font-size:clamp(15.6px,1.74vw,22.8px);color:var(--ink)}
+  .quote .src{font-size:clamp(13.2px,1.32vw,16.8px);color:var(--ink3)}
+  /* chrome */
+  .bar{position:fixed;left:0;bottom:0;height:3px;background:var(--accent);width:0;
+    transition:width .18s ease}
+  .num{position:fixed;right:clamp(14px,2vw,26px);bottom:clamp(12px,1.6vw,20px);
+    font-size:12px;color:var(--ink3);font-variant-numeric:tabular-nums}
+  .hint{position:fixed;left:clamp(14px,2vw,26px);bottom:clamp(12px,1.6vw,20px);
+    font-size:12px;color:var(--ink3)}
+  @media print{
+    body{overflow:visible;background:#fff}
+    .deck{height:auto}
+    section{display:flex!important;position:relative;inset:auto;height:100vh;
+      page-break-after:always;border-bottom:1px solid #ccc}
+    .bar,.num,.hint{display:none}
+  }
+  /* narrow screens: stack the two-column slides, shrink the bar labels */
+  @media (max-width:640px){
+    section{padding-left:16px;padding-right:16px}
+    .two{grid-template-columns:1fr;gap:22px}
+    .three{grid-template-columns:1fr;gap:20px}
+    .row{grid-template-columns:minmax(96px,14ch) 1fr auto;gap:8px}
+    .groups{grid-template-columns:1fr}
+    .hasnote h2,.hasnote .lead{max-width:none}
+    .acuity{position:relative;top:auto;right:auto;max-width:none;margin:0 0 14px}
+    .armsplit{grid-template-columns:1fr;gap:18px}
+    .hint{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .bar{transition:none}
+  }
+  /* nested aside under a bullet */
+  .sub{margin-top:7px;padding-left:11px;border-left:2px solid var(--accent);
+    font-size:clamp(14.4px,1.5vw,19.2px);color:var(--accent);font-weight:600;line-height:1.35}
+  /* links */
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(47,93,80,.35)}
+  a:hover{border-bottom-color:var(--accent)}
+  .links li{font-size:clamp(16.8px,2.04vw,27.6px);margin-bottom:clamp(12px,1.6vw,22px)}
+  .links code{font-size:.95em}
+  /* click-to-reveal callout, top right, with the prose kept clear of it */
+  .hasnote h2,.hasnote .lead{max-width:min(62ch,58%)}
+  .acuity{position:absolute;top:clamp(56px,7.5vw,110px);right:clamp(24px,4vw,70px);
+    max-width:min(32ch,32%);background:#fff;border:1px solid var(--accent2);
+    border-left:4px solid var(--accent2);border-radius:8px;z-index:3;
+    padding:clamp(9px,1.2vw,16px);box-shadow:0 2px 12px rgba(0,0,0,.07)}
+  .acuity b{display:block;color:var(--accent2);text-transform:uppercase;
+    letter-spacing:.1em;font-size:clamp(10.8px,1.2vw,13.8px);margin-bottom:5px}
+  .acuity p{margin:0;font-size:clamp(14.4px,1.56vw,20.4px);color:var(--ink);max-width:none}
+  /* prompts left, arm-structure diagram right */
+  .armsplit{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);
+    gap:clamp(14px,2.4vw,38px);align-items:start;max-width:1180px}
+  .armsplit .prompt{margin-top:0}
+  .armsplit figure{margin:0}
+  .armsplit svg{width:100%;height:auto;display:block}
+  .armsplit figcaption{font-size:clamp(11.4px,1.2vw,15px);color:var(--ink3);
+    margin-top:7px;line-height:1.4}
+  /* the three candidates, compressed onto one slide */
+  .three .prompt{margin:7px 0 0;padding:clamp(8px,1vw,12px) clamp(9px,1.1vw,14px);max-width:none}
+  .three .prompt p{font-size:clamp(12px,1.2vw,15.6px);line-height:1.45}
+  .three .prompt .tag{font-size:clamp(10.2px,1.08vw,12.6px);margin-bottom:5px}
+  .three p{font-size:clamp(14.4px,1.56vw,20.4px);margin-bottom:0}
+  /* kicker text that must keep its own capitalisation (aAI) */
+  .nc{text-transform:none}
+  /* click-to-reveal. opacity (not display) so the space stays reserved and the
+     chart does not jump upward when the question appears */
+  [data-reveal]{opacity:0;transition:opacity .18s ease}
+  [data-reveal].shown{opacity:1}
+  .ask{margin-top:clamp(14px,2.2vw,30px);font-size:clamp(21.6px,2.88vw,38.4px);font-weight:700;
+    letter-spacing:-.015em;color:var(--accent);max-width:none}
+  @media (prefers-reduced-motion:reduce){[data-reveal]{transition:none}}
+  .stub{color:var(--ink3);font-size:clamp(15.6px,1.68vw,21.6px);margin-top:clamp(20px,3vw,40px)}
+  table{border-collapse:collapse;width:100%;max-width:1150px;margin-top:clamp(6px,1vw,14px)}
+  th,td{text-align:left;padding:clamp(4px,.6vw,8px) clamp(6px,.9vw,12px);
+    border-bottom:1px solid var(--line);font-size:clamp(13.2px,1.44vw,19.2px);color:var(--ink2);
+    vertical-align:top}
+  th{font-size:clamp(10.8px,1.14vw,14.4px);letter-spacing:.07em;text-transform:uppercase;
+    color:var(--ink3);font-weight:700;border-bottom:1px solid var(--ink3)}
+  td b{color:var(--ink)}
+  td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .yes{color:var(--accent);font-weight:700}
+  .no{color:var(--warn);font-weight:700}
+  .ask{margin-top:clamp(12px,2vw,24px);background:#fff;border:1px solid var(--accent2);
+    border-left:4px solid var(--accent2);border-radius:7px;padding:clamp(10px,1.4vw,18px)}
+  .ask b{display:block;color:var(--accent2);text-transform:uppercase;letter-spacing:.1em;
+    font-size:clamp(10.8px,1.2vw,14.4px);margin-bottom:6px}
+  .ask p{margin:0;font-size:clamp(15.6px,1.74vw,22.8px);color:var(--ink);max-width:64ch}
+  .tiny{font-size:clamp(12px,1.26vw,15.6px);color:var(--ink3);margin-top:8px}
+  .mm{color:var(--ink3);font-size:.86em;font-variant-numeric:normal}
+  .fig{margin:clamp(6px,1vw,14px) 0}
+  .fig img{max-width:100%;max-height:50vh;display:block;margin:0 auto;
+    border:1px solid var(--line);border-radius:6px;background:#fff}
+  .fig .cap{font-size:clamp(12.6px,1.32vw,16.8px);color:var(--ink3);margin-top:8px;
+    max-width:86ch;line-height:1.4}
+  .fig .cap b{color:var(--ink2)}
+  .src{font-size:clamp(11.4px,1.2vw,14.4px);letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent2);font-weight:700}
+  .tri .fig img{max-height:25vh}
+  .tri .fig .cap{font-size:clamp(11.4px,1.2vw,15px)}
+  .tri h2{margin-bottom:clamp(8px,1.1vw,14px)}
+  .note p b,.note.b2 p b{display:inline;text-transform:none;letter-spacing:normal;font-size:inherit;color:var(--ink);font-weight:600;margin:0}
+  .note strong{color:var(--ink);font-weight:600;display:inline;
+    text-transform:none;letter-spacing:normal;font-size:inherit}
+  /* results still to come: visible in rehearsal, impossible to mistake for data */
+  .pending{color:var(--warn)!important;font-style:italic}
+  .note.pending{border-top-style:dashed}
+
+  .diff{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:clamp(14.4px,1.5vw,19.8px);
+    line-height:1.6;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:6px;
+    padding:clamp(10px,1.3vw,16px) clamp(12px,1.5vw,20px);max-width:80ch;margin:clamp(6px,1vw,12px) 0}
+  .diff del{color:var(--warn);background:#fbecec;text-decoration:line-through}
+  .diff ins{color:var(--accent);background:#e7f1ec;text-decoration:none}
+  .diff .who{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:clamp(10.8px,1.14vw,13.2px);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);
+    font-weight:700;margin-bottom:4px}
+  .goss{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(16px,2.6vw,40px);
+    align-items:start;max-width:1250px}
+  .goss .gq .quote{margin-bottom:clamp(7px,1vw,13px)}
+  .goss .gq .quote p{font-size:clamp(14.4px,1.5vw,19.2px)}
+  @media (max-width:640px){.goss{grid-template-columns:1fr}}
+  .diff.small{font-size:clamp(12px,1.2vw,15.6px);line-height:1.5;max-width:110ch}
+</style>
+<div class="deck" id="deck">
+
+<section class="on">
+<p class="kicker">BIOEE 7600-103 · Week 5</p>
+<h1>An agent helps you write</h1>
+<p class="byline">9 October 2026</p>
+<p class="stub" style="margin-top:1.2em;color:var(--ink3)">Public copy of the slides as
+shown in class, with class-specific detail removed. Course page:
+<a href="https://benninglab.org/teaching/agentic-ai/" style="color:var(--accent)">benninglab.org/teaching/agentic-ai</a></p>
+</section>
+
+<section>
+<p class="kicker">Trending &middot; this week</p>
+<h2>Hot goss</h2>
+<div class="goss">
+<div class="gcard"><h4>6 Oct &middot; OpenAI dumps 719 math manuscripts on GitHub</h4><ul>
+<li>From an <b>unreleased internal model</b>, grouped into 372 result families. About 4,000 open problems posed; ~3 hours of compute per result on average.</li>
+<li><b>~42% of top-line results are formally verified in Lean,</b> a proof assistant: software that checks every logical step of a proof mechanically. A Lean-checked proof is correct, provided the theorem was stated correctly. The rest are unchecked, and none are peer-reviewed.</li>
+<li><b>Day 2:</b> three manuscripts withdrawn after a sign error broke a chain of dependent proofs; 14 more revised.</li>
+<li>Snapshot of the field: <a href="https://proofsandprompts.com/2026/10/08/100-reactions-to-100-solutions/" target="_blank" rel="noopener">"100+ reactions to 100+ solutions"</a> (Proofs &amp; Prompts, 8 Oct; shared by <a href="https://x.com/littmath/status/2108261340192362827" target="_blank" rel="noopener">Daniel Litt</a>).</li>
+</ul></div>
+<div class="gq">
+<div class="quote"><p>"Quasi-Riemann is a result that I thought was complete science fiction."</p><span class="src">Tim Santens</span></div>
+<div class="quote"><p>"My feelings on recent developments are very mixed and complex."</p><span class="src">Terence Tao</span></div>
+<div class="quote"><p>"The results OpenAI announced are amazing … That said, I am sad about how these questions were treated."</p><span class="src">Inhyeok Choi</span></div>
+<div class="quote"><p>"If OpenAI wanted to destroy the mathematical community, this would be a great way to go about it."</p><span class="src">Henry Wilton</span></div>
+<div class="quote"><p>"They can simply move on and slop-bulldoze the next conjecture. And, of course, the credit remains theirs."</p><span class="src">Enrico Fatighenti</span></div>
+<div class="quote"><p>"I’m worried how big corporates are controlling academic research."</p><span class="src">Barna Saha</span></div>
+</div>
+</div>
+</section>
+
+<section>
+<p class="kicker">Today · 2:00 pm · 121 Atkinson Hall (Zoom available)</p>
+<h2>Erol Akçay: eco-evolutionary models of AI adoption</h2>
+<p class="lead">Computational Biology seminar. "Eco-evolutionary models of social phenomena: political competition and AI adoption." Akçay Lab, Penn.</p>
+<p>Preprint: Baumann, Akçay &amp; Plotkin, <a href="https://arxiv.org/abs/2604.21853" target="_blank" rel="noopener">"Generative artificial intelligence reduces social welfare through model collapse"</a> (arXiv 2604.21853)</p>
+</section>
+
+<section>
+<p class="kicker">Today</p>
+<h2>Three exercises, ordered by how much of the writing the agent does</h2>
+<div class="three">
+<div><h3>1 · Friendly reviewer</h3><ul>
+<li>It edits <b>one paragraph</b> of your draft.</li>
+</ul></div>
+<div><h3>2 · Methods from code</h3><ul>
+<li>It <b>describes</b> your analysis script.</li>
+</ul></div>
+<div><h3>3 · Proposal from a review</h3><ul>
+<li>It <b>originates</b> a project summary from last week's review.</li>
+</ul></div>
+</div>
+<p class="tiny"><a href="https://benninglab.org/teaching/agentic-ai/writing/" target="_blank" rel="noopener">benninglab.org/teaching/agentic-ai/writing</a></p>
+</section>
+
+<section>
+<p class="kicker">Start now · runs take 2–5 minutes</p>
+<h2>Pick one</h2>
+<p class="lead">Open the course page and copy the prompt for whichever exercise interests you most.</p>
+<ul>
+<li><b>1 · Friendly reviewer:</b> a whole paper or draft for context, and the <b>one paragraph</b> to edit.</li>
+<li><b>2 · Methods from code:</b> an analysis script of yours.</li>
+<li><b>3 · Proposal from a review:</b> your Week 4 review (<code>review_original.html</code> is best; it carries the DOIs).</li>
+<li>Already ran one? Open your output.</li>
+</ul>
+<div class="note"><b>Your material</b><p>Use something you wrote, or have the right to share.</p></div>
+</section>
+
+<section>
+<p class="kicker">Exercise 1 · what we ran</p>
+<h2>One abstract, ten rewrites</h2>
+<p class="lead">Benning, Eckhart, Geber &amp; Moeller 2019, <i>Am Nat</i>. Five runs each of "make it clearer" and "make it more compelling", no checker.</p>
+<table>
+<tr><th>Change from the original</th><th>Clear (of 5)</th><th>Compelling (of 5)</th></tr>
+<tr><td>"could <b>potentially</b> persist" loses "potentially"</td><td class="n">4</td><td class="n">4</td></tr>
+<tr><td>Simulations "showed" softened to "indicated" / "suggested"</td><td class="n">3</td><td class="n">4</td></tr>
+<tr><td>"estimate contributions of herbivory" becomes "test whether herbivory sets the range limit"</td><td class="n">0</td><td class="n">4</td></tr>
+<tr><td>A claim added that is not in the original</td><td class="n">0</td><td class="n">4</td></tr>
+<tr><td>"strongly associated" turned causal</td><td class="n">0</td><td class="n">2</td></tr>
+<tr><td>Opening line rescoped ("many", "most", "every" species)</td><td class="n">2</td><td class="n">3</td></tr>
+<tr><td><b>Any change to what is claimed, or how strongly</b></td><td class="n"><b>5</b></td><td class="n"><b>5</b></td></tr>
+</table>
+</section>
+
+<section>
+<p class="kicker">Exercise 1 · "make it more compelling", run 4</p>
+<h2>"Compelling" is a request to change claims</h2>
+<div class="diff"><span class="who">Aim</span>We <del>used</del><ins>combined</ins> field experiments <del>and</del><ins>with demographic</ins> simulations to <del>estimate</del><ins>test</ins> <del>contributions</del><ins>whether mammalian herbivores set the range limit</ins> of <del>mammalian herbivory to </del>a <del>range boundary in the Californian</del><ins>California</ins> annual plant…</div>
+<div class="diff"><span class="who">Last sentence</span>…empirical support to recent <del>developments</del><ins>theory</ins> <del>in</del><ins>on</ins> range limits<ins>, and they suggest that forecasts of range shifts that consider only climate may miss important constraints</ins>.</div>
+</section>
+
+<section>
+<p class="kicker">Exercise 1 · the guarded prompt</p>
+<h2>A separate checker, claim by claim</h2>
+<div class="grid">
+<div class="cell"><span class="n">10 / 10</span><span class="l">plain rewrites changed a claim or its strength</span></div>
+<div class="cell"><span class="n">0 / 3</span><span class="l">guarded rewrites did</span></div>
+</div>
+<div class="diff small"><span class="who">Guarded rewrite vs. original</span>Species&#x27; geographic distributions have already shifted during the Anthropocene. However, we often do not know what aspects of the environment drive range dynamics, much less which traits mediate organisms&#x27; responses to these environmental gradients. Most studies focus on possible climatic limits to species&#x27; distributions and have ignored the role of biotic interactions, despite theoretical support for their importance in setting distributional limits. We used field experiments and simulations to estimate <del>contributions</del><ins>the contribution</ins> of mammalian herbivory to a range boundary in the Californian annual plant Clarkia xantiana ssp. xantiana. <del>A steep gradient of increasing</del><ins>The</ins> probability of herbivory <del>occurred</del><ins>increased steeply</ins> across the boundary<del>,</del><ins>.</ins> <del>and a</del><ins>A</ins> reanalysis of prior transplant experiments revealed that herbivory drove severalfold declines in lifetime fitness at and beyond the boundary. Simulations showed that populations could potentially persist beyond the range margin in the absence of herbivory. Using data from a narrowly sympatric subspecies, <del>Clarkia</del><ins>C.</ins> xantiana<ins> ssp.</ins> parviflora, we also showed that delayed phenology is strongly associated with <ins>the susceptibility of </ins>C. xantiana ssp. <del>xantiana&#x27;s susceptibility</del><ins>xantiana</ins> to herbivory and<ins> its</ins> low fitness beyond its border. Overall, our results provide some of the most comprehensive evidence to date of how the interplay of demography, traits, and spatial gradients in species interactions can produce a geographic range limit, and they lend empirical support to recent developments in range limits theory.</div>
+<div class="ask"><b>Your runs</b><p>Did Claude change any claims meaningfully? Did it help with clarity?</p></div>
+</section>
+
+<section>
+<p class="kicker">Exercise 2 · methods from code</p>
+<h2>The paper's analysis script, citation removed</h2>
+<p class="lead">The R Markdown from the 2019 paper's Dryad archive. Author line and citation stripped, web search off.</p>
+<ul>
+<li><b>Two plain runs:</b> a one-line prompt.</li>
+<li><b>One guarded run:</b> asks first, then a separate verifier ties every statement to a line of code.</li>
+<li>Each output scored, statement by statement, against the code and the published methods.</li>
+</ul>
+</section>
+
+<section>
+<p class="kicker">Exercise 2 · Claude's methods vs. the paper's</p>
+<h2>More detailed than the paper</h2>
+<div class="two">
+<div><h3>More than the paper</h3><ul>
+<li><b>Length:</b> ~1,500 words (plain), ~2,200 (guarded), all on the statistics.</li>
+<li><b>23–40 statements</b> true of the code that the paper's main text omits or words differently.</li>
+<li><b>Transforms, spans, filters, constants:</b> <code>log(x + 1)</code>, loess span = 1, dropped stems, hard-coded residual SD.</li>
+<li><b>Packages</b> for each step, and robustness refits the paper puts in appendices.</li>
+<li><b>Sometimes more correct:</b> the paper says "log(fitness)"; the code, and all three runs, say <code>log(fitness + 1)</code>.</li>
+</ul></div>
+<div><h3>Where it fell short</h3><ul>
+<li>Missed small details: R² as a model check, Nagelkerke's pseudo-R².</li>
+<li><b>Errors:</b> 3 per plain run, mostly following the code's comments instead of what it runs (as the paper does). Guarded: 0, after its verifier fixed 19 points in its own draft.</li>
+</ul></div>
+</div>
+</section>
+
+<section>
+<p class="kicker">Exercise 3 · proposal from a review</p>
+<h2>A Project Summary from a Week 4 review</h2>
+<p class="lead">Rehearsal topic: gene flow and adaptation at range edges. Prior work only from references the review cites.</p>
+</section>
+
+<section>
+<p class="kicker">Exercise 3 · what it wrote</p>
+<h2>Why does adaptation stop at a range edge?</h2>
+<ul>
+<li><b>The question:</b> swamping by gene flow from central populations (Kirkpatrick &amp; Barton 1997), or drift eroding the variance adaptation needs (Polechová &amp; Barton 2015)? Or is the edge not a limit to adaptation at all?</li>
+<li><b>Aim 1:</b> replicated lab landscapes with an imposed gradient, crossing dispersal rate with deme size. Swamping predicts range contraction with dispersal at every deme size; drift limitation predicts an interaction.</li>
+<li><b>Aim 2:</b> at replicate field edges, transplant beyond each edge, measure the drift-threshold parameters, and carry crosses from climate-matched and central sources to F2 and backcross over three years.</li>
+<li><b>Left for me:</b> the study organism, number of edges, preliminary data, partners, trainees.</li>
+</ul>
+</section>
+
+<section>
+<p class="kicker">What the rules say now</p>
+<h2>Current guidelines from journals and agencies</h2>
+<table>
+<tr><th>Source</th><th>Rule</th></tr>
+<tr><td><b>NSF</b> notice, Dec 2023 (updated May 2026)</td><td>Disclosure encouraged; proposer responsible for accuracy. Reviewers may not upload proposals to non-approved tools.</td></tr>
+<tr><td><b>NSF</b> PAPPG 24-1 Suppl. 1, Dec 2025</td><td>Fabrication, falsification or plagiarism done with AI tools is research misconduct. Disclosing AI use in proposals is encouraged, not required.</td></tr>
+<tr><td><b>NIH</b> NOT-OD-25-132, Jul 2025</td><td>Applications "substantially developed by AI" not considered original; AI detection; 6 applications per PI per year.</td></tr>
+<tr><td><b>NIH</b> NOT-OD-23-149, Jun 2023</td><td>Reviewers may not use GenAI on applications or critiques.</td></tr>
+<tr><td><b><i>Science</i></b> journals, since Nov 2023</td><td>AI-generated text allowed if disclosed: cover letter, plus Methods or Acknowledgments depending on use. AI not an author; AI images need editor permission.</td></tr>
+<tr><td><b>Wiley</b> (Ecol Lett, BES journals), Jul 2026</td><td>Disclose at submission and in Methods / Acknowledgements; spelling and grammar exempt.</td></tr>
+<tr><td><b>ESA</b> journals</td><td>Not an author; disclose; spelling and grammar exempt; peer review not delegable.</td></tr>
+<tr><td><b><i>Evolution</i></b> (SSE / OUP)</td><td>Disclose in cover letter and Methods; report model, version and "query structure, syntax".</td></tr>
+<tr><td><b>Springer Nature</b></td><td>LLM not an author; document use in Methods; copy-editing exempt; no GenAI images.</td></tr>
+</table>
+</section>
+
+<section>
+<p class="kicker">Discussion</p>
+<h2>What do you think?</h2>
+<ol>
+<li>Did your reviewer give helpful edits? How does it compare to asking a human for a friendly review?</li>
+<li>Was the generated proposal novel, milquetoast, wrong, or something else? Would you use genAI to produce a first draft of a proposal?</li>
+<li><i>Evolution</i> asks you to report the "query structure" of AI use. How would you report a 40-step agent session?</li>
+</ol>
+</section>
+</div>
+<div class="bar" id="bar"></div>
+<div class="num" id="num"></div>
+<div class="hint">← → or space · f fullscreen</div>
+<script>
+(function(){
+  var s = Array.prototype.slice.call(document.querySelectorAll('section'));
+  var i = 0, bar = document.getElementById('bar'), num = document.getElementById('num');
+  function show(n){
+    i = Math.max(0, Math.min(s.length - 1, n));
+    s.forEach(function(el, k){
+      el.classList.toggle('on', k === i);
+      Array.prototype.forEach.call(el.querySelectorAll('[data-reveal]'), function(r){
+        r.classList.remove('shown');
+      });
+    });
+    bar.style.width = ((i + 1) / s.length * 100) + '%';
+    num.textContent = (i + 1) + ' / ' + s.length;
+    if (history.replaceState) history.replaceState(null, '', '#' + (i + 1));
+  }
+  function advance(){
+    var hidden = s[i].querySelector('[data-reveal]:not(.shown)');
+    if (hidden) { hidden.classList.add('shown'); return; }
+    show(i + 1);
+  }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { advance(); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { show(i - 1); e.preventDefault(); }
+    else if (e.key === 'Home') show(0);
+    else if (e.key === 'End') show(s.length - 1);
+    else if (e.key === 'f') { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }
+  });
+  document.addEventListener('click', function(e){
+    if (e.target.closest('a')) return;
+    if (e.clientX < window.innerWidth * 0.25) show(i - 1); else advance();
+  });
+  var start = parseInt((location.hash || '#1').slice(1), 10);
+  show(isNaN(start) ? 0 : start - 1);
+})();
+</script>
+
+</body>
+</html>
