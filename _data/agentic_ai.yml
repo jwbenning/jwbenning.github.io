@@ -220,14 +220,21 @@ schedule:
       written from your code, to a proposal drafted from last week's review. In class: methods
       written from a real code archive and checked against the paper, and what a clarity rewrite
       does to hedged claims.
+    slides:
+      url: /assets/slides/agentic-ai/week05.html
+      note: >
+        Public copy of the deck as shown in class, with class-specific detail removed.
+        Arrow keys or space to advance, f for fullscreen.
 
   - week: 6
     date: 2026-10-16
-    part: Lab management, teaching & training
-    theme: Project & lab management and automation
+    part: Mid-course reflection
+    theme: Mid-course reflection and discussion
     framing: >
-      Which lab and project tasks should we hand to an agent — and what has to stay
-      under direct human control?
+      The whole hour is discussion, mostly about AI-assisted writing, which we did not have
+      time for in Week 5. Where does it help, where does it change what a paper claims, and
+      what should a guideline for EEB say about it? This is the first step toward the
+      community guideline we draft in Week 9.
 
   - week: 7
     date: 2026-10-23
