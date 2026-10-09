@@ -28,6 +28,13 @@ announcement: >
   without registering.
 
 announcements:
+  - date: 2026-10-09
+    title: Next week is a discussion week
+    body: >
+      On <strong>16 October</strong> we spend the whole hour in discussion, mostly about
+      AI-assisted writing, as a first step toward the EEB guideline we draft in Week 9. This
+      replaces the session on project and lab management; if you want details on how John
+      uses agents for project management, ask him.
   - date: 2026-09-04
     title: Room change, and announcements are moving to Slack
     body: >
@@ -206,6 +213,11 @@ schedule:
       prompt</a> that has it write a critical review of a topic you know well, then judge what
       it wrote. In class we compare notes, look at John's runs on adaptation at range edges,
       scored against a published review, and watch Claude read papers through the library proxy.
+    slides:
+      url: /assets/slides/agentic-ai/week04.html
+      note: >
+        Public copy of the deck as shown in class, with class-specific detail removed.
+        Arrow keys or space to advance, f for fullscreen.
 
   - week: 5
     date: 2026-10-09
