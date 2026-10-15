@@ -273,6 +273,19 @@ schedule:
       research, writing, teaching, and lab work?
 
 links:
+  - date: 2026-10-15
+    title: "100+ reactions to 100+ solutions"
+    source: Proofs & Prompts, 8 October 2026
+    url: https://proofsandprompts.com/2026/10/08/100-reactions-to-100-solutions/
+    tags: [debate]
+    note: >
+      A collection of mathematicians' public reactions to OpenAI posting 719 math
+      manuscripts from an unreleased model on GitHub, some formally verified in Lean, none
+      peer-reviewed. The reactions range from amazement at results people thought were out
+      of reach, through Terence Tao's "very mixed," to anger over credit and over a company
+      setting the terms of academic research. The source for the Week 5 opening slide, and
+      a companion to "Quo Vadis, Mathematics?" below.
+
   - date: 2026-10-06
     title: "Quo Vadis, Mathematics?"
     source: Christian Szegedy, 3 October 2026 (~2,000 words)
