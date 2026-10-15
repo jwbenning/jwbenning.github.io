@@ -6,7 +6,7 @@ description: how John has been using agentic AI via Claude Code, and how to get 
 nav: true
 nav_title: ai
 nav_order: 6
-last_updated: 2026-09-30
+last_updated: 2026-10-15
 ---
 
 {% include agentic_wiki.liquid %}
@@ -90,7 +90,7 @@ one command: `/done`, which writes the handoff at the end of a session.
 
 ## Still to write
 
-The rest is not. What is queued:
+What is queued:
 
 **Commands.** _Inbox triage_ — reads a file of standing rules and then files, labels and summarises
 the inbox against what actually matters this week, rather than against generic importance.
