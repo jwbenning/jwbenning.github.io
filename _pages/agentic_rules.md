@@ -5,7 +5,7 @@ title: rules worth copying
 description: claude.md rules that change what the agent actually does
 nav: false
 wiki_slug: rules
-last_updated: 2026-09-18
+last_updated: 2026-09-30
 ---
 
 {% include agentic_wiki.liquid %}
