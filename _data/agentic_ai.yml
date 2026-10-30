@@ -263,6 +263,11 @@ schedule:
       Agents make many model calls, not one — so as ecologists, how should their
       environmental and ethical footprint shape our use of them? And when an autonomous
       system errs, who is accountable?
+    slides:
+      url: /assets/slides/agentic-ai/week08.html
+      note: >
+        Public copy of the deck as shown in class, with class-specific detail removed.
+        Arrow keys or space to advance, f for fullscreen.
 
   - week: 9
     date: 2026-11-06
