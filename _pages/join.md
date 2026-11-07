@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /join/
-last_updated: 2026-09-01
+last_updated: 2026-11-07
 title: join
 description:
 nav: true
@@ -52,15 +52,8 @@ We're always looking for collaborators. Cornell offers a stimulating intellectua
       <span class="join-chevron"></span>
     </summary>
     <div class="join-body">
-  <p><strong>We are recruiting a PhD student to start Fall 2027.</strong></p>
-  <p>If you're interested in joining the Benning Lab as a PhD student at Cornell, please fill out
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLScAYiXx9ZPS7TAvKs_pKGzmY8JL5HUe_CyiBX6yCBLEmhXeAg/viewform?usp=header">this short form</a>
-  to share some information about your background and your motivation for joining the lab.</p>
-  <p>Starting in June, we'll review submissions during the first two weeks of each month. So if you
-  submit before June 1, you'll hear from John by the third week in June; if you submit in June, you'll
-  hear from John by the third week of July, and so on. If you don't hear back within that window, or if
-  you have a question on a different timeline (e.g., a funding-application deadline or an eligibility
-  question), please reach out to <a href="mailto:jbenning@cornell.edu">John</a> directly.</p>
+  <p><strong>The inquiry period for PhD students starting Fall 2027 is now closed.</strong> Thank you
+  to everyone who reached out.</p>
   <p>Read more about Cornell's application process
   <a href="https://ecologyandevolution.cornell.edu/graduate">here</a>. You can compare stipends across
   similar graduate programs with <a href="https://mlgaynor.com/BiologyPhDStipends/">this great resource</a>
