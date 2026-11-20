@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /join/
-last_updated: 2026-11-07
+last_updated: 2026-11-20
 title: join
 description:
 nav: true
@@ -53,7 +53,8 @@ We're always looking for collaborators. Cornell offers a stimulating intellectua
     </summary>
     <div class="join-body">
   <p><strong>The inquiry period for PhD students starting Fall 2027 is now closed.</strong> Thank you
-  to everyone who reached out.</p>
+  to everyone who reached out. The interest form will reopen in June 2027, and be linked here, for students
+  applying to start in Fall 2028.</p>
   <p>Read more about Cornell's application process
   <a href="https://ecologyandevolution.cornell.edu/graduate">here</a>. You can compare stipends across
   similar graduate programs with <a href="https://mlgaynor.com/BiologyPhDStipends/">this great resource</a>
